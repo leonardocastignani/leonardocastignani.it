@@ -1,0 +1,188 @@
+{
+  "pageTitle": "Leonardo Castignani | Portfolio",
+  "pageDescription": "Portfolio di Leonardo Castignani, Sviluppatore Software.",
+  "backToTopLabel": "Torna in cima alla pagina",
+  "nav": {
+    "homeLink": "/",
+    "home": "Home",
+    "about": "Chi Sono",
+    "education": "Istruzione",
+    "experience": "Esperienze",
+    "projects": "Progetti",
+    "contact": "Contatti",
+    "openMenu": "Apri menu di navigazione",
+    "closeMenu": "Chiudi menu di navigazione",
+    "switchLang": {
+      "href": "/en",
+      "label": "EN",
+      "aria": "Passa alla lingua inglese"
+    }
+  },
+  "hero": {
+    "title": "Leonardo Castignani",
+    "subtitle": "Sviluppatore Software. Creo esperienze digitali veloci, accessibili e moderne, trasformando idee complesse in realtà.",
+    "socialAriaLabel": "Visita il mio profilo",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "downloadCV": "Scarica CV",
+    "cvPath": "/CV/it_CV Leonardo Castignani.pdf",
+    "contact": "Contattami!"
+  },
+  "about": {
+    "title": "Chi Sono",
+    "p1": "Sono uno sviluppatore software con una profonda passione per la tecnologia, attualmente al terzo anno del Corso di Laurea in Informatica presso l'Università degli Studi di Camerino. Il mio obiettivo è creare software che non solo funzioni in modo impeccabile, ma che sia anche intuitivo, accessibile e in grado di risolvere problemi reali, dal backend al frontend.",
+    "p2": "Affronto ogni progetto con curiosità e un approccio orientato alla risoluzione dei problemi. Credo fermamente nella collaborazione e nel valore della comunità open-source, dove contribuisco attivamente per continuare a imparare e migliorare le mie competenze."
+  },
+  "education": {
+    "title": "Istruzione & Competenze",
+    "studyTitle": "Percorso di Studi",
+    "skillsTitle": "Competenze Tecniche",
+    "skillsCategories": {
+      "languages": "Linguaggi di Programmazione",
+      "frontend": "Frontend & Framework",
+      "backend": "Backend & Database",
+      "tools": "Strumenti & Piattaforme"
+    },
+    "gradeLabel": "Valutazione:",
+    "educationDetails": [
+      {
+        "degree": "Laurea Triennale in Informatica (L-31)",
+        "institution": "Università degli Studi di Camerino",
+        "url": "https://www.unicam.it/",
+        "period": "2023 - In corso",
+        "grade": null
+      },
+      {
+        "degree": "Diploma di Perito Informatico",
+        "institution": "IIS \"E. Mattei\", Recanati",
+        "url": "https://www.ismatteirecanati.edu.it/",
+        "period": "2018 - 2023",
+        "grade": "94/100"
+      }
+    ],
+    "certificationsTitle": "Certificazioni",
+    "certificationDetails": [
+      {
+        "title": "Patentino della Robotica",
+        "issuer": "COMAU",
+        "date": "2022",
+        "description": "Certificazione sulle competenze di base per l'utilizzo e la programmazione di robot industriali."
+      },
+      {
+        "title": "ICDL Full Standard",
+        "issuer": "AICA",
+        "date": "2021",
+        "description": "Certificazione completa delle competenze digitali, inclusi moduli specialistici come IT-Security e Web-Editing."
+      }
+    ]
+  },
+  "experience": {
+    "title": "Esperienze Lavorative",
+    "companyAriaLabel": "Sito web di",
+    "experiences": [
+      {
+        "role": "Sviluppatore Freelance",
+        "company": "Libero Professionista",
+        "companyUrl": null,
+        "period": "2021 - In corso",
+        "description": "Sviluppo soluzioni software personalizzate per clienti privati e piccole imprese, gestendo l'intero ciclo di vita del progetto: dalla raccolta dei requisiti e progettazione, allo sviluppo, testing e rilascio finale."
+      },
+      {
+        "role": "Sviluppatore Software (Tirocinio)",
+        "company": "New Technology srl",
+        "companyUrl": "https://www.newtechnologysrl.it/",
+        "period": "Agosto 2023 - Ottobre 2023",
+        "description": "Ho contribuito attivamente all'analisi e alla risoluzione di bug su applicativi esistenti, migliorando la stabilità del software. Ho inoltre collaborato allo sviluppo di nuove funzionalità, applicando metodologie di testing e debugging in un contesto professionale."
+      },
+      {
+        "role": "Sviluppatore Junior (Alternanza Scuola-Lavoro)",
+        "company": "New Technology srl",
+        "companyUrl": "https://www.newtechnologysrl.it/",
+        "period": "Marzo 2023",
+        "description": "Prima esperienza in un contesto aziendale, dove ho supportato il team di sviluppo in task di programmazione e ho appreso le dinamiche del lavoro di squadra e le best practice del settore sotto la guida di sviluppatori senior."
+      }
+    ]
+  },
+  "projects": {
+    "title": "I Miei Progetti",
+    "projectDetails": [
+      {
+        "title": "Gestione Budget Familiare",
+        "description": "Un'applicazione desktop per tracciare le entrate e le uscite familiari, con dashboard interattive e categorizzazione delle spese.",
+        "detailedDescription": "Un'applicazione desktop completa, sviluppata in Java, che offre agli utenti un controllo totale sulle proprie finanze. L'interfaccia grafica, creata con JavaFX, è stata progettata per essere intuitiva e di facile utilizzo. Il sistema si basa su un database H2 per uno storage dei dati leggero e performante, mentre la gestione delle dipendenze e la build del progetto sono affidate a Gradle. Le funzionalità principali includono la registrazione dettagliata di entrate e uscite, la categorizzazione personalizzabile delle transazioni e la generazione di dashboard e report visivi per un'analisi approfondita delle abitudini di spesa nel tempo."
+      },
+      {
+        "title": "Piattaforma HackHub",
+        "description": "Una piattaforma web per la gestione di eventi e competizioni di programmazione, attualmente in fase di sviluppo.",
+        "detailedDescription": "HackHub è un progetto in fase di sviluppo per creare un portale dedicato agli hackathon. L'architettura, basata su Java, è progettata per essere robusta e scalabile, con l'implementazione di specifici design pattern per garantire la manutenibilità. La fase successiva prevede la migrazione del backend a Spring Boot per sfruttarne l'ecosistema e le performance."
+      },
+      {
+        "title": "Questo Portfolio",
+        "description": "Il sito che stai navigando, costruito con Astro e Tailwind CSS per mostrare le mie competenze e i miei progetti in modo moderno e reattivo.",
+        "detailedDescription": "Il sito che stai navigando è stato concepito come una vetrina delle mie competenze. Sviluppato con Astro, sfrutta l'architettura a isole per garantire tempi di caricamento minimi e un'esperienza utente fluida. L'intero design è stato realizzato con Tailwind CSS, che ha permesso uno sviluppo rapido e la creazione di un'interfaccia responsive e coerente su tutti i dispositivi. Per la logica interattiva, come la gestione dei modali e le animazioni, è stato utilizzato TypeScript. Particolare attenzione è stata dedicata all'accessibilità (standard WAI-ARIA) e all'internazionalizzazione, con supporto completo per italiano e inglese."
+      }
+    ]
+  },
+  "modal": {
+    "details": "Dettagli",
+    "close": "Chiudi",
+    "github": "Codice Sorgente",
+    "liveSite": "Sito Live",
+    "detailsAriaLabel": "Vedi i dettagli del progetto",
+    "githubAriaLabel": "Vedi il codice di",
+    "liveSiteAriaLabel": "Vedi il sito live di"
+  },
+  "contact": {
+    "title": "Mettiamoci in Contatto",
+    "subtitle": "Sono sempre aperto a nuove opportunità e collaborazioni. Se hai un progetto in mente o vuoi semplicemente connetterti, non esitare a scrivermi.",
+    "name": "Il tuo nome",
+    "email": "La tua email",
+    "phone": "Il tuo numero di telefono (opzionale)",
+    "subject": {
+      "label": "Oggetto del messaggio",
+      "placeholder": "Seleziona un oggetto...",
+      "option1": "Proposta di Lavoro",
+      "option2": "Richiesta Informazioni",
+      "option3": "Altro"
+    },
+    "message": "Il tuo messaggio...",
+    "button": "Invia Messaggio",
+    "status": {
+      "sending": "Invio in corso...",
+      "success": "Grazie! Il tuo messaggio è stato inviato con successo.",
+      "error": "Oops! C'è stato un problema. Riprova più tardi."
+    },
+    "alternative": "In alternativa, puoi trovarmi su"
+  },
+  "footer": {
+    "copyright": "© {year} Leonardo Castignani. Tutti i diritti riservati.",
+    "socialAriaLabel": "Visita il mio profilo"
+  },
+  "error404": {
+    "title": "Pagina non trovata",
+    "description": "Pagina non trovata",
+    "subtitle": "La pagina che stai cercando non esiste o è stata spostata.",
+    "button": "Torna alla Home",
+    "homeLink": "/"
+  },
+  "maintenance": {
+    "title": "Sito in Manutenzione",
+    "subtitle": "Stiamo lavorando per migliorare il sito. Torneremo presto online!"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Ultimo aggiornamento: 12 novembre 2025",
+    "introduction": "Questa Privacy Policy descrive come le tue informazioni personali vengono raccolte, utilizzate e condivise quando visiti questo sito.",
+    "dataTitle": "Dati Personali Raccolti",
+    "dataText": "Quando compili il modulo di contatto, raccogliamo le informazioni che fornisci, come nome, email e messaggio, al solo scopo di risponderti. Non condividiamo queste informazioni con terze parti.",
+    "cookieTitle": "Utilizzo dei Cookie",
+    "cookieText1": "Questo sito utilizza cookie per migliorare la tua esperienza. Di seguito sono elencati i cookie utilizzati:",
+    "cookieConsent": {
+      "title": "Cookie di Consenso (cookieconsent_status)",
+      "text": "Questo cookie viene utilizzato per memorizzare la tua scelta riguardo al consenso dei cookie, in modo da non mostrarti nuovamente il banner a ogni visita. È un cookie puramente funzionale."
+    },
+    "cookieText2": "Non vengono utilizzati cookie di profilazione o di terze parti per scopi di marketing.",
+    "contactTitle": "Contatti",
+    "contactText": "Per qualsiasi domanda riguardo a questa Privacy Policy, puoi contattarmi tramite il modulo presente su questo sito."
+  }
+}

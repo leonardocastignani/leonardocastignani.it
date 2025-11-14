@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Education from '../components/Education.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+import { getI18N } from '../i18n/utils';
+
+// const { currentLocale } = Astro;
+// const i18n = getI18N({ currentLocale });
+const i18n = getI18N({ astroUrl: Astro.url });
+---
+
+<Layout title = {i18n.pageTitle} description = {i18n.pageDescription}>
+    <Hero />
+    <About />
+    <Education />
+    <Experience />
+    <Projects />
+    <Contact />
+</Layout>

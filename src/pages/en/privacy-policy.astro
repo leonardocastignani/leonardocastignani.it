@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getI18N } from '../../i18n/utils';
+
+// const { currentLocale } = Astro;
+// const i18n = getI18N({ currentLocale });
+const i18n = getI18N({ astroUrl: Astro.url });
+---
+
+<Layout title={i18n.privacy.title} description={i18n.privacy.title}>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h1 class="text-4xl font-bold text-white mb-4">{i18n.privacy.title}</h1>
+        <p class="text-gray-400 mb-8">{i18n.privacy.lastUpdated}</p>
+
+        <div class="prose prose-invert max-w-none text-gray-300">
+            <p>{i18n.privacy.introduction}</p>
+            
+            <h2>{i18n.privacy.dataTitle}</h2>
+            <p>{i18n.privacy.dataText}</p>
+            
+            <h2>{i18n.privacy.cookieTitle}</h2>
+            <p>{i18n.privacy.cookieText1}</p>
+            <ul>
+                <li><strong>{i18n.privacy.cookieConsent.title}:</strong> {i18n.privacy.cookieConsent.text}</li>
+            </ul>
+            <p>{i18n.privacy.cookieText2}</p>
+
+            <h2>{i18n.privacy.contactTitle}</h2>
+            <p>{i18n.privacy.contactText}</p>
+        </div>
+    </div>
+</Layout>

@@ -1,0 +1,29 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import ProjectModal from './ProjectModal.astro';
+import { getI18N } from '../i18n/utils';
+
+import { getProjects } from '../data/projects.js';
+
+// const { currentLocale } = Astro;
+// const i18n = getI18N({ currentLocale });
+const i18n = getI18N({ astroUrl: Astro.url });
+const titleId = "projects-title";
+
+const myProjects = getProjects(i18n);
+---
+
+<section id="projects" class="py-20 px-4 bg-gray-900 fade-in-section" aria-labelledby={titleId}>
+    <div class="container mx-auto max-w-6xl">
+        <h2 id={titleId} class="text-3xl md:text-4xl font-bold mb-12 text-center">{i18n.projects.title}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {myProjects.map(p => (
+                <ProjectCard project={p} modalStrings={i18n.modal} />
+            ))}
+        </div>
+    </div>
+</section>
+
+{myProjects.map(p => (
+    <ProjectModal project={p} modalStrings={i18n.modal} />
+))}

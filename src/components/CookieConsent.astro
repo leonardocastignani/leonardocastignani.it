@@ -1,0 +1,42 @@
+---
+// const { currentLocale } = Astro;
+const currentLang = Astro.url.pathname.startsWith('/en') ? 'en' : 'it';
+
+const config = {
+    // 1. Cambiamo lo stile e la posizione
+    palette: {
+        popup: { background: "#1f2937" },
+        button: { background: "#2563eb" }
+    },
+    position: "bottom-right",
+    layout: "box",
+
+    // 2. Impostiamo la modalità "opt-in" per mostrare il pulsante "Accetta"
+    type: 'opt-in',
+
+    // 3. Aggiorniamo i contenuti e aggiungiamo il link alla Privacy Policy
+    content: currentLang === 'it' ? {
+        message: "Questo sito utilizza i cookie per garantire la migliore esperienza di navigazione.",
+        allow: "Accetta",
+        deny: "Rifiuta", // Usiamo "deny" invece di "dismiss" per la modalità opt-in
+        link: "Scopri di più",
+        href: "/privacy-policy" // Assicurati di creare questa pagina!
+    } : {
+        message: "This website uses cookies to ensure you get the best experience.",
+        allow: "Accept",
+        deny: "Reject",
+        link: "Learn more",
+        href: "/en/privacy-policy" // E la sua versione inglese
+    }
+};
+---
+
+<script define:vars={{ config }}>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof cookieconsent !== 'undefined' && typeof cookieconsent.initialise === 'function') {
+            cookieconsent.initialise(config);
+        } else {
+            console.error("Funzione 'cookieconsent.initialise' non trovata!");
+        }
+    });
+</script>

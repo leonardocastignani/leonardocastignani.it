@@ -1,0 +1,162 @@
+---
+import { getI18N } from '../i18n/utils';
+
+// const { currentLocale } = Astro;
+// const i18n = getI18N({ currentLocale });
+const i18n = getI18N({ astroUrl: Astro.url });
+const titleId = "contact-title";
+const formStatusMessages = i18n.contact.status;
+
+const FORMSPREE_ENDPOINT = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
+const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
+---
+
+<section id="contact" class="py-20 px-4 bg-gray-800 fade-in-section" aria-labelledby={titleId}>
+    <div class="container mx-auto max-w-2xl text-center">
+        <h2 id={titleId} class="text-3xl md:text-4xl font-bold mb-4">{i18n.contact.title}</h2>
+        <p class="text-gray-400 mb-8">
+            {i18n.contact.subtitle}
+        </p>
+
+        <form
+            id="contact-form"
+            action={FORMSPREE_ENDPOINT}
+            method="POST"
+            class="text-left space-y-4"
+        >
+            <!-- ... Campi del form esistenti ... -->
+            <div>
+                <label for="name" class="sr-only">{i18n.contact.name}</label>
+                <input type="text" id="name" name="name" required placeholder={i18n.contact.name} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+            </div>
+            <div>
+                <label for="email" class="sr-only">{i18n.contact.email}</label>
+                <input type="email" id="email" name="email" required placeholder={i18n.contact.email} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+            </div>
+            <div>
+                <label for="phone" class="sr-only">{i18n.contact.phone}</label>
+                <input type="tel" id="phone" name="phone" placeholder={i18n.contact.phone} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+            </div>
+            <div>
+                <label for="subject" class="sr-only">{i18n.contact.subject.label}</label>
+                
+                <div class="relative">
+                    <select 
+                        id="subject" 
+                        name="subject" 
+                        required 
+                        class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition appearance-none"
+                    >
+                        <option value="" disabled selected hidden>{i18n.contact.subject.placeholder}</option>
+                        <option value="Proposta di Lavoro">{i18n.contact.subject.option1}</option>
+                        <option value="Richiesta Informazioni">{i18n.contact.subject.option2}</option>
+                        <option value="Altro">{i18n.contact.subject.option3}</option>
+                    </select>
+                    
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                        <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- campo nascosto per reCAPTCHA v3 -->
+            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
+
+            <div>
+                <label for="message" class="sr-only">{i18n.contact.message}</label>
+                <textarea id="message" name="message" rows="5" required placeholder={i18n.contact.message} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></textarea>
+            </div>
+            <div class="text-center">
+                <button id="contact-submit" type="submit" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-blue-500">
+                    {i18n.contact.button}
+                </button>
+            </div>
+        </form>
+        <div id="form-status" class="mt-4 text-lg"></div>
+
+        <div class="mt-12 text-center">
+            <p class="text-gray-400 mb-2">{i18n.contact.alternative}:</p>
+            <div class="flex justify-center gap-6">
+                <a href="https://www.linkedin.com/in/leonardo-castignani/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">LinkedIn</a>
+                <a href="mailto:leo.castignani@gmail.com" class="text-blue-400 hover:text-blue-300 font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Email</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`} async></script>
+
+<script define:vars={{ formStatusMessages, RECAPTCHA_SITE_KEY }}>
+    const form = document.getElementById('contact-form');
+    const statusDiv = document.getElementById('form-status');
+    const submitButton = document.getElementById('contact-submit');
+
+    function showStatusMessage(message, color) {
+        if (!statusDiv) return;
+        statusDiv.textContent = message;
+        statusDiv.style.color = color;
+        setTimeout(() => { if (statusDiv.textContent === message) statusDiv.textContent = ''; }, 5000);
+    }
+
+    async function ajaxSubmit(formElement, formData) {
+        try {
+            const response = await fetch(formElement.action, {
+                method: formElement.method,
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                showStatusMessage(formStatusMessages.success, '#34d399');
+                formElement.reset();
+            } else {
+                const data = await response.json().catch(()=>null);
+                if (data && data.errors) {
+                    const errorMessage = data.errors.map(e => e.message).join(', ');
+                    showStatusMessage(errorMessage, '#f87171');
+                } else {
+                    showStatusMessage(formStatusMessages.error, '#f87171');
+                }
+            }
+        } catch (err) {
+            showStatusMessage(formStatusMessages.error, '#f87171');
+        } finally {
+            if (submitButton) submitButton.disabled = false;
+        }
+    }
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        if (!(event.target instanceof HTMLFormElement)) return;
+        const targetForm = event.target;
+
+        if (submitButton) submitButton.disabled = true;
+        if (statusDiv) {
+            statusDiv.textContent = formStatusMessages.sending;
+            statusDiv.style.color = '#9ca3af';
+        }
+
+        try {
+            // ottieni token reCAPTCHA v3
+            const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'contact' });
+            const hidden = document.getElementById('g-recaptcha-response');
+            if (hidden) hidden.value = token;
+
+            const fd = new FormData(targetForm);
+            await ajaxSubmit(targetForm, fd);
+        } catch (err) {
+            showStatusMessage(formStatusMessages.error, '#f87171');
+            if (submitButton) submitButton.disabled = false;
+        }
+    }
+
+    if (form) form.addEventListener('submit', handleSubmit);
+</script>
+
+<style>
+    select:invalid {
+        color: #9ca3af;
+    }
+</style>

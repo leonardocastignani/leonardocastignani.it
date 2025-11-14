@@ -1,0 +1,15 @@
+---
+const { href, class: className, label } = Astro.props;
+---
+
+<a
+    href = {href}
+    class:list = {[
+        "transition-colors",
+        "data-[active]:text-white data-[active]:font-bold",
+        className
+    ]}
+    data-nav-link
+>
+    {label}
+</a>

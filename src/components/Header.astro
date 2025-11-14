@@ -1,0 +1,80 @@
+---
+import { Image } from 'astro:assets';
+import { getI18N } from '../i18n/utils';
+import NavLink from './NavLink.astro';
+import logo from '../assets/logo.svg';
+
+const { isMaintenance = false } = Astro.props;
+const i18n = getI18N({ astroUrl: Astro.url });
+
+const navLinks = [
+    { href: i18n.nav.homeLink, label: i18n.nav.home },
+    { href: "#about", label: i18n.nav.about },
+    { href: "#education", label: i18n.nav.education },
+    { href: '#experience', label: i18n.nav.experience },
+    { href: "#projects", label: i18n.nav.projects },
+    { href: "#contact", label: i18n.nav.contact },
+];
+
+const lang = i18n.nav.switchLang;
+const openMenuLabel = i18n.nav.openMenu;
+const closeMenuLabel = i18n.nav.closeMenu;
+
+const logoClasses = "text-xl font-bold flex items-center gap-x-3";
+---
+
+<header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 border-b border-gray-800">
+    <nav class="container mx-auto max-w-6xl px-4 py-4 flex justify-between items-center">
+        {!isMaintenance ? (
+            <a href={i18n.nav.homeLink} id="header-title" class:list={[logoClasses, "hover:text-blue-500 transition-colors"]}>
+                <Image src={logo} alt="Logo di Leonardo Castignani" class="h-8 w-auto" />
+                <span>Leonardo Castignani</span>
+            </a>
+        ) : (            
+            <div id="header-title" class:list={[logoClasses]}>
+                <Image src={logo} alt="Logo di Leonardo Castignani" class="h-8 w-auto" />
+                <span>Leonardo Castignani</span>
+            </div>
+        )}
+
+        {!isMaintenance && (
+            <>
+                <div class="hidden md:flex items-center gap-6">
+                    {navLinks.map(link => (
+                        <NavLink 
+                            href={link.href} 
+                            label={link.label}
+                            class="text-gray-300 hover:text-white"
+                        />
+                    ))}
+                    <a href={lang.href} class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-md text-sm" aria-label={lang.aria}>
+                        {lang.label}
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center gap-4">
+                    <a href={lang.href} class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md text-base font-medium mt-2" aria-label={lang.aria}>
+                        {lang.label}
+                    </a>
+                    <button id="menu-btn" class="text-gray-200 focus:outline-none" aria-label={openMenuLabel} aria-expanded="false" aria-controls="mobile-menu" data-label-open={openMenuLabel} data-label-close={closeMenuLabel}>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </>
+        )}
+    </nav>
+
+    {!isMaintenance && (
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-sm">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                {navLinks.map(link => (
+                    <NavLink 
+                        href={link.href} 
+                        label={link.label}
+                        class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                    />
+                ))}
+            </div>
+        </div>
+    )}
+</header>

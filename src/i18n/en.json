@@ -1,0 +1,188 @@
+{
+  "pageTitle": "Leonardo Castignani | Portfolio",
+  "pageDescription": "Portfolio of Leonardo Castignani, Software Developer.",
+  "backToTopLabel": "Back to top",
+  "nav": {
+    "homeLink": "/en",
+    "home": "Home",
+    "about": "About Me",
+    "education": "Education",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "switchLang": {
+      "href": "/",
+      "label": "IT",
+      "aria": "Switch to Italian language"
+    }
+  },
+  "hero": {
+    "title": "Leonardo Castignani",
+    "subtitle": "Software Developer. I build fast, accessible, and modern digital experiences, turning complex ideas into reality.",
+    "socialAriaLabel": "Visit my profile on",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "downloadCV": "Download CV",
+    "cvPath": "/CV/en_CV Leonardo Castignani.pdf",
+    "contact": "Contact me!"
+  },
+  "about": {
+    "title": "About Me",
+    "p1": "I am a software developer with a deep passion for technology, currently in my third year of the Computer Science Degree Course at the University of Camerino. My goal is to create software that not only works flawlessly but is also intuitive, accessible, and capable of solving real-world problems, from backend to frontend.",
+    "p2": "I approach every project with curiosity and a problem-solving mindset. I strongly believe in collaboration and the value of the open-source community, where I actively contribute to continuously learn and improve my skills."
+  },
+  "education": {
+    "title": "Education & Skills",
+    "studyTitle": "Education Path",
+    "skillsTitle": "Technical Skills",
+    "skillsCategories": {
+      "languages": "Programming Languages",
+      "frontend": "Frontend & Frameworks",
+      "backend": "Backend & Databases",
+      "tools": "Tools & Platforms"
+    },
+    "gradeLabel": "Grade:",
+    "educationDetails": [
+      {
+        "degree": "Bachelor's Degree in Computer Science (L-31)",
+        "institution": "University of Camerino",
+        "url": "https://www.unicam.it/",
+        "period": "2023 - Ongoing",
+        "grade": null
+      },
+      {
+        "degree": "High School Diploma in Computer Science",
+        "institution": "IIS \"E. Mattei\", Recanati",
+        "url": "https://www.ismatteirecanati.edu.it/",
+        "period": "2018 - 2023",
+        "grade": "94/100"
+      }
+    ],
+    "certificationsTitle": "Certifications",
+    "certificationDetails": [
+      {
+        "title": "Robotics License",
+        "issuer": "COMAU",
+        "date": "2022",
+        "description": "Certification on the basic skills for the use and programming of industrial robots."
+      },
+      {
+        "title": "ICDL Full Standard",
+        "issuer": "AICA",
+        "date": "2021",
+        "description": "Comprehensive certification of digital skills, including specialized modules like IT-Security and Web-Editing."
+      }
+    ]
+  },
+  "experience": {
+    "title": "Work Experience",
+    "companyAriaLabel": "Website of",
+    "experiences": [
+      {
+        "role": "Freelance Developer",
+        "company": "Self-Employed",
+        "companyUrl": null,
+        "period": "2021 - Present",
+        "description": "Developing custom software solutions for private clients and small businesses, managing the entire project lifecycle: from requirements gathering and design to development, testing, and final deployment."
+      },
+      {
+        "role": "Software Developer (Internship)",
+        "company": "New Technology srl",
+        "companyUrl": "https://www.newtechnologysrl.it/",
+        "period": "August 2023 - October 2023",
+        "description": "Actively contributed to analyzing and resolving bugs in existing applications, improving software stability. I also collaborated on developing new features, applying testing and debugging methodologies in a professional environment."
+      },
+      {
+        "role": "Junior Developer (Work-Study Program)",
+        "company": "New Technology srl",
+        "companyUrl": "https://www.newtechnologysrl.it/",
+        "period": "March 2023",
+        "description": "First experience in a corporate setting, where I supported the development team with programming tasks and learned team dynamics and industry best practices under the guidance of senior developers."
+      }
+    ]
+  },
+  "projects": {
+    "title": "My Projects",
+    "projectDetails": [
+      {
+        "title": "Family Budget Management",
+        "description": "A desktop application to track family income and expenses, with interactive dashboards and expense categorization.",
+        "detailedDescription": "A comprehensive desktop application, developed in Java, that gives users full control over their finances. The graphical interface, created with JavaFX, was designed to be intuitive and user-friendly. The system relies on an H2 database for lightweight and performant data storage, while dependency management and project builds are handled by Gradle. Key features include detailed recording of income and expenses, customizable transaction categorization, and the generation of visual dashboards and reports for in-depth analysis of spending habits over time."
+      },
+      {
+        "title": "HackHub Platform",
+        "description": "A web platform for managing programming events and competitions, currently under development.",
+        "detailedDescription": "HackHub is a project under development to create a dedicated portal for hackathons. The architecture, based on Java, is designed to be robust and scalable, implementing specific design patterns to ensure maintainability. The next phase involves migrating the backend to Spring Boot to leverage its ecosystem and performance."
+      },
+      {
+        "title": "This Portfolio",
+        "description": "The site you are currently browsing, built with Astro and Tailwind CSS to showcase my skills and projects in a modern and responsive way.",
+        "detailedDescription": "The site you are browsing was designed as a showcase of my skills. Developed with Astro, it leverages the island architecture to ensure minimal loading times and a smooth user experience. The entire design was created with Tailwind CSS, which allowed for rapid development and the creation of a responsive and consistent interface across all devices. TypeScript was used for interactive logic, such as modal management and animations. Special attention was paid to accessibility (WAI-ARIA standards) and internationalization, with full support for Italian and English."
+      }
+    ]
+  },
+  "modal": {
+    "details": "Details",
+    "close": "Close",
+    "github": "Source Code",
+    "liveSite": "Live Site",
+    "detailsAriaLabel": "View project details for",
+    "githubAriaLabel": "View the code for",
+    "liveSiteAriaLabel": "View the live site for"
+  },
+  "contact": {
+    "title": "Let's Get in Touch",
+    "subtitle": "I'm always open to new opportunities and collaborations. If you have a project in mind or just want to connect, feel free to reach out.",
+    "name": "Your name",
+    "email": "Your email",
+    "phone": "Your phone number (optional)",
+    "subject": {
+      "label": "Message subject",
+      "placeholder": "Select a subject...",
+      "option1": "Job Proposal",
+      "option2": "Request for Information",
+      "option3": "Other"
+    },
+    "message": "Your message...",
+    "button": "Send Message",
+    "status": {
+      "sending": "Sending...",
+      "success": "Thank you! Your message has been sent successfully.",
+      "error": "Oops! There was a problem. Please try again later."
+    },
+    "alternative": "Alternatively, you can find me on"
+  },
+  "footer": {
+    "copyright": "© {year} Leonardo Castignani. All rights reserved.",
+    "socialAriaLabel": "Visit my profile on"
+  },
+  "error404": {
+    "title": "Page Not Found",
+    "description": "Page not found",
+    "subtitle": "The page you are looking for does not exist or has been moved.",
+    "button": "Go Back Home",
+    "homeLink": "/en"
+  },
+  "maintenance": {
+    "title": "Site Under Maintenance",
+    "subtitle": "We are working to improve the site. We will be back online soon!"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: November 12, 2025",
+    "introduction": "This Privacy Policy describes how your personal information is collected, used, and shared when you visit this site.",
+    "dataTitle": "Personal Data Collected",
+    "dataText": "When you fill out the contact form, we collect the information you provide, such as your name, email, and message, for the sole purpose of responding to you. We do not share this information with third parties.",
+    "cookieTitle": "Use of Cookies",
+    "cookieText1": "This site uses cookies to enhance your experience. The cookies used are listed below:",
+    "cookieConsent": {
+      "title": "Consent Cookie (cookieconsent_status)",
+      "text": "This cookie is used to store your choice regarding cookie consent, so you are not shown the banner again on each visit. It is a purely functional cookie."
+    },
+    "cookieText2": "No profiling or third-party cookies are used for marketing purposes.",
+    "contactTitle": "Contact",
+    "contactText": "For any questions regarding this Privacy Policy, you can contact me through the form on this site."
+  }
+}

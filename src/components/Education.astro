@@ -1,0 +1,105 @@
+---
+import { getI18N } from '../i18n/utils';
+import SkillIcon from './SkillIcon.astro';
+
+import { languages, frontend, backend, tools } from '../data/skills.js';
+
+// const { currentLocale } = Astro;
+// const i18n = getI18N({ currentLocale });
+const i18n = getI18N({ astroUrl: Astro.url });
+const titleId = "education-title";
+
+const categories = i18n.education.skillsCategories;
+---
+
+<section id="education" class="py-20 px-4 bg-gray-900 fade-in-section" aria-labelledby={titleId}>
+    <div class="container mx-auto max-w-5xl">
+        <h2 id={titleId} class="text-3xl md:text-4xl font-bold mb-12 text-center">{i18n.education.title}</h2>
+
+        <div class="grid md:grid-cols-2 gap-16">
+            <!-- Colonna Sinistra: Istruzione e Certificazioni -->
+            <div class="space-y-12">
+                <!-- Percorso di Studi -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-blue-400">{i18n.education.studyTitle}</h3>
+                    <div class="space-y-6">
+                        {i18n.education.educationDetails.map(edu => (
+                            <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                                <p class="font-bold text-lg">{edu.degree}</p>
+                                <a href={edu.url} target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-blue-400 font-semibold mb-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">
+                                        {edu.institution}
+                                    </a>
+                                <p class="text-sm text-gray-500">{edu.period}</p>
+                                {edu.grade && (
+                                    <p class="text-sm text-blue-300 mt-2">
+                                        <span class="font-semibold">{i18n.education.gradeLabel}</span> {edu.grade}
+                                    </p>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <!-- Certificazioni -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-blue-400">{i18n.education.certificationsTitle}</h3>
+                    <div class="space-y-6">
+                        {i18n.education.certificationDetails.map(cert => (
+                            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 flex flex-col">
+                                <p class="font-bold text-lg flex-grow">{cert.title}</p>
+                                <p class="text-blue-300 font-semibold mt-1">{cert.issuer}</p>
+                                <p class="text-sm text-gray-500 mb-3">{cert.date}</p>
+                                {cert.description && (
+                                    <p class="text-sm text-gray-300">{cert.description}</p>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competenze -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-6 text-blue-400">{i18n.education.skillsTitle}</h3>
+                <div class="space-y-8">
+                    <!-- Linguaggi -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-gray-300">{categories.languages}</h4>
+                        <div class="flex flex-wrap gap-4">
+                            {languages.map(({ name, Icon }) => (
+                                <SkillIcon name={name} Icon={Icon} />
+                            ))}
+                        </div>
+                    </div>
+                    <!-- Frontend -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-gray-300">{categories.frontend}</h4>
+                        <div class="flex flex-wrap gap-4">
+                            {frontend.map(({ name, Icon }) => (
+                                <SkillIcon name={name} Icon={Icon} />
+                            ))}
+                        </div>
+                    </div>
+                    <!-- Backend -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-gray-300">{categories.backend}</h4>
+                        <div class="flex flex-wrap gap-4">
+                            {backend.map(({ name, Icon }) => (
+                                <SkillIcon name={name} Icon={Icon} />
+                            ))}
+                        </div>
+                    </div>
+                    <!-- Strumenti -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-gray-300">{categories.tools}</h4>
+                        <div class="flex flex-wrap gap-4">
+                            {tools.map(({ name, Icon }) => (
+                                <SkillIcon name={name} Icon={Icon} />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

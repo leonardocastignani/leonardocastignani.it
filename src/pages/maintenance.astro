@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getI18N } from '../i18n/utils';
+
+// const { currentLocale } = Astro;
+// const i18n = getI18N({ currentLocale });
+const i18n = getI18N({ astroUrl: Astro.url });
+---
+
+<Layout title={i18n.maintenance.title} description={i18n.maintenance.subtitle} isMaintenance={true}>
+    <main class="h-screen flex flex-col justify-center items-center text-center p-4 -mt-20"> 
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">{i18n.maintenance.title}</h1>
+        <p class="text-lg md:text-xl text-gray-300">{i18n.maintenance.subtitle}</p>
+    </main>
+</Layout>
