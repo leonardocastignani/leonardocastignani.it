@@ -14,7 +14,6 @@ const modalId = `modal-${title.replace(/\s+/g, '-').toLowerCase()}`;
     aria-modal="true"
 >
     <div class="bg-gray-800 rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-gray-700" data-modal-content>
-        <!-- Close Button -->
         <button data-modal-close={modalId} class="absolute top-3 right-3 text-gray-400 hover:text-white z-10" aria-label={modalStrings.close}>
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">

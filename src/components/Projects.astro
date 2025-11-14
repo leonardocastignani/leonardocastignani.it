@@ -2,14 +2,10 @@
 import ProjectCard from './ProjectCard.astro';
 import ProjectModal from './ProjectModal.astro';
 import { getI18N } from '../i18n/utils';
-
 import { getProjects } from '../data/projects.js';
 
-// const { currentLocale } = Astro;
-// const i18n = getI18N({ currentLocale });
 const i18n = getI18N({ astroUrl: Astro.url });
 const titleId = "projects-title";
-
 const myProjects = getProjects(i18n);
 ---
 

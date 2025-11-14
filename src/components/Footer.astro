@@ -1,12 +1,8 @@
 ---
 import { getI18N } from '../i18n/utils';
 
-// const { currentLocale } = Astro;
-// const i18n = getI18N({ currentLocale });
 const i18n = getI18N({ astroUrl: Astro.url });
-
 const currentYear = new Date().getFullYear();
-
 const socialLinks = [
     { href: "https://github.com/leonardocastignani", label: "GitHub" },
     { href: "https://www.linkedin.com/in/leonardo-castignani", label: "LinkedIn" },

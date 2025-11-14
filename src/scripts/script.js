@@ -1,5 +1,5 @@
 function runScripts() {
-    // --- Script per il fade-in delle sezioni ---
+    // --- Script per il fade-in delle sezioni | Script for section fade-in ---
     const sections = document.querySelectorAll('.fade-in-section');
 
     if (sections.length > 0) {
@@ -14,7 +14,7 @@ function runScripts() {
         });
     }
 
-    // --- Script per il menu mobile ---
+    // --- Script per il menu mobile | Script for mobile menu ---
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -42,7 +42,7 @@ function runScripts() {
         });
     }
 
-    // --- Script per l'indicatore di sezione attiva ---
+    // --- Script per l'indicatore di sezione attiva | Script for active section indicator ---
     const navSections = document.querySelectorAll('section[id]');
     const headerNavLinks = document.querySelectorAll('[data-nav-link]');
 
@@ -51,10 +51,8 @@ function runScripts() {
             headerNavLinks.forEach(link => {
                 const linkHref = link.getAttribute('href');
 
-                // Definisci "Home" come qualsiasi link di navigazione che NON inizia con '#'
                 const isHomeLink = !linkHref.startsWith('#');
                 const isHomeLinkActive = (id === 'home' && isHomeLink);
-                // Controlla se un altro link di sezione è attivo (es: id='about' e href='#about')
                 const isSectionLinkActive = (id !== 'home' && linkHref === '#' + id);
 
                 if (isHomeLinkActive || isSectionLinkActive) {
@@ -94,7 +92,7 @@ function runScripts() {
         });
     }
 
-    // --- Script per il pulsante "Torna Su" ---
+    // --- Script per il pulsante "Torna Su" | Script for "Back to Top" button ---
     const backToTopBtn = document.getElementById('back-to-top-btn');
 
     if (backToTopBtn) {
@@ -127,7 +125,7 @@ function runScripts() {
         });
     }
 
-    // --- Script per i modali dei progetti ---
+    // --- Script per i modali dei progetti | Script for project modals ---
     const openModalButtons = document.querySelectorAll('[data-modal-open]');
     const closeModalButtons = document.querySelectorAll('[data-modal-close]');
     let lastFocusedElement;
@@ -143,12 +141,12 @@ function runScripts() {
         const firstElement = focusableElements[0];
         const lastElement = focusableElements[focusableElements.length - 1];
 
-        if (e.shiftKey) { // Shift + Tab
+        if (e.shiftKey) {
             if (document.activeElement === firstElement) {
                 lastElement.focus();
                 e.preventDefault();
             }
-        } else { // Tab
+        } else {
             if (document.activeElement === lastElement) {
                 firstElement.focus();
                 e.preventDefault();
@@ -216,7 +214,6 @@ function runScripts() {
         });
     });
 
-    // Chiudi il modale cliccando sull'overlay o premendo ESC
     document.addEventListener('click', (event) => {
         if (activeModal && event.target === activeModal) {
             closeModal(activeModal);

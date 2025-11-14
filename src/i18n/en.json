@@ -183,6 +183,7 @@
     },
     "cookieText2": "No profiling or third-party cookies are used for marketing purposes.",
     "contactTitle": "Contact",
-    "contactText": "For any questions regarding this Privacy Policy, you can contact me through the form on this site."
+    "contactText": "For any questions regarding this Privacy Policy, you can contact me through the form on this site.",
+    "homeLink": "/en"
   }
 }
