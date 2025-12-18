@@ -23,6 +23,9 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
+# VS Code settings
+.vscode/
+
 # archives
 *.zip
 *.tar.gz
