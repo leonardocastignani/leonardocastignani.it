@@ -23,3 +23,10 @@ const myProjects = getProjects(i18n);
 {myProjects.map(p => (
     <ProjectModal project={p} modalStrings={i18n.modal} />
 ))}
+
+<script>
+    import { initModals } from '../scripts/modals.js';
+
+    document.addEventListener('DOMContentLoaded', initModals);
+    document.addEventListener('astro:after-swap', initModals);
+</script>

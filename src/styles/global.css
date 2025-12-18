@@ -1,10 +1,32 @@
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .fade-in-section {
+        @apply opacity-0 translate-y-5 transition-all duration-700 ease-out;
+    }
+
+    .fade-in-section.is-visible {
+        @apply opacity-100 translate-y-0;
+    }
 }
 
-.fade-in-section.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+.grecaptcha-badge {
+    width: 70px !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: scale(0.75) !important;
+    transform-origin: 0 50% !important;
+    border-top-right-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important; 
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2) !important;
+}
+
+.grecaptcha-badge:hover {
+    width: 256px !important;
 }

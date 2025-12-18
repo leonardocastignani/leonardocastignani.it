@@ -77,3 +77,19 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
         </div>
     )}
 </header>
+
+<script>
+    import { initMobileMenu } from '../scripts/mobileMenu.js';
+    import { initActiveSection } from '../scripts/activeSection.js';
+
+    function initHeaderScripts() {
+        initMobileMenu();
+        initActiveSection();
+    }
+
+    // Esegui al caricamento iniziale
+    document.addEventListener('DOMContentLoaded', initHeaderScripts);
+    
+    // Esegui dopo ogni navigazione (se usi View Transitions)
+    document.addEventListener('astro:after-swap', initHeaderScripts);
+</script>

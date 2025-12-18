@@ -24,6 +24,7 @@ const imageURL = new URL('/social-preview.png', Astro.site);
         <meta charset="UTF-8" />
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width" />
+        <meta name="theme-color" content="#111827" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
@@ -69,6 +70,17 @@ const imageURL = new URL('/social-preview.png', Astro.site);
             </svg>
         </a>
         
-        <script src="../scripts/script.js"></script>
+        <script>
+            import { initFadeInAnimations } from '../scripts/animations.js';
+            import { initBackToTop } from '../scripts/backToTop.js';
+
+            function initGlobalScripts() {
+                initFadeInAnimations();
+                initBackToTop();
+            }
+
+            document.addEventListener('DOMContentLoaded', initGlobalScripts);
+            document.addEventListener('astro:after-swap', initGlobalScripts);
+        </script>
     </body>
 </html>

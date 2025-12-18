@@ -11,9 +11,8 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^6.0.2",
-    "astro": "^5.15.3",
+    "astro": "^5.16.6",
     "autoprefixer": "^10.4.21",
-    "cookieconsent": "^3.1.1",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.18"
   }
