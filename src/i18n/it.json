@@ -104,24 +104,10 @@
     ]
   },
   "projects": {
-    "title": "I Miei Progetti",
-    "projectDetails": [
-      {
-        "title": "Gestione Budget Familiare",
-        "description": "Un'applicazione desktop per tracciare le entrate e le uscite familiari, con dashboard interattive e categorizzazione delle spese.",
-        "detailedDescription": "Un'applicazione desktop completa, sviluppata in Java, che offre agli utenti un controllo totale sulle proprie finanze. L'interfaccia grafica, creata con JavaFX, è stata progettata per essere intuitiva e di facile utilizzo. Il sistema si basa su un database H2 per uno storage dei dati leggero e performante, mentre la gestione delle dipendenze e la build del progetto sono affidate a Gradle. Le funzionalità principali includono la registrazione dettagliata di entrate e uscite, la categorizzazione personalizzabile delle transazioni e la generazione di dashboard e report visivi per un'analisi approfondita delle abitudini di spesa nel tempo."
-      },
-      {
-        "title": "Piattaforma HackHub",
-        "description": "Una piattaforma web per la gestione di eventi e competizioni di programmazione, attualmente in fase di sviluppo.",
-        "detailedDescription": "HackHub è un progetto in fase di sviluppo per creare un portale dedicato agli hackathon. L'architettura, basata su Java, è progettata per essere robusta e scalabile, con l'implementazione di specifici design pattern per garantire la manutenibilità. La fase successiva prevede la migrazione del backend a Spring Boot per sfruttarne l'ecosistema e le performance."
-      },
-      {
-        "title": "Questo Portfolio",
-        "description": "Il sito che stai navigando, costruito con Astro e Tailwind CSS per mostrare le mie competenze e i miei progetti in modo moderno e reattivo.",
-        "detailedDescription": "Il sito che stai navigando è stato concepito come una vetrina delle mie competenze. Sviluppato con Astro, sfrutta l'architettura a isole per garantire tempi di caricamento minimi e un'esperienza utente fluida. L'intero design è stato realizzato con Tailwind CSS, che ha permesso uno sviluppo rapido e la creazione di un'interfaccia responsive e coerente su tutti i dispositivi. Per la logica interattiva, come la gestione dei modali e le animazioni, è stato utilizzato TypeScript. Particolare attenzione è stata dedicata all'accessibilità (standard WAI-ARIA) e all'internazionalizzazione, con supporto completo per italiano e inglese."
-      }
-    ]
+    "title": "Progetti",
+    "githubTitle": "Lavori in corso...",
+    "githubDescription": "Al momento sto rifinendo alcuni progetti personali per renderli pubblici. Nel frattempo, ti invito a esplorare i miei repository, gli esercizi universitari e il codice sorgente di questo portfolio direttamente su GitHub.",
+    "githubButton": "Visita il mio profilo GitHub"
   },
   "modal": {
     "details": "Dettagli",

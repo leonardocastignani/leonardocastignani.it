@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import { getI18N } from '../i18n/utils';
+import { SITE_DATA } from '../consts';
 import '../styles/global.css';
 
 const currentLang = Astro.url.pathname.startsWith('/en') ? 'en' : 'it';
@@ -22,6 +23,7 @@ const imageURL = new URL('/social-preview.png', Astro.site);
 <html lang={currentLang} class="scroll-smooth dark">
     <head>
         <meta charset="UTF-8" />
+        <meta name="author" content={SITE_DATA.name} />
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width" />
         <meta name="theme-color" content="#111827" />
@@ -49,6 +51,25 @@ const imageURL = new URL('/social-preview.png', Astro.site);
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
         <meta property="twitter:image" content={imageURL} />
+
+        <script type="application/ld+json" is:inline>
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Leonardo Castignani",
+                "url": "https://www.leonardocastignani.it",
+                "image": "https://www.leonardocastignani.it/assets/profilo.jpg",
+                "sameAs": [
+                "https://www.linkedin.com/in/leonardo-castignani/",
+                "https://github.com/leonardocastignani"
+                ],
+                "jobTitle": "Software Developer",
+                "worksFor": {
+                "@type": "Organization",
+                "name": "Freelance"
+                }
+            }
+        </script>
     </head>
     <body class="bg-gray-900 text-gray-100 font-sans">
         <Header isMaintenance={isMaintenance} />

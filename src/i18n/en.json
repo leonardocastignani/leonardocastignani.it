@@ -104,24 +104,10 @@
     ]
   },
   "projects": {
-    "title": "My Projects",
-    "projectDetails": [
-      {
-        "title": "Family Budget Management",
-        "description": "A desktop application to track family income and expenses, with interactive dashboards and expense categorization.",
-        "detailedDescription": "A comprehensive desktop application, developed in Java, that gives users full control over their finances. The graphical interface, created with JavaFX, was designed to be intuitive and user-friendly. The system relies on an H2 database for lightweight and performant data storage, while dependency management and project builds are handled by Gradle. Key features include detailed recording of income and expenses, customizable transaction categorization, and the generation of visual dashboards and reports for in-depth analysis of spending habits over time."
-      },
-      {
-        "title": "HackHub Platform",
-        "description": "A web platform for managing programming events and competitions, currently under development.",
-        "detailedDescription": "HackHub is a project under development to create a dedicated portal for hackathons. The architecture, based on Java, is designed to be robust and scalable, implementing specific design patterns to ensure maintainability. The next phase involves migrating the backend to Spring Boot to leverage its ecosystem and performance."
-      },
-      {
-        "title": "This Portfolio",
-        "description": "The site you are currently browsing, built with Astro and Tailwind CSS to showcase my skills and projects in a modern and responsive way.",
-        "detailedDescription": "The site you are browsing was designed as a showcase of my skills. Developed with Astro, it leverages the island architecture to ensure minimal loading times and a smooth user experience. The entire design was created with Tailwind CSS, which allowed for rapid development and the creation of a responsive and consistent interface across all devices. TypeScript was used for interactive logic, such as modal management and animations. Special attention was paid to accessibility (WAI-ARIA standards) and internationalization, with full support for Italian and English."
-      }
-    ]
+    "title": "Projects",
+    "githubTitle": "Work in Progress...",
+    "githubDescription": "I am currently polishing some personal projects to make them public. In the meantime, feel free to explore my repositories, university exercises, and the source code of this portfolio directly on GitHub.",
+    "githubButton": "Visit my GitHub Profile"
   },
   "modal": {
     "details": "Details",

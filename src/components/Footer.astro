@@ -1,11 +1,25 @@
 ---
 import { getI18N } from '../i18n/utils';
+import { SITE_DATA, SOCIAL_LINKS } from '../consts';
 
 const i18n = getI18N({ astroUrl: Astro.url });
 const currentYear = new Date().getFullYear();
 const socialLinks = [
-    { href: "https://github.com/leonardocastignani", label: "GitHub" },
-    { href: "https://www.linkedin.com/in/leonardo-castignani", label: "LinkedIn" },
+    { 
+        href: SOCIAL_LINKS.linkedin, 
+        label: "LinkedIn", 
+        icon: "linkedin"
+    },
+    { 
+        href: SOCIAL_LINKS.github,
+        label: "GitHub",
+        icon: "github"
+    },
+    { 
+        href: SOCIAL_LINKS.email, 
+        label: "Email", 
+        icon: "email" 
+    }
 ];
 ---
 

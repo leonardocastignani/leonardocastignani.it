@@ -1,5 +1,6 @@
 ---
 import { getI18N } from '../i18n/utils';
+import { SOCIAL_LINKS } from '../consts';
 
 const i18n = getI18N({ astroUrl: Astro.url });
 const titleId = "contact-title";
@@ -81,8 +82,8 @@ const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
         <div class="mt-12 text-center">
             <p class="text-gray-400 mb-2">{i18n.contact.alternative}:</p>
             <div class="flex justify-center gap-6">
-                <a href="https://www.linkedin.com/in/leonardo-castignani/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">LinkedIn</a>
-                <a href="mailto:leo.castignani@gmail.com" class="text-blue-400 hover:text-blue-300 font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Email</a>
+                <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">LinkedIn</a>
+                <a href={SOCIAL_LINKS.email} class="text-blue-400 hover:text-blue-300 font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">Email</a>
             </div>
         </div>
     </div>

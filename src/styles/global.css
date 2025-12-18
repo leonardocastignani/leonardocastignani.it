@@ -12,6 +12,20 @@
     }
 }
 
+@media print {
+    .no-print, header, footer, #back-to-top-btn, .grecaptcha-badge {
+        display: none !important;
+    }
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+}
+
 .grecaptcha-badge {
     width: 70px !important;
     overflow: hidden !important;

@@ -32,38 +32,38 @@ import LinuxIcon from '../components/icons/LinuxIcon.astro';
 import MediawikiIcon from '../components/icons/MediawikiIcon.astro';
 
 export const languages = [
-    { name: 'java', Icon: JavaIcon },
-    { name: 'c', Icon: CIcon },
-    { name: 'cpp', Icon: CppIcon },
-    { name: 'csharp', Icon: CsharpIcon },
-    { name: 'python', Icon: PythonIcon },
-    { name: 'php', Icon: PhpIcon },
-    { name: 'javascript', Icon: JavascriptIcon },
-    { name: 'typescript', Icon: TypescriptIcon },
-    { name: 'sql', Icon: SqlIcon },
+    { name: 'Java', Icon: JavaIcon },
+    { name: 'C', Icon: CIcon },
+    { name: 'C++', Icon: CppIcon },
+    { name: 'C#', Icon: CsharpIcon },
+    { name: 'Python', Icon: PythonIcon },
+    { name: 'PHP', Icon: PhpIcon },
+    { name: 'JavaScript', Icon: JavascriptIcon },
+    { name: 'TypeScript', Icon: TypescriptIcon },
+    { name: 'SQL', Icon: SqlIcon },
 ];
 
 export const frontend = [
-    { name: 'html5', Icon: Html5Icon },
-    { name: 'css3', Icon: Css3Icon },
-    { name: 'astro', Icon: AstroIcon },
-    { name: 'tailwind', Icon: TailwindCssIcon },
+    { name: 'HTML5', Icon: Html5Icon },
+    { name: 'CSS3', Icon: Css3Icon },
+    { name: 'Astro', Icon: AstroIcon },
+    { name: 'Tailwind', Icon: TailwindCssIcon },
 ];
 
 export const backend = [
-    { name: 'springboot', Icon: SpringbootIcon },
-    { name: 'mysql', Icon: MySqlIcon },
+    { name: 'Spring Boot', Icon: SpringbootIcon },
+    { name: 'MySQL', Icon: MySqlIcon },
 ];
 
 export const tools = [
-    { name: 'git', Icon: GitIcon },
-    { name: 'github', Icon: GithubIcon },
-    { name: 'copilot', Icon: GithubCopilotIcon },
-    { name: 'eclipse', Icon: EclipseIcon },
-    { name: 'vscode', Icon: VSCodeIcon },
-    { name: 'visualstudio', Icon: VSIcon },
-    { name: 'windows10', Icon: W10Icon },
-    { name: 'windows11', Icon: W11Icon },
-    { name: 'linux', Icon: LinuxIcon },
-    { name: 'mediawiki', Icon: MediawikiIcon },
+    { name: 'Git', Icon: GitIcon },
+    { name: 'GitHub', Icon: GithubIcon },
+    { name: 'Copilot', Icon: GithubCopilotIcon },
+    { name: 'Eclipse', Icon: EclipseIcon },
+    { name: 'Visual Studio Code', Icon: VSCodeIcon },
+    { name: 'Visual Studio', Icon: VSIcon },
+    { name: 'Windows 10', Icon: W10Icon },
+    { name: 'Windows 11', Icon: W11Icon },
+    { name: 'Linux', Icon: LinuxIcon },
+    { name: 'MediaWiki', Icon: MediawikiIcon },
 ];
