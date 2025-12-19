@@ -121,6 +121,14 @@
     "githubAriaLabel": "Vedi il codice di",
     "liveSiteAriaLabel": "Vedi il sito live di"
   },
+  "blog": {
+    "title": "Blog & Appunti",
+    "description": "Appunti di sviluppo, tutorial e aggiornamenti sui progetti.",
+    "backToArticles": "← Torna agli articoli",
+    "readMore": "Leggi tutto",
+    "publishedOn": "Pubblicato il",
+    "locale": "it-IT"
+  },
   "contact": {
     "title": "Mettiamoci in Contatto",
     "subtitle": "Sono sempre aperto a nuove opportunità e collaborazioni. Se hai un progetto in mente o vuoi semplicemente connetterti, non esitare a scrivermi.",

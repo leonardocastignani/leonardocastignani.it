@@ -121,6 +121,14 @@
     "githubAriaLabel": "View the code for",
     "liveSiteAriaLabel": "View the live site for"
   },
+  "blog": {
+    "title": "Blog & Notes",
+    "description": "Development notes, tutorials, and project updates.",
+    "backToArticles": "← Back to articles",
+    "readMore": "Read more",
+    "publishedOn": "Published on",
+    "locale": "en-US"
+  },
   "contact": {
     "title": "Let's Get in Touch",
     "subtitle": "I'm always open to new opportunities and collaborations. If you have a project in mind or just want to connect, feel free to reach out.",
