@@ -79,6 +79,7 @@
   "experience": {
     "title": "Esperienze Lavorative",
     "companyAriaLabel": "Sito web di",
+    "start": "Inizio del percorso professionale",
     "experiences": [
       {
         "role": "Sviluppatore Freelance",

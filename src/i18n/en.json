@@ -79,6 +79,7 @@
   "experience": {
     "title": "Work Experience",
     "companyAriaLabel": "Website of",
+    "start": "Start of professional journey",
     "experiences": [
       {
         "role": "Freelance Developer",
