@@ -23,7 +23,7 @@ Questo è il repository del mio sito portfolio personale, costruito con [Astro](
 
 -   **Framework**: [Astro](https://astro.build/)
 -   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
--   **Hosting**: Da decidere
+-   **Hosting**: [Netlify](https://www.netlify.com/)
 
 ## 🚀 Comandi Principali
 

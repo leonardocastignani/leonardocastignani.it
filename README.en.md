@@ -24,7 +24,7 @@ This is the repository for my personal portfolio website, built with [Astro](htt
 
 -   **Framework**: [Astro](https://astro.build/)
 -   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
--   **Hosting**: To decide
+-   **Hosting**: [Netlify](https://www.netlify.com/)
 
 ## 🚀 Main Commands
 
