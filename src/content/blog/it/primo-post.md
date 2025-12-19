@@ -1,9 +1,9 @@
 ---
-title: 'Il mio nuovo portfolio con Astro'
-description: 'Ecco come ho costruito questo sito usando Astro, Tailwind e le Content Collections.'
-pubDate: '2025-12-19'
-tags: ['astro', 'portfolio', 'webdev']
-lang: 'it'
+title: "Il mio nuovo portfolio con Astro"
+description: "Ecco come ho costruito questo sito usando Astro, Tailwind e le Content Collections."
+pubDate: "2025-12-19"
+tags: ["astro", "portfolio", "webdev"]
+lang: "it"
 ---
 
 ## Benvenuti nel mio blog

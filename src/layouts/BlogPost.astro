@@ -5,8 +5,13 @@ import { getI18N } from '../i18n/utils';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, lang } = Astro.props;
 const i18n = getI18N({ astroUrl: Astro.url });
+
+// Determina il locale per la data e il link di ritorno
+const dateLocale = lang === 'en' ? 'en-US' : 'it-IT';
+const backLink = lang === 'en' ? '/en/blog' : '/blog';
+const backLabel = lang === 'en' ? '← Back to articles' : '← Torna agli articoli';
 ---
 
 <Layout title={title} description={description}>
@@ -15,7 +20,7 @@ const i18n = getI18N({ astroUrl: Astro.url });
             <div class="mb-8 text-center">
                 <div class="text-gray-400 mb-2">
                     <time datetime={pubDate.toISOString()}>
-                        {pubDate.toLocaleDateString('it-IT', {
+                        {pubDate.toLocaleDateString(dateLocale, {
                             year: 'numeric',
                             month: 'long',
                             day: 'numeric',
@@ -26,14 +31,13 @@ const i18n = getI18N({ astroUrl: Astro.url });
                 <hr class="border-gray-700 my-8" />
             </div>
             
-            <!-- Qui usiamo la classe 'prose' di Tailwind Typography -->
             <div class="prose prose-invert prose-lg max-w-none hover:prose-a:text-blue-400 prose-a:text-blue-300 prose-headings:text-white prose-p:text-gray-300 prose-strong:text-white prose-code:text-blue-300">
                 <slot />
             </div>
         </article>
         
         <div class="text-center mt-12">
-            <a href="/blog" class="text-blue-400 hover:text-blue-300 font-semibold">← Torna agli articoli</a>
+            <a href={backLink} class="text-blue-400 hover:text-blue-300 font-semibold">{backLabel}</a>
         </div>
     </main>
 </Layout>

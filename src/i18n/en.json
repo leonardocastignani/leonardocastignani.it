@@ -9,6 +9,8 @@
     "education": "Education",
     "experience": "Experience",
     "projects": "Projects",
+    "blog": "Blog",
+    "blogLink": "/en/blog",
     "contact": "Contact",
     "openMenu": "Open navigation menu",
     "closeMenu": "Close navigation menu",
