@@ -1,0 +1,17 @@
+import { defineCollection, z } from 'astro:content';
+
+const blog = defineCollection({
+    type: 'content',
+    // Schema validation con Zod
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        pubDate: z.coerce.date(),
+        updatedDate: z.coerce.date().optional(),
+        heroImage: z.string().optional(),
+        tags: z.array(z.string()).optional(),
+        lang: z.enum(['it', 'en']).default('it'), // Per gestire la lingua
+    }),
+});
+
+export const collections = { blog };

@@ -4,52 +4,50 @@ export function initActiveSection() {
 
     if (navSections.length === 0 || headerNavLinks.length === 0) return;
 
+    const resetLinks = () => {
+        headerNavLinks.forEach(link => {
+            if (!link.getAttribute('href').includes('#')) return;
+            delete link.dataset.active;
+            link.classList.remove('text-white');
+            link.classList.add('text-gray-400');
+        });
+    };
+
     const activateLink = (id) => {
+        resetLinks();
         headerNavLinks.forEach(link => {
             const linkHref = link.getAttribute('href');
-            // Gestione sicura per evitare errori su href nulli
-            if (!linkHref) return;
+            if (!linkHref || !linkHref.includes('#')) return;
 
-            const isHomeLink = !linkHref.startsWith('#') || linkHref === '#home';
-            // Logica: se siamo su home (top pagina) o se l'href corrisponde all'ID sezione
-            const isHomeLinkActive = (id === 'home' && isHomeLink);
-            const isSectionLinkActive = (id !== 'home' && linkHref.includes('#' + id));
+            // Estraiamo l'ancora gestendo anche i percorsi assoluti (es. /#home -> home)
+            const parts = linkHref.split('#');
+            const anchor = parts[parts.length - 1]; // Prende l'ultima parte dopo #
 
-            if (isHomeLinkActive || isSectionLinkActive) {
-                link.dataset.active = 'true'; 
-            } else {
-                delete link.dataset.active;
+            if (anchor === id) {
+                link.dataset.active = 'true';
+                link.classList.remove('text-gray-400');
+                link.classList.add('text-white');
             }
         });
     };
 
     const sectionObserver = new IntersectionObserver((entries) => {
-        let currentSectionId = '';
-        let isIntersecting = false;
-
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                currentSectionId = entry.target.id;
-                isIntersecting = true;
+                activateLink(entry.target.id);
             }
         });
-
-        // Se siamo in cima alla pagina, attiva home
-        if (!isIntersecting && window.scrollY < window.innerHeight / 2) {
-             activateLink('home');
-        } else if (currentSectionId) {
-            activateLink(currentSectionId);
-        }
-
     }, {
-        rootMargin: '-40% 0px -50% 0px',
+        rootMargin: '-50% 0px -50% 0px',
         threshold: 0
     });
-
-    // Attiva home di default
-    activateLink('home');
 
     navSections.forEach(section => {
         sectionObserver.observe(section);
     });
+
+    // FIX: Attiva la Home immediatamente se siamo in cima alla pagina
+    if (window.scrollY < 100) {
+        activateLink('home');
+    }
 }

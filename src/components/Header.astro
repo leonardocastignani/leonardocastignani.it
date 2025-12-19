@@ -6,14 +6,16 @@ import logo from '../assets/logo.svg';
 
 const { isMaintenance = false } = Astro.props;
 const i18n = getI18N({ astroUrl: Astro.url });
+const homeBase = i18n.nav.homeLink === '/' ? '' : i18n.nav.homeLink;
 
 const navLinks = [
-    { href: i18n.nav.homeLink, label: i18n.nav.home },
-    { href: "#about", label: i18n.nav.about },
-    { href: "#education", label: i18n.nav.education },
-    { href: '#experience', label: i18n.nav.experience },
-    { href: "#projects", label: i18n.nav.projects },
-    { href: "#contact", label: i18n.nav.contact },
+    { href: `${homeBase}/#home`, label: i18n.nav.home },
+    { href: `${homeBase}/#about`, label: i18n.nav.about },
+    { href: `${homeBase}/#education`, label: i18n.nav.education },
+    { href: `${homeBase}/#experience`, label: i18n.nav.experience },
+    { href: `${homeBase}/#projects`, label: i18n.nav.projects },
+    { href: "/blog", label: "Blog" },
+    { href: `${homeBase}/#contact`, label: i18n.nav.contact },
 ];
 
 const lang = i18n.nav.switchLang;
