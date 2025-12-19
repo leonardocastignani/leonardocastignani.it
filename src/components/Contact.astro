@@ -5,9 +5,6 @@ import { SOCIAL_LINKS } from '../consts';
 const i18n = getI18N({ astroUrl: Astro.url });
 const titleId = "contact-title";
 const formStatusMessages = i18n.contact.status;
-
-const FORMSPREE_ENDPOINT = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
-const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
 ---
 
 <section id="contact" class="py-20 px-4 bg-gray-800 fade-in-section" aria-labelledby={titleId}>
@@ -19,15 +16,23 @@ const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
 
         <form
             id="contact-form"
-            action={FORMSPREE_ENDPOINT}
+            name="contact" 
             method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
             class="text-left space-y-4"
-            data-recaptcha-site-key={RECAPTCHA_SITE_KEY}
             data-msg-success={formStatusMessages.success}
             data-msg-error={formStatusMessages.error}
             data-msg-sending={formStatusMessages.sending}
         >
-            <!-- ...existing code... -->
+            <!-- Campo nascosto necessario per Netlify -->
+            <input type="hidden" name="form-name" value="contact" />
+            
+            <!-- Campo Honeypot (invisibile agli umani, serve per l'antispam) -->
+            <p class="hidden">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+
             <div>
                 <label for="name" class="sr-only">{i18n.contact.name}</label>
                 <input type="text" id="name" name="name" required placeholder={i18n.contact.name} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
@@ -64,9 +69,6 @@ const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
                 </div>
             </div>
 
-            <!-- campo nascosto per reCAPTCHA v3 -->
-            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
-
             <div>
                 <label for="message" class="sr-only">{i18n.contact.message}</label>
                 <textarea id="message" name="message" rows="5" required placeholder={i18n.contact.message} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></textarea>
@@ -89,8 +91,6 @@ const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
     </div>
 </section>
 
-<script src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`} async></script>
-
 <script>
     const form = document.getElementById('contact-form') as HTMLFormElement;
     const statusDiv = document.getElementById('form-status');
@@ -100,48 +100,18 @@ const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
         if (!statusDiv) return;
         statusDiv.textContent = message;
         statusDiv.style.color = color;
-        // Rimuovi il messaggio dopo 5 secondi
         setTimeout(() => { 
             if (statusDiv.textContent === message) statusDiv.textContent = ''; 
         }, 5000);
-    }
-
-    async function ajaxSubmit(formElement: HTMLFormElement, formData: FormData) {
-        const msgSuccess = formElement.dataset.msgSuccess || 'Success';
-        const msgError = formElement.dataset.msgError || 'Error';
-
-        try {
-            const response = await fetch(formElement.action, {
-                method: formElement.method,
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            });
-
-            if (response.ok) {
-                showStatusMessage(msgSuccess, '#34d399');
-                formElement.reset();
-            } else {
-                const data = await response.json().catch(()=>null);
-                if (data && data.errors) {
-                    const errorMessage = data.errors.map((e: any) => e.message).join(', ');
-                    showStatusMessage(errorMessage, '#f87171');
-                } else {
-                    showStatusMessage(msgError, '#f87171');
-                }
-            }
-        } catch (err) {
-            showStatusMessage(msgError, '#f87171');
-        } finally {
-            if (submitButton) submitButton.disabled = false;
-        }
     }
 
     async function handleSubmit(event: Event) {
         event.preventDefault();
         if (!(event.target instanceof HTMLFormElement)) return;
         const targetForm = event.target;
-        const siteKey = targetForm.dataset.recaptchaSiteKey;
+        
         const msgSending = targetForm.dataset.msgSending || 'Sending...';
+        const msgSuccess = targetForm.dataset.msgSuccess || 'Success';
         const msgError = targetForm.dataset.msgError || 'Error';
 
         if (submitButton) submitButton.disabled = true;
@@ -151,29 +121,25 @@ const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
         }
 
         try {
-            if (typeof grecaptcha !== 'undefined' && siteKey) {
-                grecaptcha.ready(async () => {
-                    try {
-                        const token = await grecaptcha.execute(siteKey, { action: 'contact' });
-                        const hidden = document.getElementById('g-recaptcha-response') as HTMLInputElement;
-                        if (hidden) hidden.value = token;
-                        
-                        const fd = new FormData(targetForm);
-                        await ajaxSubmit(targetForm, fd);
-                    } catch (e) {
-                        console.error("reCAPTCHA execution failed", e);
-                        showStatusMessage(msgError, '#f87171');
-                        if (submitButton) submitButton.disabled = false;
-                    }
-                });
+            // Convertiamo i dati del form in URLSearchParams per Netlify
+            const formData = new FormData(targetForm);
+            const data = new URLSearchParams(formData as any).toString();
+
+            const response = await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: data,
+            });
+
+            if (response.ok) {
+                showStatusMessage(msgSuccess, '#34d399');
+                targetForm.reset();
             } else {
-                // Fallback se reCAPTCHA non è caricato (es. adblocker) o chiave mancante
-                console.warn("reCAPTCHA not loaded or key missing");
-                const fd = new FormData(targetForm);
-                await ajaxSubmit(targetForm, fd);
+                showStatusMessage(msgError, '#f87171');
             }
         } catch (err) {
             showStatusMessage(msgError, '#f87171');
+        } finally {
             if (submitButton) submitButton.disabled = false;
         }
     }
