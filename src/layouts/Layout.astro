@@ -3,7 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import { getI18N } from '../i18n/utils';
-import { SITE_DATA } from '../consts';
+import { SITE_DATA, SOCIAL_LINKS } from '../consts';
 import '../styles/global.css';
 
 const currentLang = Astro.url.pathname.startsWith('/en') ? 'en' : 'it';
@@ -56,14 +56,15 @@ const imageURL = new URL('/social-preview.png', Astro.site);
             "@context": "https://schema.org",
             "@type": "Person",
             "name": SITE_DATA.name,
-            "url": Astro.site,
+            "url": SITE_DATA.siteUrl,
             "image": new URL("/assets/profilo.jpg", Astro.site),
+            "jobTitle": SITE_DATA.jobTitle,
             "sameAs": [
-                "https://www.linkedin.com/in/leonardo-castignani/",
-                "https://github.com/leonardocastignani"
+                SOCIAL_LINKS.linkedin,
+                SOCIAL_LINKS.github
             ],
-            "jobTitle": "Software Developer",
-            "knowsAbout": ["Java", "JavaScript", "Astro", "React", "SQL"]
+            "email": SITE_DATA.email,
+            "knowsAbout": ["Java", "JavaScript", "TypeScript", "Astro", "Tailwind CSS", "SQL"]
         })} />
     </head>
     <body class="bg-gray-900 text-gray-100 font-sans">
