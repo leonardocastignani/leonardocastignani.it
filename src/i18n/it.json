@@ -112,15 +112,6 @@
     "githubDescription": "Al momento sto rifinendo alcuni progetti personali per renderli pubblici. Nel frattempo, ti invito a esplorare i miei repository, gli esercizi universitari e il codice sorgente di questo portfolio direttamente su GitHub.",
     "githubButton": "Visita il mio profilo GitHub"
   },
-  "modal": {
-    "details": "Dettagli",
-    "close": "Chiudi",
-    "github": "Codice Sorgente",
-    "liveSite": "Sito Live",
-    "detailsAriaLabel": "Vedi i dettagli del progetto",
-    "githubAriaLabel": "Vedi il codice di",
-    "liveSiteAriaLabel": "Vedi il sito live di"
-  },
   "blog": {
     "title": "Blog & Appunti",
     "description": "Appunti di sviluppo, tutorial e aggiornamenti sui progetti.",

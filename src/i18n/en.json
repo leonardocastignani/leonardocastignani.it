@@ -112,15 +112,6 @@
     "githubDescription": "I am currently polishing some personal projects to make them public. In the meantime, feel free to explore my repositories, university exercises, and the source code of this portfolio directly on GitHub.",
     "githubButton": "Visit my GitHub Profile"
   },
-  "modal": {
-    "details": "Details",
-    "close": "Close",
-    "github": "Source Code",
-    "liveSite": "Live Site",
-    "detailsAriaLabel": "View project details for",
-    "githubAriaLabel": "View the code for",
-    "liveSiteAriaLabel": "View the live site for"
-  },
   "blog": {
     "title": "Blog & Notes",
     "description": "Development notes, tutorials, and project updates.",
