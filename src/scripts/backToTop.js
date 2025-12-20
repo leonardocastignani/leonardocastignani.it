@@ -1,3 +1,4 @@
+// --- BACK TO TOP BUTTON SCRIPT ---
 export function initBackToTop() {
     const backToTopBtn = document.getElementById('back-to-top-btn');
 
@@ -16,11 +17,9 @@ export function initBackToTop() {
         }
     };
 
-    // Rimuovi listener precedenti se esistono (utile per SPA navigation)
     window.removeEventListener('scroll', handleScroll);
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Clona e sostituisci per pulire event listener precedenti sul click
     const newBtn = backToTopBtn.cloneNode(true);
     backToTopBtn.parentNode.replaceChild(newBtn, backToTopBtn);
 

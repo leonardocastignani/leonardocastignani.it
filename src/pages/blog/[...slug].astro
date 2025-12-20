@@ -1,11 +1,12 @@
 ---
+// --- IMPORTS ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 
+// --- STATIC PATH GENERATION ---
 export async function getStaticPaths() {
     const posts = await getCollection('blog', ({ data }) => data.lang === 'it');
     return posts.map((post: CollectionEntry<'blog'>) => {
-        // Rimuoviamo "it/" dallo slug se presente per avere URL puliti
         const cleanSlug = post.slug.replace(/^it\//, '');
         return {
             params: { slug: cleanSlug },
@@ -13,12 +14,16 @@ export async function getStaticPaths() {
         };
     });
 }
+
+// --- PROPS ---
 type Props = CollectionEntry<'blog'>;
 
+// --- INITIAL CONFIGURATION ---
 const post = Astro.props;
 const { Content } = await post.render();
 ---
 
+<!-- RENDER BLOG POST LAYOUT -->
 <BlogPost {...post.data}>
     <Content />
 </BlogPost>

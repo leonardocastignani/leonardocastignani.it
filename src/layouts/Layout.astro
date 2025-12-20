@@ -1,4 +1,5 @@
 ---
+// --- IMPORTS ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
@@ -6,6 +7,7 @@ import { getI18N } from '../i18n/utils';
 import { SITE_DATA, SOCIAL_LINKS, MAINTENANCE_MODE } from '../consts';
 import '../styles/global.css';
 
+// --- INITIAL CONFIGURATION ---
 const currentLang = Astro.url.pathname.startsWith('/en') ? 'en' : 'it';
 const i18n = getI18N({ astroUrl: Astro.url });
 
@@ -31,27 +33,32 @@ const imageURL = new URL('/social-preview.png', Astro.site);
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
 
-        <!-- Favicon Implementation -->
+        <!-- FAVICON IMPLEMENTATION -->
         <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
 
+        <!-- COOKIE CONSENT LIBRARY -->
         <link rel="stylesheet" href="/libs/cookieconsent.min.css" />
         <script src="/libs/cookieconsent.min.js" defer></script>
         
+        <!-- OPEN GRAPH METADATA -->
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalURL} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={imageURL} />
+
+        <!-- TWITTER CARD METADATA -->
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={canonicalURL} />
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
         <meta property="twitter:image" content={imageURL} />
 
+        <!-- JSON-LD SCHEMA -->
         <script type="application/ld+json" is:inline set:html={JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
@@ -68,14 +75,21 @@ const imageURL = new URL('/social-preview.png', Astro.site);
         })} />
     </head>
     <body class="bg-gray-900 text-gray-100 font-sans">
+        <!-- HEADER -->
         <Header isMaintenance={isMaintenance} />
+
+        <!-- MAIN CONTENT -->
         <main id="main-content">
             <slot />
         </main>
+
+        <!-- FOOTER -->
         <Footer />
 
+        <!-- COOKIE CONSENT BANNER -->
         <CookieConsent />
 
+        <!-- BACK TO TOP BUTTON -->
         <a
             id="back-to-top-btn"
             href="#main-content"
@@ -87,6 +101,7 @@ const imageURL = new URL('/social-preview.png', Astro.site);
             </svg>
         </a>
         
+        <!-- GLOBAL SCRIPTS INITIALIZATION -->
         <script>
             import { initFadeInAnimations } from '../scripts/animations.js';
             import { initBackToTop } from '../scripts/backToTop.js';

@@ -1,7 +1,9 @@
 ---
+// --- IMPORTS ---
 import { getI18N } from '../i18n/utils';
-import { SITE_DATA, SOCIAL_LINKS } from '../consts';
+import { SOCIAL_LINKS } from '../consts';
 
+// --- INITIAL CONFIGURATION ---
 const i18n = getI18N({ astroUrl: Astro.url });
 const currentYear = new Date().getFullYear();
 const socialLinks = [
@@ -23,8 +25,10 @@ const socialLinks = [
 ];
 ---
 
+<!-- FOOTER SECTION -->
 <footer class="bg-gray-900 py-8">
     <div class="container mx-auto max-w-6xl text-center text-gray-400">
+        {/* SOCIAL LINKS CONTAINER */}
         <div class="flex justify-center gap-6 mb-4">
             {socialLinks.map(link => (
                 <a
@@ -38,6 +42,8 @@ const socialLinks = [
                 </a>
             ))}
         </div>
+
+        {/* COPYRIGHT NOTICE */}
         <p>{i18n.footer.copyright.replace('{year}', currentYear.toString())}</p>
     </div>
 </footer>

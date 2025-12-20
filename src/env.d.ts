@@ -1,14 +1,10 @@
 /// <reference types="astro/client" />
 
-interface ImportMetaEnv {
-  readonly PUBLIC_FORMSPREE_ENDPOINT: string;
-  readonly PUBLIC_RECAPTCHA_SITE_KEY: string;
-}
-
+// --- IMPORT META EXTENSION ---
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
 
+// --- EXTERNAL LIBRARY DECLARATIONS ---
 declare module 'cookieconsent';
 declare var cookieconsent: any;
-declare var grecaptcha: any;

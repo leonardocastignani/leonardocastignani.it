@@ -124,6 +124,7 @@
     "title": "Mettiamoci in Contatto",
     "subtitle": "Sono sempre aperto a nuove opportunità e collaborazioni. Se hai un progetto in mente o vuoi semplicemente connetterti, non esitare a scrivermi.",
     "name": "Il tuo nome",
+    "surname": "Il tuo cognome",
     "email": "La tua email",
     "phone": "Il tuo numero di telefono (opzionale)",
     "subject": {

@@ -1,8 +1,15 @@
 {
+  // --- BASE CONFIGURATION ---
   "extends": "astro/tsconfigs/strict",
+
+  // --- COMPILER OPTIONS ---
   "compilerOptions": {
     "allowJs": true
   },
+
+  // --- INCLUDED FILES ---
   "include": [".astro/types.d.ts", "**/*"],
+
+  // --- EXCLUDED FILES ---
   "exclude": ["dist"]
 }

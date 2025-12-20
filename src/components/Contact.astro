@@ -1,12 +1,15 @@
 ---
+// --- IMPORTS ---
 import { getI18N } from '../i18n/utils';
 import { SOCIAL_LINKS } from '../consts';
 
+// --- INITIAL CONFIGURATION ---
 const i18n = getI18N({ astroUrl: Astro.url });
 const titleId = "contact-title";
 const formStatusMessages = i18n.contact.status;
 ---
 
+<!-- CONTACT SECTION -->
 <section id="contact" class="py-20 px-4 bg-gray-800 fade-in-section" aria-labelledby={titleId}>
     <div class="container mx-auto max-w-2xl text-center">
         <h2 id={titleId} class="text-3xl md:text-4xl font-bold mb-4">{i18n.contact.title}</h2>
@@ -14,6 +17,7 @@ const formStatusMessages = i18n.contact.status;
             {i18n.contact.subtitle}
         </p>
 
+        <!-- CONTACT FORM -->
         <form
             id="contact-form"
             name="contact" 
@@ -25,26 +29,37 @@ const formStatusMessages = i18n.contact.status;
             data-msg-error={formStatusMessages.error}
             data-msg-sending={formStatusMessages.sending}
         >
-            <!-- Campo nascosto necessario per Netlify -->
             <input type="hidden" name="form-name" value="contact" />
-            
-            <!-- Campo Honeypot (invisibile agli umani, serve per l'antispam) -->
+
             <p class="hidden">
                 <label>Don't fill this out if you're human: <input name="bot-field" /></label>
             </p>
 
+            <!-- Name Field -->
             <div>
                 <label for="name" class="sr-only">{i18n.contact.name}</label>
                 <input type="text" id="name" name="name" required placeholder={i18n.contact.name} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
             </div>
+
+            <!-- Surname Field -->
+            <div>
+                <label for="surname" class="sr-only">{i18n.contact.surname}</label>
+                <input type="text" id="surname" name="surname" required placeholder={i18n.contact.surname} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+            </div>
+
+            <!-- Email Field -->
             <div>
                 <label for="email" class="sr-only">{i18n.contact.email}</label>
                 <input type="email" id="email" name="email" required placeholder={i18n.contact.email} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
             </div>
+
+            <!-- Phone Field -->
             <div>
                 <label for="phone" class="sr-only">{i18n.contact.phone}</label>
                 <input type="tel" id="phone" name="phone" placeholder={i18n.contact.phone} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
             </div>
+
+            <!-- Subject Dropdown -->
             <div>
                 <label for="subject" class="sr-only">{i18n.contact.subject.label}</label>
                 
@@ -69,16 +84,21 @@ const formStatusMessages = i18n.contact.status;
                 </div>
             </div>
 
+            <!-- Message Textarea -->
             <div>
                 <label for="message" class="sr-only">{i18n.contact.message}</label>
                 <textarea id="message" name="message" rows="5" required placeholder={i18n.contact.message} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></textarea>
             </div>
+
+            <!-- Submit Button -->
             <div class="text-center">
                 <button id="contact-submit" type="submit" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-blue-500">
                     {i18n.contact.button}
                 </button>
             </div>
         </form>
+
+        <!-- Status Message Container -->
         <div id="form-status" class="mt-4 text-lg" role="alert"></div>
 
         <div class="mt-12 text-center">
@@ -91,6 +111,7 @@ const formStatusMessages = i18n.contact.status;
     </div>
 </section>
 
+<!-- CLIENT-SIDE FORM HANDLING -->
 <script>
     const form = document.getElementById('contact-form') as HTMLFormElement;
     const statusDiv = document.getElementById('form-status');
@@ -121,7 +142,6 @@ const formStatusMessages = i18n.contact.status;
         }
 
         try {
-            // Convertiamo i dati del form in URLSearchParams per Netlify
             const formData = new FormData(targetForm);
             const data = new URLSearchParams(formData as any).toString();
 

@@ -1,3 +1,4 @@
+// --- FADE-IN ANIMATIONS SCRIPT ---
 export function initFadeInAnimations() {
     const observerOptions = {
         root: null,
@@ -9,7 +10,7 @@ export function initFadeInAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Smetti di osservare una volta animato
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);

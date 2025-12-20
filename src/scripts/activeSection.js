@@ -1,3 +1,4 @@
+// --- ACTIVE SECTION SCRIPT ---
 export function initActiveSection() {
     const navSections = document.querySelectorAll('section[id]');
     const headerNavLinks = document.querySelectorAll('[data-nav-link]');
@@ -19,9 +20,8 @@ export function initActiveSection() {
             const linkHref = link.getAttribute('href');
             if (!linkHref || !linkHref.includes('#')) return;
 
-            // Estraiamo l'ancora gestendo anche i percorsi assoluti (es. /#home -> home)
             const parts = linkHref.split('#');
-            const anchor = parts[parts.length - 1]; // Prende l'ultima parte dopo #
+            const anchor = parts[parts.length - 1];
 
             if (anchor === id) {
                 link.dataset.active = 'true';
@@ -46,7 +46,6 @@ export function initActiveSection() {
         sectionObserver.observe(section);
     });
 
-    // FIX: Attiva la Home immediatamente se siamo in cima alla pagina
     if (window.scrollY < 100) {
         activateLink('home');
     }

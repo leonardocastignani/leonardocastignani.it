@@ -1,18 +1,26 @@
 ---
+// --- IMPORTS ---
 import { getI18N } from '../i18n/utils';
 
+// --- INITIAL CONFIGURATION ---
 const i18n = getI18N({ astroUrl: Astro.url });
 const cvPath = i18n.hero.cvPath;
 ---
 
+<!-- HERO SECTION -->
 <section id="home" class="h-screen flex flex-col justify-center items-center text-center p-4">
     <div class="max-w-3xl">
+        <!-- MAIN TITLE -->
         <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-gradient py-3">
             {i18n.hero.title}
         </h1>
+
+        <!-- SUBTITLE -->
         <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
             {i18n.hero.subtitle}
         </p>
+
+        <!-- CALL TO ACTION BUTTONS -->
         <div class="mt-8 flex justify-center gap-4 flex-wrap">
             <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg transition-colors whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-white">
                 {i18n.hero.contact}
@@ -21,6 +29,8 @@ const cvPath = i18n.hero.cvPath;
                 {i18n.hero.downloadCV}
             </a>
         </div>
+
+        <!-- SOCIAL ICONS -->
         <div class="flex justify-center gap-6 mt-8">
              <a href="https://github.com/leonardocastignani" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm" aria-label={`${i18n.hero.socialAriaLabel} GitHub`}>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
@@ -35,12 +45,16 @@ const cvPath = i18n.hero.cvPath;
         </div>
     </div>
 </section>
+
 <style>
+    /* ANIMATION KEYFRAMES */
     @keyframes gradient-animation {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
     }
+
+    /* ANIMATION CLASS */
     .animate-gradient {
         background-size: 200% 200%;
         animation: gradient-animation 5s ease infinite;

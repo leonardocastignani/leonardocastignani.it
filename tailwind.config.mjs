@@ -1,8 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 import typography from '@tailwindcss/typography';
 export default {
+    // --- CONTENT PATHS ---
     content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+
+    // --- DARK MODE STRATEGY ---
     darkMode: 'class',
+
+    // --- THEME CUSTOMIZATION ---
     theme: {
         extend: {
             keyframes: {
@@ -16,6 +21,8 @@ export default {
             }
         }
     },
+
+    // --- PLUGINS ---
     plugins: [
         typography(),
     ]

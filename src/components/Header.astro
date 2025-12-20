@@ -1,13 +1,16 @@
 ---
+// --- IMPORTS ---
 import { Image } from 'astro:assets';
 import { getI18N } from '../i18n/utils';
 import NavLink from './NavLink.astro';
 import logo from '../assets/logo.svg';
 
+// --- INITIAL CONFIGURATION ---
 const { isMaintenance = false } = Astro.props;
 const i18n = getI18N({ astroUrl: Astro.url });
 const homeBase = i18n.nav.homeLink === '/' ? '' : i18n.nav.homeLink;
 
+// --- NAVIGATION MENU DEFINITION ---
 const navLinks = [
     { href: `${homeBase}/#home`, label: i18n.nav.home },
     { href: `${homeBase}/#about`, label: i18n.nav.about },
@@ -18,14 +21,47 @@ const navLinks = [
     { href: `${homeBase}/#contact`, label: i18n.nav.contact },
 ];
 
-const lang = i18n.nav.switchLang;
+// --- SMART LANGUAGE SWITCHING LOGIC ---
+const currentPath = Astro.url.pathname;
+let targetLangLink = '';
+let targetLangLabel = '';
+let targetLangAria = '';
+
+const isBlogPage = currentPath.includes('/blog');
+
+if (isBlogPage) {
+    if (currentPath.startsWith('/en')) {
+        targetLangLink = '/blog';
+        targetLangLabel = 'IT';
+        targetLangAria = 'Passa alla versione italiana';
+    } else {
+        targetLangLink = '/en/blog';
+        targetLangLabel = 'EN';
+        targetLangAria = 'Switch to English version';
+    }
+} else {
+    if (currentPath.startsWith('/en')) {
+        const pathWithoutEn = currentPath.replace(/^\/en/, '');
+        targetLangLink = pathWithoutEn || '/';
+        targetLangLabel = 'IT';
+        targetLangAria = 'Passa alla versione italiana';
+    } else {
+        targetLangLink = `/en${currentPath === '/' ? '' : currentPath}`;
+        targetLangLabel = 'EN';
+        targetLangAria = 'Switch to English version';
+    }
+}
+
+// Accessibility labels
 const openMenuLabel = i18n.nav.openMenu;
 const closeMenuLabel = i18n.nav.closeMenu;
 const logoClasses = "text-xl font-bold flex items-center gap-x-3";
 ---
 
+<!-- MAIN HEADER -->
 <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 border-b border-gray-800">
     <nav class="container mx-auto max-w-6xl px-4 py-4 flex justify-between items-center">
+        {/* SITE LOGO */}
         {!isMaintenance ? (
             <a href={i18n.nav.homeLink} id="header-title" class:list={[logoClasses, "hover:text-blue-500 transition-colors"]}>
                 <Image src={logo} alt="Logo di Leonardo Castignani" class="h-8 w-auto" />
@@ -38,8 +74,10 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
             </div>
         )}
 
+        {/* NAVIGATION MENU */}
         {!isMaintenance && (
             <>
+                {/* DESKTOP VERSION */}
                 <div class="hidden md:flex items-center gap-6">
                     {navLinks.map(link => (
                         <NavLink 
@@ -48,14 +86,17 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
                             class="text-gray-300 hover:text-white"
                         />
                     ))}
-                    <a href={lang.href} class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-md text-sm" aria-label={lang.aria}>
-                        {lang.label}
+                    {/* Desktop Language Switcher */}
+                    <a href={targetLangLink} class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-md text-sm transition-colors" aria-label={targetLangAria}>
+                        {targetLangLabel}
                     </a>
                 </div>
 
+                {/* MOBILE VERSION (Visible only on small screens) */}
                 <div class="md:hidden flex items-center gap-4">
-                    <a href={lang.href} class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md text-base font-medium mt-2" aria-label={lang.aria}>
-                        {lang.label}
+                    {/* Mobile Language Switcher */}
+                    <a href={targetLangLink} class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md text-base font-medium mt-2 transition-colors" aria-label={targetLangAria}>
+                        {targetLangLabel}
                     </a>
                     <button id="menu-btn" class="text-gray-200 focus:outline-none" aria-label={openMenuLabel} aria-expanded="false" aria-controls="mobile-menu" data-label-open={openMenuLabel} data-label-close={closeMenuLabel}>
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -65,6 +106,7 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
         )}
     </nav>
 
+    {/* MOBILE DROPDOWN MENU */}
     {!isMaintenance && (
         <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-sm">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
@@ -80,6 +122,7 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
     )}
 </header>
 
+<!-- CLIENT-SIDE SCRIPTS -->
 <script>
     import { initMobileMenu } from '../scripts/mobileMenu.js';
     import { initActiveSection } from '../scripts/activeSection.js';
@@ -89,9 +132,6 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
         initActiveSection();
     }
 
-    // Esegui al caricamento iniziale
     document.addEventListener('DOMContentLoaded', initHeaderScripts);
-    
-    // Esegui dopo ogni navigazione (se usi View Transitions)
     document.addEventListener('astro:after-swap', initHeaderScripts);
 </script>

@@ -1,19 +1,18 @@
+// --- IMPORTS ---
 import it from '../i18n/it.json';
 import en from '../i18n/en.json';
 
+// --- INITIAL CONFIGURATION ---
 const LANGUAGES = {
   it,
   en,
 };
 
+// --- FUNCTIONS ---
 function getLangFromUrl(url: URL | undefined): 'it' | 'en' {
-  if (!url || !url.pathname) {
-    return 'it';
-  }
+  if (!url || !url.pathname) { return 'it'; }
 
-  if (url.pathname.startsWith('/en')) {
-    return 'en';
-  }
+  if (url.pathname.startsWith('/en')) { return 'en'; }
 
   return 'it';
 }

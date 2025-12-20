@@ -1,6 +1,8 @@
 ---
+// --- INITIAL CONFIGURATION ---
 const currentLang = Astro.url.pathname.startsWith('/en') ? 'en' : 'it';
 
+// Cookie Consent Configuration Object
 const config = {
     palette: {
         popup: { background: "#1f2937" },
@@ -25,6 +27,7 @@ const config = {
 };
 ---
 
+<!-- CLIENT-SIDE INITIALIZATION -->
 <script define:vars={{ config }}>
     document.addEventListener('DOMContentLoaded', () => {
         if (typeof cookieconsent !== 'undefined' && typeof cookieconsent.initialise === 'function') {

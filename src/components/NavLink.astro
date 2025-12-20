@@ -1,23 +1,20 @@
 ---
+// --- INITIAL CONFIGURATION ---
 const { href, label } = Astro.props;
 const { pathname } = Astro.url;
 
 const isHashLink = href.includes('#');
 
-// Se è un link con ancora (#), NON lo attiviamo mai lato server.
-// Lasciamo che sia SOLO il JS a gestirlo.
-// Attiviamo lato server solo le pagine vere (es. /blog)
 const isActive = !isHashLink && (href === pathname || (href !== '/' && pathname.startsWith(href)));
 ---
 
+<!-- NAVIGATION LINK COMPONENT -->
 <a
     href={href}
     data-nav-link
     class:list={[
         "transition-colors duration-300 font-medium text-sm md:text-base",
-        // Stato Base: Se attivo lato server (Blog) -> Bianco, altrimenti Grigio
         isActive ? "text-white" : "text-gray-400 hover:text-white",
-        // Stato Attivo JS: Sovrascrive tutto
         "data-[active=true]:text-white"
     ]}
 >

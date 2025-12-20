@@ -1,20 +1,23 @@
 ---
+// --- IMPORTS ---
 import { getI18N } from '../i18n/utils';
 
+// --- INITIAL CONFIGURATION ---
 const i18n = getI18N({ astroUrl: Astro.url });
 const titleId = "experience-title";
 const companyClasses = "text-lg font-semibold text-blue-300 hover:text-blue-400 transition-colors";
 
-// Assicuriamoci che sia un array
 const experiences = i18n.experience.experiences || [];
 ---
 
+<!-- EXPERIENCE SECTION -->
 <section id="experience" class="py-20 px-4 bg-gray-800 fade-in-section" aria-labelledby={titleId}>
     <div class="container mx-auto max-w-4xl">
         <h2 id={titleId} class="text-3xl md:text-4xl font-bold text-center mb-16">
             {i18n.experience.title}
         </h2>
 
+        <!-- TIMELINE CONTAINER -->
         <div class="relative border-l-2 border-gray-700 ml-3 md:ml-6 space-y-12">
             {experiences.map((exp) => (
                 <div class="relative pl-8 md:pl-12 group">
@@ -58,7 +61,7 @@ const experiences = i18n.experience.experiences || [];
             ))}
         </div>
 
-        <!-- Decorazione finale (Inizio percorso) -->
+        <!-- TIMELINE FOOTER -->
         <div class="ml-3 md:ml-6 mt-8 pl-8 md:pl-12 opacity-60">
             <div class="text-gray-500 text-sm italic flex items-center gap-2">
                 <span class="w-2 h-2 bg-gray-600 rounded-full"></span>

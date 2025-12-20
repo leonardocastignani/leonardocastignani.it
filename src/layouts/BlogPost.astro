@@ -1,25 +1,30 @@
 ---
+// --- IMPORTS ---
 import type { CollectionEntry } from 'astro:content';
 import Layout from './Layout.astro';
 import { getI18N } from '../i18n/utils';
-import Maintenance from '../components/Maintenance.astro'; // Unico import
+import Maintenance from '../components/Maintenance.astro';
 import { MAINTENANCE_MODE } from '../consts';
 
+// --- PROPS DEFINITION ---
 type Props = CollectionEntry<'blog'>['data'];
 
+// --- INITIAL CONFIGURATION ---
 const { title, description, pubDate, updatedDate, heroImage, lang } = Astro.props;
 const i18n = getI18N({ astroUrl: Astro.url });
 
-// Determina il link di ritorno in base alla lingua corrente
 const backLink = lang === 'en' ? '/en/blog' : '/blog';
 ---
 
+{/* MAINTENANCE MODE CHECK */}
 {MAINTENANCE_MODE ? (
     <Maintenance lang={lang} />
 ) : (
     <Layout title={title} description={description}>
         <main class="pt-24 pb-16 px-4 bg-gray-900 min-h-screen">
             <article class="container mx-auto max-w-3xl">
+
+                {/* POST HEADER */}
                 <div class="mb-8 text-center">
                     <div class="text-gray-400 mb-2">
                         <time datetime={pubDate.toISOString()}>
@@ -34,11 +39,13 @@ const backLink = lang === 'en' ? '/en/blog' : '/blog';
                     <hr class="border-gray-700 my-8" />
                 </div>
                 
+                {/* POST CONTENT (Markdown) */}
                 <div class="prose prose-invert prose-lg max-w-none hover:prose-a:text-blue-400 prose-a:text-blue-300 prose-headings:text-white prose-p:text-gray-300 prose-strong:text-white prose-code:text-blue-300">
                     <slot />
                 </div>
             </article>
             
+            {/* POST FOOTER */}
             <div class="text-center mt-12">
                 <a href={backLink} class="text-blue-400 hover:text-blue-300 font-semibold">
                     {i18n.blog.backToArticles}

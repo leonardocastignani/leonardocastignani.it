@@ -1,8 +1,10 @@
+// --- IMPORTS ---
 import { defineCollection, z } from 'astro:content';
 
+// --- BLOG COLLECTION DEFINITION ---
 const blog = defineCollection({
     type: 'content',
-    // Schema validation con Zod
+    // --- SCHEMA DEFINITION WITH ZOD ---
     schema: z.object({
         title: z.string(),
         description: z.string(),
@@ -10,8 +12,9 @@ const blog = defineCollection({
         updatedDate: z.coerce.date().optional(),
         heroImage: z.string().optional(),
         tags: z.array(z.string()).optional(),
-        lang: z.enum(['it', 'en']).default('it'), // Per gestire la lingua
+        lang: z.enum(['it', 'en']).default('it'),
     }),
 });
 
+// --- EXPORT COLLECTIONS ---
 export const collections = { blog };

@@ -1,16 +1,17 @@
 ---
+// --- IMPORTS ---
 import Layout from '../layouts/Layout.astro';
 import itData from '../i18n/it.json';
 import enData from '../i18n/en.json';
 
-// Accettiamo la lingua come prop (default 'it')
+// --- INITIAL CONFIGURATION ---
 const { lang = 'it' } = Astro.props;
-
-// Selezioniamo i dati corretti in base alla lingua
 const t = lang === 'en' ? enData.maintenance : itData.maintenance;
 ---
 
+<!-- MAINTENANCE PAGE LAYOUT -->
 <Layout title={t.title} description={t.subtitle} isMaintenance={true}>
+    <!-- MAIN CONTENT CENTERED -->
     <main class="h-screen flex flex-col justify-center items-center text-center p-4 -mt-20"> 
         <h1 class="text-4xl md:text-5xl font-bold mb-4">{t.title}</h1>
         <p class="text-xl text-gray-400">{t.subtitle}</p>

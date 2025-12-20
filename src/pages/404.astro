@@ -1,19 +1,21 @@
 ---
+// --- IMPORTS ---
 import Layout from '../layouts/Layout.astro';
 import { getI18N } from '../i18n/utils';
-
-// Importiamo i dati JSON diretti per avere accesso alle stringhe inglesi
 import enData from '../i18n/en.json';
 
-// Usiamo i18n standard per il default (Italiano)
+// --- INITIAL CONFIGURATION ---
 const i18n = getI18N({ astroUrl: Astro.url });
 const homeLink = i18n.error404.homeLink;
 ---
 
+<!-- 404 PAGE LAYOUT -->
 <Layout title={`404: ${i18n.error404.title}`} description={i18n.error404.description}>
     <section class="h-screen flex flex-col justify-center items-center text-center p-4 -mt-20">
+        <!-- Big Error Code -->
         <h1 class="text-8xl font-extrabold text-blue-500">404</h1>
         
+        <!-- Error Title -->
         <h2 
             id="error-title" 
             class="text-3xl md:text-4xl font-bold mt-4 mb-2"
@@ -22,6 +24,7 @@ const homeLink = i18n.error404.homeLink;
             {i18n.error404.title}
         </h2>
         
+        <!-- Error Subtitle -->
         <p 
             id="error-subtitle" 
             class="text-lg text-gray-600 dark:text-gray-300 mb-8"
@@ -30,6 +33,7 @@ const homeLink = i18n.error404.homeLink;
             {i18n.error404.subtitle}
         </p>
         
+        <!-- Back to Home Button -->
         <a 
             id="error-button" 
             href={homeLink} 
@@ -42,7 +46,7 @@ const homeLink = i18n.error404.homeLink;
     </section>
 </Layout>
 
+<!-- CLIENT-SIDE LOGIC -->
 <script>
     import { init404 } from '../scripts/handle404.js';
-    // Lo script viene importato ed eseguito automaticamente
 </script>

@@ -1,4 +1,5 @@
-// Linguaggi | Languages
+// --- ICON COMPONENT IMPORTS ---
+// Programming Languages
 import JavaIcon from '../components/icons/JavaIcon.astro';
 import CIcon from '../components/icons/CIcon.astro';
 import CppIcon from '../components/icons/CppIcon.astro';
@@ -9,17 +10,17 @@ import JavascriptIcon from '../components/icons/JavascriptIcon.astro';
 import TypescriptIcon from '../components/icons/TypescriptIcon.astro';
 import SqlIcon from '../components/icons/SqlIcon.astro';
 
-// Frontend
+// Frontend Technologies
 import Html5Icon from '../components/icons/Html5Icon.astro';
 import Css3Icon from '../components/icons/Css3Icon.astro';
 import AstroIcon from '../components/icons/AstroIcon.astro';
 import TailwindCssIcon from '../components/icons/TailwindCssIcon.astro';
 
-// Backend
+// Backend Technologies
 import MySqlIcon from '../components/icons/MySqlIcon.astro';
 import SpringbootIcon from '../components/icons/SpringbootIcon.astro';
 
-// Strumenti | Tools
+// Tools & DevOps
 import GitIcon from '../components/icons/GitIcon.astro';
 import GithubIcon from '../components/icons/GithubIcon.astro';
 import GithubCopilotIcon from '../components/icons/GithubCopilotIcon.astro';
@@ -31,6 +32,7 @@ import W11Icon from '../components/icons/W11Icon.astro';
 import LinuxIcon from '../components/icons/LinuxIcon.astro';
 import MediawikiIcon from '../components/icons/MediawikiIcon.astro';
 
+// --- SKILL CATEGORIES DATA ---
 export const languages = [
     { name: 'Java', Icon: JavaIcon },
     { name: 'C', Icon: CIcon },
