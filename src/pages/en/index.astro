@@ -7,15 +7,21 @@ import Experience from '../../components/Experience.astro';
 import Projects from '../../components/Projects.astro';
 import Contact from '../../components/Contact.astro';
 import { getI18N } from '../../i18n/utils';
+import Maintenance from '../../components/Maintenance.astro'; // Nuovo percorso
+import { MAINTENANCE_MODE } from '../../consts';
 
 const i18n = getI18N({ astroUrl: Astro.url });
 ---
 
-<Layout title = {i18n.pageTitle} description = {i18n.pageDescription}>
-    <Hero />
-    <About />
-    <Education />
-    <Experience />
-    <Projects />
-    <Contact />
-</Layout>
+{MAINTENANCE_MODE ? (
+    <Maintenance lang="en" />
+) : (
+    <Layout title={i18n.pageTitle} description={i18n.pageDescription}>
+        <Hero />
+        <About />
+        <Education />
+        <Experience />
+        <Projects />
+        <Contact />
+    </Layout>
+)}

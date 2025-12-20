@@ -10,3 +10,5 @@ export const SOCIAL_LINKS = {
   github: 'https://github.com/leonardocastignani',
   email: `mailto:${SITE_DATA.email}`,
 };
+
+export const MAINTENANCE_MODE = false;
