@@ -11,4 +11,4 @@ export const SOCIAL_LINKS = {
   email: `mailto:${SITE_DATA.email}`,
 };
 
-export const MAINTENANCE_MODE = false;
+export const MAINTENANCE_MODE = true;
