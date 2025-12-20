@@ -11,4 +11,5 @@ export const SOCIAL_LINKS = {
   email: `mailto:${SITE_DATA.email}`,
 };
 
-export const MAINTENANCE_MODE = true;
+const IS_MAINTENANCE_ACTIVE = true
+export const MAINTENANCE_MODE = IS_MAINTENANCE_ACTIVE && import.meta.env.PROD;
