@@ -14,5 +14,5 @@ export const SOCIAL_LINKS = {
 };
 
 // --- MAINTENANCE MODE CONFIGURATION ---
-const IS_MAINTENANCE_ACTIVE = true
+const IS_MAINTENANCE_ACTIVE = false
 export const MAINTENANCE_MODE = IS_MAINTENANCE_ACTIVE && import.meta.env.PROD;

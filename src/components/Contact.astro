@@ -38,51 +38,75 @@ const formStatusMessages = i18n.contact.status;
             <!-- Name Field -->
             <div>
                 <label for="name" class="sr-only">{i18n.contact.name}</label>
-                <input type="text" id="name" name="name" required placeholder={i18n.contact.name} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                <input type="text" id="name" name="name" autocomplete="given-name" required placeholder={i18n.contact.name} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
             </div>
 
             <!-- Surname Field -->
             <div>
                 <label for="surname" class="sr-only">{i18n.contact.surname}</label>
-                <input type="text" id="surname" name="surname" required placeholder={i18n.contact.surname} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                <input type="text" id="surname" name="surname" autocomplete="family-name" required placeholder={i18n.contact.surname} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
             </div>
 
             <!-- Email Field -->
             <div>
                 <label for="email" class="sr-only">{i18n.contact.email}</label>
-                <input type="email" id="email" name="email" required placeholder={i18n.contact.email} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                <input type="email" id="email" name="email" autocomplete="email" required placeholder={i18n.contact.email} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
             </div>
 
             <!-- Phone Field -->
             <div>
                 <label for="phone" class="sr-only">{i18n.contact.phone}</label>
-                <input type="tel" id="phone" name="phone" placeholder={i18n.contact.phone} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder={i18n.contact.phone} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
             </div>
 
             <!-- Subject Dropdown -->
-            <div>
+            <div class="relative">
                 <label for="subject" class="sr-only">{i18n.contact.subject.label}</label>
                 
-                <div class="relative">
-                    <select 
-                        id="subject" 
-                        name="subject" 
-                        required 
-                        class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition appearance-none"
+                <!-- SELECT HIDDEN FOR VALIDATION -->
+                <select 
+                    id="subject" 
+                    name="subject" 
+                    required 
+                    class="absolute opacity-0 pointer-events-none -z-10 bottom-0 left-0 h-0 w-0"
+                    tabindex="-1"
+                    aria-hidden="true"
+                >
+                    <option value="" disabled selected hidden>{i18n.contact.subject.placeholder}</option>
+                    <option value="Proposta di Lavoro">{i18n.contact.subject.option1}</option>
+                    <option value="Richiesta Informazioni">{i18n.contact.subject.option2}</option>
+                    <option value="Altro">{i18n.contact.subject.option3}</option>
+                </select>
+
+                <!-- CUSTOM SELECT -->
+                <div class="relative" id="custom-select-container">
+                    <button 
+                        type="button" 
+                        id="custom-select-trigger"
+                        class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-left flex justify-between items-center text-gray-400"
                     >
-                        <option value="" disabled selected hidden>{i18n.contact.subject.placeholder}</option>
-                        <option value="Proposta di Lavoro">{i18n.contact.subject.option1}</option>
-                        <option value="Richiesta Informazioni">{i18n.contact.subject.option2}</option>
-                        <option value="Altro">{i18n.contact.subject.option3}</option>
-                    </select>
-                    
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
-                        <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                        <span id="custom-select-value">{i18n.contact.subject.placeholder}</span>
+                        <svg class="h-5 w-5 fill-current transition-transform duration-300" id="custom-select-arrow" viewBox="0 0 20 20">
                             <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
                         </svg>
-                    </div>
+                    </button>
+
+                    <ul 
+                        id="custom-select-options" 
+                        class="absolute z-50 w-full mt-2 bg-gray-800 border border-gray-600 rounded-lg shadow-xl opacity-0 invisible transform -translate-y-2 transition-all duration-200 overflow-hidden"
+                    >
+                        <li data-value="Proposta di Lavoro" class="px-4 py-3 hover:bg-blue-600 hover:text-white cursor-pointer text-gray-300 transition-colors border-b border-gray-700 last:border-0">
+                            {i18n.contact.subject.option1}
+                        </li>
+                        <li data-value="Richiesta Informazioni" class="px-4 py-3 hover:bg-blue-600 hover:text-white cursor-pointer text-gray-300 transition-colors border-b border-gray-700 last:border-0">
+                            {i18n.contact.subject.option2}
+                        </li>
+                        <li data-value="Altro" class="px-4 py-3 hover:bg-blue-600 hover:text-white cursor-pointer text-gray-300 transition-colors">
+                            {i18n.contact.subject.option3}
+                        </li>
+                    </ul>
                 </div>
-            </div>
+            </div>            
 
             <!-- Message Textarea -->
             <div>
@@ -113,58 +137,93 @@ const formStatusMessages = i18n.contact.status;
 
 <!-- CLIENT-SIDE FORM HANDLING -->
 <script>
+    // DOM Elements
     const form = document.getElementById('contact-form') as HTMLFormElement;
     const statusDiv = document.getElementById('form-status');
     const submitButton = document.getElementById('contact-submit') as HTMLButtonElement;
+    
+    // Custom Select Elements
+    const trigger = document.getElementById('custom-select-trigger');
+    const options = document.getElementById('custom-select-options');
+    const arrow = document.getElementById('custom-select-arrow');
+    const displayValue = document.getElementById('custom-select-value');
+    const nativeSelect = document.getElementById('subject') as HTMLSelectElement;
 
-    function showStatusMessage(message: string, color: string) {
-        if (!statusDiv) return;
-        statusDiv.textContent = message;
-        statusDiv.style.color = color;
-        setTimeout(() => { 
-            if (statusDiv.textContent === message) statusDiv.textContent = ''; 
-        }, 5000);
-    }
+    // --- CUSTOM SELECT LOGIC ---
+    if (trigger && options && nativeSelect) {
+        const toggleMenu = (show: boolean) => {
+            options.classList.toggle('invisible', !show);
+            options.classList.toggle('opacity-0', !show);
+            options.classList.toggle('-translate-y-2', !show);
+            options.classList.toggle('opacity-100', show);
+            options.classList.toggle('translate-y-0', show);
+            arrow?.classList.toggle('rotate-180', show);
+        };
 
-    async function handleSubmit(event: Event) {
-        event.preventDefault();
-        if (!(event.target instanceof HTMLFormElement)) return;
-        const targetForm = event.target;
-        
-        const msgSending = targetForm.dataset.msgSending || 'Sending...';
-        const msgSuccess = targetForm.dataset.msgSuccess || 'Success';
-        const msgError = targetForm.dataset.msgError || 'Error';
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu(options.classList.contains('invisible'));
+        });
 
-        if (submitButton) submitButton.disabled = true;
-        if (statusDiv) {
-            statusDiv.textContent = msgSending;
-            statusDiv.style.color = '#9ca3af';
-        }
+        options.querySelectorAll('li').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const target = e.target as HTMLElement;
 
-        try {
-            const formData = new FormData(targetForm);
-            const data = new URLSearchParams(formData as any).toString();
-
-            const response = await fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: data,
+                nativeSelect.value = target.getAttribute('data-value') || '';
+                if (displayValue) {
+                    displayValue.textContent = target.textContent?.trim() || '';
+                    displayValue.classList.replace('text-gray-400', 'text-white');
+                }
+                toggleMenu(false);
             });
+        });
 
-            if (response.ok) {
-                showStatusMessage(msgSuccess, '#34d399');
-                targetForm.reset();
-            } else {
-                showStatusMessage(msgError, '#f87171');
-            }
-        } catch (err) {
-            showStatusMessage(msgError, '#f87171');
-        } finally {
-            if (submitButton) submitButton.disabled = false;
-        }
+        document.addEventListener('click', (e) => {
+            if (!trigger.contains(e.target as Node)) toggleMenu(false);
+        });
     }
 
-    if (form) form.addEventListener('submit', handleSubmit);
+    // --- FORM SUBMISSION LOGIC (AJAX) ---
+    const showMsg = (msg: string, color: string) => {
+        if (!statusDiv) return;
+        statusDiv.textContent = msg;
+        statusDiv.style.color = color;
+        setTimeout(() => { if (statusDiv.textContent === msg) statusDiv.textContent = ''; }, 5000);
+    };
+
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const target = e.target as HTMLFormElement;
+            
+            if (submitButton) submitButton.disabled = true;
+            showMsg(target.dataset.msgSending || '...', '#9ca3af');
+
+            try {
+                const res = await fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(new FormData(target) as any).toString(),
+                });
+
+                if (res.ok) {
+                    showMsg(target.dataset.msgSuccess || 'OK', '#34d399');
+                    target.reset();
+                    if (displayValue) {
+                        displayValue.textContent = nativeSelect.options[0].text;
+                        displayValue.classList.replace('text-white', 'text-gray-400');
+                    }
+                } else {
+                    throw new Error();
+                }
+            } catch (err) {
+                showMsg(target.dataset.msgError || 'Error', '#f87171');
+            } finally {
+                if (submitButton) submitButton.disabled = false;
+            }
+        });
+    }
 </script>
 
 <style>
