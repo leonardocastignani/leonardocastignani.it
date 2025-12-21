@@ -1,6 +1,6 @@
 {
   "pageTitle": "Leonardo Castignani | Portfolio",
-  "pageDescription": "Portfolio di Leonardo Castignani, Sviluppatore Software.",
+  "pageDescription": "Realizzazione siti web professionali, applicazioni su misura e consulenza software. Portfolio di Leonardo Castignani, sviluppatore freelance nelle Marche.",
   "backToTopLabel": "Torna in cima alla pagina",
   "nav": {
     "homeLink": "/",
@@ -22,7 +22,7 @@
   },
   "hero": {
     "title": "Leonardo Castignani",
-    "subtitle": "Sviluppatore Software. Creo esperienze digitali veloci, accessibili e moderne, trasformando idee complesse in realtà.",
+    "subtitle": "Sviluppatore Web & Software Freelance. Realizzo siti web veloci, applicazioni su misura ed esperienze digitali moderne per aziende e privati.",
     "socialAriaLabel": "Visita il mio profilo",
     "github": "GitHub",
     "linkedin": "LinkedIn",
@@ -32,8 +32,8 @@
   },
   "about": {
     "title": "Chi Sono",
-    "p1": "Sono uno sviluppatore software con una profonda passione per la tecnologia, attualmente al terzo anno del Corso di Laurea in Informatica presso l'Università degli Studi di Camerino. Il mio obiettivo è creare software che non solo funzioni in modo impeccabile, ma che sia anche intuitivo, accessibile e in grado di risolvere problemi reali, dal backend al frontend.",
-    "p2": "Affronto ogni progetto con curiosità e un approccio orientato alla risoluzione dei problemi. Credo fermamente nella collaborazione e nel valore della comunità open-source, dove contribuisco attivamente per continuare a imparare e migliorare le mie competenze."
+    "p1": "Sono un Programmatore e Sviluppatore Web Freelance con base nelle Marche, attualmente laureando in Informatica presso l'Università di Camerino. Mi occupo di creazione siti web moderni e sviluppo software, unendo competenze tecniche avanzate a una forte attenzione per l'usabilità e la SEO.",
+    "p2": "Affronto ogni progetto con un approccio analitico: dal semplice sito vetrina alle applicazioni web complesse. Credo nella qualità del codice e collaboro attivamente nella community open-source per restare sempre aggiornato sulle ultime tecnologie."
   },
   "education": {
     "title": "Istruzione & Competenze",
@@ -88,7 +88,7 @@
         "company": "Libero Professionista",
         "companyUrl": null,
         "period": "2021 - In corso",
-        "description": "Sviluppo soluzioni software personalizzate per clienti privati e piccole imprese, gestendo l'intero ciclo di vita del progetto: dalla raccolta dei requisiti e progettazione, allo sviluppo, testing e rilascio finale."
+        "description": "Progettazione e sviluppo di siti web responsive e software personalizzati. Gestisco l'intero ciclo di vita del prodotto digitale: analisi dei requisiti, sviluppo frontend/backend, ottimizzazione delle performance e rilascio finale."
       },
       {
         "role": "Sviluppatore Software (Tirocinio)",
@@ -121,20 +121,20 @@
     "locale": "it-IT"
   },
   "contact": {
-    "title": "Mettiamoci in Contatto",
-    "subtitle": "Sono sempre aperto a nuove opportunità e collaborazioni. Se hai un progetto in mente o vuoi semplicemente connetterti, non esitare a scrivermi.",
-    "name": "Il tuo nome",
-    "surname": "Il tuo cognome",
-    "email": "La tua email",
-    "phone": "Il tuo numero di telefono (opzionale)",
+    "title": "Mettiamoci in Contatto!<br><span style=\"color: #2563eb;\">Richiedi un Preventivo o Informazioni</span>",
+    "subtitle": "Hai un progetto in mente? Cerchi uno sviluppatore per il tuo sito web o la tua app? Scrivimi per una consulenza gratuita o un preventivo senza impegno. Sono sempre aperto a nuove opportunità e collaborazioni.",
+    "name": "Nome",
+    "surname": "Cognome",
+    "email": "Email",
+    "phone": "Numero di telefono (opzionale)",
     "subject": {
       "label": "Oggetto del messaggio",
       "placeholder": "Seleziona un oggetto...",
-      "option1": "Proposta di Lavoro",
-      "option2": "Richiesta Informazioni",
+      "option1": "Proposta di Lavoro/Collaborazione",
+      "option2": "Richiesta Informazioni/Preventivo",
       "option3": "Altro"
     },
-    "message": "Il tuo messaggio...",
+    "message": "Messaggio...",
     "button": "Invia Messaggio",
     "status": {
       "sending": "Invio in corso...",
@@ -144,7 +144,7 @@
     "alternative": "In alternativa, puoi trovarmi su"
   },
   "footer": {
-    "copyright": "© {year} Leonardo Castignani. Tutti i diritti riservati.",
+    "copyright": "© {year} Leonardo Castignani | Portfolio. Tutti i diritti riservati.",
     "socialAriaLabel": "Visita il mio profilo"
   },
   "error404": {
@@ -160,7 +160,7 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "lastUpdated": "Ultimo aggiornamento: 12 novembre 2025",
+    "lastUpdated": "Ultimo aggiornamento: 19 dicembre 2025",
     "introduction": "Questa Privacy Policy descrive come le tue informazioni personali vengono raccolte, utilizzate e condivise quando visiti questo sito.",
     "dataTitle": "Dati Personali Raccolti",
     "dataText": "Quando compili il modulo di contatto, raccogliamo le informazioni che fornisci, come nome, email e messaggio, al solo scopo di risponderti. Non condividiamo queste informazioni con terze parti.",

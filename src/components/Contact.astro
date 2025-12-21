@@ -12,7 +12,7 @@ const formStatusMessages = i18n.contact.status;
 <!-- CONTACT SECTION -->
 <section id="contact" class="py-20 px-4 bg-gray-800 fade-in-section" aria-labelledby={titleId}>
     <div class="container mx-auto max-w-2xl text-center">
-        <h2 id={titleId} class="text-3xl md:text-4xl font-bold mb-4">{i18n.contact.title}</h2>
+        <h2 id={titleId} class="text-3xl md:text-4xl font-bold mb-4" set:html={i18n.contact.title} />
         <p class="text-gray-400 mb-8">
             {i18n.contact.subtitle}
         </p>

@@ -1,6 +1,6 @@
 {
   "pageTitle": "Leonardo Castignani | Portfolio",
-  "pageDescription": "Portfolio of Leonardo Castignani, Software Developer.",
+  "pageDescription": "Professional website development, custom applications, and software consulting. Portfolio by Leonardo Castignani, freelance developer in the Marche region.",
   "backToTopLabel": "Back to top",
   "nav": {
     "homeLink": "/en",
@@ -22,7 +22,7 @@
   },
   "hero": {
     "title": "Leonardo Castignani",
-    "subtitle": "Software Developer. I build fast, accessible, and modern digital experiences, turning complex ideas into reality.",
+    "subtitle": "Freelance Web & Software Developer. I create fast websites, custom applications, and modern digital experiences for businesses and individuals.",
     "socialAriaLabel": "Visit my profile on",
     "github": "GitHub",
     "linkedin": "LinkedIn",
@@ -32,8 +32,8 @@
   },
   "about": {
     "title": "About Me",
-    "p1": "I am a software developer with a deep passion for technology, currently in my third year of the Computer Science Degree Course at the University of Camerino. My goal is to create software that not only works flawlessly but is also intuitive, accessible, and capable of solving real-world problems, from backend to frontend.",
-    "p2": "I approach every project with curiosity and a problem-solving mindset. I strongly believe in collaboration and the value of the open-source community, where I actively contribute to continuously learn and improve my skills."
+    "p1": "I'm a freelance programmer and web developer based in the Marche region, currently completing a degree in Computer Science at the University of Camerino. I specialize in modern website creation and software development, combining advanced technical skills with a strong focus on usability and SEO.",
+    "p2": "I approach every project with an analytical approach: from a simple showcase site to complex web applications. I believe in code quality and actively participate in the open-source community to stay up-to-date on the latest technologies."
   },
   "education": {
     "title": "Education & Skills",
@@ -88,7 +88,7 @@
         "company": "Self-Employed",
         "companyUrl": null,
         "period": "2021 - Present",
-        "description": "Developing custom software solutions for private clients and small businesses, managing the entire project lifecycle: from requirements gathering and design to development, testing, and final deployment."
+        "description": "Design and development of responsive websites and custom software. I manage the entire digital product lifecycle: requirements analysis, front-end/back-end development, performance optimization, and final release."
       },
       {
         "role": "Software Developer (Internship)",
@@ -121,20 +121,20 @@
     "locale": "en-US"
   },
   "contact": {
-    "title": "Let's Get in Touch",
-    "subtitle": "I'm always open to new opportunities and collaborations. If you have a project in mind or just want to connect, feel free to reach out.",
-    "name": "Your name",
-    "surname": "Your surname",
-    "email": "Your email",
-    "phone": "Your phone number (optional)",
+    "title": "Let's get in touch!<br><span style=\"color: #2563eb;\">Request a quote or information</span>",
+    "subtitle": "Do you have a project in mind? Looking for a developer for your website or app? Contact me for a free consultation or a no-obligation quote. I'm always open to new opportunities and collaborations.",
+    "name": "First name",
+    "surname": "Last name",
+    "email": "Email",
+    "phone": "Phone number (optional)",
     "subject": {
       "label": "Message subject",
       "placeholder": "Select a subject...",
-      "option1": "Job Proposal",
-      "option2": "Request for Information",
+      "option1": "Job/Collaboration Proposal",
+      "option2": "Request Information/Quote",
       "option3": "Other"
     },
-    "message": "Your message...",
+    "message": "Message...",
     "button": "Send Message",
     "status": {
       "sending": "Sending...",
@@ -144,7 +144,7 @@
     "alternative": "Alternatively, you can find me on"
   },
   "footer": {
-    "copyright": "© {year} Leonardo Castignani. All rights reserved.",
+    "copyright": "© {year} Leonardo Castignani | Portfolio. All rights reserved.",
     "socialAriaLabel": "Visit my profile on"
   },
   "error404": {
@@ -160,7 +160,7 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "lastUpdated": "Last updated: November 12, 2025",
+    "lastUpdated": "Last updated: December 19, 2025",
     "introduction": "This Privacy Policy describes how your personal information is collected, used, and shared when you visit this site.",
     "dataTitle": "Personal Data Collected",
     "dataText": "When you fill out the contact form, we collect the information you provide, such as your name, email, and message, for the sole purpose of responding to you. We do not share this information with third parties.",
