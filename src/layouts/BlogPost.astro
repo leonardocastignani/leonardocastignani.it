@@ -23,6 +23,16 @@ const backLink = lang === 'en' ? '/en/blog' : '/blog';
     <Layout title={title} description={description}>
         <main class="pt-24 pb-16 px-4 bg-gray-900 min-h-screen">
             <article class="container mx-auto max-w-3xl">
+                {/* HERO IMAGE (AGGIUNGI QUESTO BLOCCO) */}
+                {heroImage && (
+                    <div class="mb-8 rounded-xl overflow-hidden shadow-2xl">
+                        <img 
+                            src={heroImage} 
+                            alt={title} 
+                            class="w-full h-auto" 
+                        />
+                    </div>
+                )}
 
                 {/* POST HEADER */}
                 <div class="mb-8 text-center">
