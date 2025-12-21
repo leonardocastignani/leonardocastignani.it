@@ -1,7 +1,7 @@
 // --- GLOBAL SITE DATA ---
 export const SITE_DATA = {
   name: 'Leonardo Castignani',
-  email: 'leo.castignani@gmail.com',
+  email: 'info@leonardocastignani.it',
   jobTitle: 'Software Developer',
   siteUrl: 'https://www.leonardocastignani.it',
 };
