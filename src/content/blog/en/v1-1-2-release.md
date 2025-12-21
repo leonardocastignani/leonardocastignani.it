@@ -2,6 +2,7 @@
 title: "Changelog v1.1.2: New Identity and SEO Boost"
 description: "Email infrastructure update, SEO optimization, and graphic fixes."
 pubDate: "2025-12-21"
+heroImage: "/blog/versione-1.1.2-portfolio.webp"
 tags: ["Changelog", "Update", "Tech"]
 lang: "en"
 ---

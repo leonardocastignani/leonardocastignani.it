@@ -10,7 +10,7 @@ import { MAINTENANCE_MODE } from '../consts';
 type Props = CollectionEntry<'blog'>['data'];
 
 // --- INITIAL CONFIGURATION ---
-const { title, description, pubDate, updatedDate, heroImage, lang } = Astro.props;
+const { title, description, pubDate, heroImage, lang } = Astro.props;
 const i18n = getI18N({ astroUrl: Astro.url });
 
 const backLink = lang === 'en' ? '/en/blog' : '/blog';
