@@ -2,7 +2,7 @@
 title: "Il mio nuovo portfolio costruito con Astro"
 description: "Un deep-dive su come ho progettato questo sito: performance, architettura a isole e gestione multilingua."
 pubDate: "2025-12-19"
-tags: ["astro", "portfolio", "webdev", "performance"]
+tags: ["Astro", "Portfolio", "Performance"]
 lang: "it"
 ---
 
