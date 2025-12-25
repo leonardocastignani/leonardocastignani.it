@@ -1,1 +1,11 @@
-/*  /404.html  404
+# Reindirizza leonardocastignani.it (HTTPS) -> www (HTTPS)
+https://leonardocastignani.it/* https://www.leonardocastignani.it/:splat 301!
+
+# Reindirizza leonardocastignani.it (HTTP) -> www (HTTPS)
+http://leonardocastignani.it/* https://www.leonardocastignani.it/:splat 301!
+
+# Reindirizza www (HTTP) -> www (HTTPS)
+http://www.leonardocastignani.it/* https://www.leonardocastignani.it/:splat 301!
+
+# Gestione pagina 404 (Questa regola deve stare sempre per ultima)
+/* /404.html 404
