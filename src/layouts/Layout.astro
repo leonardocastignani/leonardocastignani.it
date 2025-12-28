@@ -39,6 +39,16 @@ const imageURL = new URL('/social-preview.png', Astro.site);
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
 
+        <!-- GOOGLE ANALYTICS 4 (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QMMRB064D"></script>
+        <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-6QMMRB064D');
+        </script>
+
         <!-- COOKIE CONSENT LIBRARY -->
         <link rel="stylesheet" href="/libs/cookieconsent.min.css" />
         <script src="/libs/cookieconsent.min.js" defer></script>
