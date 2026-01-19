@@ -85,9 +85,6 @@ const imageURL = new URL('/social-preview.png', Astro.site);
         })} />
     </head>
     <body class="bg-gray-900 text-gray-100 font-sans overflow-x-hidden">
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M76D882F"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
         <!-- HEADER -->
         <Header isMaintenance={isMaintenance} />
 
@@ -141,5 +138,8 @@ const imageURL = new URL('/social-preview.png', Astro.site);
                 document.addEventListener('DOMContentLoaded', initGlobalScripts);
             }
         </script>
+
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M76D882F"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </body>
 </html>
