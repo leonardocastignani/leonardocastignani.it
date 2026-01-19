@@ -3,7 +3,7 @@ title: "Sito su misura vs WordPress: Quale scegliere nel 2026?"
 description: "Un'analisi approfondita tra un sito sviluppato ad hoc (custom code) e un CMS classico. Scopri perché la flessibilità di WordPress può diventare il tuo peggior nemico."
 pubDate: "2026-01-19"
 heroImage: "/blog/custom-vs-wordpress.webp"
-tags: ["Sviluppo Web", "Business", "Performance", "Astro"]
+tags: ["Sviluppo Web", "Business", "Performance"]
 lang: "it"
 ---
 

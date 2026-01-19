@@ -3,7 +3,7 @@ title: "Custom Code vs WordPress: What to Choose in 2026?"
 description: "A deep dive comparison between a custom-coded site and a classic CMS. Discover why WordPress flexibility might become your worst enemy."
 pubDate: "2026-01-19"
 heroImage: "/blog/custom-vs-wordpress.webp"
-tags: ["Web Dev", "Business", "Performance", "Astro"]
+tags: ["Web Dev", "Business", "Performance"]
 lang: "en"
 ---
 

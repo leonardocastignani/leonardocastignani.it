@@ -3,6 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* --- GLOBAL LAYOUT FIXES --- */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
 /* --- CUSTOM COMPONENTS LAYER --- */
 @layer components {
     .fade-in-section {
