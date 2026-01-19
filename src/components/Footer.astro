@@ -5,22 +5,27 @@ import { SOCIAL_LINKS } from '../consts';
 
 // --- INITIAL CONFIGURATION ---
 const i18n = getI18N({ astroUrl: Astro.url });
-const currentYear = new Date().getFullYear();
+const buildYear = new Date().getFullYear();
 const socialLinks = [
     { 
         href: SOCIAL_LINKS.linkedin, 
-        label: "LinkedIn", 
-        icon: "linkedin"
+        label: "LinkedIn"
     },
     { 
         href: SOCIAL_LINKS.github,
-        label: "GitHub",
-        icon: "github"
+        label: "GitHub"
+    },
+    { 
+        href: SOCIAL_LINKS.instagram,
+        label: "Instagram"
+    },
+    { 
+        href: SOCIAL_LINKS.facebook,
+        label: "Facebook"
     },
     { 
         href: SOCIAL_LINKS.email, 
-        label: "Email", 
-        icon: "email" 
+        label: "Email"
     }
 ];
 ---
@@ -44,6 +49,17 @@ const socialLinks = [
         </div>
 
         {/* COPYRIGHT NOTICE */}
-        <p>{i18n.footer.copyright.replace('{year}', currentYear.toString())}</p>
+        <p id="copyright-text">
+            {i18n.footer.copyright.replace('{year}', buildYear.toString())}
+        </p>
     </div>
 </footer>
+
+<!-- CLIENT-SIDE SCRIPTS -->
+<script>
+    const copyrightElement = document.getElementById('copyright-text');
+    if (copyrightElement) {
+        const currentYear = new Date().getFullYear().toString();
+        copyrightElement.innerText = copyrightElement.innerText.replace(/\d{4}/, currentYear);
+    }
+</script>

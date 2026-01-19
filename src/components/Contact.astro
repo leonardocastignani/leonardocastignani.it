@@ -208,6 +208,13 @@ const formStatusMessages = i18n.contact.status;
                 });
 
                 if (res.ok) {
+                    // @ts-ignore
+                    window.dataLayer = window.dataLayer || [];
+                    // @ts-ignore
+                    window.dataLayer.push({
+                        'event': 'form_submission_success',
+                        'module': 'contact_form'
+                    });
                     showMsg(target.dataset.msgSuccess || 'OK', '#34d399');
                     target.reset();
                     if (displayValue) {
