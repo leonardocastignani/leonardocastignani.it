@@ -1,23 +1,24 @@
 ---
+// --- INITIAL CONFIGURATION ---
 interface Props {
   href: string;
   name: string;
   Icon: any;
   ariaLabel: string;
 }
-
 const { href, name, Icon, ariaLabel } = Astro.props;
 ---
 
+<!-- SOCIAL ICON COMPONENT -->
 <a
   href={href}
   target="_blank"
   rel="noopener noreferrer"
-  class="group relative flex items-center justify-center p-2 rounded-full hover:bg-gray-800 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+  class="group relative flex flex-col items-center justify-center p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
   aria-label={ariaLabel}
 >
   {/* ICON CONTAINER */}
-  <div class="w-8 h-8 text-gray-400 group-hover:text-white transition-all duration-300 ease-in-out transform group-hover:scale-110 group-hover:-translate-y-1">
+  <div class="w-12 h-12 text-gray-400 group-hover:text-white transition-colors duration-300 ease-in-out transform group-hover:scale-110 [&_path]:!fill-current">
     <Icon class="w-full h-full" />
   </div>
 

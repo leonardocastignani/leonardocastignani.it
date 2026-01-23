@@ -1,4 +1,3 @@
-// src/data/social.js
 import EmailIcon from '../components/icons/EmailIcon.astro';
 import GithubIcon from '../components/icons/GithubIcon.astro';
 import LinkedinIcon from '../components/icons/LinkedinIcon.astro';
