@@ -17,7 +17,7 @@ This is the repository for my personal portfolio website, built with [Astro](htt
 -   **High Performance**: Built with Astro for near-instant loading times.
 -   **Multi-language Support (i18n)**: Content available in Italian and English.
 -   **On-Scroll Animations**: Sections smoothly fade in as you scroll down the page.
--   **Functional Contact Form**: Integrated with [Formspree](https://formspree.io/) to receive emails.
+-   **Functional Contact Form**: Integration with form management via [Netlify](https://www.netlify.com/) to receive emails.
 -   **SEO Friendly**: Optimized structure for search engines.
 
 ## 🛠️ Technologies Used

@@ -16,7 +16,7 @@ Questo è il repository del mio sito portfolio personale, costruito con [Astro](
 -   **Performance Elevate**: Costruito con Astro per un caricamento quasi istantaneo.
 -   **Supporto Multilingua (i18n)**: Contenuti disponibili in Italiano e Inglese, con un comodo selettore di lingua.
 -   **Animazioni "On Scroll"**: Le sezioni appaiono con una fluida animazione durante lo scorrimento della pagina.
--   **Modulo di Contatto Funzionante**: Integrazione con [Formspree](https://formspree.io/) per ricevere messaggi via email.
+-   **Modulo di Contatto Funzionante**: Integrazione con la gestione dei form tramite [Netlify](https://www.netlify.com/) per ricevere messaggi via email.
 -   **SEO Friendly**: Struttura ottimizzata per i motori di ricerca.
 
 ## 🛠️ Tecnologie Utilizzate

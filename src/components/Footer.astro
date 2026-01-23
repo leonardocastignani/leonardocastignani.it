@@ -2,49 +2,26 @@
 // --- IMPORTS ---
 import { getI18N } from '../i18n/utils';
 import { SOCIAL_LINKS } from '../consts';
+import { social } from '../data/social';
+import SocialLink from './SocialLink.astro';
 
 // --- INITIAL CONFIGURATION ---
 const i18n = getI18N({ astroUrl: Astro.url });
 const buildYear = new Date().getFullYear();
-const socialLinks = [
-    { 
-        href: SOCIAL_LINKS.linkedin, 
-        label: "LinkedIn"
-    },
-    { 
-        href: SOCIAL_LINKS.github,
-        label: "GitHub"
-    },
-    { 
-        href: SOCIAL_LINKS.instagram,
-        label: "Instagram"
-    },
-    { 
-        href: SOCIAL_LINKS.facebook,
-        label: "Facebook"
-    },
-    { 
-        href: SOCIAL_LINKS.email, 
-        label: "Email"
-    }
-];
 ---
 
 <!-- FOOTER SECTION -->
 <footer class="bg-gray-900 py-8">
     <div class="container mx-auto max-w-6xl text-center text-gray-400">
         {/* SOCIAL LINKS CONTAINER */}
-        <div class="flex justify-center gap-6 mb-4">
-            {socialLinks.map(link => (
-                <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="hover:text-white transition-colors text-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm"
-                    aria-label={`${i18n.footer.socialAriaLabel} ${link.label}`}
-                >
-                    {link.label}
-                </a>
+        <div class="flex justify-center items-center gap-4 mb-8 flex-wrap">
+            {social.map(({ name, Icon, id }) => (
+                <SocialLink 
+                    href={SOCIAL_LINKS[id as keyof typeof SOCIAL_LINKS] || '#'} 
+                    name={name} 
+                    Icon={Icon}
+                    ariaLabel={`${i18n.footer.socialAriaLabel} ${name}`}
+                />
             ))}
         </div>
 
