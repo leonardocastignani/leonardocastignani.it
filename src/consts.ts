@@ -11,7 +11,7 @@ export const SOCIAL_LINKS = {
   linkedin: 'https://www.linkedin.com/in/leonardo-castignani/',
   github: 'https://github.com/leonardocastignani',
   instagram: 'https://www.instagram.com/leonardocastignani.it/',
-  facebook: 'https://www.facebook.com/profile.php?id=61585957205087',
+  facebook: 'https://www.facebook.com/leonardocastignani.it/',
   email: `mailto:${SITE_DATA.email}`,
 };
 
