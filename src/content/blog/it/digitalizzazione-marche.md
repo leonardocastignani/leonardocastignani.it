@@ -3,7 +3,7 @@ title: "Digitalizzazione nelle Marche: opportunità per le PMI"
 description: "Il territorio marchigiano è ricco di eccellenze, ma spesso carente sul fronte digitale. Ecco come un sito web moderno può colmare il divario tra qualità del prodotto e visibilità online."
 pubDate: "2026-02-09"
 heroImage: "/blog/marche-digital.webp"
-tags: ["Local", "Marche", "Strategia", "PMI"]
+tags: ["Marche", "Strategia", "PMI"]
 lang: "it"
 ---
 

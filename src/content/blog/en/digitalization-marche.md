@@ -3,7 +3,7 @@ title: "Digitalization in the Marche Region: Opportunities for SMEs"
 description: "The Marche region is full of excellence but often lacks on the digital front. Here is how a modern website can bridge the gap between product quality and online visibility."
 pubDate: "2026-02-09"
 heroImage: "/blog/marche-digital.webp"
-tags: ["Local", "Marche", "Strategy", "SME"]
+tags: ["Marche", "Strategy", "SME"]
 lang: "en"
 ---
 
