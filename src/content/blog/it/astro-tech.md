@@ -34,6 +34,7 @@ import ThemeToggle from '../components/ThemeToggle.svelte';
 <MobileMenu client:visible />
 
 <ThemeToggle client:load />
+```
 
 ### I Risultati
 Grazie a questo approccio, il mio portfolio ottiene costantemente **100/100 su Lighthouse**. Non sto caricando l'intera libreria React per mostrare un testo statico "Chi Sono". Sto caricando React (o Preact, o Svelte) solo per quel piccolo pezzo di interfaccia che ne ha bisogno.

@@ -34,6 +34,7 @@ import ThemeToggle from '../components/ThemeToggle.svelte';
 <MobileMenu client:visible />
 
 <ThemeToggle client:load />
+```
 
 ### The Results
 Thanks to this approach, my portfolio consistently scores **100/100 on Lighthouse**. I'm not loading the entire React library to display static "About Me" text. I'm loading React (or Preact, or Svelte) only for that small piece of UI that needs it.
