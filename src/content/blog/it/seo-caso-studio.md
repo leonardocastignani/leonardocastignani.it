@@ -33,6 +33,7 @@ Ecco un estratto reale del codice che genera lo schema `Person` e `ProfessionalS
   ]
 }
 </script>
+```
 
 ### 3. Meta Tag Canonici e Open Graph
 Gestendo un sito multilingua (IT/EN), è cruciale evitare la penalizzazione per "contenuti duplicati". Utilizzo un componente `BaseHead.astro` centralizzato che gestisce dinamicamente:

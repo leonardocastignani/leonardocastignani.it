@@ -33,6 +33,7 @@ Here is a real snippet of the code generating the `Person` and `ProfessionalServ
   ]
 }
 </script>
+```
 
 ### 3. Canonical Meta Tags and Open Graph
 Running a multilingual site (IT/EN), avoiding "duplicate content" penalties is crucial. I use a centralized `BaseHead.astro` component that dynamically manages:
