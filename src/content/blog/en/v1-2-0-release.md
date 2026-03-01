@@ -2,7 +2,7 @@
 title: "Changelog v1.2.0: New Favicon and GTM Integration"
 description: "Release notes for version 1.2.0: favicon restyling, Google Tag Manager, and graphic fixes."
 pubDate: "2026-01-23"
-heroImage: "/blog/versione-1.2.0-portfolio.webp"
+heroImage: "/blog/release-1.2.0-portfolio.webp"
 tags: ["Changelog", "Update", "Tech"]
 lang: "en"
 ---
