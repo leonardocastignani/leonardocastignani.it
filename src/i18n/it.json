@@ -174,5 +174,10 @@
     "contactTitle": "Contatti",
     "contactText": "Per qualsiasi domanda riguardo a questa Privacy Policy, puoi contattarmi tramite il modulo presente su questo sito.",
     "homeLink": "/"
+  },
+  "whatsapp": {
+    "tooltip": "Scrivimi su WhatsApp",
+    "ariaLabel": "Contattami su WhatsApp",
+    "message": "Ciao%20Leonardo%2C%20ho%20trovato%20il%20tuo%20portfolio%20e%20vorrei%20mettermi%20in%20contatto%20con%20te%21"
   }
 }
