@@ -5,6 +5,7 @@ pubDate: "2026-05-25"
 heroImage: "/blog/ux-writing-conversioni.webp"
 tags: ["UX", "Marketing", "Business"]
 lang: "it"
+alternateSlug: "ux-writing-conversions"
 ---
 
 C'è un equivoco molto diffuso quando si progetta un nuovo sito web o una piattaforma digitale: si pensa che il successo dipenda al 90% dal design visivo e dalle immagini, lasciando i testi come ultimo riempitivo. 

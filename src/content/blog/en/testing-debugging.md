@@ -5,6 +5,7 @@ pubDate: "2026-04-13"
 heroImage: "/blog/testing-debugging.webp"
 tags: ["Testing", "Business", "Quality"]
 lang: "en"
+alternateSlug: "testing-debugging"
 ---
 
 There is a very well-known, unwritten rule in software engineering: fixing a bug during the design or development phase costs $1. Fixing it when the software is already public and being used by clients can cost $100 (or much more, if we calculate lost sales and brand damage).

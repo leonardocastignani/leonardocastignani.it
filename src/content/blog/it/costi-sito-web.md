@@ -5,6 +5,7 @@ pubDate: "2026-01-26"
 heroImage: "/blog/website-cost.webp"
 tags: ["Preventivi", "Business", "Freelance"]
 lang: "it"
+alternateSlug: "website-costs"
 ---
 
 È la domanda che ogni cliente fa, ed è sacrosanto che sia così: *"Quanto mi costa?"*.

@@ -5,6 +5,7 @@ pubDate: "2025-12-23"
 heroImage: "/blog/auguri-natale-2025.webp" 
 tags: ["Best wishes", "Freelance", "2026"]
 lang: "en"
+alternateSlug: "buone-feste-2025"
 ---
 
 As 2025 draws to a close, I'm taking a moment to unplug my keyboard, close my code editor, and reflect on the past year.

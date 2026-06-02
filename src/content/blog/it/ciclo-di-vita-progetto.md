@@ -5,6 +5,7 @@ pubDate: "2026-03-30"
 heroImage: "/blog/project-lifecycle.webp"
 tags: ["Workflow", "Software", "Project Management"]
 lang: "it"
+alternateSlug: "project-lifecycle"
 ---
 
 C'è un malinteso molto diffuso: molti clienti pensano che il lavoro di uno sviluppatore consista nel sedersi davanti al computer, aprire un editor e digitare codice finché il software non appare magicamente online.

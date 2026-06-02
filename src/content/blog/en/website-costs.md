@@ -5,6 +5,7 @@ pubDate: "2026-01-26"
 heroImage: "/blog/website-cost.webp"
 tags: ["Pricing", "Business", "Freelance"]
 lang: "en"
+alternateSlug: "costi-sito-web"
 ---
 
 It's the question every client asks, and rightly so: *"How much will it cost?"*.

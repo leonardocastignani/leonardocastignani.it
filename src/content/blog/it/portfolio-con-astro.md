@@ -5,6 +5,7 @@ pubDate: "2025-12-19"
 heroImage: "/blog/nuovo-portfolio-freelance.webp"
 tags: ["Astro", "Portfolio", "Performance"]
 lang: "it"
+alternateSlug: "portfolio-with-astro"
 ---
 
 ## Finalmente online! 🚀

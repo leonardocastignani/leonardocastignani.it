@@ -5,6 +5,7 @@ pubDate: "2026-03-09"
 heroImage: "/blog/maintenance-go-live.webp"
 tags: ["Business", "Maintenance", "Security"]
 lang: "en"
+alternateSlug: "manutenzione-sito-web"
 ---
 
 The "Go Live" moment – the official launch of a website – is always the exciting culmination of weeks of analysis, design, and development. We toast, post on social media, and often, clients breathe a sigh of relief thinking: *"Great, that's done. We don't have to think about it for the next 5 years"*.

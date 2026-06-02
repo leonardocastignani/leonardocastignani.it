@@ -5,6 +5,7 @@ pubDate: "2026-05-04"
 heroImage: "/blog/generative-ui-future.webp"
 tags: ["AI", "Business", "Innovation"]
 lang: "en"
+alternateSlug: "generative-ui-futuro"
 ---
 
 Until recently, Artificial Intelligence in the digital world was primarily seen as a "stochastic parrot" capable of writing blog texts or generating images. Today, the paradigm has shifted much higher: we are entering the era of **Generative UI** (Generative User Interface).

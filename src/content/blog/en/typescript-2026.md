@@ -5,6 +5,7 @@ pubDate: "2026-05-11"
 heroImage: "/blog/typescript-2026-guide.webp"
 tags: ["TypeScript", "Clean Code", "Software Development"]
 lang: "en"
+alternateSlug: "typescript-2026"
 ---
 
 If 2025 was the year of consolidation, 2026 has established an irrefutable truth in the software development world: starting a professional project today without **TypeScript** is a risk no company should take.

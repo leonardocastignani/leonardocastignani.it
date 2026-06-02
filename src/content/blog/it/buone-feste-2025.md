@@ -5,6 +5,7 @@ pubDate: "2025-12-23"
 heroImage: "/blog/auguri-natale-2025.webp" 
 tags: ["Auguri", "Freelance", "2026"]
 lang: "it"
+alternateSlug: "happy-holidays-2025"
 ---
 
 Mentre il 2025 volge al termine, mi prendo un momento per staccare le mani dalla tastiera, chiudere l'editor di codice e riflettere sull'anno appena trascorso.

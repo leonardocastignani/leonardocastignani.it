@@ -5,6 +5,7 @@ pubDate: "2026-03-23"
 heroImage: "/blog/accessibilita-web-a11y.webp"
 tags: ["A11y", "Accessibility", "SEO"]
 lang: "en"
+alternateSlug: "accessibilita-web-a11y"
 ---
 
 When we talk about **Web Accessibility** (often abbreviated as *A11y*, because there are 11 letters between the 'A' and the 'y' in the word accessibility), many clients imagine it as an expensive "extra" aimed at a tiny percentage of users.

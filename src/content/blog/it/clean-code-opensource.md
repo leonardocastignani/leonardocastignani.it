@@ -5,6 +5,7 @@ pubDate: "2026-03-16"
 heroImage: "/blog/clean-code-open-source.webp"
 tags: ["Open Source", "Clean Code", "Mindset"]
 lang: "it"
+alternateSlug: "clean-code-opensource"
 ---
 
 Spesso, quando parlo con clienti o persone al di fuori dell'ambito tech, mi viene fatta una domanda ricorrente: *"Perché passi il tuo tempo libero a scrivere codice gratis per l'Open Source?"*

@@ -5,6 +5,7 @@ pubDate: "2026-03-30"
 heroImage: "/blog/project-lifecycle.webp"
 tags: ["Workflow", "Software", "Project Management"]
 lang: "en"
+alternateSlug: "ciclo-di-vita-progetto"
 ---
 
 There is a widespread misconception: many clients think a developer's job consists of sitting in front of a computer, opening an editor, and typing code until the software magically appears online.

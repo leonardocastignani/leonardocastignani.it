@@ -5,6 +5,7 @@ pubDate: "2025-12-21"
 heroImage: "/blog/release-1.1.2-portfolio.webp"
 tags: ["Changelog", "Update", "Tech"]
 lang: "en"
+alternateSlug: "v1-1-2-release"
 ---
 
 Today I released version **1.1.2** of my portfolio. Here are the main new features:

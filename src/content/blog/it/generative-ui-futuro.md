@@ -5,6 +5,7 @@ pubDate: "2026-05-04"
 heroImage: "/blog/generative-ui-future.webp"
 tags: ["AI", "Business", "Innovazione"]
 lang: "it"
+alternateSlug: "generative-ui-future"
 ---
 
 Fino a poco tempo fa, l'Intelligenza Artificiale nel mondo digitale era vista principalmente come un "pappagallo stocastico" capace di scrivere testi per i blog o generare immagini. Oggi, il paradigma si è spostato molto più in alto: stiamo entrando nell'era della **Generative UI** (User Interface Generativa).

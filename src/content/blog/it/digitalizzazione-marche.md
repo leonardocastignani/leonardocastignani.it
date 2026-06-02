@@ -5,6 +5,7 @@ pubDate: "2026-02-09"
 heroImage: "/blog/marche-digital.webp"
 tags: ["Marche", "Strategia", "PMI"]
 lang: "it"
+alternateSlug: "digitalization-marche"
 ---
 
 Le Marche sono una regione straordinaria, un distretto diffuso fatto di artigianato d'eccellenza, calzature, design e turismo. Abbiamo prodotti che il mondo ci invidia. Tuttavia, molte Piccole e Medie Imprese (PMI) locali faticano ancora a comunicare questo valore online.

@@ -5,6 +5,7 @@ pubDate: "2026-01-23"
 heroImage: "/blog/release-1.2.0-portfolio.webp"
 tags: ["Changelog", "Update", "Tech"]
 lang: "it"
+alternateSlug: "v1-2-0-release"
 ---
 
 Sono felice di annunciare il rilascio della versione **1.2.0**. Questo aggiornamento si concentra sul perfezionamento dell'identità visiva e sul miglioramento delle capacità di analisi del sito, oltre a correggere alcuni difetti grafici segnalati.

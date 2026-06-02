@@ -5,6 +5,7 @@ pubDate: "2026-03-02"
 heroImage: "/blog/astro-i18n-case-study.webp"
 tags: ["Astro", "i18n", "Case Study"]
 lang: "en"
+alternateSlug: "astro-i18n"
 ---
 
 Anyone who has ever had to turn a single-language website into a multilingual one knows this: handling **i18n** (internationalization) is often a nightmare. Between heavy libraries to install, infinite React contexts, and SEO issues, it's easy to get lost.

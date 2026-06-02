@@ -5,6 +5,7 @@ pubDate: "2026-02-02"
 heroImage: "/blog/speed-sales.webp"
 tags: ["SEO", "Performance", "Core Web Vitals"]
 lang: "en"
+alternateSlug: "velocita-sitoweb-seo"
 ---
 
 We are in the age of digital impatience. According to established studies by Google and Amazon, every second of delay in page loading costs a significant loss in conversions. Specifically, if a mobile page takes more than **3 seconds** to load, 53% of users abandon the site before even seeing the logo.

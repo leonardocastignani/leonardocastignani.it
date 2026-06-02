@@ -5,6 +5,7 @@ pubDate: "2026-05-25"
 heroImage: "/blog/ux-writing-conversioni.webp"
 tags: ["UX", "Marketing", "Business"]
 lang: "en"
+alternateSlug: "ux-writing-conversioni"
 ---
 
 There is a widespread misconception when designing a new website or digital platform: people think success depends 90% on visual design and images, leaving the text as an afterthought to fill the gaps.

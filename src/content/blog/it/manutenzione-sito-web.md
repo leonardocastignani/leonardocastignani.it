@@ -5,6 +5,7 @@ pubDate: "2026-03-09"
 heroImage: "/blog/maintenance-go-live.webp"
 tags: ["Business", "Manutenzione", "Sicurezza"]
 lang: "it"
+alternateSlug: "website-maintenance"
 ---
 
 Il momento del "Go Live" – la messa online ufficiale del sito – è sempre il culmine emozionante di settimane di analisi, design e sviluppo. Si brinda, si pubblica il post sui social e, spesso, i clienti tirano un sospiro di sollievo pensando: *"Ottimo, questo è fatto. Non ci pensiamo più per i prossimi 5 anni"*.

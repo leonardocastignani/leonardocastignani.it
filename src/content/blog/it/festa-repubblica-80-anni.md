@@ -5,6 +5,7 @@ pubDate: "2026-06-01"
 heroImage: "/blog/festa-repubblica-2026.webp"
 tags: ["Festività", "Italia", "Riflessioni"]
 lang: "it"
+alternateSlug: "italian-republic-day-80-years"
 ---
 
 Domani, 2 Giugno 2026, l'Italia festeggia un traguardo storico: gli **80 anni della nostra Repubblica**. Era il 1946 quando il nostro Paese scelse un nuovo inizio, fondando le proprie basi su una Costituzione che, fin dal suo primo articolo, mette al centro il *lavoro*.

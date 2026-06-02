@@ -5,6 +5,7 @@ pubDate: "2026-04-13"
 heroImage: "/blog/testing-debugging.webp"
 tags: ["Testing", "Business", "Qualità"]
 lang: "it"
+alternateSlug: "testing-debugging"
 ---
 
 C'è una regola non scritta molto nota nell'ingegneria del software: risolvere un bug in fase di progettazione o sviluppo costa 1€. Risolverlo quando il software è già pubblico e utilizzato dai clienti può costarne 100€ (o molto di più, se calcoliamo le vendite perse e i danni d'immagine).

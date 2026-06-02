@@ -5,6 +5,7 @@ pubDate: "2026-01-19"
 heroImage: "/blog/custom-vs-wordpress.webp"
 tags: ["Web Dev", "Business", "Performance"]
 lang: "en"
+alternateSlug: "wordpress-vs-custom"
 ---
 
 In 2026, the question is no longer "do I need a website?", but "what *kind* of infrastructure does my business need?". Often, the automatic answer is **WordPress**. Don't get me wrong: WordPress powers nearly 40% of the web and is a fantastic tool for editorial blogs or news outlets.

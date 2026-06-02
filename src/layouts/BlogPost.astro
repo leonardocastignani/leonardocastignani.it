@@ -10,17 +10,28 @@ import { MAINTENANCE_MODE } from '../consts';
 type Props = CollectionEntry<'blog'>['data'];
 
 // --- INITIAL CONFIGURATION ---
-const { title, description, pubDate, heroImage, lang } = Astro.props;
+const { title, description, pubDate, heroImage, lang, alternateSlug } = Astro.props;
 const i18n = getI18N({ astroUrl: Astro.url });
 
 const backLink = lang === 'en' ? '/en/blog' : '/blog';
+
+let alternateIt = undefined;
+let alternateEn = undefined;
+
+if (alternateSlug) {
+    if (lang === 'it') {
+        alternateEn = new URL(`/en/blog/${alternateSlug}/`, Astro.site);
+    } else {
+        alternateIt = new URL(`/blog/${alternateSlug}/`, Astro.site);
+    }
+}
 ---
 
 {/* MAINTENANCE MODE CHECK */}
 {MAINTENANCE_MODE ? (
     <Maintenance lang={lang} />
 ) : (
-    <Layout title={title} description={description}>
+    <Layout title={title} description={description} alternateIt={alternateIt} alternateEn={alternateEn}>
         <main class="pt-24 pb-16 px-4 bg-gray-900 min-h-screen">
             <article class="container mx-auto max-w-3xl">
                 {/* HERO IMAGE (AGGIUNGI QUESTO BLOCCO) */}

@@ -5,6 +5,7 @@ pubDate: "2026-04-27"
 heroImage: "/blog/automazione-processi-pmi.webp"
 tags: ["Business", "Automation", "Productivity"]
 lang: "en"
+alternateSlug: "automazione-pmi"
 ---
 
 There is a false myth circulating among Small and Medium Enterprises (SMEs): the belief that process automation is a luxury reserved for large Silicon Valley multinationals or companies with huge internal IT departments.

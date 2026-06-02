@@ -5,6 +5,7 @@ pubDate: "2026-04-20"
 heroImage: "/blog/react-to-astro-migration.webp"
 tags: ["Astro", "React", "Performance"]
 lang: "it"
+alternateSlug: "react-vs-astro"
 ---
 
 Negli ultimi anni, React è diventato il re indiscusso dello sviluppo frontend. Ha cambiato per sempre il nostro modo di costruire interfacce utente. Tuttavia, come spesso accade nell'industria tech, abbiamo iniziato a usare un martello per qualsiasi problema, anche quando ci serviva un cacciavite.

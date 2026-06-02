@@ -14,11 +14,20 @@ const i18n = getI18N({ astroUrl: Astro.url });
 const { 
     title = i18n.pageTitle, 
     description = i18n.pageDescription,
-    isMaintenance = MAINTENANCE_MODE
+    isMaintenance = MAINTENANCE_MODE,
+    alternateIt,
+    alternateEn
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = new URL('/social-preview.png', Astro.site);
+
+const currentPath = Astro.url.pathname;
+const itPath = currentLang === 'en' ? (currentPath.replace(/^\/en/, '') || '/') : currentPath;
+const enPath = currentLang === 'it' ? (`/en${currentPath === '/' ? '/' : currentPath}`) : currentPath;
+
+const hreflangIt = alternateIt || new URL(itPath, Astro.site);
+const hreflangEn = alternateEn || new URL(enPath, Astro.site);
 ---
 
 <!doctype html>
@@ -31,6 +40,14 @@ const imageURL = new URL('/social-preview.png', Astro.site);
         <meta name="theme-color" content="#111827" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
+
+        <!-- TAG CANONICAL -->
+        <link rel="canonical" href={canonicalURL} />
+
+        <!-- TAG HREFLANG PER SEO INTERNAZIONALE -->
+        <link rel="alternate" hreflang="it" href={hreflangIt} />
+        <link rel="alternate" hreflang="en" href={hreflangEn} />
+        <link rel="alternate" hreflang="x-default" href={hreflangIt} />
 
         <!-- FAVICON IMPLEMENTATION -->
         <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />

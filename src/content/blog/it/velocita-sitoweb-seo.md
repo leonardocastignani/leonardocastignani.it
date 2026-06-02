@@ -5,6 +5,7 @@ pubDate: "2026-02-02"
 heroImage: "/blog/speed-sales.webp"
 tags: ["SEO", "Performance", "Core Web Vitals"]
 lang: "it"
+alternateSlug: "website-speed-sales"
 ---
 
 Siamo nell'era dell'impazienza digitale. Secondo studi consolidati di Google e Amazon, ogni secondo di ritardo nel caricamento di una pagina costa una perdita significativa in conversioni. Nello specifico, se una pagina mobile impiega più di **3 secondi** a caricarsi, il 53% degli utenti abbandona il sito prima ancora di vedere il logo.

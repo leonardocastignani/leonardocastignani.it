@@ -5,6 +5,7 @@ pubDate: "2026-02-23"
 heroImage: "/blog/seo-case-study.webp"
 tags: ["SEO", "Case Study", "Astro"]
 lang: "it"
+alternateSlug: "seo-case-study"
 ---
 
 Avere un sito veloce è il primo passo, ma renderlo "comprensibile" ai motori di ricerca è il secondo. Per il mio portfolio, non mi sono limitato a installare un plugin (che su Astro non esiste nel senso "WordPressiano" del termine), ma ho costruito una struttura SEO tecnica solida scrivendo codice.

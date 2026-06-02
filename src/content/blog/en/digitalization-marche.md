@@ -5,6 +5,7 @@ pubDate: "2026-02-09"
 heroImage: "/blog/marche-digital.webp"
 tags: ["Marche", "Strategy", "SME"]
 lang: "en"
+alternateSlug: "digitalizzazione-marche"
 ---
 
 The Marche region is extraordinary, a widespread district made of excellent craftsmanship, footwear, design, and tourism. We have products that the world envies. However, many local Small and Medium Enterprises (SMEs) still struggle to communicate this value online.

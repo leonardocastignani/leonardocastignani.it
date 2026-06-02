@@ -5,6 +5,7 @@ pubDate: "2026-06-01"
 heroImage: "/blog/festa-repubblica-2026.webp"
 tags: ["Holiday", "Italy", "Reflections"]
 lang: "en"
+alternateSlug: "festa-repubblica-80-anni"
 ---
 
 Tomorrow, June 2nd, 2026, Italy celebrates a historic milestone: the **80th anniversary of our Republic**. It was 1946 when our country chose a new beginning, building its foundation on a Constitution that, from its very first article, places *work* at its center.

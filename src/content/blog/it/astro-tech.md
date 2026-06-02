@@ -5,6 +5,7 @@ pubDate: "2026-02-16"
 heroImage: "/blog/astro-tech-deep-dive.webp"
 tags: ["Astro", "JavaScript", "Performance"]
 lang: "it"
+alternateSlug: "astro-tech"
 ---
 
 Quando ho deciso di ricostruire il mio portfolio, la tentazione di usare una Single Page Application (SPA) con Next.js o React puro era forte. Sono tecnologie che uso quotidianamente. Tuttavia, per un sito di contenuti e presentazione, l'approccio SPA porta con sé un peso inutile (overhead).

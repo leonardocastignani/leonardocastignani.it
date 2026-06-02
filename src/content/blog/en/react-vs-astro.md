@@ -5,6 +5,7 @@ pubDate: "2026-04-20"
 heroImage: "/blog/react-to-astro-migration.webp"
 tags: ["Astro", "React", "Performance"]
 lang: "en"
+alternateSlug: "react-vs-astro"
 ---
 
 In recent years, React has become the undisputed king of frontend development. It has forever changed the way we build user interfaces. However, as often happens in the tech industry, we started using a hammer for every problem, even when we needed a screwdriver.
