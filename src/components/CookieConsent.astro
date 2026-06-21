@@ -1,39 +1,199 @@
 ---
-// --- INITIAL CONFIGURATION ---
-const currentLang = Astro.url.pathname.startsWith('/en') ? 'en' : 'it';
+// --- IMPORTS ---
+import { getLangFromUrl, getI18N } from '../i18n/utils';
 
-// Cookie Consent Configuration Object
-const config = {
-    palette: {
-        popup: { background: "#1f2937" },
-        button: { background: "#2563eb" }
-    },
-    position: "bottom-right",
-    layout: "box",
-    type: 'opt-in',
-    content: currentLang === 'it' ? {
-        message: "Questo sito utilizza i cookie per garantire la migliore esperienza di navigazione.",
-        allow: "Accetta",
-        deny: "Rifiuta",
-        link: "Scopri di più",
-        href: "/privacy-policy"
-    } : {
-        message: "This website uses cookies to ensure you get the best experience.",
-        allow: "Accept",
-        deny: "Reject",
-        link: "Learn more",
-        href: "/en/privacy-policy"
-    }
-};
+// --- INITIAL CONFIGURATION ---
+const currentLang = getLangFromUrl(Astro.url);
+const i18n = getI18N({ astroUrl: Astro.url });
+const cm = i18n.cookieModal;
+const privacyHref = currentLang === 'it' ? '/privacy-policy' : '/en/privacy-policy';
 ---
 
-<!-- CLIENT-SIDE INITIALIZATION -->
-<script define:vars={{ config }}>
-    document.addEventListener('DOMContentLoaded', () => {
-        if (typeof cookieconsent !== 'undefined' && typeof cookieconsent.initialise === 'function') {
-            cookieconsent.initialise(config);
-        } else {
-            console.error("Funzione 'cookieconsent.initialise' non trovata!");
+<div
+    id="cookie-consent-modal"
+    class="cookie-modal-overlay hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cookie-modal-title"
+    aria-describedby="cookie-modal-desc"
+>
+    <div class="cookie-modal-panel w-full max-w-md bg-gray-800 border border-gray-700 rounded-2xl shadow-2xl p-6 sm:p-8">
+        <h2 id="cookie-modal-title" class="text-xl font-bold text-white mb-3">
+            {cm.title}
+        </h2>
+        <p id="cookie-modal-desc" class="text-sm text-gray-300 leading-relaxed mb-2">
+            {cm.description}
+        </p>
+        <a
+            href={privacyHref}
+            class="inline-block text-sm text-blue-400 hover:text-blue-300 underline underline-offset-2 mb-6"
+        >
+            {cm.learnMore}
+        </a>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+            <button
+                type="button"
+                data-action="accept-all"
+                class="order-1 sm:order-2 flex-1 bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2.5 px-5 rounded-lg transition-colors"
+            >
+                {cm.acceptAll}
+            </button>
+            <button
+                type="button"
+                data-action="accept-necessary"
+                class="order-2 sm:order-1 flex-1 bg-transparent border border-gray-600 hover:bg-gray-700 text-gray-200 font-semibold py-2.5 px-5 rounded-lg transition-colors"
+            >
+                {cm.acceptNecessary}
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // @ts-nocheck
+
+    // --- COOKIE HELPERS ---
+    function getCookie(name) {
+        const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+        return match ? decodeURIComponent(match[1]) : null;
+    }
+
+    function setCookie(name, value, days) {
+        const maxAge = days * 24 * 60 * 60;
+        document.cookie = `${name}=${value}; path=/; max-age=${maxAge}; SameSite=Lax`;
+    }
+
+    // --- GOOGLE CONSENT MODE UPDATE ---
+    function triggerGTMConsentUpdate() {
+        if (typeof window.gtag === 'function') {
+            window.gtag('consent', 'update', {
+                analytics_storage: 'granted',
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted'
+            });
         }
-    });
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'cookie_consent_granted' });
+    }
+
+    // --- SCROLL LOCK ---
+    function lockScroll() {
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
+        document.documentElement.style.scrollbarGutter = 'auto';
+        document.documentElement.classList.add('cookie-scroll-locked');
+        const header = document.querySelector('header');
+        if (header) header.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
+    function unlockScroll() {
+        document.documentElement.classList.remove('cookie-scroll-locked');
+        document.documentElement.style.paddingRight = '';
+        document.documentElement.style.scrollbarGutter = '';
+        const header = document.querySelector('header');
+        if (header) header.style.paddingRight = '';
+    }
+
+    // --- FOCUS TRAP ---
+    function trapFocus(modal) {
+        modal.addEventListener('keydown', (e) => {
+            if (e.key !== 'Tab') return;
+            const focusable = Array.from(
+                modal.querySelectorAll('button, a[href]')
+            ).filter((el) => el.offsetParent !== null);
+            if (focusable.length === 0) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        });
+    }
+
+    function showModal(modal) {
+        lockScroll();
+        modal.classList.remove('hidden');
+        requestAnimationFrame(() => modal.classList.add('cookie-modal-visible'));
+        const firstBtn = modal.querySelector('[data-action="accept-all"]');
+        if (firstBtn) firstBtn.focus();
+    }
+
+    function hideModal(modal) {
+        modal.classList.remove('cookie-modal-visible');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            unlockScroll();
+            document.dispatchEvent(new CustomEvent('cookieConsentChanged'));
+        }, 250);
+    }
+
+    function handleChoice(value, modal) {
+        setCookie('cookieconsent_status', value, 365);
+        if (value === 'allow') {
+            triggerGTMConsentUpdate();
+        }
+        hideModal(modal);
+    }
+
+    function initCookieConsent() {
+        const modal = document.getElementById('cookie-consent-modal');
+        if (!modal || modal.dataset.bound === 'true') return;
+
+        const isPrivacyPage =
+            window.location.pathname === '/privacy-policy' ||
+            window.location.pathname === '/en/privacy-policy';
+        if (isPrivacyPage) return;
+
+        const consent = getCookie('cookieconsent_status');
+        if (consent === 'allow' || consent === 'necessary') return;
+
+        modal.dataset.bound = 'true';
+        showModal(modal);
+        trapFocus(modal);
+
+        modal
+            .querySelector('[data-action="accept-all"]')
+            ?.addEventListener('click', () => handleChoice('allow', modal));
+        modal
+            .querySelector('[data-action="accept-necessary"]')
+            ?.addEventListener('click', () => handleChoice('necessary', modal));
+    }
+
+    window.openCookieModal = function() {
+        const modal = document.getElementById('cookie-consent-modal');
+        if (!modal) return;
+
+        modal.dataset.bound = 'false';
+
+        showModal(modal);
+        trapFocus(modal);
+
+        const btnAll = modal.querySelector('[data-action="accept-all"]');
+        const btnNec = modal.querySelector('[data-action="accept-necessary"]');
+
+        if (btnAll) {
+            const newBtnAll = btnAll.cloneNode(true);
+            btnAll.parentNode.replaceChild(newBtnAll, btnAll);
+            newBtnAll.addEventListener('click', () => handleChoice('allow', modal));
+        }
+        if (btnNec) {
+            const newBtnNec = btnNec.cloneNode(true);
+            btnNec.parentNode.replaceChild(newBtnNec, btnNec);
+            newBtnNec.addEventListener('click', () => handleChoice('necessary', modal));
+        }
+    };
+
+    document.addEventListener('astro:page-load', initCookieConsent);
+
+    if (document.readyState !== 'loading') {
+        initCookieConsent();
+    } else {
+        document.addEventListener('DOMContentLoaded', initCookieConsent);
+    }
 </script>

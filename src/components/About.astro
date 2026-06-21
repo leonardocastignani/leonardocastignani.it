@@ -16,14 +16,14 @@ const titleId = "about-title";
         <div class="md:col-span-1 flex justify-center">
             <Image
                 src={profileImg} 
-                alt="Foto di Leonardo Castignani" 
+                alt={i18n.about.imageAlt} 
                 class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-blue-500 shadow-lg"
                 loading="lazy"
                 quality={85}
             />
         </div>
 
-        {/* COLUMN 2: TEXT CONTENT */}
+        {/* TEXT CONTENT */}
         <div class="md:col-span-2 text-center md:text-left">
             <h2 id={titleId} class="text-3xl md:text-4xl font-bold mb-4">{i18n.about.title}</h2>
             {/* Paragraph 1 */}

@@ -1,13 +1,20 @@
 ---
 // --- IMPORTS ---
-import { getI18N } from '../i18n/utils';
+import { getI18N, getLangFromUrl } from '../i18n/utils';
 import { SOCIAL_LINKS } from '../consts';
 import { social } from '../data/social';
 import SocialLink from './SocialLink.astro';
 
 // --- INITIAL CONFIGURATION ---
 const i18n = getI18N({ astroUrl: Astro.url });
+const currentLang = getLangFromUrl(Astro.url);
+const privacyHref = currentLang === 'it' ? '/privacy-policy' : '/en/privacy-policy';
 const buildYear = new Date().getFullYear();
+
+// --- DYNAMIC LOCAL SEO TEXT ---
+const geoText = currentLang === 'it' 
+    ? "Sviluppatore Web e Software operativo nelle Marche e disponibile da remoto." 
+    : "Web and Software Developer based in Marche, Italy. Available for remote work.";
 ---
 
 <!-- FOOTER SECTION -->
@@ -25,9 +32,24 @@ const buildYear = new Date().getFullYear();
             ))}
         </div>
 
+        {/* GEOGRAPHIC SEO TEXT */}
+        <p class="mb-4 text-sm font-medium text-gray-500">
+            {geoText}
+        </p>
+
         {/* COPYRIGHT NOTICE */}
         <p id="copyright-text">
             {i18n.footer.copyright.replace('{year}', buildYear.toString())}
+        </p>
+
+        {/* LEGAL LINKS */}
+        <p class="mt-2 text-sm">
+            <a
+                href={privacyHref}
+                class="text-gray-400 hover:text-white underline underline-offset-2 transition-colors"
+            >
+                {i18n.footer.privacyLink}
+            </a>
         </p>
     </div>
 </footer>

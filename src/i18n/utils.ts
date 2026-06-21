@@ -9,7 +9,7 @@ const LANGUAGES = {
 };
 
 // --- FUNCTIONS ---
-function getLangFromUrl(url: URL | undefined): 'it' | 'en' {
+export function getLangFromUrl(url: URL | undefined): 'it' | 'en' {
   if (!url || !url.pathname) { return 'it'; }
 
   if (url.pathname.startsWith('/en')) { return 'en'; }

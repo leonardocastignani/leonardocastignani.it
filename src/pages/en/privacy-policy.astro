@@ -5,37 +5,106 @@ import { getI18N } from '../../i18n/utils';
 
 // --- INITIAL CONFIGURATION ---
 const i18n = getI18N({ astroUrl: Astro.url });
-const homeLink = i18n.privacy.homeLink;
+const p = i18n.privacy;
+const homeLink = p.homeLink;
 ---
 
 <!-- PRIVACY POLICY PAGE LAYOUT -->
-<Layout title={i18n.privacy.title} description={i18n.privacy.title}>
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<Layout title={p.title} description={p.title}>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
         <!-- PAGE HEADER -->
-        <h1 class="text-4xl font-bold text-white mb-4">{i18n.privacy.title}</h1>
-        <p class="text-gray-400 mb-8">{i18n.privacy.lastUpdated}</p>
+        <h1 class="text-4xl font-bold text-white mb-4">{p.title}</h1>
+        <p class="text-gray-400 mb-8">{p.lastUpdated}</p>
 
         <!-- POLICY CONTENT -->
         <div class="prose prose-invert max-w-none text-gray-300">
-            <p>{i18n.privacy.introduction}</p>
-            
-            <h2>{i18n.privacy.dataTitle}</h2>
-            <p>{i18n.privacy.dataText}</p>
-            
-            <h2>{i18n.privacy.cookieTitle}</h2>
-            <p>{i18n.privacy.cookieText1}</p>
+            <p>{p.introduction}</p>
+
+            <h2>{p.dataControllerTitle}</h2>
+            <p>{p.dataControllerText}</p>
+
+            <h2>{p.dataTitle}</h2>
+            <p>{p.dataText}</p>
+
+            <h2>{p.cookieTitle}</h2>
+            <p>{p.cookieText1}</p>
+
+            <h3>{p.cookieTypesTitle}</h3>
+            <p>{p.cookieTypesIntro}</p>
             <ul>
-                <li><strong>{i18n.privacy.cookieConsent.title}:</strong> {i18n.privacy.cookieConsent.text}</li>
+                <li><strong>{p.technicalCookiesTitle}:</strong> {p.technicalCookiesText}</li>
+                <li><strong>{p.analyticsCookiesTitle}:</strong> {p.analyticsCookiesText}</li>
             </ul>
-            <p>{i18n.privacy.cookieText2}</p>
 
-            <h2>{i18n.privacy.contactTitle}</h2>
-            <p>{i18n.privacy.contactText}</p>
+            <ul>
+                <li><strong>{p.cookieConsent.title}:</strong> {p.cookieConsent.text}</li>
+            </ul>
+            <p>{p.cookieText2}</p>
 
-            <!-- Back to Home Button -->
-            <a href={homeLink} class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">
-                {i18n.error404.button}
-            </a>
+            <h2>{p.legalBasisTitle}</h2>
+            <p>{p.legalBasisText}</p>
+
+            <h2>{p.retentionTitle}</h2>
+            <p>{p.retentionText}</p>
+
+            <h2>{p.manageConsentTitle}</h2>
+            <p>{p.manageConsentText}</p>
+
+            <h2>{p.rightsTitle}</h2>
+            <p>{p.rightsText}</p>
+
+            <h2>{p.contactTitle}</h2>
+            <p>{p.contactText}</p>
+
+            <!-- ACTION BUTTONS -->
+            <div class="flex flex-wrap gap-4 mt-10 not-prose">
+                <a
+                    href={homeLink}
+                    class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                >
+                    {i18n.error404.button}
+                </a>
+
+                <button
+                    id="privacy-back-btn"
+                    type="button"
+                    class="hidden bg-transparent border border-gray-600 hover:bg-gray-700 text-gray-200 font-bold py-3 px-6 rounded-lg transition-colors"
+                >
+                    {p.backButton}
+                </button>
+            </div>
         </div>
     </div>
+
+    <script>
+        // Mostra "Ritorna da dove hai lasciato" solo se esiste una pagina di
+        // provenienza valida (stesso dominio) nella cronologia del browser.
+        function initBackButton() {
+            const btn = document.getElementById('privacy-back-btn');
+            if (!btn || btn.dataset.bound === 'true') return;
+
+            let hasValidReferrer = false;
+            try {
+                hasValidReferrer =
+                    !!document.referrer &&
+                    new URL(document.referrer).origin === window.location.origin;
+            } catch (e) {
+                hasValidReferrer = false;
+            }
+
+            if (window.history.length > 1 && hasValidReferrer) {
+                btn.classList.remove('hidden');
+                btn.dataset.bound = 'true';
+                btn.addEventListener('click', () => window.history.back());
+            }
+        }
+
+        document.addEventListener('astro:page-load', initBackButton);
+
+        if (document.readyState !== 'loading') {
+            initBackButton();
+        } else {
+            document.addEventListener('DOMContentLoaded', initBackButton);
+        }
+    </script>
 </Layout>

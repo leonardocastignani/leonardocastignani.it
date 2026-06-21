@@ -1,6 +1,6 @@
 {
   "pageTitle": "Leonardo Castignani | Portfolio",
-  "pageDescription": "Realizzazione siti web professionali, applicazioni su misura e consulenza software. Portfolio di Leonardo Castignani, sviluppatore freelance nelle Marche.",
+  "pageDescription": "Sviluppatore Web e Software nelle Marche. Realizzo siti web veloci, ottimizzati per la SEO e app su misura. Richiedi subito una consulenza gratuita!",
   "backToTopLabel": "Torna in cima alla pagina",
   "nav": {
     "homeLink": "/",
@@ -32,6 +32,7 @@
   },
   "about": {
     "title": "Chi Sono",
+    "imageAlt": "Foto profilo di Leonardo Castignani",
     "p1": "Sono un Programmatore e Sviluppatore Web Freelance con base nelle Marche, attualmente laureando in Informatica presso l'Università di Camerino. Mi occupo di creazione siti web moderni e sviluppo software, unendo competenze tecniche avanzate a una forte attenzione per l'usabilità e la SEO.",
     "p2": "Affronto ogni progetto con un approccio analitico: dal semplice sito vetrina alle applicazioni web complesse. Credo nella qualità del codice e collaboro attivamente nella community open-source per restare sempre aggiornato sulle ultime tecnologie."
   },
@@ -145,7 +146,8 @@
   },
   "footer": {
     "copyright": "© {year} Leonardo Castignani | Portfolio. Tutti i diritti riservati.",
-    "socialAriaLabel": "Visita il mio profilo"
+    "socialAriaLabel": "Visita il mio profilo",
+    "privacyLink": "Privacy Policy"
   },
   "error404": {
     "title": "Pagina non trovata",
@@ -160,24 +162,48 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "lastUpdated": "Ultimo aggiornamento: 19 dicembre 2025",
+    "lastUpdated": "Ultimo aggiornamento: 22 giugno 2026",
     "introduction": "Questa Privacy Policy descrive come le tue informazioni personali vengono raccolte, utilizzate e condivise quando visiti questo sito.",
+    "dataControllerTitle": "Titolare del Trattamento",
+    "dataControllerText": "Il Titolare del trattamento dei dati raccolti tramite questo sito è Leonardo Castignani, contattabile all'indirizzo email info@leonardocastignani.it.",
     "dataTitle": "Dati Personali Raccolti",
     "dataText": "Quando compili il modulo di contatto, raccogliamo le informazioni che fornisci, come nome, email e messaggio, al solo scopo di risponderti. Non condividiamo queste informazioni con terze parti.",
     "cookieTitle": "Utilizzo dei Cookie",
     "cookieText1": "Questo sito utilizza cookie per migliorare la tua esperienza. Di seguito sono elencati i cookie utilizzati:",
+    "cookieTypesTitle": "Tipologie di Cookie Utilizzate",
+    "cookieTypesIntro": "I cookie utilizzati su questo sito si dividono in due categorie:",
+    "technicalCookiesTitle": "Cookie Tecnici (sempre attivi)",
+    "technicalCookiesText": "Sono indispensabili per il corretto funzionamento del sito (es. memorizzare la tua scelta sul consenso). Non richiedono il tuo consenso preventivo, in quanto necessari all'erogazione del servizio.",
+    "analyticsCookiesTitle": "Cookie di Analisi e Terze Parti",
+    "analyticsCookiesText": "Tramite Google Tag Manager possono essere attivati cookie di analisi (es. Google Analytics) per comprendere come i visitatori utilizzano il sito, in forma aggregata e anonimizzata. Questi cookie vengono attivati SOLO se scegli \"Accetta tutti\" nel banner cookie, in conformità al Google Consent Mode: di default ogni tracciamento è impostato su \"negato\" finché non fornisci il tuo consenso esplicito.",
     "cookieConsent": {
-      "title": "Cookie di Consenso (cookieconsent_status)",
-      "text": "Questo cookie viene utilizzato per memorizzare la tua scelta riguardo al consenso dei cookie, in modo da non mostrarti nuovamente il banner a ogni visita. È un cookie puramente funzionale."
+      "title": "Cookie Tecnico di Consenso (cookieconsent_status)",
+      "text": "Questo cookie viene utilizzato per memorizzare la tua scelta riguardo al consenso dei cookie (\"tutti\" o \"solo necessari\"), in modo da non mostrarti nuovamente il banner a ogni visita. Ha una durata di 12 mesi."
     },
-    "cookieText2": "Non vengono utilizzati cookie di profilazione o di terze parti per scopi di marketing.",
+    "cookieText2": "Nessun cookie di profilazione viene installato senza il tuo consenso esplicito.",
+    "legalBasisTitle": "Base Giuridica del Trattamento",
+    "legalBasisText": "Il trattamento dei cookie tecnici si basa sul legittimo interesse del Titolare al corretto funzionamento del sito. Il trattamento dei cookie di analisi si basa sul tuo consenso esplicito, che puoi revocare in qualsiasi momento.",
+    "retentionTitle": "Periodo di Conservazione",
+    "retentionText": "I dati raccolti tramite il modulo di contatto vengono conservati per il tempo necessario a rispondere alla tua richiesta. Il cookie tecnico che memorizza la tua scelta di consenso ha una durata di 12 mesi, trascorsi i quali ti verrà nuovamente richiesto il consenso. I cookie di analisi installati da Google, se acconsenti, seguono le durate stabilite da Google stessa (fino a un massimo di 24 mesi): per i dettagli aggiornati consulta la Cookie Policy di Google.",
+    "manageConsentTitle": "Come Modificare le tue Preferenze",
+    "manageConsentText": "Puoi modificare la tua scelta in qualsiasi momento cancellando i cookie di questo sito dalle impostazioni del tuo browser: al successivo accesso, il banner per la scelta del consenso ti verrà nuovamente proposto.",
+    "rightsTitle": "I tuoi Diritti",
+    "rightsText": "In qualità di interessato, hai il diritto di accedere ai tuoi dati personali, richiederne la rettifica o la cancellazione, opporti al trattamento, richiederne la limitazione o la portabilità, e di proporre reclamo all'Autorità Garante per la Protezione dei Dati Personali.",
     "contactTitle": "Contatti",
-    "contactText": "Per qualsiasi domanda riguardo a questa Privacy Policy, puoi contattarmi tramite il modulo presente su questo sito.",
+    "contactText": "Per qualsiasi domanda riguardo a questa Privacy Policy, puoi contattarmi tramite il modulo presente su questo sito o via email.",
+    "backButton": "Ritorna da dove hai lasciato",
     "homeLink": "/"
   },
   "whatsapp": {
     "tooltip": "Scrivimi su WhatsApp",
     "ariaLabel": "Contattami su WhatsApp",
     "message": "Ciao%20Leonardo%2C%20ho%20trovato%20il%20tuo%20portfolio%20e%20vorrei%20mettermi%20in%20contatto%20con%20te%21"
+  },
+  "cookieModal": {
+    "title": "La tua privacy conta",
+    "description": "Utilizziamo i cookie per offrirti la migliore esperienza sul sito e per analizzare il traffico in forma aggregata. Puoi accettare tutti i cookie oppure proseguire con i soli cookie tecnici, necessari al funzionamento del sito.",
+    "acceptAll": "Accetta tutti",
+    "acceptNecessary": "Solo necessari",
+    "learnMore": "Scopri di più"
   }
 }

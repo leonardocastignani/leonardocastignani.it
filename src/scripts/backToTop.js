@@ -1,3 +1,4 @@
+// --- BACK TO TOP SCRIPT ---
 export function initBackToTop() {
     const backToTopBtn = document.getElementById('back-to-top-btn');
 

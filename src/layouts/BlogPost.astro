@@ -31,10 +31,10 @@ if (alternateSlug) {
 {MAINTENANCE_MODE ? (
     <Maintenance lang={lang} />
 ) : (
-    <Layout title={title} description={description} alternateIt={alternateIt} alternateEn={alternateEn}>
+    <Layout title={title} description={description} image={heroImage} alternateIt={alternateIt} alternateEn={alternateEn}>
         <main class="pt-24 pb-16 px-4 bg-gray-900 min-h-screen">
             <article class="container mx-auto max-w-3xl">
-                {/* HERO IMAGE (AGGIUNGI QUESTO BLOCCO) */}
+                {/* HERO IMAGE */}
                 {heroImage && (
                     <div class="mb-8 rounded-xl overflow-hidden shadow-2xl">
                         <img 

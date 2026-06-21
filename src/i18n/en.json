@@ -1,6 +1,6 @@
 {
   "pageTitle": "Leonardo Castignani | Portfolio",
-  "pageDescription": "Professional website development, custom applications, and software consulting. Portfolio by Leonardo Castignani, freelance developer in the Marche region.",
+  "pageDescription": "Freelance Web & Software Developer based in Marche, Italy. I build fast, SEO-optimized websites and custom apps. Contact me for a free quote today!",
   "backToTopLabel": "Back to top",
   "nav": {
     "homeLink": "/en",
@@ -32,6 +32,7 @@
   },
   "about": {
     "title": "About Me",
+    "imageAlt": "Profile photo of Leonardo Castignani",
     "p1": "I'm a freelance programmer and web developer based in the Marche region, currently completing a degree in Computer Science at the University of Camerino. I specialize in modern website creation and software development, combining advanced technical skills with a strong focus on usability and SEO.",
     "p2": "I approach every project with an analytical approach: from a simple showcase site to complex web applications. I believe in code quality and actively participate in the open-source community to stay up-to-date on the latest technologies."
   },
@@ -145,7 +146,8 @@
   },
   "footer": {
     "copyright": "© {year} Leonardo Castignani | Portfolio. All rights reserved.",
-    "socialAriaLabel": "Visit my profile on"
+    "socialAriaLabel": "Visit my profile on",
+    "privacyLink": "Privacy Policy"
   },
   "error404": {
     "title": "Page Not Found",
@@ -160,24 +162,48 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "lastUpdated": "Last updated: December 19, 2025",
+    "lastUpdated": "Last updated: June 22, 2026",
     "introduction": "This Privacy Policy describes how your personal information is collected, used, and shared when you visit this site.",
+    "dataControllerTitle": "Data Controller",
+    "dataControllerText": "The Data Controller for the data collected through this site is Leonardo Castignani, reachable at info@leonardocastignani.it.",
     "dataTitle": "Personal Data Collected",
-    "dataText": "When you fill out the contact form, we collect the information you provide, such as your name, email, and message, for the sole purpose of responding to you. We do not share this information with third parties.",
+    "dataText": "When you fill out the contact form, we collect the information you provide, such as name, email, and message, solely to reply to you. We do not share this information with third parties.",
     "cookieTitle": "Use of Cookies",
-    "cookieText1": "This site uses cookies to enhance your experience. The cookies used are listed below:",
+    "cookieText1": "This site uses cookies to improve your experience. The cookies used are listed below:",
+    "cookieTypesTitle": "Types of Cookies Used",
+    "cookieTypesIntro": "Cookies on this site fall into two categories:",
+    "technicalCookiesTitle": "Technical Cookies (always active)",
+    "technicalCookiesText": "Essential for the site to work correctly (e.g. storing your consent choice). They do not require prior consent, as they are necessary to provide the service.",
+    "analyticsCookiesTitle": "Analytics and Third-Party Cookies",
+    "analyticsCookiesText": "Through Google Tag Manager, analytics cookies (e.g. Google Analytics) may be activated to understand how visitors use the site, in aggregated and anonymized form. These cookies are activated ONLY if you choose \"Accept all\" in the cookie banner, in line with Google Consent Mode: by default all tracking is set to \"denied\" until you give explicit consent.",
     "cookieConsent": {
-      "title": "Consent Cookie (cookieconsent_status)",
-      "text": "This cookie is used to store your choice regarding cookie consent, so you are not shown the banner again on each visit. It is a purely functional cookie."
+      "title": "Technical Consent Cookie (cookieconsent_status)",
+      "text": "This cookie stores your choice regarding cookie consent (\"all\" or \"required only\"), so the banner is not shown again on every visit. It lasts 12 months."
     },
-    "cookieText2": "No profiling or third-party cookies are used for marketing purposes.",
+    "cookieText2": "No profiling cookie is installed without your explicit consent.",
+    "legalBasisTitle": "Legal Basis for Processing",
+    "legalBasisText": "Processing of technical cookies is based on the Controller's legitimate interest in the proper functioning of the site. Processing of analytics cookies is based on your explicit consent, which you can withdraw at any time.",
+    "retentionTitle": "Retention Period",
+    "retentionText": "Data collected through the contact form is kept for as long as needed to respond to your request. The technical cookie that stores your consent choice lasts 12 months, after which your consent will be requested again. Analytics cookies set by Google, if you consent, follow the retention periods set by Google itself (up to 24 months): see Google's Cookie Policy for up-to-date details.",
+    "manageConsentTitle": "How to Change Your Preferences",
+    "manageConsentText": "You can change your choice at any time by deleting this site's cookies from your browser settings: on your next visit, the consent banner will be shown again.",
+    "rightsTitle": "Your Rights",
+    "rightsText": "As a data subject, you have the right to access your personal data, request rectification or erasure, object to processing, request restriction or portability, and lodge a complaint with the competent Data Protection Authority.",
     "contactTitle": "Contact",
-    "contactText": "For any questions regarding this Privacy Policy, you can contact me through the form on this site.",
+    "contactText": "For any questions about this Privacy Policy, you can contact me through the form on this site or by email.",
+    "backButton": "Back to where you left off",
     "homeLink": "/en"
   },
   "whatsapp": {
     "tooltip": "Message me on WhatsApp",
     "ariaLabel": "Contact me on WhatsApp",
     "message": "Hello%20Leonardo%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch%20with%20you%21"
+  },
+  "cookieModal": {
+    "title": "Your privacy matters",
+    "description": "We use cookies to give you the best experience on the site and to analyze traffic in aggregate form. You can accept all cookies or continue with only the technical cookies required for the site to function.",
+    "acceptAll": "Accept all",
+    "acceptNecessary": "Only necessary",
+    "learnMore": "Learn more"
   }
 }

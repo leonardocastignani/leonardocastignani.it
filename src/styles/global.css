@@ -12,6 +12,21 @@ html, body {
     padding: 0;
 }
 
+/* --- CUSTOM SCROLLBAR --- */
+html {
+    scrollbar-width: auto;
+    scrollbar-color: #374151 #111827;
+}
+html::-webkit-scrollbar { width: 12px; }
+html::-webkit-scrollbar-track { background: #111827; }
+html::-webkit-scrollbar-thumb { background: #374151; border-radius: 6px; border: 2px solid #111827; }
+html::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+
+/* --- COOKIE SCROLL LOCK --- */
+html.cookie-scroll-locked {
+    overflow: hidden;
+}
+
 /* --- CUSTOM COMPONENTS LAYER --- */
 @layer components {
     .fade-in-section {
@@ -20,6 +35,22 @@ html, body {
 
     .fade-in-section.is-visible {
         @apply opacity-100 translate-y-0;
+    }
+
+    .cookie-modal-overlay {
+        @apply opacity-0 transition-opacity duration-300 ease-out;
+    }
+
+    .cookie-modal-overlay.cookie-modal-visible {
+        @apply opacity-100;
+    }
+
+    .cookie-modal-panel {
+        @apply opacity-0 scale-95 transition-all duration-300 ease-out;
+    }
+
+    .cookie-modal-overlay.cookie-modal-visible .cookie-modal-panel {
+        @apply opacity-100 scale-100;
     }
 }
 

@@ -4,6 +4,7 @@ export const SITE_DATA = {
   email: 'info@leonardocastignani.it',
   jobTitle: 'Software Developer',
   siteUrl: 'https://www.leonardocastignani.it',
+  whatsappNumber: '393337020242',
 };
 
 // --- SOCIAL MEDIA LINKS ---
@@ -16,5 +17,5 @@ export const SOCIAL_LINKS = {
 };
 
 // --- MAINTENANCE MODE CONFIGURATION ---
-const IS_MAINTENANCE_ACTIVE = false
+const IS_MAINTENANCE_ACTIVE = false;
 export const MAINTENANCE_MODE = IS_MAINTENANCE_ACTIVE && import.meta.env.PROD;
