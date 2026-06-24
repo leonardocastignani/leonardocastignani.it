@@ -7,5 +7,61 @@ http://leonardocastignani.it/* https://www.leonardocastignani.it/:splat 301!
 # Reindirizza www (HTTP) -> www (HTTPS)
 http://www.leonardocastignani.it/* https://www.leonardocastignani.it/:splat 301!
 
+# -- Redirect Articoli in Italiano --
+/blog/accessibilita-web-a11y/ /blog/sviluppo-siti-web-accessibili-a11y/ 301!
+/blog/astro-i18n/ /blog/creare-siti-web-multilingua-i18n-astro-js/ 301!
+/blog/astro-tech/ /blog/performance-siti-web-astro-js-islands/ 301!
+/blog/automazione-pmi/ /blog/automazione-processi-aziendali-pmi-italia/ 301!
+/blog/buone-feste-2025/ /blog/auguri-feste-2026-sviluppatore-web-freelance-marche/ 301!
+/blog/ciclo-di-vita-progetto/ /blog/fasi-sviluppo-software-progetti-web-aziendali/ 301!
+/blog/clean-code-opensource/ /blog/vantaggi-clean-code-sviluppo-software-open-source/ 301!
+/blog/cookie-banner-guida/ /blog/guida-cookie-banner-gdpr-siti-web/ 301!
+/blog/core-web-vitals-2026/ /blog/ottimizzazione-seo-tecnica-core-web-vitals-2026/ 301!
+/blog/costi-sito-web/ /blog/costo-sito-web-professionale-preventivi/ 301!
+/blog/digitalizzazione-marche/ /blog/digitalizzazione-pmi-marche-sviluppo-web/ 301!
+/blog/festa-repubblica-80-anni/ /blog/80-anni-repubblica-italiana-innovazione-digitale/ 301!
+/blog/generative-ui-futuro/ /blog/intelligenza-artificiale-generative-ui-web-design/ 301!
+/blog/manutenzione-sito-web/ /blog/manutenzione-sicurezza-siti-web-aziendali/ 301!
+/blog/portfolio-con-astro/ /blog/leonardo-castignani-portfolio-sviluppatore-web-freelance-marche/ 301!
+/blog/react-vs-astro/ /blog/migrazione-sito-web-react-astro-performance/ 301!
+/blog/seo-caso-studio/ /blog/caso-studio-consulente-seo-tecnica-dati-strutturati/ 301!
+/blog/seo-locale-2026/ /blog/ottimizzazione-seo-locale-2026-civitanova-marche/ 301!
+/blog/sito-miglior-commerciale/ /blog/realizzazione-siti-web-conversione-vendite/ 301!
+/blog/testing-debugging/ /blog/testing-debugging-sviluppo-software-sicuro/ 301!
+/blog/typescript-2026/ /blog/sviluppo-web-typescript-codice-scalabile-2026/ 301!
+/blog/ux-writing-conversioni/ /blog/ux-writing-ottimizzazione-tasso-conversione/ 301!
+/blog/velocita-sitoweb-seo/ /blog/velocita-sito-web-impatto-vendite-seo/ 301!
+/blog/wordpress-vs-custom/ /blog/sito-web-custom-vs-wordpress-prestazioni/ 301!
+/blog/v1-1-2-release/ /blog/changelog-v1-1-2-aggiornamento-seo-sito-web/ 301!
+/blog/v1-2-0-release/ /blog/changelog-v1-2-0-integrazione-google-tag-manager/ 301!
+
+# -- Redirect Articoli in Inglese --
+/en/blog/web-accessibility-a11y/ /en/blog/accessible-web-development-a11y-standards/ 301!
+/en/blog/astro-i18n/ /en/blog/multilingual-website-development-i18n-astro-js/ 301!
+/en/blog/astro-tech/ /en/blog/astro-js-islands-architecture-performance/ 301!
+/en/blog/business-automation-smes/ /en/blog/custom-business-process-automation-software/ 301!
+/en/blog/happy-holidays-2025/ /en/blog/freelance-web-developer-italy-holidays-2026-goals/ 301!
+/en/blog/project-lifecycle/ /en/blog/custom-software-development-lifecycle/ 301!
+/en/blog/clean-code-opensource/ /en/blog/clean-code-benefits-enterprise-software-open-source/ 301!
+/en/blog/cookie-banner-guide/ /en/blog/gdpr-cookie-banner-compliance-guide/ 301!
+/en/blog/core-web-vitals-2026/ /en/blog/technical-seo-core-web-vitals-optimization-2026/ 301!
+/en/blog/website-costs/ /en/blog/professional-custom-website-development-costs/ 301!
+/en/blog/digitalization-marche/ /en/blog/digital-transformation-italian-smes-marche/ 301!
+/en/blog/italian-republic-day-80-years/ /en/blog/italian-digital-innovation-tech-industry/ 301!
+/en/blog/generative-ui-future/ /en/blog/ai-generative-ui-future-web-design/ 301!
+/en/blog/website-maintenance/ /en/blog/enterprise-website-security-maintenance/ 301!
+/en/blog/portfolio-with-astro/ /en/blog/leonardo-castignani-freelance-high-performance-portfolio-astro-js/ 301!
+/en/blog/react-vs-astro/ /en/blog/migrating-react-spa-to-astro-performance/ 301!
+/en/blog/seo-case-study/ /en/blog/technical-seo-json-ld-structured-data-case-study/ 301!
+/en/blog/local-seo-2026/ /en/blog/local-seo-strategies-google-business-profile-2026/ 301!
+/en/blog/website-best-salesperson/ /en/blog/high-converting-website-design-cro/ 301!
+/en/blog/testing-debugging/ /en/blog/software-testing-debugging-business-stability/ 301!
+/en/blog/typescript-2026/ /en/blog/typescript-scalable-software-development-2026/ 301!
+/en/blog/ux-writing-conversions/ /en/blog/ux-writing-microcopy-conversion-rate-optimization/ 301!
+/en/blog/website-speed-sales/ /en/blog/website-loading-speed-impact-ecommerce-sales/ 301!
+/en/blog/wordpress-vs-custom/ /en/blog/custom-coded-website-vs-wordpress-cms/ 301!
+/en/blog/v1-1-2-release/ /en/blog/website-technical-seo-update-changelog-v1-1-2/ 301!
+/en/blog/v1-2-0-release/ /en/blog/google-tag-manager-integration-update-v1-2-0/ 301!
+
 # Gestione pagina 404 (Questa regola deve stare sempre per ultima)
 /* /404.html 404

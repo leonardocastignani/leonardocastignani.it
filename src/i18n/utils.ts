@@ -24,3 +24,14 @@ export const getI18N = ({ astroUrl }: { astroUrl: URL | undefined }) => {
   }
   return LANGUAGES.it;
 };
+
+export function slugifyTag(tag: string): string {
+  return tag
+    .toLowerCase()
+    .trim()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/[\s_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}

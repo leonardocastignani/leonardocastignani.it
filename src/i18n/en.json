@@ -20,6 +20,10 @@
       "aria": "Switch to Italian language"
     }
   },
+  "images": {
+    "profileAlt": "Portrait of Leonardo Castignani, Software and Web Developer in Civitanova Marche, Italy.",
+    "socialAlt": "High-performance web design and custom software development services in Italy."
+  },
   "hero": {
     "title": "Leonardo Castignani",
     "subtitle": "Freelance Web & Software Developer. I create fast websites, custom applications, and modern digital experiences for businesses and individuals.",
@@ -32,7 +36,6 @@
   },
   "about": {
     "title": "About Me",
-    "imageAlt": "Profile photo of Leonardo Castignani",
     "p1": "I'm a freelance programmer and web developer based in the Marche region, currently completing a degree in Computer Science at the University of Camerino. I specialize in modern website creation and software development, combining advanced technical skills with a strong focus on usability and SEO.",
     "p2": "I approach every project with an analytical approach: from a simple showcase site to complex web applications. I believe in code quality and actively participate in the open-source community to stay up-to-date on the latest technologies."
   },

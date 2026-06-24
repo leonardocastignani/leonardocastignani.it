@@ -20,6 +20,10 @@
       "aria": "Passa alla lingua inglese"
     }
   },
+  "images": {
+    "profileAlt": "Ritratto di Leonardo Castignani, Sviluppatore Web e Software a Civitanova Marche.",
+    "socialAlt": "Servizi di sviluppo siti web e software ad alte prestazioni nelle Marche."
+  },
   "hero": {
     "title": "Leonardo Castignani",
     "subtitle": "Sviluppatore Web & Software Freelance. Realizzo siti web veloci, applicazioni su misura ed esperienze digitali moderne per aziende e privati.",
@@ -32,7 +36,6 @@
   },
   "about": {
     "title": "Chi Sono",
-    "imageAlt": "Foto profilo di Leonardo Castignani",
     "p1": "Sono un Programmatore e Sviluppatore Web Freelance con base nelle Marche, attualmente laureando in Informatica presso l'Università di Camerino. Mi occupo di creazione siti web moderni e sviluppo software, unendo competenze tecniche avanzate a una forte attenzione per l'usabilità e la SEO.",
     "p2": "Affronto ogni progetto con un approccio analitico: dal semplice sito vetrina alle applicazioni web complesse. Credo nella qualità del codice e collaboro attivamente nella community open-source per restare sempre aggiornato sulle ultime tecnologie."
   },

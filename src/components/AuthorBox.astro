@@ -1,0 +1,120 @@
+---
+// --- IMPORTS ---
+import { Image } from 'astro:assets';
+import { SITE_DATA, SOCIAL_LINKS } from '../consts';
+import profileImg from '../assets/profilo.jpg';
+import LinkedinIcon from './icons/LinkedinIcon.astro';
+import GithubIcon from './icons/GithubIcon.astro';
+
+// --- PROPS ---
+interface Props {
+    lang?: 'it' | 'en';
+}
+
+const { lang = 'it' } = Astro.props;
+
+// --- LOGICA E TESTI (EEAT & GEO) ---
+const isIt = lang === 'it';
+
+// GEO
+const geoLocation = "Civitanova Marche, IT";
+const roleAndGeo = `${SITE_DATA.jobTitle} | ${geoLocation}`;
+
+// EEAT
+const bio = isIt
+    ? "Sviluppatore Web e Software specializzato in Web Performance, Architetture a Isole (Astro) e SEO Tecnica. Aiuto le aziende a scalare attraverso prodotti digitali veloci, accessibili e orientati alla conversione."
+    : "Web & Software Developer specializing in Web Performance, Islands Architecture (Astro), and Technical SEO. I help businesses scale through fast, accessible, and conversion-driven digital products.";
+
+const titleText = isIt ? "Scritto da" : "Written by";
+
+// --- JSON-LD SCHEMA (Author Entity) ---
+const authorSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": SITE_DATA.name,
+    "jobTitle": SITE_DATA.jobTitle,
+    "url": SITE_DATA.siteUrl,
+    "image": new URL(profileImg.src, Astro.site).toString(),
+    "homeLocation": {
+        "@type": "Place",
+        "name": "Civitanova Marche, Marche, Italy"
+    },
+    "sameAs": [
+        SOCIAL_LINKS.linkedin,
+        SOCIAL_LINKS.github
+    ],
+    "knowsAbout": [
+        "Web Development", 
+        "Software Development",
+        "SEO", 
+        "Astro", 
+        "TypeScript", 
+        "Software Engineering"
+    ]
+};
+---
+
+<!-- JSON-LD INJECTION -->
+<script is:inline type="application/ld+json" set:html={JSON.stringify(authorSchema)} />
+
+<!-- AUTHOR BOX UI -->
+<aside class="mt-16 mb-8 p-6 md:p-8 bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-2xl shadow-xl flex flex-col md:flex-row items-center md:items-start gap-6 transition-all duration-300 hover:border-blue-500/50">
+    
+    <!-- AVATAR -->
+    <div class="flex-shrink-0 relative">
+        <div class="absolute inset-0 bg-blue-500 rounded-full blur opacity-30"></div>
+        <Image 
+            src={profileImg} 
+            alt={`Foto di ${SITE_DATA.name}`} 
+            class="relative w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-2 border-gray-700 shadow-md"
+            quality={85}
+        />
+    </div>
+
+    <!-- CONTENT -->
+    <div class="flex-1 text-center md:text-left">
+        <span class="text-[11px] font-bold uppercase tracking-widest text-blue-400 mb-1.5 block">
+            {titleText}
+        </span>
+        
+        <h3 class="text-2xl font-bold text-white mb-1">
+            {SITE_DATA.name}
+        </h3>
+        
+        <!-- GEO & ROLE INDICATOR -->
+        <p class="text-sm font-mono text-gray-400 mb-3 flex items-center justify-center md:justify-start gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            {roleAndGeo}
+        </p>
+        
+        <!-- BIO -->
+        <p class="text-gray-300 leading-relaxed text-sm md:text-base mb-5">
+            {bio}
+        </p>
+        
+        <!-- SOCIAL TRUST SIGNALS -->
+        <div class="flex items-center justify-center md:justify-start gap-4">
+            <a 
+                href={SOCIAL_LINKS.linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-gray-400 hover:text-white transition-all duration-200 flex items-center justify-center w-6 h-6 hover:scale-110 [&_svg]:w-full [&_svg]:h-full"
+                aria-label={`Profilo LinkedIn di ${SITE_DATA.name}`}
+            >
+                <LinkedinIcon />
+            </a>
+            <a 
+                href={SOCIAL_LINKS.github} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-gray-400 hover:text-white transition-all duration-200 flex items-center justify-center w-6 h-6 hover:scale-110 [&_svg]:w-full [&_svg]:h-full"
+                aria-label={`Profilo GitHub di ${SITE_DATA.name}`}
+            >
+                <GithubIcon />
+            </a>
+        </div>
+    </div>
+</aside>
