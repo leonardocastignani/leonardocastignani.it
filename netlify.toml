@@ -1,0 +1,12 @@
+# --- SECURITY HEADERS ---
+# Header HTTP a basso rischio (nessun impatto su script inline, GTM/Partytown, JSON-LD).
+# La Content-Security-Policy è volutamente esclusa: richiede una mappatura dedicata
+# di tutti gli script inline e i domini di terze parti prima di poter essere attivata.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"

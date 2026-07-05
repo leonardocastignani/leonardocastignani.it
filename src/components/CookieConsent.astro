@@ -6,7 +6,7 @@ import { getLangFromUrl, getI18N } from '../i18n/utils';
 const currentLang = getLangFromUrl(Astro.url);
 const i18n = getI18N({ astroUrl: Astro.url });
 const cm = i18n.cookieModal;
-const privacyHref = currentLang === 'it' ? '/privacy-policy' : '/en/privacy-policy';
+const privacyHref = currentLang === 'it' ? '/privacy-policy/' : '/en/privacy-policy/';
 ---
 
 <div
@@ -146,8 +146,8 @@ const privacyHref = currentLang === 'it' ? '/privacy-policy' : '/en/privacy-poli
         if (!modal || modal.dataset.bound === 'true') return;
 
         const isPrivacyPage =
-            window.location.pathname === '/privacy-policy' ||
-            window.location.pathname === '/en/privacy-policy';
+            window.location.pathname === '/privacy-policy/' ||
+            window.location.pathname === '/en/privacy-policy/';
         if (isPrivacyPage) return;
 
         const consent = getCookie('cookieconsent_status');

@@ -15,7 +15,7 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate, heroImage, imageAlt, imageTitle, imageCaption, lang, alternateSlug, faqs, tags } = Astro.props;
 const i18n = getI18N({ astroUrl: Astro.url });
 
-const backLink = lang === 'en' ? '/en/blog' : '/blog';
+const backLink = lang === 'en' ? '/en/blog/' : '/blog/';
 
 let alternateIt = undefined;
 let alternateEn = undefined;
@@ -64,6 +64,31 @@ const jsonLd = {
   "dateModified": updatedDate ? updatedDate.toISOString() : pubDate.toISOString(),
   "inLanguage": lang === 'it' ? 'it-IT' : 'en-US'
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": SITE_DATA.siteUrl
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": lang === 'en' ? "Blog" : "Articoli",
+      "item": `${SITE_DATA.siteUrl}${lang === 'en' ? '/en/blog/' : '/blog/'}`
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": title,
+      "item": Astro.url.href
+    }
+  ]
+};
 ---
 
 {/* MAINTENANCE MODE CHECK */}
@@ -73,7 +98,8 @@ const jsonLd = {
     <Layout title={title} description={description} image={heroImage} imageAlt={imageAlt || title} alternateIt={alternateIt} alternateEn={alternateEn}>
         
         <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-        
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
         <main class="pt-24 pb-16 px-4 bg-gray-900 min-h-screen">
             <article class="container mx-auto max-w-3xl">
                 {/* HERO IMAGE */}

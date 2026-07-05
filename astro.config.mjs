@@ -7,6 +7,7 @@ import partytown from '@astrojs/partytown';
 // --- ASTRO CONFIGURATION ---
 export default defineConfig({
   site: 'https://www.leonardocastignani.it',
+  trailingSlash: 'always',
   i18n: {
     defaultLocale: 'it',
     locales: ['it', 'en'],

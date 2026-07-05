@@ -3,14 +3,14 @@
   "pageDescription": "Freelance Web & Software Developer based in Marche, Italy. I build fast, SEO-optimized websites and custom apps. Contact me for a free quote today!",
   "backToTopLabel": "Back to top",
   "nav": {
-    "homeLink": "/en",
+    "homeLink": "/en/",
     "home": "Home",
     "about": "About Me",
     "education": "Education",
     "experience": "Experience",
     "projects": "Projects",
     "blog": "Blog",
-    "blogLink": "/en/blog",
+    "blogLink": "/en/blog/",
     "contact": "Contact",
     "openMenu": "Open navigation menu",
     "closeMenu": "Close navigation menu",
@@ -157,7 +157,7 @@
     "description": "Page not found",
     "subtitle": "The page you are looking for does not exist or has been moved.",
     "button": "Go Back Home",
-    "homeLink": "/en"
+    "homeLink": "/en/"
   },
   "maintenance": {
     "title": "Site Under Maintenance",
@@ -195,7 +195,7 @@
     "contactTitle": "Contact",
     "contactText": "For any questions about this Privacy Policy, you can contact me through the form on this site or by email.",
     "backButton": "Back to where you left off",
-    "homeLink": "/en"
+    "homeLink": "/en/"
   },
   "whatsapp": {
     "tooltip": "Message me on WhatsApp",

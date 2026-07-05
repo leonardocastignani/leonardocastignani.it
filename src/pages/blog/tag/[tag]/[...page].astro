@@ -65,7 +65,7 @@ const schemaLd = {
 };
 ---
 
-<Layout title={pageTitle} description={description}>
+<Layout title={pageTitle} description={description} prevUrl={page.url.prev} nextUrl={page.url.next}>
 
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaLd)} />
 

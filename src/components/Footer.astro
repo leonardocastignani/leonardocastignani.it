@@ -8,7 +8,7 @@ import SocialLink from './SocialLink.astro';
 // --- INITIAL CONFIGURATION ---
 const i18n = getI18N({ astroUrl: Astro.url });
 const currentLang = getLangFromUrl(Astro.url);
-const privacyHref = currentLang === 'it' ? '/privacy-policy' : '/en/privacy-policy';
+const privacyHref = currentLang === 'it' ? '/privacy-policy/' : '/en/privacy-policy/';
 const buildYear = new Date().getFullYear();
 
 // --- DYNAMIC LOCAL SEO TEXT ---

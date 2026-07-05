@@ -10,12 +10,12 @@
     "experience": "Esperienze",
     "projects": "Progetti",
     "blog": "Blog",
-    "blogLink": "/blog",
+    "blogLink": "/blog/",
     "contact": "Contatti",
     "openMenu": "Apri menu di navigazione",
     "closeMenu": "Chiudi menu di navigazione",
     "switchLang": {
-      "href": "/en",
+      "href": "/en/",
       "label": "EN",
       "aria": "Passa alla lingua inglese"
     }

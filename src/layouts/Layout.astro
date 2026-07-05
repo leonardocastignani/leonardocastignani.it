@@ -3,6 +3,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
+import { ClientRouter } from 'astro:transitions';
 import { getI18N, getLangFromUrl } from '../i18n/utils';
 import { SITE_DATA, SOCIAL_LINKS, MAINTENANCE_MODE } from '../consts';
 import '../styles/global.css';
@@ -11,14 +12,16 @@ import '../styles/global.css';
 const currentLang = getLangFromUrl(Astro.url);
 const i18n = getI18N({ astroUrl: Astro.url });
 
-const { 
-    title = i18n.pageTitle, 
+const {
+    title = i18n.pageTitle,
     description = i18n.pageDescription,
     isMaintenance = MAINTENANCE_MODE,
     alternateIt,
     alternateEn,
     image,
-    imageAlt = i18n.images.socialAlt
+    imageAlt = i18n.images.socialAlt,
+    prevUrl,
+    nextUrl
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -50,6 +53,10 @@ const hreflangEn = alternateEn || new URL(enPath, Astro.site);
         <link rel="alternate" hreflang="it" href={hreflangIt} />
         <link rel="alternate" hreflang="en" href={hreflangEn} />
         <link rel="alternate" hreflang="x-default" href={hreflangIt} />
+
+        <!-- TAG REL PREV/NEXT PER PAGINAZIONE -->
+        {prevUrl && <link rel="prev" href={new URL(prevUrl, Astro.site)} />}
+        {nextUrl && <link rel="next" href={new URL(nextUrl, Astro.site)} />}
 
         <!-- FAVICON IMPLEMENTATION -->
         <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
@@ -108,6 +115,14 @@ const hreflangEn = alternateEn || new URL(enPath, Astro.site);
             "@type": ["Person", "ProfessionalService"],
             "name": SITE_DATA.name,
             "url": SITE_DATA.siteUrl,
+            "telephone": `+${SITE_DATA.whatsappNumber}`,
+            "priceRange": "$$",
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            },
             "image": {
                 "@type": "ImageObject",
                 "url": new URL('/profilo.jpg', Astro.site).toString(),
@@ -136,6 +151,9 @@ const hreflangEn = alternateEn || new URL(enPath, Astro.site);
             "email": SITE_DATA.email,
             "knowsAbout": ["Java", "JavaScript", "TypeScript", "Astro", "Tailwind CSS", "SQL", "Web Development"]
         })} />
+
+        <!-- VIEW TRANSITIONS (SPA-LIKE NAVIGATION) -->
+        <ClientRouter />
     </head>
     <body class="bg-gray-900 text-gray-100 font-sans overflow-x-hidden">
         <!-- HEADER -->
@@ -209,6 +227,18 @@ const hreflangEn = alternateEn || new URL(enPath, Astro.site);
 
         </div>
                     
+        <!-- GTM VIRTUAL PAGEVIEW SU NAVIGAZIONE SPA (VIEW TRANSITIONS) -->
+        <script>
+            document.addEventListener('astro:page-load', () => {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'virtual_pageview',
+                    page_path: window.location.pathname,
+                    page_title: document.title
+                });
+            });
+        </script>
+
         <!-- GLOBAL SCRIPTS INITIALIZATION -->
         <script>
             import { initFadeInAnimations } from '../scripts/animations.js';

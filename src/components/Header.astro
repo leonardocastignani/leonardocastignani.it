@@ -8,7 +8,7 @@ import logo from '../assets/logo.svg';
 // --- INITIAL CONFIGURATION ---
 const { isMaintenance = false } = Astro.props;
 const i18n = getI18N({ astroUrl: Astro.url });
-const homeBase = i18n.nav.homeLink === '/' ? '' : i18n.nav.homeLink;
+const homeBase = i18n.nav.homeLink === '/' ? '' : i18n.nav.homeLink.replace(/\/$/, '');
 
 // --- NAVIGATION MENU DEFINITION ---
 const navLinks = [
@@ -30,23 +30,23 @@ let targetLangAria = '';
 const isBlogPage = currentPath.includes('/blog');
 
 if (isBlogPage) {
-    if (currentPath.startsWith('/en')) {
-        targetLangLink = '/blog';
+    if (currentPath.startsWith('/en/')) {
+        targetLangLink = '/blog/';
         targetLangLabel = 'IT';
         targetLangAria = 'Passa alla versione italiana';
     } else {
-        targetLangLink = '/en/blog';
+        targetLangLink = '/en/blog/';
         targetLangLabel = 'EN';
         targetLangAria = 'Switch to English version';
     }
 } else {
-    if (currentPath.startsWith('/en')) {
+    if (currentPath.startsWith('/en/')) {
         const pathWithoutEn = currentPath.replace(/^\/en/, '');
         targetLangLink = pathWithoutEn || '/';
         targetLangLabel = 'IT';
         targetLangAria = 'Passa alla versione italiana';
     } else {
-        targetLangLink = `/en${currentPath === '/' ? '' : currentPath}`;
+        targetLangLink = currentPath === '/' ? '/en/' : `/en${currentPath}`;
         targetLangLabel = 'EN';
         targetLangAria = 'Switch to English version';
     }
@@ -87,16 +87,20 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
                         />
                     ))}
                     {/* Desktop Language Switcher */}
-                    <a href={targetLangLink} class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-md text-sm transition-colors" aria-label={targetLangAria}>
-                        {targetLangLabel}
+                    <a href={targetLangLink} hreflang={currentPath.startsWith('/en/') ? 'it' : 'en'} class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-md text-sm transition-colors" aria-label={targetLangAria}>
+                        <span lang={currentPath.startsWith('/en/') ? 'it' : 'en'}>
+                            {targetLangLabel}
+                        </span>
                     </a>
                 </div>
 
                 {/* MOBILE VERSION (Visible only on small screens) */}
                 <div class="md:hidden flex items-center gap-4">
                     {/* Mobile Language Switcher */}
-                    <a href={targetLangLink} class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md text-base font-medium mt-2 transition-colors" aria-label={targetLangAria}>
-                        {targetLangLabel}
+                    <a href={targetLangLink} hreflang={currentPath.startsWith('/en/') ? 'it' : 'en'} class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md text-base font-medium mt-2 transition-colors" aria-label={targetLangAria}>
+                        <span lang={currentPath.startsWith('/en/') ? 'it' : 'en'}>
+                            {targetLangLabel}
+                        </span>
                     </a>
                     <button id="menu-btn" class="text-gray-200 focus:outline-none" aria-label={openMenuLabel} aria-expanded="false" aria-controls="mobile-menu" data-label-open={openMenuLabel} data-label-close={closeMenuLabel}>
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>

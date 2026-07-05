@@ -3,6 +3,8 @@ export function init404() {
     const path = window.location.pathname;
 
     if (path.startsWith('/en/') || path === '/en') {
+        document.documentElement.lang = 'en';
+
         const titleEl = document.getElementById('error-title');
         const subtitleEl = document.getElementById('error-subtitle');
         const buttonEl = document.getElementById('error-button');
