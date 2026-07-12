@@ -1,13 +1,14 @@
 ---
 title: "Changelog v1.2.0: Nuova Favicon e Integrazione GTM"
-description: "Note di rilascio per la versione 1.2.0: restyling della favicon, Google Tag Manager e correzioni grafiche."
+description: "Changelog v1.2.0: restyling della favicon, integrazione di Google Tag Manager e correzioni grafiche su leonardocastignani.it."
+cardDescription: "Novità v1.2.0: nuova favicon, Google Tag Manager e fix grafici."
 pubDate: "2026-01-23"
 updatedDate: "2026-06-23"
 heroImage: "/blog/release-1.2.0-aggiornamento-integrazione-google-tag-manager-siti-web-marche.webp"
 imageAlt: "Log di rilascio dell'aggiornamento 1.2.0 con integrazione GTM."
 imageTitle: "Changelog v1.2.0: Google Tag Manager"
 imageCaption: "Nuova identità visiva e tracciamento avanzato per analisi di marketing."
-tags: ["Changelog", "Update", "Tech"]
+tags: ["aggiornamenti"]
 lang: "it"
 alternateSlug: "google-tag-manager-integration-update-v1-2-0"
 faqs:
@@ -35,4 +36,4 @@ Ecco il dettaglio delle modifiche introdotte in questa release:
 
 ---
 
-*Il sito è in continua evoluzione. Al prossimo aggiornamento!*
+*Il sito è in continua evoluzione: se ti sei perso la [release precedente, la v1.1.2](/blog/changelog-v1-1-2-aggiornamento-seo-sito-web/), con l'aggiornamento SEO tecnico, recuperala pure. Al prossimo aggiornamento!*

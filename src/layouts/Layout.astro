@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import { ClientRouter } from 'astro:transitions';
 import { getI18N, getLangFromUrl } from '../i18n/utils';
-import { SITE_DATA, SOCIAL_LINKS, MAINTENANCE_MODE } from '../consts';
+import { SITE_DATA, MAINTENANCE_MODE, SCHEMA_IDS, PERSON_KNOWS_ABOUT, PERSON_SAME_AS } from '../consts';
 import '../styles/global.css';
 
 // --- INITIAL CONFIGURATION ---
@@ -21,7 +21,8 @@ const {
     image,
     imageAlt = i18n.images.socialAlt,
     prevUrl,
-    nextUrl
+    nextUrl,
+    noindex = false
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -46,6 +47,10 @@ const hreflangEn = alternateEn || new URL(enPath, Astro.site);
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
 
+        <!-- ROBOTS: low-value pages stay
+             crawlable/linkable but excluded from the index -->
+        {noindex && <meta name="robots" content="noindex,follow" />}
+
         <!-- TAG CANONICAL -->
         <link rel="canonical" href={canonicalURL} />
 
@@ -57,6 +62,14 @@ const hreflangEn = alternateEn || new URL(enPath, Astro.site);
         <!-- TAG REL PREV/NEXT PER PAGINAZIONE -->
         {prevUrl && <link rel="prev" href={new URL(prevUrl, Astro.site)} />}
         {nextUrl && <link rel="next" href={new URL(nextUrl, Astro.site)} />}
+
+        <!-- RSS FEED DISCOVERY -->
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title={`${SITE_DATA.name} | Blog`}
+            href={currentLang === 'en' ? '/en/rss.xml' : '/rss.xml'}
+        />
 
         <!-- FAVICON IMPLEMENTATION -->
         <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
@@ -112,50 +125,80 @@ const hreflangEn = alternateEn || new URL(enPath, Astro.site);
         <!-- JSON-LD SCHEMA -->
         <script type="application/ld+json" is:inline set:html={JSON.stringify({
             "@context": "https://schema.org",
-            "@type": ["Person", "ProfessionalService"],
-            "name": SITE_DATA.name,
-            "url": SITE_DATA.siteUrl,
-            "telephone": `+${SITE_DATA.whatsappNumber}`,
-            "priceRange": "$$",
-            "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "09:00",
-                "closes": "18:00"
-            },
-            "image": {
-                "@type": "ImageObject",
-                "url": new URL('/profilo.jpg', Astro.site).toString(),
-                "description": i18n.images.profileAlt
-            },
-            "jobTitle": SITE_DATA.jobTitle,
-            "areaServed": {
-                "@type": "GeoCircle",
-                "geoMidpoint": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "43.30675",
-                    "longitude": "13.72860"
+            "@graph": [
+                {
+                    "@type": ["Person", "ProfessionalService"],
+                    "@id": SCHEMA_IDS.person,
+                    "name": SITE_DATA.name,
+                    "url": SITE_DATA.siteUrl,
+                    "telephone": `+${SITE_DATA.whatsappNumber}`,
+                    "priceRange": "$$",
+                    "openingHoursSpecification": {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "09:00",
+                        "closes": "18:00"
+                    },
+                    "image": {
+                        "@type": "ImageObject",
+                        "url": new URL('/profilo.jpg', Astro.site).toString(),
+                        "description": i18n.images.profileAlt
+                    },
+                    "jobTitle": SITE_DATA.jobTitle,
+                    "areaServed": {
+                        "@type": "GeoCircle",
+                        "geoMidpoint": {
+                            "@type": "GeoCoordinates",
+                            "latitude": "43.30675",
+                            "longitude": "13.72860"
+                        },
+                        "geoRadius": "50000"
+                    },
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Civitanova Marche",
+                        "addressRegion": "Marche",
+                        "addressCountry": "IT"
+                    },
+                    "sameAs": PERSON_SAME_AS,
+                    "email": SITE_DATA.email,
+                    "knowsAbout": PERSON_KNOWS_ABOUT
                 },
-                "geoRadius": "50000"
-            },
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Civitanova Marche",
-                "addressRegion": "Marche",
-                "addressCountry": "IT"
-            },
-            "sameAs": [
-                SOCIAL_LINKS.linkedin,
-                SOCIAL_LINKS.github
-            ],
-            "email": SITE_DATA.email,
-            "knowsAbout": ["Java", "JavaScript", "TypeScript", "Astro", "Tailwind CSS", "SQL", "Web Development"]
+                {
+                    "@type": "Organization",
+                    "@id": SCHEMA_IDS.organization,
+                    "name": SITE_DATA.name,
+                    "url": SITE_DATA.siteUrl,
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": new URL('/favicon/favicon-96x96.png', Astro.site).toString()
+                    },
+                    "founder": { "@id": SCHEMA_IDS.person },
+                    "sameAs": PERSON_SAME_AS
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": SCHEMA_IDS.website,
+                    "name": SITE_DATA.name,
+                    "url": SITE_DATA.siteUrl,
+                    "publisher": { "@id": SCHEMA_IDS.organization },
+                    "inLanguage": [currentLang === 'it' ? 'it-IT' : 'en-US']
+                }
+            ]
         })} />
 
         <!-- VIEW TRANSITIONS (SPA-LIKE NAVIGATION) -->
         <ClientRouter />
     </head>
     <body class="bg-gray-900 text-gray-100 font-sans overflow-x-hidden">
+        <!-- SKIP TO CONTENT (ACCESSIBILITY) -->
+        <a
+            href="#main-content"
+            class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus-visible:ring-2 focus-visible:ring-white"
+        >
+            {i18n.skipToContentLabel}
+        </a>
+
         <!-- HEADER -->
         <Header isMaintenance={isMaintenance} />
 

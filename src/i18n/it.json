@@ -2,6 +2,7 @@
   "pageTitle": "Leonardo Castignani | Portfolio",
   "pageDescription": "Sviluppatore Web e Software nelle Marche. Realizzo siti web veloci, ottimizzati per la SEO e app su misura. Richiedi subito una consulenza gratuita!",
   "backToTopLabel": "Torna in cima alla pagina",
+  "skipToContentLabel": "Salta al contenuto principale",
   "nav": {
     "homeLink": "/",
     "home": "Home",
@@ -32,7 +33,7 @@
     "linkedin": "LinkedIn",
     "downloadCV": "Scarica CV",
     "cvPath": "/CV/it_CV Leonardo Castignani.pdf",
-    "contact": "Contattami!"
+    "contact": "Richiedi un preventivo gratuito"
   },
   "about": {
     "title": "Chi Sono",
@@ -122,7 +123,52 @@
     "backToArticles": "← Torna agli articoli",
     "readMore": "Leggi tutto",
     "publishedOn": "Pubblicato il",
-    "locale": "it-IT"
+    "locale": "it-IT",
+    "ctaTitle": "Hai un progetto simile in mente?",
+    "ctaText": "Se questo articolo ti ha dato spunti utili, posso aiutarti a metterli in pratica sul tuo sito o progetto.",
+    "ctaButton": "Richiedi un preventivo gratuito",
+    "ctaHref": "/#contact",
+    "relatedTitle": "Articoli correlati",
+    "homeSectionTitle": "Dal Blog",
+    "homeSectionSubtitle": "Guide pratiche su SEO, performance e sviluppo web, scritte da chi realizza siti ogni giorno.",
+    "viewAllLabel": "Vedi tutti gli articoli"
+  },
+  "homeFaq": {
+    "title": "Domande frequenti",
+    "subtitle": "Le risposte più utili prima di scrivermi, prese direttamente dal blog.",
+    "readMore": "Approfondisci",
+    "items": [
+      {
+        "question": "Quanto costa un sito web aziendale professionale nel 2026?",
+        "answer": "Il costo non riguarda il 'pezzo di codice', ma la strategia: un sito professionale parte dalle migliaia di euro perché include UX design, SEO tecnica e infrastruttura su misura.",
+        "href": "/blog/costo-sito-web-professionale-preventivi/"
+      },
+      {
+        "question": "Quali sono i pericoli di un sito web economico o low-cost?",
+        "answer": "I template economici presentano enormi lacune: codice sporco, estrema lentezza, pessimo posizionamento Google e nessuna differenziazione strategica rispetto ai competitor.",
+        "href": "/blog/costo-sito-web-professionale-preventivi/"
+      },
+      {
+        "question": "Quanto tempo occorre per completare un progetto digitale?",
+        "answer": "Il timing dipende dalla complessità. Una landing page performante richiede poche settimane, mentre piattaforme SaaS aziendali necessitano di una progettazione estesa a più fasi.",
+        "href": "/blog/fasi-sviluppo-software-progetti-web-aziendali/"
+      },
+      {
+        "question": "Elabori preventivi su misura per professionisti a Civitanova Marche?",
+        "answer": "Sì, offro consulenze mirate e preventivi trasparenti basati sulle reali necessità di business delle PMI e dei liberi professionisti marchigiani, massimizzando il ROI.",
+        "href": "/blog/costo-sito-web-professionale-preventivi/"
+      },
+      {
+        "question": "Offri piani di assistenza e manutenzione a Civitanova Marche?",
+        "answer": "Sì, offro contratti di manutenzione completi (performance e sicurezza) che garantiscono alle aziende del territorio massima affidabilità e tranquillità tecnica post-lancio.",
+        "href": "/blog/manutenzione-sicurezza-siti-web-aziendali/"
+      },
+      {
+        "question": "Cosa succede esattamente dopo che ti contatto?",
+        "answer": "Partiamo con una call conoscitiva (o un caffè, se sei nelle Marche) per analizzare i colli di bottiglia del tuo processo attuale e le funzionalità indispensabili per il primo rilascio, prima ancora di parlare di codice o di preventivo.",
+        "href": "/blog/fasi-sviluppo-software-progetti-web-aziendali/"
+      }
+    ]
   },
   "contact": {
     "title": "Mettiamoci in Contatto!<br><span style=\"color: #2563eb;\">Richiedi un Preventivo o Informazioni</span>",

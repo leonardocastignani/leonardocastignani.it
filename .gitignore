@@ -30,6 +30,7 @@ pnpm-debug.log*
 *.zip
 *.tar.gz
 *.rar
+*.pdf
 
 # Claude AI specific files
 .claude/

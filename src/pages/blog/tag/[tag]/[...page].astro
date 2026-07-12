@@ -4,31 +4,25 @@ import type { GetStaticPaths, Page } from 'astro';
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import Layout from '../../../../layouts/Layout.astro';
-import { getI18N, slugifyTag } from '../../../../i18n/utils';
-import { SITE_DATA } from '../../../../consts';
+import { getI18N } from '../../../../i18n/utils';
+import { getTagLabel, isNoindexTag } from '../../../../data/tags';
+import { SITE_DATA, SCHEMA_IDS } from '../../../../consts';
 
 // --- STATIC PATHS GENERATION ---
 export const getStaticPaths = (async ({ paginate }) => {
     const allPosts = await getCollection('blog', ({ data }) => data.lang === 'it');
     const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-    const tagsMap = new Map<string, string>();
+    const uniqueTags = new Set<string>();
     sortedPosts.forEach((post) => {
-        post.data.tags?.forEach((tag) => {
-            tagsMap.set(slugifyTag(tag), tag);
-        });
+        post.data.tags?.forEach((tag) => uniqueTags.add(tag));
     });
 
-    return Array.from(tagsMap.keys()).flatMap((sluggedTag) => {
-        const originalDisplayTag = tagsMap.get(sluggedTag);
-        
-        const filteredPosts = sortedPosts.filter((post) => 
-            post.data.tags?.some(t => slugifyTag(t) === sluggedTag)
-        );
+    return Array.from(uniqueTags).flatMap((tag) => {
+        const filteredPosts = sortedPosts.filter((post) => post.data.tags?.includes(tag));
 
         return paginate(filteredPosts, {
-            params: { tag: sluggedTag },
-            props: { displayTag: originalDisplayTag },
+            params: { tag },
             pageSize: 6,
         });
     });
@@ -44,10 +38,12 @@ type Props = {
 const { page } = Astro.props;
 const { tag } = Astro.params;
 const i18n = getI18N({ astroUrl: Astro.url });
+const displayTag = getTagLabel(tag!, 'it');
+const noindex = isNoindexTag(tag!);
 
 // --- SEO & CANONICAL ---
-const pageTitle = `Articoli taggati con "${tag}" ${page.currentPage > 1 ? `- Pagina ${page.currentPage}` : ''} | ${SITE_DATA.name}`;
-const description = `Esplora tutti gli articoli del blog riguardanti ${tag}. Leggi guide, tutorial e approfondimenti.`;
+const pageTitle = `Articoli taggati con "${displayTag}" ${page.currentPage > 1 ? `- Pagina ${page.currentPage}` : ''} | ${SITE_DATA.name}`;
+const description = `Esplora tutti gli articoli del blog riguardanti ${displayTag}. Leggi guide, tutorial e approfondimenti.`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 // --- SCHEMA MARKUP (CollectionPage) ---
@@ -57,15 +53,11 @@ const schemaLd = {
     "name": pageTitle,
     "description": description,
     "url": canonicalURL.toString(),
-    "isPartOf": {
-        "@type": "WebSite",
-        "name": SITE_DATA.name,
-        "url": SITE_DATA.siteUrl
-    }
+    "isPartOf": { "@id": SCHEMA_IDS.website }
 };
 ---
 
-<Layout title={pageTitle} description={description} prevUrl={page.url.prev} nextUrl={page.url.next}>
+<Layout title={pageTitle} description={description} prevUrl={page.url.prev} nextUrl={page.url.next} noindex={noindex}>
 
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaLd)} />
 
@@ -74,7 +66,7 @@ const schemaLd = {
             {/* INTESTAZIONE PAGINA */}
             <div class="text-center mb-12">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                    Tag: <span class="text-blue-400 capitalize">{tag}</span>
+                    Tag: <span class="text-blue-400">{displayTag}</span>
                 </h1>
                 <p class="text-gray-400 text-lg">
                     Pagina {page.currentPage} di {page.lastPage} ({page.total} articoli totali)
@@ -108,7 +100,7 @@ const schemaLd = {
                                 <h2 class="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
                                     {post.data.title}
                                 </h2>
-                                <p class="text-gray-400 line-clamp-3 mb-4">{post.data.description}</p>
+                                <p class="text-gray-400 line-clamp-3 mb-4">{post.data.cardDescription}</p>
                                 <span class="text-sm text-gray-500 font-mono">
                                     {post.data.pubDate.toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' })}
                                 </span>

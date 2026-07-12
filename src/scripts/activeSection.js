@@ -5,9 +5,26 @@ export function initActiveSection() {
 
     if (navSections.length === 0 || headerNavLinks.length === 0) return;
 
+    const isTracked = (link) => {
+        const linkHref = link.getAttribute('href');
+        return Boolean(link.dataset.section) || Boolean(linkHref && linkHref.includes('#'));
+    };
+
+    const sectionIdsForLink = (link) => {
+        const ids = [];
+        const linkHref = link.getAttribute('href');
+        if (linkHref && linkHref.includes('#')) {
+            ids.push(linkHref.split('#').pop());
+        }
+        if (link.dataset.section) {
+            ids.push(link.dataset.section);
+        }
+        return ids;
+    };
+
     const resetLinks = () => {
         headerNavLinks.forEach(link => {
-            if (!link.getAttribute('href').includes('#')) return;
+            if (!isTracked(link)) return;
             delete link.dataset.active;
             link.classList.remove('text-white');
             link.classList.add('text-gray-400');
@@ -15,19 +32,15 @@ export function initActiveSection() {
     };
 
     const activateLink = (id) => {
+        const matchingLinks = Array.from(headerNavLinks).filter(link => sectionIdsForLink(link).includes(id));
+
+        if (matchingLinks.length === 0) return;
+
         resetLinks();
-        headerNavLinks.forEach(link => {
-            const linkHref = link.getAttribute('href');
-            if (!linkHref || !linkHref.includes('#')) return;
-
-            const parts = linkHref.split('#');
-            const anchor = parts[parts.length - 1];
-
-            if (anchor === id) {
-                link.dataset.active = 'true';
-                link.classList.remove('text-gray-400');
-                link.classList.add('text-white');
-            }
+        matchingLinks.forEach(link => {
+            link.dataset.active = 'true';
+            link.classList.remove('text-gray-400');
+            link.classList.add('text-white');
         });
     };
 

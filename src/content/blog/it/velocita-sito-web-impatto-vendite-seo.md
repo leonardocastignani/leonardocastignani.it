@@ -1,13 +1,14 @@
 ---
 title: "Perché la velocità del sito influenza le tue vendite"
-description: "Dati alla mano: se il tuo sito impiega più di 3 secondi ad aprirsi, stai regalando clienti alla concorrenza. Ecco come la performance impatta direttamente sul fatturato."
+description: "Velocità del sito e vendite: se il tuo sito impiega più di 3 secondi ad aprirsi, stai regalando clienti alla concorrenza. Ecco l'impatto sul fatturato."
+cardDescription: "Sito lento, clienti persi: come la velocità impatta davvero sul fatturato."
 pubDate: "2026-02-02"
 updatedDate: "2026-06-23"
 heroImage: "/blog/velocita-sito-web-impatto-vendite-seo-italia.webp"
 imageAlt: "Grafico che correla il tempo di caricamento del sito alle vendite perse."
 imageTitle: "Velocità del Sito e Fatturato"
 imageCaption: "Un sito web veloce trattiene gli utenti e aumenta esponenzialmente i profitti."
-tags: ["SEO", "Performance", "Core Web Vitals"]
+tags: ["seo-tecnica", "marketing-conversione"]
 lang: "it"
 alternateSlug: "website-loading-speed-impact-ecommerce-sales"
 faqs:
@@ -43,3 +44,5 @@ Ottimizzare un sito non è magia, è ingegneria. Nel mio workflow, applico strat
 3.  **Architettura Statica:** Usare generatori come Astro permette di servire pagine HTML pre-costruite, eliminando i tempi di attesa del database.
 
 La velocità è la prima forma di rispetto verso il tempo dei tuoi clienti. Un sito veloce comunica professionalità ed efficienza ancora prima che l'utente legga una sola parola.
+
+Questi principi di ottimizzazione tecnica sono spesso legati alla scelta dell'architettura di base del sito: ne parlo nel dettaglio nella guida su [sito custom vs WordPress](/blog/sito-web-custom-vs-wordpress-prestazioni/) e nell'approfondimento sui [Core Web Vitals e la SEO tecnica nel 2026](/blog/ottimizzazione-seo-tecnica-core-web-vitals-2026/).

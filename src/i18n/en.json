@@ -2,6 +2,7 @@
   "pageTitle": "Leonardo Castignani | Portfolio",
   "pageDescription": "Freelance Web & Software Developer based in Marche, Italy. I build fast, SEO-optimized websites and custom apps. Contact me for a free quote today!",
   "backToTopLabel": "Back to top",
+  "skipToContentLabel": "Skip to main content",
   "nav": {
     "homeLink": "/en/",
     "home": "Home",
@@ -32,7 +33,7 @@
     "linkedin": "LinkedIn",
     "downloadCV": "Download CV",
     "cvPath": "/CV/en_CV Leonardo Castignani.pdf",
-    "contact": "Contact me!"
+    "contact": "Get a Free Quote"
   },
   "about": {
     "title": "About Me",
@@ -122,7 +123,52 @@
     "backToArticles": "← Back to articles",
     "readMore": "Read more",
     "publishedOn": "Published on",
-    "locale": "en-US"
+    "locale": "en-US",
+    "ctaTitle": "Have a similar project in mind?",
+    "ctaText": "If this article gave you useful ideas, I can help you put them into practice on your site or project.",
+    "ctaButton": "Get a Free Quote",
+    "ctaHref": "/en/#contact",
+    "relatedTitle": "Related Articles",
+    "homeSectionTitle": "From the Blog",
+    "homeSectionSubtitle": "Practical guides on SEO, performance, and web development, written by someone who builds websites every day.",
+    "viewAllLabel": "View all articles"
+  },
+  "homeFaq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "The most useful answers before you reach out, taken straight from the blog.",
+    "readMore": "Read more",
+    "items": [
+      {
+        "question": "Why is there such a large price gap between web developers?",
+        "answer": "The price difference reflects standard low-cost templates versus engineered, custom-coded strategic platforms built for high performance, deep SEO, and high conversion rates.",
+        "href": "/en/blog/professional-custom-website-development-costs/"
+      },
+      {
+        "question": "What are the hidden costs of cheap websites?",
+        "answer": "Cheap sites act as a 'sunk cost': they are poorly optimized, slow, generic, and will cost you thousands in lost customers and tarnished brand reputation over time.",
+        "href": "/en/blog/professional-custom-website-development-costs/"
+      },
+      {
+        "question": "What are the standard phases of custom web development?",
+        "answer": "The process includes 5 key steps: Discovery & Strategy, UX/UI Architecture, Technical Engineering, Quality Assurance (QA) Testing, and Deployment.",
+        "href": "/en/blog/custom-software-development-lifecycle/"
+      },
+      {
+        "question": "Do you provide post-deployment support and training?",
+        "answer": "Yes, every digital project handover includes technical documentation, team training, and automated CI/CD pipeline setup for ongoing maintenance.",
+        "href": "/en/blog/custom-software-development-lifecycle/"
+      },
+      {
+        "question": "What is included in a professional maintenance retainer?",
+        "answer": "A solid plan provides total peace of mind: routine vulnerability patching, Core Web Vitals monitoring, API functionality checks, and guaranteed disaster recovery backups.",
+        "href": "/en/blog/enterprise-website-security-maintenance/"
+      },
+      {
+        "question": "What exactly happens right after I contact you?",
+        "answer": "We start with an in-depth discovery call (or a coffee, if you're in the Marche region) to analyze the bottlenecks in your current workflow and the must-have features for a first release, before any code or quote is discussed.",
+        "href": "/en/blog/custom-software-development-lifecycle/"
+      }
+    ]
   },
   "contact": {
     "title": "Let's get in touch!<br><span style=\"color: #2563eb;\">Request a quote or information</span>",

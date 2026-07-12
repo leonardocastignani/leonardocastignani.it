@@ -1,13 +1,14 @@
 ---
 title: "Changelog v1.2.0: New Favicon and GTM Integration"
-description: "Release notes for version 1.2.0: favicon restyling, Google Tag Manager, and graphic fixes."
+description: "Changelog v1.2.0: favicon restyling, Google Tag Manager integration, and graphic fixes on leonardocastignani.it."
+cardDescription: "What's new in v1.2.0: new favicon, Google Tag Manager, and graphic fixes."
 pubDate: "2026-01-23"
 updatedDate: "2026-06-23"
 heroImage: "/blog/release-1.2.0-aggiornamento-integrazione-google-tag-manager-siti-web-marche.webp"
 imageAlt: "Release notes for update 1.2.0 featuring GTM integration."
-imageTitle: "Changelog v1.2.0: Analytics & UI"
+imageTitle: "Changelog v1.2.0: Google Tag Manager"
 imageCaption: "New visual identity and advanced marketing analytics tracking implemented."
-tags: ["Changelog", "Update", "Tech"]
+tags: ["aggiornamenti"]
 lang: "en"
 alternateSlug: "changelog-v1-2-0-integrazione-google-tag-manager"
 faqs:
@@ -15,8 +16,8 @@ faqs:
     answer: "The update deployed a modern favicon restyle for enhanced brand recognition in browser tabs, critical UI bug resolutions, and the core integration of Google Tag Manager."
   - question: "What is the primary benefit of Google Tag Manager?"
     answer: "Google Tag Manager centralizes complex analytics script injections, allowing for powerful, flexible marketing data aggregation without bloating the hard-coded website architecture."
-  - question: "Do you offer graphic bug fixing services for existing international sites?"
-    answer: "Absolutely, resolving cross-device UI discrepancies and optimizing responsive layouts is a standard technical service I provide for clients worldwide."
+  - question: "Do you also fix pre-existing graphic issues for businesses in the Marche region?"
+    answer: "Yes, in addition to building sites from scratch, I step in as a technical consultant in Civitanova Marche to fix UI/UX issues and extend functionality on pre-existing portals."
 ---
 
 I'm happy to announce the release of version **1.2.0**. This update focuses on refining the visual identity and improving site analytics capabilities, as well as fixing some reported graphic glitches.
@@ -35,4 +36,4 @@ Here are the details of the changes introduced in this release:
 
 ---
 
-*The site is constantly evolving. See you in the next update!*
+*The site is constantly evolving: if you missed the [previous release, v1.1.2](/en/blog/website-technical-seo-update-changelog-v1-1-2/), with the technical SEO update, feel free to catch up on it. See you in the next update!*

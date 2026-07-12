@@ -1,6 +1,6 @@
 ---
 // --- INITIAL CONFIGURATION ---
-const { href, label } = Astro.props;
+const { href, label, sectionId } = Astro.props;
 const { pathname } = Astro.url;
 
 const isHashLink = href.includes('#');
@@ -12,6 +12,7 @@ const isActive = !isHashLink && (href === pathname || (href !== '/' && pathname.
 <a
     href={href}
     data-nav-link
+    data-section={sectionId}
     class:list={[
         "transition-colors duration-300 font-medium text-sm md:text-base",
         isActive ? "text-white" : "text-gray-400 hover:text-white",

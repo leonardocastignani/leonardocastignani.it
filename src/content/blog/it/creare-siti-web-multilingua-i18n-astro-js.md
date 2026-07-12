@@ -1,13 +1,14 @@
 ---
 title: "Sopravvivere all'i18n: Come gestire un sito Multilingua in Astro"
-description: "Un caso di studio pratico su come ho implementato il multilingua (IT/EN) su questo portfolio usando il routing nativo di Astro e dizionari custom."
+description: "Caso studio i18n: come ho implementato un sito multilingua IT/EN in Astro, usando il routing nativo e dizionari custom, senza librerie esterne."
+cardDescription: "Come ho reso questo sito bilingue IT/EN con il routing nativo di Astro."
 pubDate: "2026-03-02"
 updatedDate: "2026-06-23"
 heroImage: "/blog/siti-web-multilingua-i18n-astro-js-italia.webp"
 imageAlt: "Codice Astro per siti web multilingua sviluppati per aziende delle Marche."
 imageTitle: "Sviluppo Siti Multilingua con Astro"
 imageCaption: "Configurazione i18n per espandere il business locale sui mercati esteri."
-tags: ["Astro", "i18n", "Case Study"]
+tags: ["sviluppo-astro-performance", "case-study"]
 lang: "it"
 alternateSlug: "multilingual-website-development-i18n-astro-js"
 faqs:
@@ -87,4 +88,4 @@ const t = useTranslations(lang);
 ```
 
 ### Conclusione: Meno magia, più controllo
-La vera forza di questo approccio in Astro è l'assenza di "magia nera". Non c'è un provider di stato globale che appesantisce il client, non ci sono librerie esterne da mantenere. Tutto viene risolto al **build time**. Il risultato finale è puro HTML inviato al browser, tradotto perfettamente e con i tag `<html lang="it">` e `hreflang` configurati alla perfezione per la SEO.
+La vera forza di questo approccio in Astro è l'assenza di "magia nera". Non c'è un provider di stato globale che appesantisce il client, non ci sono librerie esterne da mantenere. Tutto viene risolto al **build time**. Il risultato finale è puro HTML inviato al browser, tradotto perfettamente e con i tag `<html lang="it">` e `hreflang` configurati alla perfezione per la SEO. Se ti interessa un altro caso studio tecnico su Astro, ho documentato anche come ho implementato [i dati strutturati JSON-LD per la SEO tecnica](/blog/dati-strutturati-json-ld-astro-seo-tecnica-marche/) su questo stesso sito.

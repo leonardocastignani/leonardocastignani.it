@@ -1,7 +1,5 @@
 # --- SECURITY HEADERS ---
 # Header HTTP a basso rischio (nessun impatto su script inline, GTM/Partytown, JSON-LD).
-# La Content-Security-Policy è volutamente esclusa: richiede una mappatura dedicata
-# di tutti gli script inline e i domini di terze parti prima di poter essere attivata.
 [[headers]]
   for = "/*"
   [headers.values]
@@ -10,3 +8,19 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    # CSP in modalità Report-Only: osserva le violazioni senza bloccare nulla.
+    # Domini mappati direttamente dal codice sorgente: GTM (script/iframe),
+    # Google Analytics (beacon via connect-src), Partytown (worker-src blob:
+    # per eseguire GTM fuori dal thread principale). Nessun font/CDN esterno.
+    # Passare a "Content-Security-Policy" (enforcement) solo dopo un periodo
+    # di osservazione delle violazioni in produzione.
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; worker-src 'self' blob:; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; frame-src https://www.googletagmanager.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';"
+
+# --- CORS + CACHE PER L'ENDPOINT GEO/RAG ---
+# Astro scarta gli header custom del Response quando l'endpoint è prerenderizzato
+# (output statico): vanno quindi dichiarati qui, a livello CDN.
+[[headers]]
+  for = "/llms-full.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=86400"

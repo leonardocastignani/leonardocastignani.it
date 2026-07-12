@@ -37,7 +37,7 @@ const faqSchema = {
         
         <div class="space-y-4">
             {items.map((item) => (
-                <details class="group border-b border-gray-700/50 pb-4 last:border-none last:pb-0">
+                <details name="article-faq" class="group border-b border-gray-700/50 pb-4 last:border-none last:pb-0">
                     <summary class="flex justify-between items-center font-semibold text-white cursor-pointer list-none [&::-webkit-details-marker]:hidden hover:text-blue-400 transition-colors duration-200 select-none">
                         <span>{item.question}</span>
                         <span class="transition-transform duration-300 group-open:rotate-180 text-gray-400 group-hover:text-blue-400">

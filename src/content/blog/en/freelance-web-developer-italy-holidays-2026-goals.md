@@ -1,13 +1,14 @@
 ---
 title: "Happy Holidays and a 2026 full of Innovation!"
-description: "Thank you for this year spent together and best wishes for a 2026 full of digital projects."
+description: "Happy holidays from Leonardo Castignani, freelance web developer based in Civitanova Marche, Italy: thank you for a great year together."
+cardDescription: "Happy Holidays! Thank you for this year, and best wishes for 2026."
 pubDate: "2025-12-23"
 updatedDate: "2026-06-23"
 heroImage: "/blog/sviluppatore-web-freelance-auguri-natale-2025-civitanova-marche-2026.webp"
 imageAlt: "Web development workspace of Leonardo Castignani in Italy."
 imageTitle: "Happy Holidays and Digital Projects 2026"
 imageCaption: "Ready for a new year of digital innovation and global software development."
-tags: ["Best wishes", "Freelance", "2026"]
+tags: ["aggiornamenti"]
 lang: "en"
 alternateSlug: "auguri-feste-2026-sviluppatore-web-freelance-marche"
 faqs:
@@ -21,7 +22,7 @@ faqs:
 
 As 2025 draws to a close, I'm taking a moment to unplug my keyboard, close my code editor, and reflect on the past year.
 
-It's been a year of growth, technical challenges solved, and new collaborations. Launching the new version of my portfolio just now was the perfect way to close this chapter: a symbol of how technology and expertise are constantly evolving.
+It's been a year of growth, technical challenges solved, and new collaborations. Launching the [new version of my portfolio](/en/blog/leonardo-castignani-freelance-high-performance-portfolio-astro-js/) just now was the perfect way to close this chapter: a symbol of how technology and expertise are constantly evolving.
 
 ### 🎄 My Best Wishes for You
 

@@ -1,0 +1,76 @@
+---
+// --- IMPORTS ---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { getI18N, getLangFromUrl } from '../i18n/utils';
+
+// --- INITIAL CONFIGURATION ---
+const i18n = getI18N({ astroUrl: Astro.url });
+const lang = getLangFromUrl(Astro.url);
+const titleId = "latest-posts-title";
+
+const blogIndexHref = lang === 'en' ? '/en/blog/' : '/blog/';
+const postHref = (post: CollectionEntry<'blog'>) =>
+    lang === 'en'
+        ? `/en/blog/${post.slug.replace(/^en\//, '')}/`
+        : `/blog/${post.slug.replace(/^it\//, '')}/`;
+
+const latestPosts = (await getCollection('blog', ({ data }) => data.lang === lang))
+    .sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+    .slice(0, 3);
+---
+
+{latestPosts.length > 0 && (
+    <!-- LATEST BLOG POSTS (rendered inside the shared #latest-posts section, see Layout usage) -->
+    <div class="container mx-auto max-w-5xl text-center">
+        <h2 id={titleId} class="text-3xl md:text-4xl font-bold mb-3">{i18n.blog.homeSectionTitle}</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto mb-12">{i18n.blog.homeSectionSubtitle}</p>
+
+            {/* POSTS GRID */}
+            <div class="grid gap-8 md:grid-cols-3 text-left">
+                {latestPosts.map((post: CollectionEntry<'blog'>, index: number) => (
+                    <a
+                        href={postHref(post)}
+                        class="block group bg-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 shadow-lg"
+                    >
+                        {post.data.heroImage && (
+                            <div class="aspect-[16/9] w-full overflow-hidden border-b border-gray-700 bg-gray-900">
+                                <img
+                                    src={post.data.heroImage}
+                                    alt={post.data.title}
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    loading={index === 0 ? "eager" : "lazy"}
+                                    decoding="async"
+                                    width="600"
+                                    height="335"
+                                />
+                            </div>
+                        )}
+                        <div class="p-6">
+                            <div class="text-sm text-blue-400 mb-2">
+                                {post.data.pubDate.toLocaleDateString(i18n.blog.locale, { year: 'numeric', month: 'short', day: 'numeric' })}
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                                {post.data.title}
+                            </h3>
+                            <p class="text-gray-400 line-clamp-3">
+                                {post.data.cardDescription}
+                            </p>
+                        </div>
+                    </a>
+                ))}
+            </div>
+
+            {/* VIEW ALL LINK */}
+            <div class="mt-12">
+                <a
+                    href={blogIndexHref}
+                    class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-blue-400 rounded"
+                >
+                    <span>{i18n.blog.viewAllLabel}</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+            </div>
+    </div>
+)}

@@ -1,6 +1,10 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Leonardo Castignani | Sviluppatore Web & Software Freelance",
+  "short_name": "L. Castignani",
+  "description": "Sviluppatore Web e Software freelance nelle Marche. Siti veloci, ottimizzati per la SEO e app su misura.",
+  "start_url": "/",
+  "scope": "/",
+  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "/favicon/web-app-manifest-192x192.png",
@@ -15,7 +19,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#111827",
+  "background_color": "#111827",
   "display": "standalone"
 }

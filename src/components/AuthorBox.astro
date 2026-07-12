@@ -26,36 +26,7 @@ const bio = isIt
     : "Web & Software Developer specializing in Web Performance, Islands Architecture (Astro), and Technical SEO. I help businesses scale through fast, accessible, and conversion-driven digital products.";
 
 const titleText = isIt ? "Scritto da" : "Written by";
-
-// --- JSON-LD SCHEMA (Author Entity) ---
-const authorSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": SITE_DATA.name,
-    "jobTitle": SITE_DATA.jobTitle,
-    "url": SITE_DATA.siteUrl,
-    "image": new URL(profileImg.src, Astro.site).toString(),
-    "homeLocation": {
-        "@type": "Place",
-        "name": "Civitanova Marche, Marche, Italy"
-    },
-    "sameAs": [
-        SOCIAL_LINKS.linkedin,
-        SOCIAL_LINKS.github
-    ],
-    "knowsAbout": [
-        "Web Development", 
-        "Software Development",
-        "SEO", 
-        "Astro", 
-        "TypeScript", 
-        "Software Engineering"
-    ]
-};
 ---
-
-<!-- JSON-LD INJECTION -->
-<script is:inline type="application/ld+json" set:html={JSON.stringify(authorSchema)} />
 
 <!-- AUTHOR BOX UI -->
 <aside class="mt-16 mb-8 p-6 md:p-8 bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-2xl shadow-xl flex flex-col md:flex-row items-center md:items-start gap-6 transition-all duration-300 hover:border-blue-500/50">

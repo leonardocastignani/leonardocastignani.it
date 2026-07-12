@@ -1,13 +1,14 @@
 ---
 title: "Why I Chose Astro: Island Architecture & Real Performance"
-description: "It's not just hype. A technical analysis of Islands Architecture and how shipping Zero JavaScript to the browser radically changes performance and TTI."
+description: "Astro and Islands Architecture: why shipping zero JavaScript to the browser radically changes real-world performance and TTI."
+cardDescription: "Not just hype: how Astro's Islands Architecture changes real performance."
 pubDate: "2026-02-16"
 updatedDate: "2026-06-23"
 heroImage: "/blog/performance-siti-web-astro-js-deep-dive-civitanova-marche.webp"
 imageAlt: "Astro JS performance analysis for high-speed web projects."
 imageTitle: "Astro Islands Architecture"
 imageCaption: "Scoring 100/100 on Lighthouse to dominate organic search results worldwide."
-tags: ["Astro", "JavaScript", "Performance"]
+tags: ["sviluppo-astro-performance"]
 lang: "en"
 alternateSlug: "performance-siti-web-astro-js-islands"
 faqs:
@@ -15,8 +16,8 @@ faqs:
     answer: "Islands Architecture is a paradigm where most of the webpage is rendered as static HTML, and only specific, interactive components load JavaScript when needed."
   - question: "Why is Astro better for business sites than a pure SPA?"
     answer: "Astro ships zero JavaScript by default, vastly improving load times, Time to Interactive (TTI), and SEO, making it perfect for corporate websites and portfolios."
-  - question: "Do you build high-performance websites for international clients?"
-    answer: "Yes, I build ultra-fast Astro websites tailored for global audiences, managing every technical aspect from my base in Civitanova Marche, Italy."
+  - question: "Do you build high-performance websites in Civitanova Marche?"
+    answer: "Yes, I design fast, lightweight Astro platforms for SMEs and professionals across Civitanova Marche and the wider Marche region, ensuring maximum local SEO performance, and I also take on clients across Italy and internationally."
 ---
 
 When I decided to rebuild my portfolio, the temptation to use a Single Page Application (SPA) with Next.js or pure React was strong. These are technologies I use daily. However, for a content and presentation site, the SPA approach carries unnecessary weight (overhead).
@@ -49,6 +50,6 @@ import ThemeToggle from '../components/ThemeToggle.svelte';
 ```
 
 ### The Results
-Thanks to this approach, my portfolio consistently scores **100/100 on Lighthouse**. I'm not loading the entire React library to display static "About Me" text. I'm loading React (or Preact, or Svelte) only for that small piece of UI that needs it.
+Thanks to this approach, my portfolio consistently scores **100/100 on Lighthouse**. I'm not loading the entire React library to display static "About Me" text. I'm loading React (or Preact, or Svelte) only for that small piece of UI that needs it. For a deeper look at what these scores actually measure, see my guide to [Core Web Vitals in 2026](/en/blog/technical-seo-core-web-vitals-optimization-2026/).
 
-This is the efficiency I strive to bring to every client project: using technology to solve performance problems, not to create new ones.
+This is the efficiency I strive to bring to every client project: using technology to solve performance problems, not to create new ones. If you're currently running a React SPA and wondering whether it's worth the switch, I cover the trade-offs in [migrating from React to Astro](/en/blog/migrating-react-spa-to-astro-performance/).

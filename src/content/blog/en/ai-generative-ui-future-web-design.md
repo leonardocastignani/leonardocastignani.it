@@ -1,13 +1,14 @@
 ---
 title: "The Future of Web Design: Generative UI and What Changes for Clients"
-description: "Dynamically generated web interfaces by Artificial Intelligence are here. Discover how Generative UI is redefining the developer's role and the value for companies."
+description: "Generative UI: dynamically generated AI web interfaces are already here. Here's what's changing for developers and businesses."
+cardDescription: "Generative UI is here: what's changing for developers and businesses."
 pubDate: "2026-05-04"
 updatedDate: "2026-06-23"
 heroImage: "/blog/intelligenza-artificiale-generative-ui-web-design.webp"
 imageAlt: "Dynamically generated web interface powered by Artificial Intelligence."
 imageTitle: "The Future of Generative UI"
 imageCaption: "How AI is reshaping frontend engineering and personalized user experiences."
-tags: ["AI", "Business", "Innovation"]
+tags: ["ai-innovazione"]
 lang: "en"
 alternateSlug: "intelligenza-artificiale-generative-ui-web-design"
 faqs:
@@ -39,7 +40,7 @@ Today, a developer's value no longer lies in "pressing keys" to align pixels on 
 My job is no longer writing repetitive code (*boilerplate*), but:
 1.  **Orchestrating AI:** Guiding generative models to produce secure and accessible code.
 2.  **Integration and Security:** AI doesn't know how to protect your database's sensitive data or how to securely connect your payment gateway.
-3.  **Performance Optimization:** AI tends to generate redundant code. The human eye is needed to clean it up (using architectures like Astro) and ensure instant loading times.
+3.  **Performance Optimization:** AI tends to generate redundant code. The human eye is needed to clean it up (using architectures like [Astro and its Islands Architecture](/en/blog/astro-js-islands-architecture-performance/)) and ensure instant loading times.
 
 ### What Changes for You (The Client)
 This technological transition brings huge tangible benefits for SMEs and entrepreneurs who decide to invest in the digital space:

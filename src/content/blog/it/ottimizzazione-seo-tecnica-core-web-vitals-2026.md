@@ -1,13 +1,14 @@
 ---
 title: "Core Web Vitals nel 2026: Cosa è cambiato e come ottimizzare"
-description: "Le metriche aggiornate di Google spiegate nel dettaglio: tecniche pratiche per misurare e migliorare LCP, INP e CLS utilizzando l'architettura di Astro."
+description: "Core Web Vitals 2026: le metriche aggiornate di Google spiegate nel dettaglio, con tecniche pratiche per migliorare LCP, INP e CLS con Astro."
+cardDescription: "Core Web Vitals 2026: come migliorare LCP, INP e CLS con Astro."
 pubDate: "2026-06-15"
 updatedDate: "2026-06-23"
 heroImage: "/blog/ottimizzazione-seo-core-web-vitals-2026-marche.webp"
 imageAlt: "Metriche Core Web Vitals di Google ottimizzate per un sito web delle Marche."
 imageTitle: "Ottimizzazione Core Web Vitals 2026"
 imageCaption: "LCP, INP e CLS perfetti per battere la concorrenza su Google."
-tags: ["Performance", "SEO", "Web Vitals"]
+tags: ["seo-tecnica"]
 lang: "it"
 alternateSlug: "technical-seo-core-web-vitals-optimization-2026"
 faqs:
@@ -40,7 +41,9 @@ L'INP ha sostituito il vecchio FID, diventando la metrica definitiva per misurar
 
 **Come ottimizzarlo (Il vantaggio di Astro):**
 Il nemico numero uno dell'INP è un *Main Thread* bloccato da enormi bundle JavaScript che il browser deve eseguire.
-Astro risolve questo problema alla radice inviando **zero JavaScript di default** al browser. Grazie all'**Architettura a Isole (Islands Architecture)**, il sito è composto da HTML puro. Se serve interattività (es. un form o un menu), il JavaScript viene caricato e idratato *solo per quel piccolo componente* e solo quando è visibile (`client:visible`), mantenendo il browser libero di rispondere istantaneamente ai click dell'utente.
+Astro risolve questo problema alla radice inviando **zero JavaScript di default** al browser. Grazie all'[**Architettura a Isole (Islands Architecture)**](/blog/performance-siti-web-astro-js-islands/), il sito è composto da HTML puro. Se serve interattività (es. un form o un menu), il JavaScript viene caricato e idratato *solo per quel piccolo componente* e solo quando è visibile (`client:visible`), mantenendo il browser libero di rispondere istantaneamente ai click dell'utente.
+
+Se il tuo sito attuale è costruito con una SPA React pesante, può valere la pena leggere anche la mia analisi su [quando (e perché) migrare da React ad Astro](/blog/migrazione-sito-web-react-astro-performance/).
 
 #### 3. CLS (Cumulative Layout Shift) - Stabilità Visiva
 Hai mai provato a cliccare un pulsante su un sito, ma un secondo prima appare un'immagine che sposta tutto il layout verso il basso facendoti cliccare l'elemento sbagliato? Questo è un layout shift. Il CLS misura questa instabilità visiva e deve essere inferiore a **0.1**.

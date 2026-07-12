@@ -2,7 +2,8 @@
 // --- IMPORTS ---
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { getI18N, slugifyTag } from '../../../i18n/utils';
+import { getI18N } from '../../../i18n/utils';
+import { getTagLabel } from '../../../data/tags';
 import Maintenance from '../../../components/Maintenance.astro';
 import { MAINTENANCE_MODE } from '../../../consts';
 
@@ -15,10 +16,9 @@ const posts = (await getCollection('blog', ({ data }) => data.lang === 'en')).so
 
 const tagCounts = posts.reduce((acc, post) => {
     post.data.tags?.forEach((tag: string) => {
-        const slugged = slugifyTag(tag);
-        acc[slugged] = {
-            display: tag,
-            count: (acc[slugged]?.count || 0) + 1
+        acc[tag] = {
+            display: getTagLabel(tag, 'en'),
+            count: (acc[tag]?.count || 0) + 1
         };
     });
     return acc;
@@ -92,11 +92,11 @@ const uniqueTags = Object.keys(tagCounts).sort((a, b) => tagCounts[b].count - ta
                                     {post.data.title}
                                 </h2>
                                 <p class="text-gray-400 line-clamp-3">
-                                    {post.data.description}
+                                    {post.data.cardDescription}
                                 </p>
-                                <div class="mt-4 flex gap-2">
+                                <div class="mt-4 flex gap-2 flex-wrap">
                                     {post.data.tags?.map((tag: string) => (
-                                        <span class="text-xs bg-gray-900 text-gray-300 px-2 py-1 rounded border border-gray-700">#{tag}</span>
+                                        <span class="text-xs bg-gray-900 text-gray-300 px-2 py-1 rounded border border-gray-700">#{getTagLabel(tag, 'en')}</span>
                                     ))}
                                 </div>
                             </div>

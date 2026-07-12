@@ -1,13 +1,14 @@
 ---
 title: "Perché il tuo sito web è il tuo miglior commerciale (che lavora H24)"
-description: "Smetti di considerare il tuo sito come un biglietto da visita digitale. Scopri come trasformarlo in un venditore instancabile grazie a testi, CTA e Social Proof."
+description: "Realizzazione siti web orientati alla conversione: come trasformare il tuo sito da biglietto da visita a venditore instancabile con CTA e Social Proof."
+cardDescription: "Il tuo sito può vendere per te 24 ore su 24: ecco come, con CTA e Social Proof."
 pubDate: "2026-05-18"
 updatedDate: "2026-06-23"
 heroImage: "/blog/reazione-siti-web-vendita-conversioni-commerciale-italia.webp"
 imageAlt: "Struttura di una landing page aziendale focalizzata sulla conversione."
 imageTitle: "Il Sito Web come Strumento di Vendita"
 imageCaption: "Copywriting persuasivo e Call to Action efficaci per generare lead H24."
-tags: ["Business", "Marketing", "Strategia"]
+tags: ["marketing-conversione"]
 lang: "it"
 alternateSlug: "high-converting-website-design-cro"
 faqs:
@@ -42,7 +43,7 @@ Se il tuo sito si limita a dire quanto sei bravo, è solo auto-promozione. Ma se
 Per trasformare il tuo sito in una macchina da vendita, devi inserire:
 * **Testimonianze reali:** Con nome, cognome e (se possibile) foto o logo dell'azienda.
 * **Casi Studio (Case Studies):** Non limitarti a mettere la foto del prodotto finito. Racconta il problema iniziale del cliente, la soluzione che hai applicato e i risultati misurabili che hai ottenuto.
-* **Certificazioni e Numeri:** Mostrare loghi di partner affidabili o dati concreti ("Oltre 500 progetti consegnati") abbatte lo scetticismo iniziale.
+* **Certificazioni e Numeri:** Mostrare loghi di partner affidabili o dati concreti (ad esempio, un e-commerce potrebbe usare un copy come "Oltre 500 progetti consegnati") abbatte lo scetticismo iniziale.
 
 ### 3. Call to Action (CTA) Inequivocabili
 Il tuo visitatore ha letto i testi, ha capito che puoi risolvere il suo problema e si fida delle tue recensioni. E adesso?
@@ -54,6 +55,8 @@ Le tue *Call to Action* (chiamate all'azione) non devono essere nascoste o timid
 * *"Scarica il Catalogo 2027"*
 
 Le CTA devono avere un colore che stacchi dal resto del design (per attirare l'occhio) e devono essere disseminate strategicamente lungo tutto il percorso di lettura, non relegate solo nella triste pagina "Contatti".
+
+Anche il microcopy che accompagna le CTA e i moduli di contatto ha un peso enorme sulla conversione: se vuoi approfondire come scegliere le parole giuste in ogni punto di contatto, ho scritto una guida dedicata all'[UX writing e all'ottimizzazione del tasso di conversione](/blog/ux-writing-ottimizzazione-tasso-conversione/).
 
 ### Conclusione
 Costruire un sito web performante (curando la velocità, la SEO e l'infrastruttura tecnica con strumenti come Astro) è vitale per portare gli utenti alla tua porta. Ma una volta entrati, è la struttura psicologica della pagina a fare il lavoro pesante.

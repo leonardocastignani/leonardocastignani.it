@@ -1,13 +1,14 @@
 ---
 title: "UX Writing: Perché le parole giuste fanno la differenza nelle vendite"
-description: "Non basta un bel design. Scopri come il microcopy, le Call to Action e il tono di voce possono trasformare i visitatori del tuo sito in clienti."
+description: "UX Writing e CRO: non basta un bel design. Come microcopy, Call to Action e tono di voce trasformano i visitatori del tuo sito in clienti."
+cardDescription: "Non basta un bel design: le parole giuste trasformano i visitatori in clienti."
 pubDate: "2026-05-25"
 updatedDate: "2026-06-23"
 heroImage: "/blog/ux-writing-ottimizzazione-tasso-conversione-siti-web.webp"
 imageAlt: "Analisi del microcopy su un bottone di acquisto per ecommerce."
 imageTitle: "UX Writing e Tasso di Conversione"
 imageCaption: "Come le parole giuste guidano l'utente all'acquisto abbattendo le frizioni."
-tags: ["UX", "Marketing", "Business"]
+tags: ["marketing-conversione"]
 lang: "it"
 alternateSlug: "ux-writing-microcopy-conversion-rate-optimization"
 faqs:
@@ -30,7 +31,7 @@ Prendiamo un esempio classico: il form di iscrizione alla newsletter.
 * **Approccio pigro:** "Inserisci la tua email." (Freddo, transazionale, non offre valore).
 * **Approccio UX Writing:** "Unisciti a 5.000 professionisti. Solo strategie reali, zero spam." 
 
-Aggiungere una riga di microcopy che rassicura l'utente sulla privacy o sul valore che riceverà può aumentare il tasso di conversione (Conversion Rate) anche del 30%. Non è magia, è psicologia applicata al web design.
+Aggiungere una riga di microcopy che rassicura l'utente sulla privacy o sul valore che riceverà può aumentare in modo significativo il tasso di conversione (Conversion Rate). Non è magia, è psicologia applicata al web design.
 
 ### La scienza della Call to Action (CTA) perfetta
 Il bottone è il momento della verità. È il punto esatto in cui un utente decide se darti fiducia o abbandonare la pagina.
@@ -47,6 +48,8 @@ L'UX Writing dà il meglio di sé quando le cose vanno storte. Immagina un utent
 Un messaggio generico in rosso fuoco *"Errore: campo non valido"* genera frustrazione e fa sentire l'utente stupido.
 
 Un buon messaggio di errore è empatico, si prende la colpa e offre una soluzione immediata: *"Ops, sembra che manchi la chiocciola (@) nella tua email. Dai un'occhiata e riprova!"*. Un tono di voce umano nei momenti di frustrazione (le cosiddette frizioni) salva l'esperienza dell'utente e gli impedisce di chiudere il sito.
+
+Questa attenzione al linguaggio è parte integrante di un approccio più ampio all'accessibilità: nella mia guida sullo [sviluppo di siti web accessibili (A11y)](/blog/sviluppo-siti-web-accessibili-a11y/) spiego come una buona UX scritta vada di pari passo con un'esperienza inclusiva per tutti gli utenti.
 
 ### Conclusione
 Le parole sul tuo sito non sono semplici etichette, ma istruzioni di navigazione e leve di persuasione. Quando sviluppo un progetto digitale, non mi limito a "creare i bottoni", ma studio attentamente il contesto in cui si trovano. 

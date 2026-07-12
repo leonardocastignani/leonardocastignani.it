@@ -1,13 +1,14 @@
 ---
 title: "Da React a Astro: Quando (e Perché) Migrare il Tuo Frontend"
-description: "Un confronto tecnico e pratico tra Single Page Application (SPA) e Architettura a Isole. Scopri quando ha senso migrare e cosa si guadagna in performance."
+description: "React vs Astro: confronto tecnico tra Single Page Application e Architettura a Isole. Quando ha senso migrare e cosa si guadagna in performance."
+cardDescription: "Da React ad Astro: quando conviene migrare e cosa si guadagna in performance."
 pubDate: "2026-04-20"
 updatedDate: "2026-06-23"
 heroImage: "/blog/migrazione-sito-react-astro-performance-seo.webp"
 imageAlt: "Confronto tecnico tra React SPA e l'architettura Astro MPA."
 imageTitle: "Migrazione da React ad Astro JS"
 imageCaption: "Eliminare il debito tecnico e velocizzare il caricamento del sito web."
-tags: ["Astro", "React", "Performance"]
+tags: ["sviluppo-astro-performance"]
 lang: "it"
 alternateSlug: "migrating-react-spa-to-astro-performance"
 faqs:
@@ -35,7 +36,7 @@ Il browser del cliente deve scaricare, analizzare ed eseguire tutto quel codice 
 ### Il Cambio di Paradigma con Astro
 Astro risolve questo problema tornando alle origini (Multi-Page Application), ma con superpoteri moderni. Di default, Astro estrae tutto il codice e invia al browser **solo HTML e CSS puri**. Zero JavaScript.
 
-Il vero colpo di genio è l'**Island Architecture** (Architettura a Isole). 
+Il vero colpo di genio è l'[**Island Architecture** (Architettura a Isole)](/blog/performance-siti-web-astro-js-islands/). 
 Non devi abbandonare React. Se ti serve un componente altamente interattivo (come un carrello e-commerce o una barra di ricerca complessa), puoi usare il tuo codice React esistente e dire ad Astro di "idratare" *solo* quell'isola specifica, lasciando il resto della pagina statico.
 
 ### Quando (e Perché) Migrare ad Astro
@@ -46,7 +47,7 @@ La migrazione ha un senso assoluto (e porta un ROI incredibile in termini di con
 3.  **Documentazioni Tecniche:** Dove gli utenti cercano risposte veloci senza dover aspettare il caricamento di una complessa applicazione di routing.
 
 **Cosa ci guadagni?**
-* **Performance immediate:** Passare da punteggi Lighthouse di 60/100 a 100/100 è la norma, non l'eccezione.
+* **Performance immediate:** Passare da punteggi Lighthouse di 60/100 a 100/100 è la norma, non l'eccezione (per approfondire le metriche coinvolte, vedi la mia guida ai [Core Web Vitals nel 2026](/blog/ottimizzazione-seo-tecnica-core-web-vitals-2026/)).
 * **SEO Superiore:** Google adora l'HTML pulito e istantaneo.
 * **Meno codice da mantenere:** Zero librerie di routing lato client complesse.
 

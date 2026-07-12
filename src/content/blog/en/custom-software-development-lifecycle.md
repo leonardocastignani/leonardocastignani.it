@@ -1,13 +1,14 @@
 ---
 title: "The Lifecycle of a Digital Project: My Step-by-Step Process"
-description: "Discover the behind-the-scenes of my workflow. From requirements analysis to deployment, here is how I turn an idea into a software or web platform."
+description: "The software development lifecycle, step by step: from requirements analysis to deployment, how I turn an idea into software or a web platform."
+cardDescription: "From idea to deployment: my step-by-step software development process."
 pubDate: "2026-03-30"
 updatedDate: "2026-06-23"
 heroImage: "/blog/ciclo-sviluppo-software-web-agency-marche.webp"
 imageAlt: "Software development lifecycle diagram by Leonardo Castignani."
 imageTitle: "Professional Software Engineering Lifecycle"
 imageCaption: "From requirement discovery to deployment: building robust digital tools."
-tags: ["Workflow", "Software", "Project Management"]
+tags: ["sviluppo-software-qualita"]
 lang: "en"
 alternateSlug: "fasi-sviluppo-software-progetti-web-aziendali"
 faqs:
@@ -21,7 +22,7 @@ faqs:
 
 There is a widespread misconception: many clients think a developer's job consists of sitting in front of a computer, opening an editor, and typing code until the software magically appears online.
 
-In reality, writing code is just *one* part of the process. A successful digital project—whether it's a custom corporate ERP, a complex web app, or a SaaS platform—is the result of engineering, planning, and rigorous management.
+In reality, writing code is just *one* part of the process. A successful digital project—whether it's custom business management software, a complex web app, or a SaaS platform—is the result of engineering, planning, and rigorous management.
 
 Today, I am taking you behind the scenes to show you the exact lifecycle of a project when you decide to work with me.
 
@@ -44,7 +45,7 @@ I use a modern and robust ecosystem (like TypeScript to eliminate logic bugs, an
 ### Phase 4: Testing & Quality Assurance (QA)
 The software is built, but it is not ready for production yet. Now the stress-testing phase begins:
 * **Functional Testing:** I verify that every single piece of logic does exactly what it's supposed to do (without breaking the rest of the system).
-* **Security:** I check that sensitive data is protected and that authentications work properly.
+* **Security:** I check that sensitive data is protected and that authentications work properly. If the project collects user data, this phase also covers GDPR compliance: I wrote a [guide to cookie banners and GDPR](/en/blog/gdpr-cookie-banner-compliance-guide/) that explains how to handle this correctly.
 * **Responsiveness and Accessibility:** I make sure the interface is smooth and usable on any device.
 
 ### Phase 5: Deploy (Go Live) & Handover
@@ -53,3 +54,5 @@ But I don't leave you alone: I provide technical documentation, practical traini
 
 ### Conclusion
 Entrusting the development of a digital project doesn't mean buying "programming hours," but being guided through a proven process that turns an abstract idea into a solid business tool. This methodical approach is what guarantees deadlines are met and delivers a final product that doesn't just "work," but brings real value to your company.
+
+If you're wondering how much it costs to go through this entire process, I covered the topic in detail in this article on [how much a professional website really costs](/en/blog/professional-custom-website-development-costs/).

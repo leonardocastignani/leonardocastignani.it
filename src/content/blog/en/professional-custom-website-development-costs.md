@@ -1,13 +1,14 @@
 ---
 title: "How Much Does a Professional Website Really Cost?"
-description: "Let's analyze the huge gap between a €300 site and a professional project. We talk about strategy, hidden costs, and Return on Investment (ROI)."
+description: "How much does a professional website really cost? Comparing a €300 site to a custom project: strategy, hidden costs, and real ROI."
+cardDescription: "€300 site or professional project? Hidden costs and ROI compared."
 pubDate: "2026-01-26"
 updatedDate: "2026-06-23"
 heroImage: "/blog/costo-sito-web-professionale-preventivo-marche.webp"
 imageAlt: "Cost analysis and ROI for professional custom website development."
 imageTitle: "Website Costs and ROI"
 imageCaption: "The business value of investing in custom web engineering over cheap templates."
-tags: ["Pricing", "Business", "Freelance"]
+tags: ["business-strategia"]
 lang: "en"
 alternateSlug: "costo-sito-web-professionale-preventivi"
 faqs:
@@ -17,6 +18,8 @@ faqs:
     answer: "Cheap sites act as a 'sunk cost': they are poorly optimized, slow, generic, and will cost you thousands in lost customers and tarnished brand reputation over time."
   - question: "What factors into the cost of a custom professional site?"
     answer: "A professional investment covers strategic marketing analysis, custom performance optimization, mobile-first adaptable UX, semantic clean code, and scalable architecture."
+  - question: "Do you provide custom quotes for businesses outside Italy?"
+    answer: "Yes. Based in Civitanova Marche, Italy, I also work with clients across Italy and internationally, offering transparent quotes tailored to real business needs and ROI."
 ---
 
 It's the question every client asks, and rightly so: *"How much will it cost?"*.
@@ -33,8 +36,8 @@ A low-cost site (under €500-800) is usually a pre-made template, bought for a 
 ### What Are You Paying for in a Professional Site? (The Investment)
 When a professional presents you with a quote, the cost doesn't just cover the hours of writing code. You are investing in a set of fundamental assets:
 
-1.  **Analysis and Strategy:** Before writing a line of code, we need to understand who your ideal client is and how to talk to them. The site must be a sales tool, not a poster.
-2.  **Technical Performance:** Optimizing images, configuring caching, writing clean code (perhaps using technologies like Astro or React) to ensure the site loads in milliseconds.
+1.  **Analysis and Strategy:** Before writing a line of code, we need to understand who your ideal client is and how to talk to them. The site must be a sales tool, not a poster. This is the first step of a structured process: if you want to understand how the [phases of a custom software or web development project](/en/blog/custom-software-development-lifecycle/) unfold, there's a dedicated deep dive.
+2.  **Technical Performance:** Optimizing images, configuring caching, writing clean code (perhaps using technologies like Astro or React) to ensure the site loads in milliseconds. This groundwork also underpins proper [indexing through Google Search Console](/en/blog/google-search-console-seo-guide-websites-italy/), essential for SEO ranking.
 3.  **Mobile Adaptability:** It's not enough for the site to just "shrink" on a phone. The mobile user experience must be designed for touch, with accessible menus and readable text.
 4.  **Maintainability:** A professional site is built to last. The code is modular, allowing future updates without "breaking" the entire system.
 

@@ -1,13 +1,14 @@
 ---
 title: "Changelog v1.1.2: Nuova identità e SEO Boost"
-description: "Aggiornamento dell'infrastruttura email, ottimizzazione SEO e fix grafici."
+description: "Changelog v1.1.2: aggiornamento dell'infrastruttura email, ottimizzazione SEO tecnica e correzioni grafiche del sito."
+cardDescription: "Novità v1.1.2: email, SEO e piccoli fix grafici del sito."
 pubDate: "2025-12-21"
 updatedDate: "2026-06-23"
 heroImage: "/blog/release-1.1.2-aggiornamento-sito-web-seo-tecnica-civitanova-marche.webp"
 imageAlt: "Log di rilascio dell'aggiornamento 1.1.2 per l'ottimizzazione server."
 imageTitle: "Changelog v1.1.2: Server e SEO"
 imageCaption: "Miglioramenti dell'infrastruttura backend e visibilità locale aggiornata."
-tags: ["Changelog", "Update", "Tech"]
+tags: ["aggiornamenti"]
 lang: "it"
 alternateSlug: "website-technical-seo-update-changelog-v1-1-2"
 faqs:
@@ -37,4 +38,4 @@ Ho lavorato "sotto il cofano" per migliorare la visibilità sui motori di ricerc
 
 ---
 
-*Il sito è in continua evoluzione. Al prossimo aggiornamento!*
+*Il sito è in continua evoluzione. Nella [release successiva, la v1.2.0](/blog/changelog-v1-2-0-integrazione-google-tag-manager/), ho integrato Google Tag Manager. Al prossimo aggiornamento!*

@@ -24,6 +24,6 @@ const { Content } = await post.render();
 ---
 
 <!-- RENDER BLOG POST LAYOUT -->
-<BlogPost {...post.data}>
+<BlogPost {...post.data} slug={post.slug}>
     <Content />
 </BlogPost>

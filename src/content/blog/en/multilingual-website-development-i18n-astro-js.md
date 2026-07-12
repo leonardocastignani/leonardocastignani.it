@@ -1,13 +1,14 @@
 ---
 title: "Surviving i18n: How to Handle a Multilingual Site in Astro"
-description: "A practical case study on how I implemented multilingual routing (IT/EN) on this portfolio using Astro's native features and custom dictionaries."
+description: "i18n case study: how I built a multilingual (IT/EN) website in Astro using native routing and custom dictionaries, without external libraries."
+cardDescription: "How I made this site bilingual (IT/EN) using Astro's native i18n routing."
 pubDate: "2026-03-02"
 updatedDate: "2026-06-23"
 heroImage: "/blog/siti-web-multilingua-i18n-astro-js-italia.webp"
 imageAlt: "Astro code architecture for multilingual websites developed in Italy."
 imageTitle: "Multilingual Websites with Astro"
 imageCaption: "i18n configuration to scale Italian businesses globally without JavaScript bloat."
-tags: ["Astro", "i18n", "Case Study"]
+tags: ["sviluppo-astro-performance", "case-study"]
 lang: "en"
 alternateSlug: "creare-siti-web-multilingua-i18n-astro-js"
 faqs:
@@ -86,4 +87,4 @@ const t = useTranslations(lang);
 ```
 
 ### Conclusion: Less Magic, More Control
-The real strength of this approach in Astro is the lack of "black magic". There is no global state provider slowing down the client, no external libraries to maintain. Everything is resolved at **build time**. The final result is pure HTML sent to the browser, perfectly translated, and with the `<html lang="en">` and `hreflang` tags flawlessly configured for SEO.
+The real strength of this approach in Astro is the lack of "black magic". There is no global state provider slowing down the client, no external libraries to maintain. Everything is resolved at **build time**. The final result is pure HTML sent to the browser, perfectly translated, and with the `<html lang="en">` and `hreflang` tags flawlessly configured for SEO. If you're interested in another technical Astro case study, I've also documented how I implemented [JSON-LD structured data for technical SEO](/en/blog/schema-markup-json-ld-astro-seo-italy/) on this same site.

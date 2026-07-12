@@ -1,13 +1,14 @@
 ---
 title: "Accessibilità Web (A11y): Perché un sito inclusivo conviene a tutti"
-description: "Rendere un sito accessibile non è solo un obbligo etico o legale. Scopri come l'accessibilità migliora la SEO, l'esperienza utente e le conversioni."
+description: "Sviluppo di siti web accessibili (A11y): perché non è solo un obbligo etico o legale, ma una leva concreta per SEO, UX e conversioni."
+cardDescription: "Accessibilità web: un obbligo che migliora anche SEO e conversioni."
 pubDate: "2026-03-23"
 updatedDate: "2026-06-23"
 heroImage: "/blog/sviluppo-siti-web-accessibili-a11y-marche.webp"
 imageAlt: "Interfaccia web accessibile sviluppata da Leonardo Castignani a Civitanova Marche."
 imageTitle: "Sviluppo Siti Web Accessibili nelle Marche"
 imageCaption: "L'accessibilità web migliora l'esperienza utente e la SEO locale per le imprese."
-tags: ["A11y", "Accessibilità", "SEO"]
+tags: ["accessibilita"]
 lang: "it"
 alternateSlug: "accessible-web-development-a11y-standards"
 faqs:
@@ -50,7 +51,7 @@ Google non "guarda" le immagini e non usa il mouse. Legge il codice.
 
 Quando scrivi codice accessibile (aggiungendo i testi alternativi `alt` alle immagini, usando un HTML rigorosamente semantico e gerarchie di titoli `H1, H2, H3` corrette), stai letteralmente imboccando Google col cucchiaino. **I siti accessibili vengono premiati dai motori di ricerca** perché sono per definizione più facili da scansionare (crawlare) e indicizzare.
 
-Inoltre, un sito facile da navigare riduce drasticamente il *Bounce Rate* (frequenza di rimbalzo) e aumenta il tasso di conversione. Se l'utente non fa fatica a trovare le informazioni, è più propenso ad acquistare.
+Inoltre, un sito facile da navigare riduce drasticamente il *Bounce Rate* (frequenza di rimbalzo) e aumenta il tasso di conversione. Se l'utente non fa fatica a trovare le informazioni, è più propenso ad acquistare. Anche la scelta delle parole nei bottoni, nei form e nei messaggi di errore gioca un ruolo enorme in questo: ne parlo in dettaglio nella guida su [UX writing e ottimizzazione del tasso di conversione](/blog/ux-writing-ottimizzazione-tasso-conversione/).
 
 ### Conclusione
 L'accessibilità web oggi non è più opzionale. Con l'avvento dell'European Accessibility Act (EAA), sta diventando anche un obbligo legale per molte aziende. Ma prima ancora degli avvocati, dovresti farlo per il tuo business: escludere il 20% della popolazione globale dal tuo sito significa lasciare soldi sul tavolo. Un web accessibile è un web migliore per tutti.

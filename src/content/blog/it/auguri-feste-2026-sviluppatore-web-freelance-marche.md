@@ -1,13 +1,14 @@
 ---
 title: "Buone Feste e un 2026 ricco di Innovazione!"
-description: "Un ringraziamento per questo anno trascorso insieme e i migliori auguri per un 2026 pieno di progetti digitali."
+description: "Auguri di buone feste da Leonardo Castignani, sviluppatore web freelance a Civitanova Marche: grazie per l'anno trascorso insieme."
+cardDescription: "Buone Feste! Grazie per l'anno trascorso insieme e auguri per un 2026 di progetti digitali."
 pubDate: "2025-12-23"
 updatedDate: "2026-06-23"
 heroImage: "/blog/sviluppatore-web-freelance-auguri-natale-2025-civitanova-marche-2026.webp"
 imageAlt: "Setup di sviluppo web di Leonardo Castignani, freelance a Civitanova Marche."
 imageTitle: "Buone Feste e Progetti Digitali 2026"
 imageCaption: "Pronti per un nuovo anno di innovazione digitale nel territorio marchigiano."
-tags: ["Auguri", "Freelance", "2026"]
+tags: ["aggiornamenti"]
 lang: "it"
 alternateSlug: "freelance-web-developer-italy-holidays-2026-goals"
 faqs:
@@ -21,7 +22,7 @@ faqs:
 
 Mentre il 2025 volge al termine, mi prendo un momento per staccare le mani dalla tastiera, chiudere l'editor di codice e riflettere sull'anno appena trascorso.
 
-È stato un anno di crescita, di sfide tecniche risolte e di nuove collaborazioni. Lanciare la nuova versione del mio portfolio proprio in questi giorni è stato il modo migliore per chiudere questo capitolo: un simbolo di come la tecnologia e le competenze siano in continua evoluzione.
+È stato un anno di crescita, di sfide tecniche risolte e di nuove collaborazioni. Lanciare la [nuova versione del mio portfolio](/blog/leonardo-castignani-portfolio-sviluppatore-web-freelance-marche/) proprio in questi giorni è stato il modo migliore per chiudere questo capitolo: un simbolo di come la tecnologia e le competenze siano in continua evoluzione.
 
 ### 🎄 I miei Auguri per Voi
 

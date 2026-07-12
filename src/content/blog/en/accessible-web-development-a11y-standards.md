@@ -1,13 +1,14 @@
 ---
 title: "Web Accessibility (A11y): Why an Inclusive Site Benefits Everyone"
-description: "Making a site accessible isn't just an ethical or legal obligation. Discover how accessibility improves SEO, User Experience, and conversions."
+description: "Accessible web development (A11y): why it's not just an ethical or legal obligation, but a real lever for SEO, user experience, and conversions."
+cardDescription: "Web accessibility: an obligation that also boosts SEO and conversions."
 pubDate: "2026-03-23"
 updatedDate: "2026-06-23"
 heroImage: "/blog/sviluppo-siti-web-accessibili-a11y-marche.webp"
 imageAlt: "Accessible web interface developed by Leonardo Castignani in Italy."
 imageTitle: "Accessible Web Development in Italy"
 imageCaption: "Web accessibility improves user experience and SEO rankings for international businesses."
-tags: ["A11y", "Accessibility", "SEO"]
+tags: ["accessibilita"]
 lang: "en"
 alternateSlug: "sviluppo-siti-web-accessibili-a11y"
 faqs:
@@ -50,7 +51,7 @@ Google doesn't "look" at images and doesn't use a mouse. It reads code.
 
 When you write accessible code (adding `alt` text to images, using strictly semantic HTML, and correct `H1, H2, H3` heading hierarchies), you are literally spoon-feeding Google. **Accessible sites are rewarded by search engines** because they are inherently easier to crawl and index.
 
-Furthermore, a site that is easy to navigate drastically reduces the *Bounce Rate* and increases the conversion rate. If the user doesn't struggle to find information, they are more likely to buy.
+Furthermore, a site that is easy to navigate drastically reduces the *Bounce Rate* and increases the conversion rate. If the user doesn't struggle to find information, they are more likely to buy. The wording used in buttons, forms, and error messages plays a huge role here too: I cover this in detail in my guide on [UX writing and conversion rate optimization](/en/blog/ux-writing-microcopy-conversion-rate-optimization/).
 
 ### Conclusion
 Today, web accessibility is no longer optional. With the advent of the European Accessibility Act (EAA), it is also becoming a legal requirement for many companies. But even before the lawyers get involved, you should do it for your business: excluding 20% of the global population from your site means leaving money on the table. An accessible web is a better web for everyone.

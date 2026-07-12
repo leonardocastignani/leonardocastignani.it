@@ -1,13 +1,14 @@
 ---
 title: "From React to Astro: When (and Why) to Migrate Your Frontend"
-description: "A technical and practical comparison between Single Page Applications (SPA) and Islands Architecture. Discover when it makes sense to migrate and what you gain in performance."
+description: "React vs Astro: a technical comparison between Single Page Applications and Islands Architecture. When it makes sense to migrate, and what you gain."
+cardDescription: "From React to Astro: when it's worth migrating, and what you gain."
 pubDate: "2026-04-20"
 updatedDate: "2026-06-23"
 heroImage: "/blog/migrazione-sito-react-astro-performance-seo.webp"
 imageAlt: "Technical comparison between React SPAs and Astro MPA architecture."
 imageTitle: "Migrating from React to Astro JS"
 imageCaption: "Eliminating performance debt to deliver blazing-fast static websites."
-tags: ["Astro", "React", "Performance"]
+tags: ["sviluppo-astro-performance"]
 lang: "en"
 alternateSlug: "migrazione-sito-web-react-astro-performance"
 faqs:
@@ -35,7 +36,7 @@ The client's browser must download, parse, and execute all that code to finally 
 ### The Paradigm Shift with Astro
 Astro solves this problem by going back to basics (Multi-Page Applications), but with modern superpowers. By default, Astro strips out all the code and sends the browser **only pure HTML and CSS**. Zero JavaScript.
 
-The real stroke of genius is the **Islands Architecture**.
+The real stroke of genius is the [**Islands Architecture**](/en/blog/astro-js-islands-architecture-performance/).
 You don't have to abandon React. If you need a highly interactive component (like an e-commerce cart or a complex search bar), you can use your existing React code and tell Astro to "hydrate" *only* that specific island, leaving the rest of the page static.
 
 ### When (and Why) to Migrate to Astro
@@ -46,7 +47,7 @@ Migration makes absolute sense (and brings incredible ROI in terms of conversion
 3.  **Technical Documentation:** Where users are looking for fast answers without having to wait for a complex routing application to load.
 
 **What do you gain?**
-* **Instant Performance:** Going from Lighthouse scores of 60/100 to 100/100 is the norm, not the exception.
+* **Instant Performance:** Going from Lighthouse scores of 60/100 to 100/100 is the norm, not the exception (for a deeper dive into the metrics involved, see my guide to [Core Web Vitals in 2026](/en/blog/technical-seo-core-web-vitals-optimization-2026/)).
 * **Superior SEO:** Google loves clean, instant HTML.
 * **Less code to maintain:** Zero complex client-side routing libraries.
 

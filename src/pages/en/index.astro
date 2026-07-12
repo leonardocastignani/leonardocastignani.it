@@ -6,6 +6,8 @@ import About from '../../components/About.astro';
 import Education from '../../components/Education.astro';
 import Experience from '../../components/Experience.astro';
 import Projects from '../../components/Projects.astro';
+import LatestPosts from '../../components/LatestPosts.astro';
+import HomeFAQ from '../../components/HomeFAQ.astro';
 import Contact from '../../components/Contact.astro';
 import { getI18N } from '../../i18n/utils';
 import Maintenance from '../../components/Maintenance.astro';
@@ -19,13 +21,17 @@ const i18n = getI18N({ astroUrl: Astro.url });
 {MAINTENANCE_MODE ? (
     <Maintenance lang="en" />
 ) : (
-     // --- MAIN LANDING PAGE LAYOUT ---
+    // --- MAIN LANDING PAGE LAYOUT ---
     <Layout title={i18n.pageTitle} description={i18n.pageDescription}>
         <Hero />
         <About />
         <Education />
         <Experience />
         <Projects />
+        <section id="latest-posts" class="py-20 px-4 bg-gray-800 fade-in-section" aria-labelledby="latest-posts-title">
+            <LatestPosts />
+            <HomeFAQ />
+        </section>
         <Contact />
     </Layout>
 )}

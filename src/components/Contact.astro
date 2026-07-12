@@ -10,7 +10,7 @@ const formStatusMessages = i18n.contact.status;
 ---
 
 <!-- CONTACT SECTION -->
-<section id="contact" class="py-20 px-4 bg-gray-800 fade-in-section" aria-labelledby={titleId}>
+<section id="contact" class="py-20 px-4 bg-gray-900 fade-in-section" aria-labelledby={titleId}>
     <div class="container mx-auto max-w-2xl text-center">
         <h2 id={titleId} class="text-3xl md:text-4xl font-bold mb-4" set:html={i18n.contact.title} />
         <p class="text-gray-400 mb-8">
@@ -59,15 +59,15 @@ const formStatusMessages = i18n.contact.status;
                 <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder={i18n.contact.phone} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
             </div>
 
-            <!-- Subject Dropdown -->
+            <!-- Subject Dropdown (ARIA "select-only combobox" pattern) -->
             <div class="relative">
-                <label for="subject" class="sr-only">{i18n.contact.subject.label}</label>
-                
-                <!-- SELECT HIDDEN FOR VALIDATION -->
-                <select 
-                    id="subject" 
-                    name="subject" 
-                    required 
+                <label id="subject-label" class="sr-only">{i18n.contact.subject.label}</label>
+
+                <!-- SELECT HIDDEN FOR NATIVE FORM VALIDATION/SUBMISSION -->
+                <select
+                    id="subject"
+                    name="subject"
+                    required
                     class="absolute opacity-0 pointer-events-none -z-10 bottom-0 left-0 h-0 w-0"
                     tabindex="-1"
                     aria-hidden="true"
@@ -80,33 +80,41 @@ const formStatusMessages = i18n.contact.status;
 
                 <!-- CUSTOM SELECT -->
                 <div class="relative" id="custom-select-container">
-                    <button 
-                        type="button" 
+                    <button
+                        type="button"
                         id="custom-select-trigger"
+                        role="combobox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-controls="custom-select-options"
+                        aria-labelledby="subject-label custom-select-value"
                         class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-left flex justify-between items-center text-gray-400"
                     >
                         <span id="custom-select-value">{i18n.contact.subject.placeholder}</span>
-                        <svg class="h-5 w-5 fill-current transition-transform duration-300" id="custom-select-arrow" viewBox="0 0 20 20">
+                        <svg class="h-5 w-5 fill-current transition-transform duration-300" id="custom-select-arrow" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
                             <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
                         </svg>
                     </button>
 
-                    <ul 
-                        id="custom-select-options" 
+                    <ul
+                        id="custom-select-options"
+                        role="listbox"
+                        aria-labelledby="subject-label"
+                        tabindex="-1"
                         class="absolute z-50 w-full mt-2 bg-gray-800 border border-gray-600 rounded-lg shadow-xl opacity-0 invisible transform -translate-y-2 transition-all duration-200 overflow-hidden"
                     >
-                        <li data-value="Proposta di Lavoro" class="px-4 py-3 hover:bg-blue-600 hover:text-white cursor-pointer text-gray-300 transition-colors border-b border-gray-700 last:border-0">
+                        <li id="option-0" role="option" aria-selected="false" data-value="Proposta di Lavoro" class="px-4 py-3 hover:bg-blue-600 hover:text-white cursor-pointer text-gray-300 transition-colors border-b border-gray-700 last:border-0">
                             {i18n.contact.subject.option1}
                         </li>
-                        <li data-value="Richiesta Informazioni" class="px-4 py-3 hover:bg-blue-600 hover:text-white cursor-pointer text-gray-300 transition-colors border-b border-gray-700 last:border-0">
+                        <li id="option-1" role="option" aria-selected="false" data-value="Richiesta Informazioni" class="px-4 py-3 hover:bg-blue-600 hover:text-white cursor-pointer text-gray-300 transition-colors border-b border-gray-700 last:border-0">
                             {i18n.contact.subject.option2}
                         </li>
-                        <li data-value="Altro" class="px-4 py-3 hover:bg-blue-600 hover:text-white cursor-pointer text-gray-300 transition-colors">
+                        <li id="option-2" role="option" aria-selected="false" data-value="Altro" class="px-4 py-3 hover:bg-blue-600 hover:text-white cursor-pointer text-gray-300 transition-colors">
                             {i18n.contact.subject.option3}
                         </li>
                     </ul>
                 </div>
-            </div>            
+            </div>
 
             <!-- Message Textarea -->
             <div>
@@ -137,100 +145,191 @@ const formStatusMessages = i18n.contact.status;
 
 <!-- CLIENT-SIDE FORM HANDLING -->
 <script>
-    // DOM Elements
-    const form = document.getElementById('contact-form') as HTMLFormElement;
-    const statusDiv = document.getElementById('form-status');
-    const submitButton = document.getElementById('contact-submit') as HTMLButtonElement;
-    
-    // Custom Select Elements
-    const trigger = document.getElementById('custom-select-trigger');
-    const options = document.getElementById('custom-select-options');
-    const arrow = document.getElementById('custom-select-arrow');
-    const displayValue = document.getElementById('custom-select-value');
-    const nativeSelect = document.getElementById('subject') as HTMLSelectElement;
+    // Re-runs on every navigation (including View Transitions swaps), since
+    // the section's DOM nodes are recreated each time and a plain top-level
+    // script only ever runs once. See the module-scope listener below for
+    // the one piece of state (outside-click) that must NOT be re-attached.
+    function initContactForm() {
+        const form = document.getElementById('contact-form') as HTMLFormElement | null;
+        const statusDiv = document.getElementById('form-status');
+        const submitButton = document.getElementById('contact-submit') as HTMLButtonElement | null;
 
-    // --- CUSTOM SELECT LOGIC ---
-    if (trigger && options && nativeSelect) {
-        const toggleMenu = (show: boolean) => {
-            options.classList.toggle('invisible', !show);
-            options.classList.toggle('opacity-0', !show);
-            options.classList.toggle('-translate-y-2', !show);
-            options.classList.toggle('opacity-100', show);
-            options.classList.toggle('translate-y-0', show);
-            arrow?.classList.toggle('rotate-180', show);
-        };
+        // --- ARIA "select-only combobox" custom select ---
+        const trigger = document.getElementById('custom-select-trigger');
+        const listbox = document.getElementById('custom-select-options');
+        const arrow = document.getElementById('custom-select-arrow');
+        const displayValue = document.getElementById('custom-select-value');
+        const nativeSelect = document.getElementById('subject') as HTMLSelectElement | null;
 
-        trigger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleMenu(options.classList.contains('invisible'));
-        });
+        if (trigger && listbox && nativeSelect) {
+            const options = Array.from(listbox.querySelectorAll<HTMLLIElement>('li[role="option"]'));
+            let activeIndex = -1;
 
-        options.querySelectorAll('li').forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const target = e.target as HTMLElement;
+            const isOpen = () => trigger.getAttribute('aria-expanded') === 'true';
 
-                nativeSelect.value = target.getAttribute('data-value') || '';
+            const highlight = (index: number) => {
+                options.forEach((opt, i) => {
+                    opt.classList.toggle('bg-blue-600', i === index);
+                    opt.classList.toggle('text-white', i === index);
+                });
+                activeIndex = index;
+                if (index >= 0) {
+                    trigger.setAttribute('aria-activedescendant', options[index].id);
+                    options[index].scrollIntoView({ block: 'nearest' });
+                } else {
+                    trigger.removeAttribute('aria-activedescendant');
+                }
+            };
+
+            const openListbox = () => {
+                listbox.classList.remove('invisible', 'opacity-0', '-translate-y-2');
+                listbox.classList.add('opacity-100', 'translate-y-0');
+                arrow?.classList.add('rotate-180');
+                trigger.setAttribute('aria-expanded', 'true');
+                const selectedIndex = options.findIndex(o => o.getAttribute('aria-selected') === 'true');
+                highlight(selectedIndex >= 0 ? selectedIndex : 0);
+            };
+
+            const closeListbox = () => {
+                listbox.classList.add('invisible', 'opacity-0', '-translate-y-2');
+                listbox.classList.remove('opacity-100', 'translate-y-0');
+                arrow?.classList.remove('rotate-180');
+                trigger.setAttribute('aria-expanded', 'false');
+                highlight(-1);
+            };
+
+            const selectOption = (index: number) => {
+                const opt = options[index];
+                if (!opt) return;
+                options.forEach(o => o.setAttribute('aria-selected', 'false'));
+                opt.setAttribute('aria-selected', 'true');
+                nativeSelect.value = opt.getAttribute('data-value') || '';
                 if (displayValue) {
-                    displayValue.textContent = target.textContent?.trim() || '';
+                    displayValue.textContent = opt.textContent?.trim() || '';
                     displayValue.classList.replace('text-gray-400', 'text-white');
                 }
-                toggleMenu(false);
+                closeListbox();
+                trigger.focus();
+            };
+
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                isOpen() ? closeListbox() : openListbox();
             });
-        });
 
-        document.addEventListener('click', (e) => {
-            if (!trigger.contains(e.target as Node)) toggleMenu(false);
-        });
-    }
-
-    // --- FORM SUBMISSION LOGIC (AJAX) ---
-    const showMsg = (msg: string, color: string) => {
-        if (!statusDiv) return;
-        statusDiv.textContent = msg;
-        statusDiv.style.color = color;
-        setTimeout(() => { if (statusDiv.textContent === msg) statusDiv.textContent = ''; }, 5000);
-    };
-
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const target = e.target as HTMLFormElement;
-            
-            if (submitButton) submitButton.disabled = true;
-            showMsg(target.dataset.msgSending || '...', '#9ca3af');
-
-            try {
-                const res = await fetch("/", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: new URLSearchParams(new FormData(target) as any).toString(),
-                });
-
-                if (res.ok) {
-                    // @ts-ignore
-                    window.dataLayer = window.dataLayer || [];
-                    // @ts-ignore
-                    window.dataLayer.push({
-                        'event': 'form_submission_success',
-                        'module': 'contact_form'
-                    });
-                    showMsg(target.dataset.msgSuccess || 'OK', '#34d399');
-                    target.reset();
-                    if (displayValue) {
-                        displayValue.textContent = nativeSelect.options[0].text;
-                        displayValue.classList.replace('text-white', 'text-gray-400');
-                    }
-                } else {
-                    throw new Error();
+            trigger.addEventListener('keydown', (e) => {
+                switch (e.key) {
+                    case 'ArrowDown':
+                        e.preventDefault();
+                        isOpen() ? highlight(Math.min(activeIndex + 1, options.length - 1)) : openListbox();
+                        break;
+                    case 'ArrowUp':
+                        e.preventDefault();
+                        isOpen() ? highlight(Math.max(activeIndex - 1, 0)) : openListbox();
+                        break;
+                    case 'Home':
+                        if (isOpen()) { e.preventDefault(); highlight(0); }
+                        break;
+                    case 'End':
+                        if (isOpen()) { e.preventDefault(); highlight(options.length - 1); }
+                        break;
+                    case 'Enter':
+                    case ' ':
+                        e.preventDefault();
+                        isOpen() ? selectOption(activeIndex) : openListbox();
+                        break;
+                    case 'Escape':
+                        if (isOpen()) { e.preventDefault(); closeListbox(); }
+                        break;
+                    case 'Tab':
+                        if (isOpen()) closeListbox();
+                        break;
                 }
-            } catch (err) {
-                showMsg(target.dataset.msgError || 'Error', '#f87171');
-            } finally {
-                if (submitButton) submitButton.disabled = false;
-            }
-        });
+            });
+
+            options.forEach((opt, index) => {
+                opt.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    selectOption(index);
+                });
+                opt.addEventListener('mouseenter', () => highlight(index));
+            });
+        }
+
+        // --- FORM SUBMISSION LOGIC (AJAX) ---
+        const showMsg = (msg: string, color: string) => {
+            if (!statusDiv) return;
+            statusDiv.textContent = msg;
+            statusDiv.style.color = color;
+            setTimeout(() => { if (statusDiv.textContent === msg) statusDiv.textContent = ''; }, 5000);
+        };
+
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const target = e.target as HTMLFormElement;
+
+                if (submitButton) submitButton.disabled = true;
+                showMsg(target.dataset.msgSending || '...', '#9ca3af');
+
+                try {
+                    const res = await fetch("/", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams(new FormData(target) as any).toString(),
+                    });
+
+                    if (res.ok) {
+                        // @ts-ignore
+                        window.dataLayer = window.dataLayer || [];
+                        // @ts-ignore
+                        window.dataLayer.push({
+                            'event': 'form_submission_success',
+                            'module': 'contact_form'
+                        });
+                        showMsg(target.dataset.msgSuccess || 'OK', '#34d399');
+                        target.reset();
+                        if (nativeSelect) {
+                            nativeSelect.querySelectorAll('option').forEach(o => o.selected = o.value === '');
+                        }
+                        listbox?.querySelectorAll('[role="option"]').forEach(o => o.setAttribute('aria-selected', 'false'));
+                        if (displayValue && nativeSelect) {
+                            displayValue.textContent = nativeSelect.options[0].text;
+                            displayValue.classList.replace('text-white', 'text-gray-400');
+                        }
+                    } else {
+                        throw new Error();
+                    }
+                } catch (err) {
+                    showMsg(target.dataset.msgError || 'Error', '#f87171');
+                } finally {
+                    if (submitButton) submitButton.disabled = false;
+                }
+            });
+        }
     }
+
+    // The outside-click listener is bound to `document`, which persists
+    // across View Transitions navigations (unlike the section's own DOM
+    // nodes) — so it's attached exactly once, and looks up the current
+    // trigger/listbox live on every click instead of closing over stale
+    // references from a previous page.
+    document.addEventListener('click', (e) => {
+        const trigger = document.getElementById('custom-select-trigger');
+        const listbox = document.getElementById('custom-select-options');
+        if (!trigger || !listbox) return;
+        if (trigger.getAttribute('aria-expanded') !== 'true') return;
+        if (trigger.contains(e.target as Node) || listbox.contains(e.target as Node)) return;
+
+        listbox.classList.add('invisible', 'opacity-0', '-translate-y-2');
+        listbox.classList.remove('opacity-100', 'translate-y-0');
+        listbox.querySelectorAll('[role="option"]').forEach(o => o.classList.remove('bg-blue-600', 'text-white'));
+        document.getElementById('custom-select-arrow')?.classList.remove('rotate-180');
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.removeAttribute('aria-activedescendant');
+    });
+
+    document.addEventListener('astro:page-load', initContactForm);
 </script>
 
 <style>

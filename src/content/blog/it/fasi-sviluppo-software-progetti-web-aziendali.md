@@ -1,13 +1,14 @@
 ---
 title: "Il ciclo di vita di un progetto digitale: Come lavoro step-by-step"
-description: "Scopri il dietro le quinte del mio processo di lavoro. Dalla prima analisi dei requisiti al deploy, ecco come trasformo un'idea in un software o in una piattaforma web."
+description: "Il processo di sviluppo software passo dopo passo: dall'analisi dei requisiti al deploy, come trasformo un'idea in un software o una piattaforma web."
+cardDescription: "Dall'idea al deploy: il mio processo di lavoro per software e piattaforme web."
 pubDate: "2026-03-30"
 updatedDate: "2026-06-23"
 heroImage: "/blog/ciclo-sviluppo-software-web-agency-marche.webp"
 imageAlt: "Diagramma del ciclo di vita dello sviluppo software curato da Leonardo Castignani."
 imageTitle: "Ciclo di Sviluppo Software Professionale"
 imageCaption: "Dall'analisi dei requisiti al deploy: il metodo per piattaforme web di successo."
-tags: ["Workflow", "Software", "Project Management"]
+tags: ["sviluppo-software-qualita"]
 lang: "it"
 alternateSlug: "custom-software-development-lifecycle"
 faqs:
@@ -44,7 +45,7 @@ Utilizzo un ecosistema moderno e robusto (come TypeScript per azzerare i bug log
 ### Fase 4: Testing & Quality Assurance (QA)
 Il software è costruito, ma non è ancora pronto per la produzione. Ora inizia la fase di stress-test:
 * **Test Funzionali:** Verifico che ogni singola logica faccia esattamente quello che deve fare (senza rompere il resto del sistema).
-* **Sicurezza:** Controllo che i dati sensibili siano protetti e che le autenticazioni funzionino correttamente.
+* **Sicurezza:** Controllo che i dati sensibili siano protetti e che le autenticazioni funzionino correttamente. Se il progetto raccoglie dati utente, questa fase include anche la conformità GDPR: ho scritto una [guida su cookie banner e GDPR](/blog/guida-cookie-banner-gdpr-siti-web/) che spiega nel dettaglio come gestire correttamente questo aspetto.
 * **Responsività e Accessibilità:** Mi assicuro che l'interfaccia sia fluida e utilizzabile su qualsiasi dispositivo.
 
 ### Fase 5: Deploy (Go Live) & Handover
@@ -53,3 +54,5 @@ Ma non ti lascio da solo: ti fornisco la documentazione tecnica, una formazione 
 
 ### Conclusione
 Affidare lo sviluppo di un progetto digitale non significa comprare "ore di programmazione", ma farsi guidare in un processo collaudato che trasforma un'idea astratta in uno strumento di lavoro solido. Questo approccio metodico è ciò che garantisce il rispetto delle scadenze e un prodotto finale che non si limita a "funzionare", ma che porta reale valore alla tua azienda.
+
+Se ti stai chiedendo quanto possa costare seguire questo intero processo, ho affrontato l'argomento in dettaglio in questo articolo su [quanto costa davvero un sito web professionale](/blog/costo-sito-web-professionale-preventivi/).

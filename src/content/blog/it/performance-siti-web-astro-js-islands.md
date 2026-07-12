@@ -1,13 +1,14 @@
 ---
 title: "Perché ho scelto Astro: Island Architecture e Performance Reali"
-description: "Non è solo hype. Analisi tecnica dell'Architettura a Isole e di come spedire Zero JavaScript al browser cambi radicalmente le prestazioni e il TTI."
+description: "Astro e Islands Architecture: perché spedire zero JavaScript al browser cambia radicalmente le prestazioni e il TTI di un sito web."
+cardDescription: "Non è solo hype: come l'Architettura a Isole di Astro cambia le prestazioni reali."
 pubDate: "2026-02-16"
 updatedDate: "2026-06-23"
 heroImage: "/blog/performance-siti-web-astro-js-deep-dive-civitanova-marche.webp"
 imageAlt: "Analisi delle performance di Astro JS per progetti web a Civitanova Marche."
 imageTitle: "Architettura a Isole con Astro JS"
 imageCaption: "Prestazioni 100/100 su Lighthouse per dominare la SEO organica locale."
-tags: ["Astro", "JavaScript", "Performance"]
+tags: ["sviluppo-astro-performance"]
 lang: "it"
 alternateSlug: "astro-js-islands-architecture-performance"
 faqs:
@@ -49,6 +50,6 @@ import ThemeToggle from '../components/ThemeToggle.svelte';
 ```
 
 ### I Risultati
-Grazie a questo approccio, il mio portfolio ottiene costantemente **100/100 su Lighthouse**. Non sto caricando l'intera libreria React per mostrare un testo statico "Chi Sono". Sto caricando React (o Preact, o Svelte) solo per quel piccolo pezzo di interfaccia che ne ha bisogno.
+Grazie a questo approccio, il mio portfolio ottiene costantemente **100/100 su Lighthouse**. Non sto caricando l'intera libreria React per mostrare un testo statico "Chi Sono". Sto caricando React (o Preact, o Svelte) solo per quel piccolo pezzo di interfaccia che ne ha bisogno. Per capire cosa misurano davvero questi punteggi, vedi la mia guida ai [Core Web Vitals nel 2026](/blog/ottimizzazione-seo-tecnica-core-web-vitals-2026/).
 
-Questa è l'efficienza che cerco di portare in ogni progetto cliente: usare la tecnologia per risolvere problemi di performance, non per crearne di nuovi.
+Questa è l'efficienza che cerco di portare in ogni progetto cliente: usare la tecnologia per risolvere problemi di performance, non per crearne di nuovi. Se stai ancora usando una SPA React e ti chiedi se vale la pena passare ad Astro, approfondisco i pro e i contro in [migrazione da React ad Astro](/blog/migrazione-sito-web-react-astro-performance/).

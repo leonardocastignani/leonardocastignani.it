@@ -1,13 +1,14 @@
 ---
 title: "80 Years of the Republic: Happy June 2nd!"
-description: "Celebrating the 80th anniversary of the Italian Republic. A moment of reflection on progress, work, and our country's digital future."
+description: "80 years of the Italian Republic: a moment of reflection on progress, work, and the digital future of Made in Italy."
+cardDescription: "80 years of the Italian Republic: reflecting on progress and digital future."
 pubDate: "2026-06-01"
 updatedDate: "2026-06-23"
 heroImage: "/blog/tecnologia-digitale-made-in-italy-sviluppo-web-festa-repubblica-2026.webp"
 imageAlt: "June 2nd Celebration: progress, technology, and Italian industry."
 imageTitle: "80 Years of Republic and Innovation"
 imageCaption: "The evolution of Italian industry: from manufacturing to modern digital infrastructure."
-tags: ["Holiday", "Italy", "Reflections"]
+tags: ["aggiornamenti"]
 lang: "en"
 alternateSlug: "80-anni-repubblica-italiana-innovazione-digitale"
 faqs:
@@ -26,7 +27,7 @@ Often, between writing lines of code, meeting deadlines, and launching new proje
 ### From 1946 to the Modern Web
 The concept of "work" has changed radically over these eight decades. From post-war reconstruction and massive manufacturing plants, we have transitioned into the information age and the digital revolution.
 
-Today, working also means building intangible infrastructures, connecting people worldwide, and digitizing our excellence (especially here, in our precious Marche region). But the spirit of sacrifice, creativity, and the drive behind the "Made in Italy" brand remain exactly the same as in 1946.
+Today, working also means building intangible infrastructures, connecting people worldwide, and [digitizing our excellence](/en/blog/digital-transformation-italian-smes-marche/) (especially here, in our precious Marche region). But the spirit of sacrifice, creativity, and the drive behind the "Made in Italy" brand remain exactly the same as in 1946.
 
 ### A Day to Pause
 In observance of this national holiday, I am taking a short break from development and screens to recharge my batteries and enjoy the day.
