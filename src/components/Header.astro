@@ -17,6 +17,7 @@ const navLinks = [
     { href: `${homeBase}/#education`, label: i18n.nav.education },
     { href: `${homeBase}/#experience`, label: i18n.nav.experience },
     { href: `${homeBase}/#projects`, label: i18n.nav.projects },
+    { href: i18n.nav.servicesLink, label: i18n.nav.services, sectionId: 'services' },
     { href: i18n.nav.blogLink, label: i18n.nav.blog, sectionId: 'latest-posts' },
     { href: `${homeBase}/#contact`, label: i18n.nav.contact },
 ];
@@ -28,6 +29,7 @@ let targetLangLabel = '';
 let targetLangAria = '';
 
 const isBlogPage = currentPath.includes('/blog');
+const isServicesPage = currentPath === '/servizi/' || currentPath === '/en/services/';
 
 if (isBlogPage) {
     if (currentPath.startsWith('/en/')) {
@@ -36,6 +38,16 @@ if (isBlogPage) {
         targetLangAria = 'Passa alla versione italiana';
     } else {
         targetLangLink = '/en/blog/';
+        targetLangLabel = 'EN';
+        targetLangAria = 'Switch to English version';
+    }
+} else if (isServicesPage) {
+    if (currentPath.startsWith('/en/')) {
+        targetLangLink = '/servizi/';
+        targetLangLabel = 'IT';
+        targetLangAria = 'Passa alla versione italiana';
+    } else {
+        targetLangLink = '/en/services/';
         targetLangLabel = 'EN';
         targetLangAria = 'Switch to English version';
     }
@@ -59,7 +71,7 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
 ---
 
 <!-- MAIN HEADER -->
-<header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 border-b border-gray-800">
+<header id="site-header" class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 border-b border-gray-800/60">
     <nav class="container mx-auto max-w-6xl px-4 py-4 flex justify-between items-center">
         {/* SITE LOGO */}
         {!isMaintenance ? (
@@ -77,8 +89,10 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
         {/* NAVIGATION MENU */}
         {!isMaintenance && (
             <>
-                {/* DESKTOP VERSION */}
-                <div class="hidden md:flex items-center gap-6">
+                {/* DESKTOP VERSION (raised to lg: 8 links + language switch don't
+                     comfortably fit at md, which also caused overlap/overflow on
+                     phones in landscape — those need the compact menu too) */}
+                <div class="hidden lg:flex items-center gap-6">
                     {navLinks.map(link => (
                         <NavLink
                             href={link.href}
@@ -95,8 +109,8 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
                     </a>
                 </div>
 
-                {/* MOBILE VERSION (Visible only on small screens) */}
-                <div class="md:hidden flex items-center gap-4">
+                {/* MOBILE/COMPACT VERSION (below lg: includes phones in landscape) */}
+                <div class="lg:hidden flex items-center gap-4">
                     {/* Mobile Language Switcher */}
                     <a href={targetLangLink} hreflang={currentPath.startsWith('/en/') ? 'it' : 'en'} class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md text-base font-medium mt-2 transition-colors" aria-label={targetLangAria}>
                         <span lang={currentPath.startsWith('/en/') ? 'it' : 'en'}>
@@ -113,7 +127,7 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
 
     {/* MOBILE DROPDOWN MENU */}
     {!isMaintenance && (
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-sm">
+        <div id="mobile-menu" class="hidden lg:hidden bg-gray-900/95 backdrop-blur-sm mobile-menu-panel">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
                 {navLinks.map(link => (
                     <NavLink

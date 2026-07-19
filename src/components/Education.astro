@@ -17,7 +17,7 @@ const categories = i18n.education.skillsCategories;
 
         <div class="grid md:grid-cols-2 gap-16">
             {/* EDUCATION & CERTIFICATIONS */}
-            <div class="space-y-12">
+            <div class="space-y-12" data-animate="slide-left">
                 {/* Course of Study */}
                 <div>
                     <h3 class="text-2xl font-semibold mb-6 text-blue-400">{i18n.education.studyTitle}</h3>
@@ -58,7 +58,7 @@ const categories = i18n.education.skillsCategories;
             </div>
 
             {/* TECHNICAL SKILLS */}
-            <div>
+            <div data-animate="slide-right">
                 <h3 class="text-2xl font-semibold mb-6 text-blue-400">{i18n.education.skillsTitle}</h3>
                 <div class="space-y-8">
                     {/* Programming Languages */}

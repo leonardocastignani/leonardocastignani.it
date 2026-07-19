@@ -1,0 +1,89 @@
+---
+// --- IMPORTS ---
+import { getI18N } from '../i18n/utils';
+
+// --- PROPS ---
+interface Heading {
+    depth: number;
+    slug: string;
+    text: string;
+}
+interface Props {
+    headings: Heading[];
+    lang?: 'it' | 'en';
+}
+const { headings, lang = 'it' } = Astro.props;
+const i18n = getI18N({ astroUrl: Astro.url });
+
+// Only H2/H3, and only shown above a minimum length to be worth the affordance.
+const items = (headings || []).filter((h) => h.depth === 2 || h.depth === 3);
+const MIN_HEADINGS = 4;
+---
+
+{items.length > MIN_HEADINGS && (
+    <>
+        {/* FLOATING TRIGGER: same size and resting bottom offset as back-to-top
+             (and the WhatsApp/cookie speed-dial), takes that spot until
+             back-to-top appears (scrollY > 300), then slides up just enough
+             to leave the same 12px gap (gap-3) as the WhatsApp/cookie stack. */}
+        <button
+            id="toc-trigger"
+            class="btn-premium fixed bottom-6 right-6 w-9 h-9 rounded-full bg-gray-700/90 hover:bg-gray-600 border border-gray-500/50 backdrop-blur-sm shadow-lg flex items-center justify-center z-40 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="toc-panel"
+            aria-label={i18n.toc.openLabel}
+            data-label-open={i18n.toc.openLabel}
+            data-label-close={i18n.toc.closeLabel}
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h10M4 18h16" />
+            </svg>
+        </button>
+
+        {/* OVERLAY PANEL */}
+        <div
+            id="toc-overlay"
+            class="toc-modal-overlay hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="toc-title"
+        >
+            <div class="toc-modal-panel w-full max-w-sm max-h-[70vh] overflow-y-auto bg-gray-800 border border-gray-700 rounded-2xl shadow-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 id="toc-title" class="text-lg font-bold text-white">{i18n.toc.title}</h2>
+                    <button id="toc-close" aria-label={i18n.toc.closeLabel} class="text-gray-400 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <nav aria-label={i18n.toc.title}>
+                    <ul class="space-y-1">
+                        {items.map((h) => (
+                            <li>
+                                <a
+                                    href={`#${h.slug}`}
+                                    class:list={["toc-link block text-sm text-gray-300 hover:text-blue-400 py-1.5 transition-colors", h.depth === 3 && "pl-4 text-[13px] text-gray-400"]}
+                                >
+                                    {h.text}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <script>
+            import { initTableOfContents } from '../scripts/toc.js';
+
+            document.addEventListener('astro:page-load', initTableOfContents);
+            if (document.readyState !== 'loading') {
+                initTableOfContents();
+            } else {
+                document.addEventListener('DOMContentLoaded', initTableOfContents);
+            }
+        </script>
+    </>
+)}

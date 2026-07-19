@@ -9,9 +9,11 @@ export function initCookiePreferencesBtn() {
         if (consent) {
             btn.classList.remove('opacity-0');
             btn.classList.add('opacity-100');
+            btn.removeAttribute('tabindex');
         } else {
             btn.classList.add('opacity-0');
             btn.classList.remove('opacity-100');
+            btn.setAttribute('tabindex', '-1');
         }
     }
 

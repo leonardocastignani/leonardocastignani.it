@@ -1,0 +1,122 @@
+---
+// --- IMPORTS ---
+import { getI18N } from '../i18n/utils';
+
+// --- PROPS ---
+interface Props {
+    lang?: 'it' | 'en';
+}
+const { lang = 'it' } = Astro.props;
+const i18n = getI18N({ astroUrl: Astro.url });
+---
+
+<!-- BLOG SEARCH (Pagefind, static index generated post-build) -->
+<div class="relative max-w-xl mx-auto mb-12" data-pagefind-ignore>
+    <div class="relative">
+        <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+        </svg>
+        <input
+            type="search"
+            id="blog-search-input"
+            placeholder={i18n.search.placeholder}
+            aria-label={i18n.search.placeholder}
+            autocomplete="off"
+            class="input-glow w-full bg-gray-800/60 border border-gray-700 rounded-xl py-3 pl-12 pr-4 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
+        />
+    </div>
+    <div
+        id="blog-search-results"
+        class="hidden absolute z-30 mt-2 w-full max-h-[70vh] overflow-y-auto bg-gray-800 border border-gray-700 rounded-xl shadow-2xl"
+        role="listbox"
+    ></div>
+</div>
+
+<script define:vars={{ lang, noResultsText: i18n.search.noResults, loadingText: i18n.search.loading, unavailableText: i18n.search.unavailable }}>
+    let pagefindInstance;
+    let debounceTimer;
+
+    async function loadPagefind() {
+        if (pagefindInstance !== undefined) return pagefindInstance;
+        try {
+            const mod = await import(/* @vite-ignore */ '/pagefind/pagefind.js');
+            await mod.init();
+            pagefindInstance = mod;
+        } catch (err) {
+            console.warn('Pagefind non disponibile (indice assente: probabile ambiente di sviluppo).', err);
+            pagefindInstance = null;
+        }
+        return pagefindInstance;
+    }
+
+    function initBlogSearch() {
+        const input = document.getElementById('blog-search-input');
+        const results = document.getElementById('blog-search-results');
+        if (!input || !results || input.dataset.bound === 'true') return;
+        input.dataset.bound = 'true';
+
+        const renderResults = async (rawResults) => {
+            if (!rawResults || rawResults.length === 0) {
+                results.innerHTML = `<p class="p-4 text-sm text-gray-400">${noResultsText}</p>`;
+                return;
+            }
+            const items = await Promise.all(rawResults.slice(0, 8).map((r) => r.data()));
+            results.innerHTML = items.map((item) => `
+                <a href="${item.url}" class="block p-4 border-b border-gray-700 last:border-none hover:bg-gray-700/60 transition-colors" role="option">
+                    <div class="font-semibold text-white text-sm mb-1">${item.meta && item.meta.title ? item.meta.title : ''}</div>
+                    <div class="text-xs text-gray-400 line-clamp-2">${item.excerpt}</div>
+                </a>
+            `).join('');
+        };
+
+        const runSearch = async (term) => {
+            if (!term || term.trim().length < 2) {
+                results.classList.add('hidden');
+                results.innerHTML = '';
+                return;
+            }
+
+            results.classList.remove('hidden');
+            results.innerHTML = `<p class="p-4 text-sm text-gray-400">${loadingText}</p>`;
+
+            const pf = await loadPagefind();
+            if (!pf) {
+                results.innerHTML = `<p class="p-4 text-sm text-gray-400">${unavailableText}</p>`;
+                return;
+            }
+
+            const { results: searchResults } = await pf.search(term, { filters: { lang: [lang] } });
+            await renderResults(searchResults);
+        };
+
+        input.addEventListener('input', (event) => {
+            clearTimeout(debounceTimer);
+            const value = event.target.value;
+            debounceTimer = setTimeout(() => runSearch(value), 250);
+        });
+
+        input.addEventListener('focus', () => {
+            if (input.value.trim().length >= 2) results.classList.remove('hidden');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (event.target !== input && !results.contains(event.target)) {
+                results.classList.add('hidden');
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                results.classList.add('hidden');
+                input.blur();
+            }
+        });
+    }
+
+    document.addEventListener('astro:page-load', initBlogSearch);
+    if (document.readyState !== 'loading') {
+        initBlogSearch();
+    } else {
+        document.addEventListener('DOMContentLoaded', initBlogSearch);
+    }
+</script>

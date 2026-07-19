@@ -20,7 +20,7 @@ const formStatusMessages = i18n.contact.status;
         <!-- CONTACT FORM -->
         <form
             id="contact-form"
-            name="contact" 
+            name="contact"
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
@@ -28,6 +28,7 @@ const formStatusMessages = i18n.contact.status;
             data-msg-success={formStatusMessages.success}
             data-msg-error={formStatusMessages.error}
             data-msg-sending={formStatusMessages.sending}
+            data-prefill-template={i18n.services.modal.prefillMessage}
         >
             <input type="hidden" name="form-name" value="contact" />
 
@@ -38,30 +39,30 @@ const formStatusMessages = i18n.contact.status;
             <!-- Name Field -->
             <div>
                 <label for="name" class="sr-only">{i18n.contact.name}</label>
-                <input type="text" id="name" name="name" autocomplete="given-name" required placeholder={i18n.contact.name} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                <input type="text" id="name" name="name" autocomplete="given-name" required placeholder={i18n.contact.name} class="input-glow w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 focus:-translate-y-0.5">
             </div>
 
             <!-- Surname Field -->
             <div>
                 <label for="surname" class="sr-only">{i18n.contact.surname}</label>
-                <input type="text" id="surname" name="surname" autocomplete="family-name" required placeholder={i18n.contact.surname} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                <input type="text" id="surname" name="surname" autocomplete="family-name" required placeholder={i18n.contact.surname} class="input-glow w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 focus:-translate-y-0.5">
             </div>
 
             <!-- Email Field -->
             <div>
                 <label for="email" class="sr-only">{i18n.contact.email}</label>
-                <input type="email" id="email" name="email" autocomplete="email" required placeholder={i18n.contact.email} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                <input type="email" id="email" name="email" autocomplete="email" required placeholder={i18n.contact.email} class="input-glow w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 focus:-translate-y-0.5">
             </div>
 
             <!-- Phone Field -->
             <div>
                 <label for="phone" class="sr-only">{i18n.contact.phone}</label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder={i18n.contact.phone} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder={i18n.contact.phone} class="input-glow w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 focus:-translate-y-0.5">
             </div>
 
             <!-- Subject Dropdown (ARIA "select-only combobox" pattern) -->
             <div class="relative">
-                <label id="subject-label" class="sr-only">{i18n.contact.subject.label}</label>
+                <label id="subject-label" for="subject" class="sr-only">{i18n.contact.subject.label}</label>
 
                 <!-- SELECT HIDDEN FOR NATIVE FORM VALIDATION/SUBMISSION -->
                 <select
@@ -88,7 +89,7 @@ const formStatusMessages = i18n.contact.status;
                         aria-expanded="false"
                         aria-controls="custom-select-options"
                         aria-labelledby="subject-label custom-select-value"
-                        class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-left flex justify-between items-center text-gray-400"
+                        class="input-glow w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 text-left flex justify-between items-center text-gray-400"
                     >
                         <span id="custom-select-value">{i18n.contact.subject.placeholder}</span>
                         <svg class="h-5 w-5 fill-current transition-transform duration-300" id="custom-select-arrow" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
@@ -119,19 +120,19 @@ const formStatusMessages = i18n.contact.status;
             <!-- Message Textarea -->
             <div>
                 <label for="message" class="sr-only">{i18n.contact.message}</label>
-                <textarea id="message" name="message" rows="5" required placeholder={i18n.contact.message} class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></textarea>
+                <textarea id="message" name="message" rows="5" required placeholder={i18n.contact.message} class="input-glow w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 focus:-translate-y-0.5"></textarea>
             </div>
 
             <!-- Submit Button -->
             <div class="text-center">
-                <button id="contact-submit" type="submit" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-blue-500">
+                <button id="contact-submit" type="submit" class="btn-premium magnetic bg-blue-600 hover:bg-blue-500 hover:shadow-[0_10px_30px_-8px_rgba(59,130,246,0.55)] text-white font-bold py-3 px-8 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-blue-500">
                     {i18n.contact.button}
                 </button>
             </div>
         </form>
 
         <!-- Status Message Container -->
-        <div id="form-status" class="mt-4 text-lg" role="alert"></div>
+        <div id="form-status" class="mt-4 text-lg transition-all duration-300 ease-out" role="alert"></div>
 
         <div class="mt-12 text-center">
             <p class="text-gray-400 mb-2">{i18n.contact.alternative}:</p>
@@ -254,14 +255,50 @@ const formStatusMessages = i18n.contact.status;
                 });
                 opt.addEventListener('mouseenter', () => highlight(index));
             });
+
+            // --- PREFILL FROM SERVICE MODAL / ESTIMATOR CTA (one-time use, cleared after applying) ---
+            const inquiryRaw = sessionStorage.getItem('serviceInquiry');
+            if (inquiryRaw) {
+                try {
+                    const inquiry = JSON.parse(inquiryRaw) as { title?: string; message?: string };
+                    const messageField = document.getElementById('message') as HTMLTextAreaElement | null;
+
+                    if (inquiry.message) {
+                        selectOption(1); // "Richiesta Informazioni" / "Request Information/Quote"
+                        if (messageField) messageField.value = inquiry.message;
+                    } else if (inquiry.title) {
+                        selectOption(1);
+                        const template = form?.dataset.prefillTemplate || '';
+                        if (messageField && template) {
+                            messageField.value = template.replace('{service}', inquiry.title);
+                        }
+                    }
+                } catch (err) {
+                    console.warn('Impossibile precompilare il form dal servizio selezionato.', err);
+                } finally {
+                    sessionStorage.removeItem('serviceInquiry');
+                }
+            }
         }
 
         // --- FORM SUBMISSION LOGIC (AJAX) ---
         const showMsg = (msg: string, color: string) => {
             if (!statusDiv) return;
-            statusDiv.textContent = msg;
             statusDiv.style.color = color;
-            setTimeout(() => { if (statusDiv.textContent === msg) statusDiv.textContent = ''; }, 5000);
+            statusDiv.style.opacity = '0';
+            statusDiv.style.transform = 'translateY(-4px)';
+            window.setTimeout(() => {
+                statusDiv.textContent = msg;
+                statusDiv.style.opacity = '1';
+                statusDiv.style.transform = 'translateY(0)';
+            }, 120);
+            setTimeout(() => {
+                if (statusDiv.textContent === msg) {
+                    statusDiv.style.opacity = '0';
+                    statusDiv.style.transform = 'translateY(-4px)';
+                    window.setTimeout(() => { statusDiv.textContent = ''; }, 300);
+                }
+            }, 5000);
         };
 
         if (form) {

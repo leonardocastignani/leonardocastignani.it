@@ -6,6 +6,7 @@ import About from '../components/About.astro';
 import Education from '../components/Education.astro';
 import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
+import ServicesTeaser from '../components/ServicesTeaser.astro';
 import LatestPosts from '../components/LatestPosts.astro';
 import HomeFAQ from '../components/HomeFAQ.astro';
 import Contact from '../components/Contact.astro';
@@ -28,6 +29,7 @@ const i18n = getI18N({ astroUrl: Astro.url });
         <Education />
         <Experience />
         <Projects />
+        <ServicesTeaser />
         <section id="latest-posts" class="py-20 px-4 bg-gray-800 fade-in-section" aria-labelledby="latest-posts-title">
             <LatestPosts />
             <HomeFAQ />

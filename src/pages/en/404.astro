@@ -1,0 +1,41 @@
+---
+// --- IMPORTS ---
+import Layout from '../../layouts/Layout.astro';
+import { getI18N } from '../../i18n/utils';
+import enData from '../../i18n/en.json';
+
+// --- INITIAL CONFIGURATION ---
+// This page's own route path starts with /en, so getI18N/getLangFromUrl
+// resolve to English natively — no runtime language patching needed here
+// (unlike the root 404.astro, which Netlify only ever serves for non-/en/
+// paths once the /en/* redirect rule in public/_redirects is in place).
+const i18n = getI18N({ astroUrl: Astro.url });
+const homeLink = i18n.error404.homeLink;
+---
+
+<!-- 404 PAGE LAYOUT (English) -->
+<Layout title={`404: ${i18n.error404.title}`} description={i18n.error404.description}>
+    <section class="h-screen flex flex-col justify-center items-center text-center p-4 -mt-20">
+        <!-- Big Error Code -->
+        <h1 class="text-8xl font-extrabold text-blue-500">404</h1>
+
+        <!-- Error Title -->
+        <h2 id="error-title" class="text-3xl md:text-4xl font-bold mt-4 mb-2">
+            {enData.error404.title}
+        </h2>
+
+        <!-- Error Subtitle -->
+        <p id="error-subtitle" class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            {enData.error404.subtitle}
+        </p>
+
+        <!-- Back to Home Button -->
+        <a
+            id="error-button"
+            href={homeLink}
+            class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+        >
+            {enData.error404.button}
+        </a>
+    </section>
+</Layout>

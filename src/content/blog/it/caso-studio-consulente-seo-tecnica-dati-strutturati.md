@@ -16,8 +16,6 @@ faqs:
     answer: "Una sitemap XML generata dinamicamente ad ogni build garantisce che, quando pubblico un nuovo contenuto, Google Search Console ne venga informata subito, per un'indicizzazione rapida e accurata."
   - question: "Cosa sono i Dati Strutturati (JSON-LD) nella SEO?"
     answer: "I JSON-LD sono stringhe di codice inserite nell'HTML che spiegano chiaramente a Google la natura del sito e la sua identità (es. 'Persona' o 'Servizio Professionale'), sbloccando i rich snippet e potenziando la SEO semantica."
-  - question: "Come i meta tag canonical prevengono i contenuti duplicati?"
-    answer: "In siti multilingua come questo, inietto in modo sistematico meta tag Canonical localizzati nell'`<head>` di ogni pagina, indicando a Google la corretta relazione tra lingua e area geografica ed evitando penalizzazioni per contenuti duplicati."
   - question: "Offri servizi di ottimizzazione SEO Tecnica nelle Marche?"
     answer: "Sì, implemento architetture SEO avanzate (da Sitemap XML dinamiche a JSON-LD custom) per siti e-commerce e aziendali in tutto il territorio marchigiano."
 ---

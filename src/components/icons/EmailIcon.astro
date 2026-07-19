@@ -1,16 +1,29 @@
 ---
 const { ...props } = Astro.props;
 ---
-<svg xmlns="http://www.w3.org/2000/svg" aria-label="Gmail" role="img" viewBox="0 0 512 512" fill="#000000" {...props}>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" { ...props }>
     <title>Email</title>
-    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-    <g id="SVGRepo_iconCarrier">
-        <rect width="512" height="512" rx="15%" fill="#ffffff"></rect>
-        <path d="M158 391v-142l-82-63V361q0 30 30 30" fill="#4285f4"></path>
-        <path d="M 154 248l102 77l102-77v-98l-102 77l-102-77" fill="#ea4335"></path>
-        <path d="M354 391v-142l82-63V361q0 30-30 30" fill="#34a853"></path>
-        <path d="M76 188l82 63v-98l-30-23c-27-21-52 0-52 26" fill="#c5221f"></path>
-        <path d="M436 188l-82 63v-98l30-23c27-21 52 0 52 26" fill="#fbbc04"></path>
-    </g>
+    <path fill="url(#email-grad-a)" d="M146 44h38v110c0 6.627-5.373 12-12 12h-20a6 6 0 0 1-6-6z"/>
+    <path fill="#fc413d" d="M46 44H8v110c0 6.627 5.373 12 12 12h20a6 6 0 0 0 6-6z"/>
+    <path fill="url(#email-grad-b)" d="M39.226 30.456c-8.033-6.752-20.018-5.714-26.77 2.319-6.752 8.032-5.714 20.017 2.319 26.77l76.078 63.949a8 8 0 0 0 10.295 0l76.078-63.95c8.032-6.752 9.07-18.737 2.318-26.77-6.752-8.032-18.737-9.07-26.769-2.318L96 78.18z"/>
+    <defs>
+        <linearGradient id="email-grad-a" x1="165" x2="165" y1="44" y2="166" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#60d673"/>
+            <stop offset=".17" stop-color="#42c868"/>
+            <stop offset=".39" stop-color="#0ebc5f"/>
+            <stop offset=".62" stop-color="#00a9bb"/>
+            <stop offset=".86" stop-color="#3c90ff"/>
+            <stop offset="1" stop-color="#3186ff"/>
+        </linearGradient>
+        <linearGradient id="email-grad-b" x1="8" x2="184" y1="46.13" y2="46.13" gradientUnits="userSpaceOnUse">
+            <stop offset=".08" stop-color="#ff63a0"/>
+            <stop offset=".3" stop-color="#fc413d"/>
+            <stop offset=".5" stop-color="#fc413d"/>
+            <stop offset=".65" stop-color="#fc413d"/>
+            <stop offset=".72" stop-color="#fc5c30"/>
+            <stop offset=".86" stop-color="#feb10c"/>
+            <stop offset=".91" stop-color="#fec700"/>
+            <stop offset=".96" stop-color="#ffdb0f"/>
+        </linearGradient>
+    </defs>
 </svg>

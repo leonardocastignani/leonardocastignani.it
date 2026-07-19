@@ -10,6 +10,8 @@
     "education": "Istruzione",
     "experience": "Esperienze",
     "projects": "Progetti",
+    "services": "Servizi",
+    "servicesLink": "/servizi/",
     "blog": "Blog",
     "blogLink": "/blog/",
     "contact": "Contatti",
@@ -91,23 +93,30 @@
       {
         "role": "Sviluppatore Freelance",
         "company": "Libero Professionista",
-        "companyUrl": null,
+        "companyUrl": "https://www.leonardocastignani.it/",
         "period": "2021 - In corso",
-        "description": "Progettazione e sviluppo di siti web responsive e software personalizzati. Gestisco l'intero ciclo di vita del prodotto digitale: analisi dei requisiti, sviluppo frontend/backend, ottimizzazione delle performance e rilascio finale."
+        "description": "Progettazione e sviluppo di siti web responsive, orientati alle performance e alla SEO, e applicativi software su misura. Gestisco autonomamente l'intero ciclo di vita del prodotto digitale: dall'analisi strategica dei requisiti allo sviluppo frontend e backend, fino al deployment, collaudo e manutenzione continua."
+      },
+      {
+        "role": "Sviluppatore Web & Software (Stage formativo)",
+        "company": "Clion S.p.A.",
+        "companyUrl": "https://www.clion.it/",
+        "period": "Maggio 2026 - Luglio 2026",
+        "description": "Tirocinio curriculare (320 ore) svolto nell'ambito del Corso di Laurea in Informatica presso UNICAM. Mi sono occupato della progettazione, realizzazione e restyling di siti web (landing page e multipagina) e dello sviluppo di software (gestionali e non) interamente web-based. Le attività hanno compreso la gestione di CMS, la configurazione di contenuti per blog su WordPress e lo sviluppo di un tool custom per la conversione di codice statico (HTML/CSS/JS) in temi WordPress compatibili con Elementor."
       },
       {
         "role": "Sviluppatore Software (Tirocinio)",
-        "company": "New Technology srl",
+        "company": "New Technology s.r.l.",
         "companyUrl": "https://www.newtechnologysrl.it/",
         "period": "Agosto 2023 - Ottobre 2023",
-        "description": "Ho contribuito attivamente all'analisi e alla risoluzione di bug su applicativi esistenti, migliorando la stabilità del software. Ho inoltre collaborato allo sviluppo di nuove funzionalità, applicando metodologie di testing e debugging in un contesto professionale."
+        "description": "Tirocinio incentrato sull'analisi e la risoluzione di bug (bug fixing) su applicativi software esistenti, ottimizzandone la stabilità e l'efficienza. Ho collaborato con il team IT alla progettazione e implementazione di nuove funzionalità, applicando metodologie di testing e debugging in un ambiente di sviluppo strutturato."
       },
       {
         "role": "Sviluppatore Junior (Alternanza Scuola-Lavoro)",
-        "company": "New Technology srl",
+        "company": "New Technology s.r.l.",
         "companyUrl": "https://www.newtechnologysrl.it/",
         "period": "Marzo 2023",
-        "description": "Prima esperienza in un contesto aziendale, dove ho supportato il team di sviluppo in task di programmazione e ho appreso le dinamiche del lavoro di squadra e le best practice del settore sotto la guida di sviluppatori senior."
+        "description": "Percorso PCTO (120 ore) che ha segnato il mio primo approccio diretto al mondo aziendale. Ho affiancato il team in task operativi di programmazione, acquisendo familiarità con le dinamiche del lavoro di squadra, i flussi di sviluppo software e le best practice del settore sotto la supervisione di sviluppatori senior."
       }
     ]
   },
@@ -117,12 +126,377 @@
     "githubDescription": "Al momento sto rifinendo alcuni progetti personali per renderli pubblici. Nel frattempo, ti invito a esplorare i miei repository, gli esercizi universitari e il codice sorgente di questo portfolio direttamente su GitHub.",
     "githubButton": "Visita il mio profilo GitHub"
   },
+  "services": {
+    "metaTitle": "Servizi | Leonardo Castignani",
+    "metaDescription": "Landing page e siti multi-pagina su misura, Core Web Vitals, SEO/GEO/AEO, migrazioni tecnologiche e software su misura. Scopri come posso far crescere il tuo progetto digitale.",
+    "title": "I miei Servizi",
+    "subtitle": "Soluzioni concrete per chi ha bisogno di un sito veloce, trovabile su Google e pronto a crescere - non un altro preventivo generico.",
+    "list": [
+      {
+        "slug": "sviluppo-web-alte-prestazioni",
+        "icon": "performance",
+        "title": "Landing Page ad Alte Prestazioni",
+        "tagline": "Una pagina, un obiettivo: convertire visitatori in contatti veri.",
+        "description": "Sviluppo di landing page one-page con architettura a isole (Astro): fino a 6 sezioni, menu ad ancora, form di contatto avanzato e caricamento istantaneo. Eventuali funzionalità aggiuntive vengono sempre quotate in modo trasparente.",
+        "features": [
+          "Architettura a isole (Astro) per zero JavaScript superfluo",
+          "Menu ad ancora con scorrimento fluido tra le sezioni",
+          "Form di contatto avanzato collegato alla tua email",
+          "Design responsive e mobile-first su ogni dispositivo"
+        ],
+        "idealFor": [
+          "Chi deve lanciare una campagna o un'attività in tempi brevi",
+          "Chi vuole una vetrina snella, veloce e facile da aggiornare",
+          "Chi preferisce un progetto mirato, con un budget contenuto"
+        ],
+        "includes": [
+          "Analisi dei requisiti e proposta tecnica",
+          "Design responsive su misura, non template preconfezionati",
+          "Sviluppo con architettura a isole (Astro) e zero JS superfluo",
+          "Test cross-browser e cross-device prima del rilascio",
+          "Formazione all'uso del form di contatto e dei contenuti"
+        ]
+      },
+      {
+        "slug": "sito-corporate-tailor-made",
+        "icon": "development",
+        "title": "Sito Multi-pagina su Misura",
+        "tagline": "Un sito su misura, senza i limiti di un CMS generico.",
+        "description": "Sviluppo di siti corporate multi-pagina in codice sorgente personalizzato, senza CMS: design su misura e pannello di controllo dedicato solo alle sezioni che ti servono davvero (News, Portfolio, Gallery), senza interfacce inutili.",
+        "features": [
+          "Codice sorgente custom, nessun CMS da mantenere o aggiornare",
+          "Pannello di controllo dedicato per le sezioni dinamiche",
+          "Struttura scalabile su più pagine, senza limiti rigidi",
+          "Nessuna vulnerabilità nota da plugin o temi di terze parti"
+        ],
+        "idealFor": [
+          "Chi vuole un'immagine aziendale solida e distintiva",
+          "Chi non vuole dipendere da plugin, licenze o aggiornamenti CMS",
+          "Chi ha bisogno di più pagine con contenuti in parte dinamici"
+        ],
+        "includes": [
+          "Analisi dei requisiti e proposta tecnica",
+          "Design responsive su misura, non template preconfezionati",
+          "Sviluppo con architettura a isole (Astro) e zero JS superfluo",
+          "Pannello di controllo per le sezioni dinamiche concordate",
+          "Formazione all'uso del pannello e dei contenuti"
+        ]
+      },
+      {
+        "slug": "core-web-vitals",
+        "icon": "core-web-vitals",
+        "title": "Ottimizzazione Core Web Vitals",
+        "tagline": "Meno attesa, più conversioni: performance misurabili, non promesse.",
+        "description": "Audit tecnico di LCP, INP e CLS con refactoring mirato del codice esistente: interventi concreti su immagini, script e layout per migliorare l'esperienza utente e il posizionamento su Google, con numeri misurabili prima e dopo.",
+        "features": [
+          "Audit Lighthouse e PageSpeed Insights dettagliato",
+          "Refactoring mirato di immagini, font e script di terze parti",
+          "Monitoraggio dei Core Web Vitals nel tempo",
+          "Report comprensibile anche a chi non è tecnico"
+        ],
+        "idealFor": [
+          "Chi ha già un sito ma perde visitatori per i tempi di caricamento",
+          "Chi ha ricevuto un avviso di Google Search Console su LCP/INP/CLS",
+          "Chi vuole capire, in numeri, quanto la lentezza costa in conversioni"
+        ],
+        "includes": [
+          "Audit completo con Lighthouse e PageSpeed Insights",
+          "Ottimizzazione di immagini, font e caricamento script",
+          "Riduzione del JavaScript non essenziale",
+          "Report prima/dopo con metriche misurabili",
+          "Monitoraggio continuo nel tempo (opzionale)"
+        ]
+      },
+      {
+        "slug": "seo-tecnica-locale",
+        "icon": "seo",
+        "title": "SEO, GEO & Ricerca Generativa",
+        "tagline": "Farsi trovare da Google e citare dagli assistenti AI.",
+        "description": "Dati strutturati (JSON-LD), SEO tecnica e locale, e le nuove discipline GEO/AEO per essere citato da ChatGPT, Perplexity e AI Overview: un unico pacchetto per dominare sia la ricerca classica sia quella generativa.",
+        "features": [
+          "Dati strutturati Schema.org (JSON-LD) su misura",
+          "SEO tecnica, locale e Google Business Profile",
+          "GEO e AEO per la visibilità su ChatGPT, Perplexity e AI Overview",
+          "Struttura per il retrieval AI (llms.txt, RAG-readiness)"
+        ],
+        "idealFor": [
+          "Chi ha un'attività locale e vuole comparire nelle ricerche della zona",
+          "Chi vuole essere citato anche dagli assistenti AI (ChatGPT, Perplexity)",
+          "Chi ha un sito che Google fatica a indicizzare o posizionare"
+        ],
+        "includes": [
+          "Audit tecnico SEO completo del sito esistente",
+          "Implementazione di dati strutturati Schema.org (JSON-LD)",
+          "Ottimizzazione Google Business Profile e SEO locale",
+          "Strategia GEO/AEO per la visibilità sugli assistenti AI",
+          "Predisposizione RAG-readiness (llms.txt, embeddings, schema avanzato)"
+        ]
+      },
+      {
+        "slug": "migrazioni-tecnologiche",
+        "icon": "migrations",
+        "title": "Migrazioni e Restyling Tecnologico",
+        "tagline": "Dal vecchio sito lento a un'architettura moderna, senza perdere posizionamento.",
+        "description": "Migrazione di portali WordPress appesantiti o Single Page Application pesanti verso architetture moderne e performanti, preservando URL, contenuti e ranking SEO acquisito nel tempo.",
+        "features": [
+          "Migrazione da WordPress verso architetture moderne",
+          "Passaggio da SPA pesanti a rendering ibrido (SSR/SSG)",
+          "Redirect 301 e preservazione del posizionamento SEO",
+          "Piano di migrazione a basso rischio, senza downtime"
+        ],
+        "idealFor": [
+          "Chi ha un sito WordPress diventato lento e difficile da mantenere",
+          "Chi ha una Single Page Application (React/Vue) pesante da caricare",
+          "Chi vuole cambiare tecnologia senza perdere posizionamento SEO"
+        ],
+        "includes": [
+          "Analisi del sito/applicazione esistente e piano di migrazione",
+          "Mappatura e redirect 301 di tutti gli URL esistenti",
+          "Migrazione dei contenuti senza perdita di dati",
+          "Verifica SEO post-migrazione (posizionamento, indicizzazione)",
+          "Rilascio a basso rischio, senza downtime del sito"
+        ]
+      },
+      {
+        "slug": "software-gestionale-automazione",
+        "icon": "automation",
+        "title": "Software su Misura e Automazione",
+        "tagline": "Strumenti su misura per far lavorare meno le persone e più i processi.",
+        "description": "Sviluppo di applicativi gestionali, tool interni e automazioni personalizzate: dashboard, integrazioni tra software già in uso e automazione di processi ripetitivi, pensati per il tuo flusso di lavoro specifico, non adattati da un software generico.",
+        "features": [
+          "Software gestionale su misura (non solo applicazioni web)",
+          "Automazione di processi aziendali ripetitivi",
+          "Integrazioni tra strumenti e sistemi già in uso",
+          "Dashboard e reportistica personalizzata"
+        ],
+        "idealFor": [
+          "Chi gestisce ancora processi a mano (fogli Excel, email, carta)",
+          "Chi usa più software che non comunicano tra loro",
+          "Chi ha bisogno di uno strumento interno su misura, non un gestionale generico"
+        ],
+        "includes": [
+          "Analisi del processo aziendale da digitalizzare o automatizzare",
+          "Sviluppo di software gestionale/tool interno su misura",
+          "Integrazione con sistemi e software già in uso",
+          "Dashboard di controllo e reportistica personalizzata",
+          "Formazione del team all'uso dello strumento"
+        ]
+      }
+    ],
+    "processTitle": "Come lavoro",
+    "processSubtitle": "Un metodo chiaro, dalla prima chiamata al rilascio in produzione.",
+    "process": [
+      {
+        "icon": "discovery",
+        "title": "Analisi e Strategia",
+        "description": "Analizziamo insieme obiettivi, pubblico e vincoli tecnici per definire la soluzione più adatta, prima di scrivere una sola riga di codice."
+      },
+      {
+        "icon": "design",
+        "title": "Progettazione UX/UI",
+        "description": "Definisco architettura delle informazioni e interfaccia, con un occhio sempre puntato su performance e conversione."
+      },
+      {
+        "icon": "development",
+        "title": "Sviluppo e Testing",
+        "description": "Scrivo codice pulito e testato, con controlli di qualità e accessibilità durante tutto il processo, non solo alla fine."
+      },
+      {
+        "icon": "launch",
+        "title": "Rilascio e Assistenza",
+        "description": "Pubblico il progetto con pipeline automatizzate e resto a disposizione per formazione, manutenzione e crescita futura."
+      }
+    ],
+    "faqTitle": "Domande frequenti sui servizi",
+    "detailsLabel": "Scopri di più",
+    "homeSectionTitle": "Come posso aiutarti",
+    "homeSectionSubtitle": "Dallo sviluppo web su misura all'automazione dei processi aziendali: ogni progetto parte da un obiettivo concreto, non da un template.",
+    "viewAllLabel": "Scopri tutti i servizi",
+    "modal": {
+      "idealForLabel": "Pensato per chi:",
+      "includesLabel": "Cosa include",
+      "ctaLabel": "Richiedi informazioni su questo servizio",
+      "closeLabel": "Chiudi finestra di dettaglio",
+      "prefillMessage": "Salve, sono interessato/a al servizio \"{service}\". Vorrei ricevere maggiori informazioni e, se possibile, un preventivo indicativo."
+    },
+    "quiz": {
+      "title": "Non sai da dove partire? Scoprilo in 30 secondi.",
+      "subtitle": "Rispondi a 4 domande veloci: ti diciamo subito di cosa hai davvero bisogno.",
+      "restartLabel": "Ricomincia",
+      "resultCtaLabel": "Scopri questo servizio",
+      "resultIntro": "In base alle tue risposte, il servizio più adatto a te è:",
+      "progressLabel": "Domanda {current} di {total}",
+      "questions": [
+        {
+          "question": "Cosa ti serve principalmente?",
+          "answers": [
+            { "label": "Una landing page veloce per una campagna", "service": "sviluppo-web-alte-prestazioni" },
+            { "label": "Un sito aziendale multi-pagina su misura", "service": "sito-corporate-tailor-made" },
+            { "label": "Velocizzare il sito attuale", "service": "core-web-vitals" },
+            { "label": "Farmi trovare su Google e dagli assistenti AI", "service": "seo-tecnica-locale" },
+            { "label": "Modernizzare la tecnologia attuale", "service": "migrazioni-tecnologiche" },
+            { "label": "Automatizzare un processo aziendale", "service": "software-gestionale-automazione" },
+            { "label": "Non sono ancora sicuro/a" },
+            { "label": "Un mix di più cose tra queste" }
+          ]
+        },
+        {
+          "question": "Come useresti principalmente il progetto?",
+          "answers": [
+            { "label": "Vetrina rapida per una campagna o un'offerta", "service": "sviluppo-web-alte-prestazioni" },
+            { "label": "Presenza aziendale solida e strutturata", "service": "sito-corporate-tailor-made" },
+            { "label": "Capire perché il sito è lento", "service": "core-web-vitals" },
+            { "label": "Farmi notare nella mia zona e online", "service": "seo-tecnica-locale" },
+            { "label": "Rifare un sito già esistente", "service": "migrazioni-tecnologiche" },
+            { "label": "Strumento interno per il team", "service": "software-gestionale-automazione" },
+            { "label": "Dipende, fammi qualche esempio" },
+            { "label": "Un po' di tutto questo insieme" }
+          ]
+        },
+        {
+          "question": "Quale problema ti dà più fastidio oggi?",
+          "answers": [
+            { "label": "Non ho ancora nulla online", "service": "sviluppo-web-alte-prestazioni" },
+            { "label": "Il mio sito attuale sembra amatoriale", "service": "sito-corporate-tailor-made" },
+            { "label": "Il sito carica troppo lentamente", "service": "core-web-vitals" },
+            { "label": "Il sito resta invisibile online", "service": "seo-tecnica-locale" },
+            { "label": "Tecnologia ormai superata e lenta", "service": "migrazioni-tecnologiche" },
+            { "label": "Troppo tempo su attività manuali", "service": "software-gestionale-automazione" },
+            { "label": "Nessuno di questi in particolare" },
+            { "label": "Diversi di questi contemporaneamente" }
+          ]
+        },
+        {
+          "question": "Un solo risultato nei prossimi 3 mesi: quale sceglieresti?",
+          "answers": [
+            { "label": "Una landing page online per una campagna", "service": "sviluppo-web-alte-prestazioni" },
+            { "label": "Un sito aziendale completo e professionale", "service": "sito-corporate-tailor-made" },
+            { "label": "Punteggi di velocità più alti", "service": "core-web-vitals" },
+            { "label": "Posizioni più alte su Google e sulle AI", "service": "seo-tecnica-locale" },
+            { "label": "Una piattaforma moderna e solida", "service": "migrazioni-tecnologiche" },
+            { "label": "Meno tempo su attività ripetitive", "service": "software-gestionale-automazione" },
+            { "label": "Preferisco deciderlo insieme a te" },
+            { "label": "Più di uno di questi risultati" }
+          ]
+        }
+      ]
+    },
+    "estimator": {
+      "title": "Configura il tuo progetto",
+      "subtitle": "Scegli il tipo di progetto, la dimensione e le funzionalità che ti interessano: la stima si aggiorna in tempo reale.",
+      "disclaimer": "Valori puramente indicativi a scopo illustrativo: il costo reale dipende da obiettivi, complessità e contenuti del progetto, e viene definito insieme dopo una prima chiamata gratuita.",
+      "totalLabel": "Investimento stimato",
+      "emptyLabel": "Scegli un tipo di progetto per vedere una stima",
+      "projectTypeLabel": "1. Tipo di progetto",
+      "addonsLabel": "2. Funzionalità aggiuntive",
+      "resetLabel": "Ricomincia",
+      "contactLabel": "Richiedi un preventivo su misura",
+      "noAddonsLabel": "nessuna",
+      "messageTemplate": "Ho configurato online il seguente progetto: {type} ({units} {unitLabel}), con queste funzionalità aggiuntive: {addons}. Stima indicativa: ~€{total}. Vorrei ricevere maggiori informazioni e un preventivo più preciso.",
+      "reactions": [
+        "Un progetto snello ed efficace.",
+        "Un buon compromesso tra scopo e budget.",
+        "Un progetto completo e ben strutturato.",
+        "Una trasformazione digitale a tutto tondo."
+      ],
+      "projectTypes": [
+        {
+          "key": "landing",
+          "label": "Landing Page",
+          "description": "Fino a 6 sezioni incluse, menu ad ancora e form avanzato; funzionalità extra sempre a preventivo.",
+          "basePrice": 600,
+          "unitLabel": "Sezioni aggiuntive",
+          "unitPrice": 150,
+          "minUnits": 0,
+          "maxUnits": 8,
+          "defaultUnits": 0,
+          "excludedAddons": ["automation"]
+        },
+        {
+          "key": "multipage",
+          "label": "Sito Multi-pagina su Misura",
+          "description": "Sito multi-pagina in codice custom (no CMS), con pannello di controllo dedicato; include fino a 8 pagine.",
+          "basePrice": 1700,
+          "unitLabel": "Pagine aggiuntive",
+          "unitPrice": 180,
+          "minUnits": 0,
+          "maxUnits": 15,
+          "defaultUnits": 0,
+          "excludedAddons": []
+        },
+        {
+          "key": "restyling",
+          "label": "Restyling / Migrazione",
+          "description": "Rinnovamento di un sito esistente o passaggio a una tecnologia moderna, preservando URL e posizionamento SEO.",
+          "basePrice": 1000,
+          "unitLabel": "Pagine da migrare",
+          "unitPrice": 150,
+          "minUnits": 1,
+          "maxUnits": 20,
+          "defaultUnits": 5,
+          "excludedAddons": []
+        },
+        {
+          "key": "web-software",
+          "label": "Software su Misura",
+          "description": "Applicativo gestionale, tool interno o automazione su misura, sviluppato dopo un'analisi dei requisiti.",
+          "basePrice": 900,
+          "unitLabel": "Moduli funzionali",
+          "unitPrice": 500,
+          "minUnits": 1,
+          "maxUnits": 12,
+          "defaultUnits": 3,
+          "excludedAddons": ["seo-onpage-technical", "seo-local-international", "geo", "aeo", "rag", "rss", "cwv"]
+        }
+      ],
+      "addons": [
+        { "key": "seo-onpage-technical", "label": "SEO On-Page e Tecnica", "description": "Metatag, heading, sitemap, crawlability e Core Web Vitals.", "price": 300 },
+        { "key": "seo-local-international", "label": "SEO Locale e Internazionale", "description": "Google Business Profile, hreflang e posizionamento multi-paese.", "price": 300 },
+        { "key": "geo", "label": "GEO (Generative Engine Optimization)", "description": "Ottimizzazione per citazioni da ChatGPT, Perplexity e AI Overview.", "price": 350 },
+        { "key": "aeo", "label": "AEO (Answer Engine Optimization)", "description": "Ottimizzazione per risposte dirette, ricerca vocale e SGE.", "price": 300 },
+        { "key": "rag", "label": "RAG-Readiness", "description": "Struttura dati e contenuti pronta per il retrieval da sistemi AI (llms.txt, embeddings, schema avanzato).", "price": 450 },
+        { "key": "rss", "label": "Feed RSS", "description": "Distribuzione automatica dei contenuti tramite feed RSS.", "price": 80 },
+        { "key": "cwv", "label": "Ottimizzazione Core Web Vitals", "description": "Audit e refactoring per LCP, INP e CLS.", "price": 350 },
+        { "key": "automation", "label": "Automazioni e Integrazioni", "description": "Collegamento con strumenti e processi già in uso.", "price": 500 }
+      ]
+    },
+    "terminal": {
+      "title": "Guarda una build reale, dal vivo",
+      "subtitle": "Questo è esattamente il tipo di output che ottengo lavorando su ogni progetto: build veloci, pulite, verificabili — non solo parole.",
+      "lines": [
+        "$ npm run build",
+        "  building for production...",
+        "  ✓ 89 pagine generate",
+        "  ✓ immagini ottimizzate automaticamente",
+        "  ✓ sitemap e feed RSS generati",
+        "  ✓ build completata in 10.86s",
+        "$ _"
+      ]
+    },
+    "beforeAfter": {
+      "title": "L'impatto reale dell'ottimizzazione",
+      "subtitle": "Un esempio tipico di ciò che succede quando un sito lento viene ottimizzato correttamente.",
+      "disclaimer": "Valori illustrativi basati su casi tipici di ottimizzazione tecnica, non riferiti a un cliente specifico.",
+      "beforeLabel": "Prima",
+      "afterLabel": "Dopo",
+      "stats": [
+        { "label": "Tempo di caricamento (LCP)", "before": 4.2, "after": 0.9, "suffix": "s", "decimals": 1 },
+        { "label": "Peso della pagina", "before": 3500, "after": 650, "suffix": " KB", "decimals": 0 },
+        { "label": "Richieste HTTP", "before": 85, "after": 22, "suffix": "", "decimals": 0 }
+      ]
+    },
+    "ctaTitle": "Non sai da dove iniziare?",
+    "ctaText": "Raccontami il tuo progetto: in una prima chiamata conoscitiva individuiamo insieme la soluzione più adatta, senza impegno.",
+    "ctaButton": "Richiedi una consulenza gratuita",
+    "ctaHref": "/#contact"
+  },
   "blog": {
     "title": "Blog & Appunti",
     "description": "Appunti di sviluppo, tutorial e aggiornamenti sui progetti.",
     "backToArticles": "← Torna agli articoli",
     "readMore": "Leggi tutto",
     "publishedOn": "Pubblicato il",
+    "readingTime": "{minutes} min di lettura",
     "locale": "it-IT",
     "ctaTitle": "Hai un progetto simile in mente?",
     "ctaText": "Se questo articolo ti ha dato spunti utili, posso aiutarti a metterli in pratica sul tuo sito o progetto.",
@@ -131,7 +505,15 @@
     "relatedTitle": "Articoli correlati",
     "homeSectionTitle": "Dal Blog",
     "homeSectionSubtitle": "Guide pratiche su SEO, performance e sviluppo web, scritte da chi realizza siti ogni giorno.",
-    "viewAllLabel": "Vedi tutti gli articoli"
+    "viewAllLabel": "Vedi tutti gli articoli",
+    "shareLabel": "Condividi questo articolo",
+    "shareNative": "Condividi",
+    "shareLinkedin": "Condividi su LinkedIn",
+    "shareX": "Condividi su X",
+    "shareWhatsapp": "Condividi su WhatsApp",
+    "shareEmail": "Condividi via email",
+    "shareCopy": "Copia link",
+    "shareCopied": "Link copiato!"
   },
   "homeFaq": {
     "title": "Domande frequenti",
@@ -247,6 +629,21 @@
     "tooltip": "Scrivimi su WhatsApp",
     "ariaLabel": "Contattami su WhatsApp",
     "message": "Ciao%20Leonardo%2C%20ho%20trovato%20il%20tuo%20portfolio%20e%20vorrei%20mettermi%20in%20contatto%20con%20te%21"
+  },
+  "speedDial": {
+    "openLabel": "Apri menu contatti rapidi",
+    "closeLabel": "Chiudi menu contatti rapidi"
+  },
+  "toc": {
+    "title": "Indice dei contenuti",
+    "openLabel": "Apri indice dei contenuti",
+    "closeLabel": "Chiudi indice dei contenuti"
+  },
+  "search": {
+    "placeholder": "Cerca tra gli articoli...",
+    "noResults": "Nessun risultato trovato.",
+    "loading": "Ricerca in corso...",
+    "unavailable": "Ricerca non disponibile in ambiente di sviluppo (disponibile dopo la build di produzione)."
   },
   "cookieModal": {
     "title": "La tua privacy conta",

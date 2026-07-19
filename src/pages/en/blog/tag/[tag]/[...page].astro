@@ -7,6 +7,7 @@ import Layout from '../../../../../layouts/Layout.astro';
 import { getI18N } from '../../../../../i18n/utils';
 import { getTagLabel, isNoindexTag } from '../../../../../data/tags';
 import { SITE_DATA, SCHEMA_IDS } from '../../../../../consts';
+import { getReadingTime } from '../../../../../scripts/readingTime.js';
 
 // --- STATIC PATHS GENERATION ---
 export const getStaticPaths = (async ({ paginate }) => {
@@ -73,20 +74,20 @@ const schemaLd = {
             </div>
 
             {/* GRIGLIA ARTICOLI */}
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-stagger-children="90">
                 {page.data.map((post) => {
                     const cleanSlug = post.slug.replace(/^en\//, '');
                     return (
                         <a 
                             href={`/en/blog/${cleanSlug}/`} 
-                            class="block group bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-blue-400 transition-all duration-300 hover:-translate-y-1"
+                            data-animate="fade-up" data-tilt-max="1.6" class="card-tilt spotlight block group bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-blue-400"
                         >
                             {post.data.heroImage && (
-                                <div class="aspect-[16/9] w-full overflow-hidden border-b border-gray-700 bg-gray-800">
+                                <div class="img-reveal aspect-[16/9] w-full overflow-hidden border-b border-gray-700 bg-gray-800">
                                     <img 
                                         src={post.data.heroImage} 
                                         alt={post.data.title} 
-                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
+                                        class="w-full h-full object-cover" 
                                         loading="lazy"
                                         decoding="async"
                                         width="600"
@@ -101,6 +102,8 @@ const schemaLd = {
                                 <p class="text-gray-400 line-clamp-3 mb-4">{post.data.cardDescription}</p>
                                 <span class="text-sm text-gray-500 font-mono">
                                     {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                                    {' · '}
+                                    {i18n.blog.readingTime.replace('{minutes}', getReadingTime(post.body).toString())}
                                 </span>
                             </div>
                         </a>

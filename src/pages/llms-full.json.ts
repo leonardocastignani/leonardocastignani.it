@@ -1,6 +1,8 @@
 // IMPORTS
 import { getCollection } from 'astro:content';
 import { SITE_DATA, SOCIAL_LINKS, PERSON_KNOWS_ABOUT } from '../consts';
+import itI18n from '../i18n/it.json';
+import enI18n from '../i18n/en.json';
 
 // EXPORTS
 export const prerender = true;
@@ -66,6 +68,16 @@ export async function GET() {
             certifications: AUTHORITY.certifications,
             publishedArticles: itPosts.length + enPosts.length,
             contact: SOCIAL_LINKS,
+        },
+        services: {
+            it: {
+                url: `${SITE_DATA.siteUrl}/servizi/`,
+                list: itI18n.services.list.map((s) => ({ title: s.title, tagline: s.tagline, description: s.description, features: s.features })),
+            },
+            en: {
+                url: `${SITE_DATA.siteUrl}/en/services/`,
+                list: enI18n.services.list.map((s) => ({ title: s.title, tagline: s.tagline, description: s.description, features: s.features })),
+            },
         },
         knowledgeBase: [
             ...itPosts.map((post) => toKnowledgeEntry(post, 'it')),

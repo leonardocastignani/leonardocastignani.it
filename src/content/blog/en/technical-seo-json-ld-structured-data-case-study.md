@@ -16,8 +16,6 @@ faqs:
     answer: "A dynamically generated XML sitemap ensures that every time new content is published, Google Search Console is immediately pinged for fast and accurate indexing."
   - question: "What is structured data (JSON-LD) in SEO?"
     answer: "JSON-LD is code injected into the HTML that clearly explains to Google the nature of a site and its identity (e.g. 'Person' or 'Professional Service'), unlocking rich snippets and strengthening semantic SEO."
-  - question: "How do canonical meta tags prevent duplicate content?"
-    answer: "On multilingual sites like this one, I systematically inject localized Canonical Meta Tags within the `<head>` of each page, providing search engines the strict language and region relationships necessary to avoid penalties."
   - question: "Do you offer technical SEO optimization services in the Marche region?"
     answer: "Yes, I implement advanced SEO architectures (from dynamic XML Sitemaps to custom JSON-LD) for e-commerce and business websites throughout the Marche region, as well as for clients elsewhere in Italy."
 ---

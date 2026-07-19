@@ -1,6 +1,7 @@
 import EmailIcon from '../components/icons/EmailIcon.astro';
 import GithubIcon from '../components/icons/GithubIcon.astro';
 import LinkedinIcon from '../components/icons/LinkedinIcon.astro';
+import IndeedIcon from '../components/icons/IndeedIcon.astro';
 import FacebookIcon from '../components/icons/FacebookIcon.astro';
 import InstagramIcon from '../components/icons/InstagramIcon.astro';
 
@@ -9,6 +10,11 @@ export const social = [
         name: 'LinkedIn', 
         Icon: LinkedinIcon,
         id: 'linkedin'
+    },
+    { 
+        name: 'Indeed', 
+        Icon: IndeedIcon,
+        id: 'indeed'
     },
     { 
         name: 'GitHub', 

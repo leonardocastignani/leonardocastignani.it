@@ -16,8 +16,6 @@ faqs:
     answer: "The price difference reflects standard low-cost templates versus engineered, custom-coded strategic platforms built for high performance, deep SEO, and high conversion rates."
   - question: "What are the hidden costs of cheap websites?"
     answer: "Cheap sites act as a 'sunk cost': they are poorly optimized, slow, generic, and will cost you thousands in lost customers and tarnished brand reputation over time."
-  - question: "What factors into the cost of a custom professional site?"
-    answer: "A professional investment covers strategic marketing analysis, custom performance optimization, mobile-first adaptable UX, semantic clean code, and scalable architecture."
   - question: "Do you provide custom quotes for businesses outside Italy?"
     answer: "Yes. Based in Civitanova Marche, Italy, I also work with clients across Italy and internationally, offering transparent quotes tailored to real business needs and ROI."
 ---

@@ -1,0 +1,47 @@
+---
+// --- IMPORTS ---
+import { getI18N, getLangFromUrl } from '../i18n/utils';
+import ServiceIcon from './icons/ServiceIcon.astro';
+import type { ServiceIconName } from '../types/services';
+
+// --- INITIAL CONFIGURATION ---
+const i18n = getI18N({ astroUrl: Astro.url });
+const services = i18n.services;
+const titleId = "services-teaser-title";
+const servicesPageHref = getLangFromUrl(Astro.url) === 'en' ? '/en/services/' : '/servizi/';
+---
+
+<!-- HOME SERVICES TEASER (quick overview linking to the full /servizi/ page) -->
+<section id="services" class="py-20 px-4 bg-gray-900 fade-in-section" aria-labelledby={titleId}>
+    <div class="container mx-auto max-w-5xl text-center border-t border-gray-700/50 pt-16">
+        <h2 id={titleId} class="text-3xl md:text-4xl font-bold mb-3">{services.homeSectionTitle}</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto mb-12">{services.homeSectionSubtitle}</p>
+
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-12 text-left" data-stagger-children="80">
+            {services.list.map((service) => (
+                <a
+                    href={`${servicesPageHref}#service-${service.slug}`}
+                    data-animate="fade-up"
+                    class="service-teaser-card card-tilt spotlight group relative flex flex-col bg-gray-800 border border-gray-700 hover:border-blue-500 rounded-2xl p-6 shadow-xl transition-colors duration-200"
+                    data-tilt-max="2"
+                >
+                    <span class="mb-4 flex items-center justify-center w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex-shrink-0" style="transform: translateZ(20px);">
+                        <ServiceIcon name={service.icon as ServiceIconName} class="w-6 h-6" />
+                    </span>
+                    <h3 class="text-base font-bold text-white mb-1.5">{service.title}</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">{service.tagline}</p>
+                </a>
+            ))}
+        </div>
+
+        <a
+            href={servicesPageHref}
+            class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-blue-400 rounded"
+        >
+            <span>{services.viewAllLabel}</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+        </a>
+    </div>
+</section>

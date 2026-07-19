@@ -44,6 +44,9 @@ function getSitemapOverrides(pathname) {
   if (pathname === '/blog/' || pathname === '/en/blog/') {
     return { changefreq: 'weekly', priority: 0.8 };
   }
+  if (pathname === '/servizi/' || pathname === '/en/services/') {
+    return { changefreq: 'monthly', priority: 0.9 };
+  }
   if (pathname.includes('/blog/tag/')) {
     return { changefreq: 'monthly', priority: 0.3 };
   }

@@ -12,6 +12,15 @@ html, body {
     padding: 0;
 }
 
+/* `scrollbar-gutter: stable` (set on html in Layout.astro) reserves the
+   scrollbar's space on the html element's own box, outside of body. Only
+   body has the dark bg-gray-900 background, so that reserved strip fell
+   through to the browser's default (white) canvas behind it — visible as
+   an uncovered vertical strip whenever a modal/cookie banner dims the page. */
+html {
+    background-color: #111827;
+}
+
 /* --- CUSTOM SCROLLBAR --- */
 html {
     scrollbar-width: auto;
@@ -22,19 +31,391 @@ html::-webkit-scrollbar-track { background: #111827; }
 html::-webkit-scrollbar-thumb { background: #374151; border-radius: 6px; border: 2px solid #111827; }
 html::-webkit-scrollbar-thumb:hover { background: #4b5563; }
 
-/* --- COOKIE SCROLL LOCK --- */
-html.cookie-scroll-locked {
+/* --- MODAL SCROLL LOCK (shared by every full-screen overlay: cookie consent, service detail, ...) --- */
+html.modal-scroll-locked {
     overflow: hidden;
+}
+
+/* --- PREMIUM EASING TOKENS --- */
+:root {
+    --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --spotlight-x: 50%;
+    --spotlight-y: 50%;
+    --tilt-x: 0deg;
+    --tilt-y: 0deg;
 }
 
 /* --- CUSTOM COMPONENTS LAYER --- */
 @layer components {
+    /* SCROLL REVEAL SYSTEM (data-animate) */
     .fade-in-section {
         @apply opacity-0 translate-y-5 transition-all duration-700 ease-out;
     }
 
     .fade-in-section.is-visible {
         @apply opacity-100 translate-y-0;
+    }
+
+    [data-animate] {
+        opacity: 0;
+        transition: opacity 0.8s var(--ease-premium), transform 0.8s var(--ease-premium), filter 0.8s var(--ease-premium);
+        will-change: opacity, transform;
+    }
+    [data-animate="fade-up"] { transform: translateY(28px); }
+    [data-animate="fade"] { transform: none; }
+    [data-animate="slide-left"] { transform: translateX(-36px); }
+    [data-animate="slide-right"] { transform: translateX(36px); }
+    [data-animate="scale"] { transform: scale(0.92); filter: blur(2px); }
+
+    [data-animate].is-visible {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+        filter: blur(0);
+    }
+
+    /* TOC TRIGGER: slides between the back-to-top slot and its own spot on scroll.
+       Declared with the ID's higher specificity so it doesn't get silently
+       dropped by .btn-premium's own (transform/box-shadow/filter-only) transition
+       rule further down — same shorthand-property clash pattern as elsewhere. */
+    #toc-trigger {
+        transition: bottom 0.3s var(--ease-smooth), transform 0.35s var(--ease-bounce), box-shadow 0.35s var(--ease-smooth), filter 0.3s var(--ease-smooth);
+    }
+
+    /* PREMIUM BUTTONS */
+    .btn-premium {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        transition: transform 0.35s var(--ease-bounce), box-shadow 0.35s var(--ease-smooth), filter 0.3s var(--ease-smooth);
+        transform: translateZ(0) scale(1);
+    }
+    .btn-premium:hover {
+        transform: translateY(-2px) scale(1.015);
+        filter: brightness(1.08);
+    }
+    .btn-premium:active {
+        transform: translateY(0) scale(0.97);
+        transition-duration: 0.12s;
+    }
+    .btn-premium .btn-ripple {
+        position: absolute;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.45);
+        transform: scale(0);
+        opacity: 0.6;
+        pointer-events: none;
+        animation: btn-ripple-anim 650ms var(--ease-smooth) forwards;
+    }
+    @keyframes btn-ripple-anim {
+        to { transform: scale(1); opacity: 0; }
+    }
+
+    /* CARD PREMIUM (lift + soft 3D tilt + glow shadow) */
+    .card-tilt {
+        position: relative;
+        transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth), border-color 0.4s var(--ease-smooth);
+        transform: perspective(1000px) rotateX(var(--tilt-y)) rotateY(var(--tilt-x)) translateY(0);
+        transform-style: preserve-3d;
+    }
+    .card-tilt:hover {
+        transform: perspective(1000px) rotateX(var(--tilt-y)) rotateY(var(--tilt-x)) translateY(-4px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px -10px rgba(59, 130, 246, 0.25);
+    }
+
+    /* TERMINAL DEMO BLINKING CURSOR */
+    .terminal-cursor {
+        animation: terminal-blink 1s step-end infinite;
+    }
+    @keyframes terminal-blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+    }
+
+    /* PROCESS STEPPER CONNECTOR + ACTIVE ICON STATE */
+    @media (min-width: 1024px) {
+        .process-connector::after {
+            content: "\2192";
+            position: absolute;
+            top: 2.75rem;
+            right: -1.5rem;
+            font-size: 1.5rem;
+            line-height: 1;
+            color: rgba(255, 255, 255, 0.15);
+            pointer-events: none;
+        }
+    }
+    .process-icon.process-step-active {
+        border-color: rgba(59, 130, 246, 0.8);
+        color: #60a5fa;
+        background-color: rgba(59, 130, 246, 0.1);
+    }
+
+    /* SERVICE CARD HIGHLIGHT (jump target from the quiz result) */
+    .service-card-highlight {
+        animation: service-card-pulse 1.6s ease-out 2;
+    }
+    @keyframes service-card-pulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.55); border-color: rgba(59, 130, 246, 0.85); }
+        50% { box-shadow: 0 0 0 12px rgba(59, 130, 246, 0); border-color: rgba(59, 130, 246, 0.85); }
+    }
+
+    /* CARD HOVER AFFORDANCE ARROW */
+    .card-tilt::after {
+        content: "";
+        position: absolute;
+        right: 14px;
+        bottom: 14px;
+        width: 30px;
+        height: 30px;
+        border-radius: 9999px;
+        background-color: rgba(17, 24, 39, 0.85);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2360a5fa' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M17 7H7M17 7V17'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 14px 14px;
+        opacity: 0;
+        transform: translate(6px, 6px);
+        transition: opacity 0.35s var(--ease-smooth), transform 0.35s var(--ease-smooth);
+        pointer-events: none;
+        z-index: 5;
+    }
+    .card-tilt:hover::after {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    /* GRADIENT BORDER */
+    .gradient-border {
+        position: relative;
+        background: linear-gradient(#1f2937, #1f2937) padding-box,
+            linear-gradient(120deg, rgba(96,165,250,0.55), rgba(168,85,247,0.45), rgba(236,72,153,0.35)) border-box;
+        border: 1px solid transparent;
+        transition: background 0.5s var(--ease-smooth);
+    }
+
+    /* SPOTLIGHT HOVER EFFECT */
+    .spotlight {
+        position: relative;
+        overflow: hidden;
+    }
+    .spotlight::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.5s var(--ease-smooth);
+        background: radial-gradient(400px circle at var(--spotlight-x) var(--spotlight-y), rgba(96,165,250,0.14), transparent 70%);
+        pointer-events: none;
+    }
+    .spotlight:hover::before { opacity: 1; }
+
+    /* IMAGE REVEAL + LEGGERO ZOOM */
+    .img-reveal {
+        overflow: hidden;
+    }
+    .img-reveal img {
+        transition: transform 0.6s var(--ease-smooth), opacity 0.6s var(--ease-smooth), filter 0.6s var(--ease-smooth);
+    }
+    .img-reveal:hover img {
+        transform: scale(1.045);
+    }
+
+    /* SKELETON LOADING PER IMMAGINI */
+    .img-skeleton {
+        background: linear-gradient(100deg, #1f2937 30%, #2b3646 50%, #1f2937 70%);
+        background-size: 200% 100%;
+        animation: skeleton-shine 1.4s ease-in-out infinite;
+    }
+    @keyframes skeleton-shine {
+        from { background-position: 150% 0; }
+        to { background-position: -50% 0; }
+    }
+
+    /* GLASSMORPHISM LEGGERO */
+    .glass-panel {
+        background: rgba(31, 41, 55, 0.45);
+        backdrop-filter: blur(14px) saturate(140%);
+        -webkit-backdrop-filter: blur(14px) saturate(140%);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* FLOATING GLOW BLOBS */
+    .glow-blob {
+        position: absolute;
+        border-radius: 9999px;
+        filter: blur(60px);
+        pointer-events: none;
+        opacity: 0.35;
+        animation: glow-float 10s ease-in-out infinite;
+    }
+    @keyframes glow-float {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(20px, -25px) scale(1.08); }
+    }
+
+    /* MAGNETIC ELEMENTS (JS sets transform via inline style) */
+    .magnetic {
+        transition: transform 0.25s var(--ease-smooth);
+    }
+
+    /* MOBILE SPEED-DIAL (WhatsApp + cookie preferences, collapsed on mobile only) */
+    .speed-dial-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        transition: opacity 0.3s var(--ease-smooth), transform 0.3s var(--ease-smooth);
+    }
+    @media (max-width: 767px) {
+        .speed-dial-panel {
+            opacity: 0;
+            transform: translateY(12px);
+            pointer-events: none;
+        }
+        .speed-dial-panel.speed-dial-open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+    }
+
+    /* MOBILE MENU FLUID TRANSITION */
+    .mobile-menu-panel {
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-8px);
+        transition: max-height 0.45s var(--ease-premium), opacity 0.3s var(--ease-smooth), transform 0.35s var(--ease-smooth);
+    }
+    .mobile-menu-panel.menu-open {
+        max-height: 28rem;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* NAVBAR SCROLL STATE: at the very top it's the full-width bar as before.
+       Once scrolled, color/blur/shadow still crossfade smoothly (as before);
+       the shape change to a floating pill snaps instantly instead of
+       animating (morphing the whole bar's geometry read as a distracting
+       shape-shift). The pill itself only kicks in at the SAME lg: breakpoint
+       where Header.astro switches to the multi-link desktop nav — below
+       that (including phones in landscape, which can exceed 768px wide but
+       still use the compact hamburger nav) the header stays full-width and
+       square, since there's no room to inset it without wrapping. */
+    #site-header {
+        top: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        border-radius: 0;
+        transition: background-color 0.4s var(--ease-smooth), backdrop-filter 0.4s var(--ease-smooth),
+            box-shadow 0.4s var(--ease-smooth), border-color 0.4s var(--ease-smooth);
+    }
+    #site-header.is-scrolled {
+        background-color: rgba(17, 24, 39, 0.6);
+        box-shadow: 0 8px 30px -10px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(20px);
+        border-color: transparent;
+    }
+    @media (min-width: 1024px) {
+        #site-header.is-scrolled {
+            top: 1rem;
+            border-radius: 9999px;
+            left: 50%;
+            right: auto;
+            transform: translateX(-50%);
+            width: calc(100% - 2rem);
+            max-width: 72rem;
+        }
+    }
+
+    /* ANIMATED NAV UNDERLINE */
+    .nav-link-underline {
+        position: relative;
+    }
+    .nav-link-underline::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, #60a5fa, #a855f7);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.35s var(--ease-premium);
+        border-radius: 2px;
+    }
+    .nav-link-underline:hover::after,
+    .nav-link-underline[data-active="true"]::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    /* FAQ SMOOTH HEIGHT ANIMATION */
+    .faq-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.4s var(--ease-premium);
+    }
+    .faq-content > div {
+        overflow: hidden;
+    }
+    details[open] > .faq-content,
+    .faq-content.is-open {
+        grid-template-rows: 1fr;
+    }
+
+    /* INPUT FOCUS GLOW */
+    .input-glow {
+        transition: box-shadow 0.3s var(--ease-smooth), border-color 0.3s var(--ease-smooth), transform 0.2s var(--ease-smooth);
+    }
+    .input-glow:focus {
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25), 0 0 18px rgba(59, 130, 246, 0.15);
+    }
+
+    /* READING PROGRESS BAR */
+    #reading-progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        width: 0%;
+        background: linear-gradient(90deg, #60a5fa, #a855f7, #ec4899);
+        z-index: 60;
+        transition: width 0.1s linear;
+    }
+
+    /* LIGHTBOX */
+    .lightbox-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        background: rgba(10, 12, 20, 0.92);
+        backdrop-filter: blur(6px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s var(--ease-smooth);
+    }
+    .lightbox-overlay.is-open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .lightbox-overlay img {
+        max-width: 90vw;
+        max-height: 85vh;
+        border-radius: 0.75rem;
+        transform: scale(0.94);
+        transition: transform 0.35s var(--ease-premium);
+        box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    }
+    .lightbox-overlay.is-open img {
+        transform: scale(1);
     }
 
     .cookie-modal-overlay {
@@ -52,6 +433,73 @@ html.cookie-scroll-locked {
     .cookie-modal-overlay.cookie-modal-visible .cookie-modal-panel {
         @apply opacity-100 scale-100;
     }
+
+    /* TABLE OF CONTENTS OVERLAY (shares the cookie-modal open/close pattern) */
+    .toc-modal-overlay {
+        @apply opacity-0 transition-opacity duration-300 ease-out;
+    }
+
+    .toc-modal-overlay.toc-modal-visible {
+        @apply opacity-100;
+    }
+
+    .toc-modal-panel {
+        @apply opacity-0 scale-95 transition-all duration-300 ease-out;
+        scrollbar-width: thin;
+        scrollbar-color: #4b5563 transparent;
+    }
+
+    .toc-modal-panel::-webkit-scrollbar { width: 8px; }
+    .toc-modal-panel::-webkit-scrollbar-track { background: transparent; }
+    .toc-modal-panel::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 6px; }
+    .toc-modal-panel::-webkit-scrollbar-thumb:hover { background: #6b7280; }
+
+    .toc-modal-overlay.toc-modal-visible .toc-modal-panel {
+        @apply opacity-100 scale-100;
+    }
+}
+
+/* --- PROSE CONTENT REVEAL (blog paragraphs) --- */
+.prose-reveal > * {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s var(--ease-premium), transform 0.7s var(--ease-premium);
+}
+.prose-reveal > *.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Elegant animated blockquotes */
+.prose blockquote {
+    position: relative;
+    transition: border-color 0.3s var(--ease-smooth), background-color 0.3s var(--ease-smooth);
+}
+
+/* Lightbox-ready images get a pointer cursor + subtle hover cue */
+.prose img {
+    cursor: zoom-in;
+    transition: transform 0.4s var(--ease-smooth), filter 0.4s var(--ease-smooth);
+    border-radius: 0.75rem;
+}
+.prose img:hover {
+    filter: brightness(1.05);
+}
+
+/* --- REDUCED MOTION: DISABLE NON-ESSENTIAL MOTION --- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+    [data-animate], .fade-in-section {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+    .glow-blob { animation: none !important; }
 }
 
 /* --- PRINT STYLES --- */

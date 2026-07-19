@@ -14,7 +14,7 @@ const isActive = !isHashLink && (href === pathname || (href !== '/' && pathname.
     data-nav-link
     data-section={sectionId}
     class:list={[
-        "transition-colors duration-300 font-medium text-sm md:text-base",
+        "nav-link-underline transition-colors duration-300 font-medium text-sm md:text-base",
         isActive ? "text-white" : "text-gray-400 hover:text-white",
         "data-[active=true]:text-white"
     ]}

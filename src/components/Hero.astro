@@ -8,38 +8,48 @@ const cvPath = i18n.hero.cvPath;
 ---
 
 <!-- HERO SECTION -->
-<section id="home" class="h-screen flex flex-col justify-center items-center text-center p-4">
-    <div class="max-w-3xl">
+<section id="home" class="relative h-screen flex flex-col justify-center items-center text-center p-4 overflow-hidden">
+    <!-- AMBIENT GLOW BLOBS (delicate mouse parallax) -->
+    <div class="glow-blob bg-blue-500 w-72 h-72 -top-10 -left-10" data-parallax-depth="18" aria-hidden="true"></div>
+    <div class="glow-blob bg-purple-500 w-80 h-80 top-1/3 -right-16" style="animation-delay: -3s;" data-parallax-depth="26" aria-hidden="true"></div>
+    <div class="glow-blob bg-pink-500 w-64 h-64 bottom-0 left-1/3" style="animation-delay: -6s;" data-parallax-depth="14" aria-hidden="true"></div>
+
+    <div class="max-w-3xl relative z-10" data-stagger-children="120">
         <!-- MAIN TITLE -->
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-gradient py-3">
+        <h1 data-animate="fade-up" class="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-gradient py-3">
             {i18n.hero.title}
         </h1>
 
         <!-- SUBTITLE -->
-        <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+        <p data-animate="fade-up" class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
             {i18n.hero.subtitle}
         </p>
 
         <!-- CALL TO ACTION BUTTONS -->
-        <div class="mt-8 flex justify-center gap-4 flex-wrap">
-            <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg transition-colors whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-white">
+        <div data-animate="fade-up" class="mt-8 flex justify-center gap-4 flex-wrap">
+            <a href="#contact" data-magnetic-strength="0.3" class="btn-premium magnetic bg-blue-600 hover:bg-blue-500 hover:shadow-[0_10px_35px_-8px_rgba(59,130,246,0.6)] text-white font-bold py-3 px-6 rounded-lg whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-white">
                 {i18n.hero.contact}
             </a>
-            <a href={cvPath} download class="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-purple-400">
+            <a href={cvPath} download data-magnetic-strength="0.3" class="btn-premium magnetic border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white hover:shadow-[0_10px_35px_-8px_rgba(168,85,247,0.5)] font-bold py-3 px-6 rounded-lg whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-purple-400">
                 {i18n.hero.downloadCV}
             </a>
         </div>
 
         <!-- SOCIAL ICONS -->
-        <div class="flex justify-center gap-6 mt-8">
-            <a href="https://github.com/leonardocastignani" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm" aria-label={`${i18n.hero.socialAriaLabel} GitHub`}>
+        <div data-animate="fade-up" class="flex justify-center gap-6 mt-8">
+            <a href="https://github.com/leonardocastignani" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm" aria-label={`${i18n.hero.socialAriaLabel} GitHub`}>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
             </a>
-            <a href="https://www.linkedin.com/in/leonardo-castignani/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm" aria-label={`${i18n.hero.socialAriaLabel} LinkedIn`}>
+            <a href="https://www.linkedin.com/in/leonardo-castignani/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm" aria-label={`${i18n.hero.socialAriaLabel} LinkedIn`}>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+            </a>
+            <a href="https://profile.indeed.com/p/leonardoc-6lmm68l" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm" aria-label={`${i18n.hero.socialAriaLabel} Indeed`}>
+                <svg class="h-9 w-9" fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.566 21.5633v-8.762c.2553.0231.5009.0346.758.0346 1.2225 0 2.3739-.3206 3.3506-.8928v9.6182c0 .8219-.1957 1.4287-.5757 1.8338-.378.4033-.8808.6049-1.491.6049-.6007 0-1.0766-.2016-1.468-.6183-.3781-.4032-.5739-1.01-.5739-1.8184zM11.589.5659c2.5447-.8929 5.4424-.8449 7.6186.987.405.3687.8673.8334 1.0515 1.3806.2207.6913-.7695-.073-.9057-.167-.71-.4532-1.4182-.8334-2.2127-1.0946C12.8614.3873 8.8122 2.709 6.2945 6.315c-1.0516 1.5939-1.7367 3.2721-2.299 5.1174-.0614.2017-.1094.4647-.2207.6413-.1113.2036-.048-.5453-.048-.5702.0845-.7623.2438-1.4997.4414-2.237C5.3292 5.3375 7.897 2.0655 11.5891.5658zm4.9281 7.0587c0 1.6686-1.353 3.0224-3.0205 3.0224-1.6677 0-3.0186-1.3538-3.0186-3.0224 0-1.6687 1.351-3.0224 3.0186-3.0224 1.6676 0 3.0205 1.3518 3.0205 3.0224Z"/>
                 </svg>
             </a>
         </div>

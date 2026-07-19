@@ -13,18 +13,22 @@ const titleId = "about-title";
 <section id="about" class="py-20 px-4 bg-gray-800 fade-in-section" aria-labelledby={titleId}>
     <div class="container mx-auto max-w-5xl grid md:grid-cols-3 gap-12 items-center">
         {/* PROFILE IMAGE */}
-        <div class="md:col-span-1 flex justify-center">
-            <Image
-                src={profileImg} 
-                alt={i18n.images.profileAlt} 
-                class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-blue-500 shadow-lg"
-                loading="lazy"
-                quality={85}
-            />
+        <div class="md:col-span-1 flex justify-center" data-animate="scale">
+            <div class="img-reveal rounded-full">
+                <Image
+                    src={profileImg}
+                    alt={i18n.images.profileAlt}
+                    class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-blue-500 shadow-lg"
+                    loading="lazy"
+                    quality={80}
+                    widths={[192, 256, 384, 512]}
+                    sizes="(min-width: 768px) 256px, 192px"
+                />
+            </div>
         </div>
 
         {/* TEXT CONTENT */}
-        <div class="md:col-span-2 text-center md:text-left">
+        <div class="md:col-span-2 text-center md:text-left" data-animate="slide-left">
             <h2 id={titleId} class="text-3xl md:text-4xl font-bold mb-4">{i18n.about.title}</h2>
             {/* Paragraph 1 */}
             <p class="text-gray-300 leading-relaxed">

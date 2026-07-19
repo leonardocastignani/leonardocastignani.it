@@ -10,6 +10,8 @@
     "education": "Education",
     "experience": "Experience",
     "projects": "Projects",
+    "services": "Services",
+    "servicesLink": "/en/services/",
     "blog": "Blog",
     "blogLink": "/en/blog/",
     "contact": "Contact",
@@ -91,23 +93,30 @@
       {
         "role": "Freelance Developer",
         "company": "Self-Employed",
-        "companyUrl": null,
+        "companyUrl": "https://www.leonardocastignani.it/en/",
         "period": "2021 - Present",
-        "description": "Design and development of responsive websites and custom software. I manage the entire digital product lifecycle: requirements analysis, front-end/back-end development, performance optimization, and final release."
+        "description": "Design and development of responsive, SEO-optimized websites and custom software applications. I independently manage the entire digital product lifecycle: from strategic requirements analysis to frontend and backend development, through to deployment, testing, and ongoing maintenance."
+      },
+      {
+        "role": "Web & Software Developer (Training Internship)",
+        "company": "Clion S.p.A.",
+        "companyUrl": "https://www.clion.it/",
+        "period": "May 2026 - July 2026",
+        "description": "Curricular internship (320 hours) completed as part of my Computer Science Bachelor's degree at UNICAM. I worked on the creation and restyling of websites (landing pages and multi-page sites) and the development of various web-based software (both management and non-management applications). My tasks also included CMS management, WordPress blog content configuration, and developing a custom conversion tool to transform static code (HTML/CSS/JS) into Elementor-compatible WordPress themes."
       },
       {
         "role": "Software Developer (Internship)",
-        "company": "New Technology srl",
+        "company": "New Technology s.r.l.",
         "companyUrl": "https://www.newtechnologysrl.it/",
         "period": "August 2023 - October 2023",
-        "description": "Actively contributed to analyzing and resolving bugs in existing applications, improving software stability. I also collaborated on developing new features, applying testing and debugging methodologies in a professional environment."
+        "description": "Internship focused on analyzing and resolving bugs (bug fixing) within existing software applications, significantly improving overall stability and efficiency. I collaborated with the IT team to design and implement new features, applying rigorous testing and debugging methodologies in a structured development environment."
       },
       {
         "role": "Junior Developer (Work-Study Program)",
-        "company": "New Technology srl",
+        "company": "New Technology s.r.l.",
         "companyUrl": "https://www.newtechnologysrl.it/",
         "period": "March 2023",
-        "description": "First experience in a corporate setting, where I supported the development team with programming tasks and learned team dynamics and industry best practices under the guidance of senior developers."
+        "description": "Work-Study Program (120 hours) representing my first direct experience in a corporate IT setting. I supported the development team with operational programming tasks, gaining hands-on knowledge of team dynamics, software development workflows, and industry best practices under the mentorship of senior developers."
       }
     ]
   },
@@ -117,12 +126,377 @@
     "githubDescription": "I am currently polishing some personal projects to make them public. In the meantime, feel free to explore my repositories, university exercises, and the source code of this portfolio directly on GitHub.",
     "githubButton": "Visit my GitHub Profile"
   },
+  "services": {
+    "metaTitle": "Services | Leonardo Castignani",
+    "metaDescription": "Landing pages and custom multi-page websites, Core Web Vitals, SEO/GEO/AEO, technology migrations and custom software. See how I can help your digital project grow.",
+    "title": "My Services",
+    "subtitle": "Concrete solutions for anyone who needs a fast website, findable on Google, and ready to grow - not another generic quote.",
+    "list": [
+      {
+        "slug": "high-performance-web-development",
+        "icon": "performance",
+        "title": "High-Performance Landing Page",
+        "tagline": "One page, one goal: turning visitors into real leads.",
+        "description": "Development of one-page landing sites with islands architecture (Astro): up to 6 sections, anchor menu, advanced contact form, and instant load times. Any extra features are always quoted transparently.",
+        "features": [
+          "Islands architecture (Astro) for zero superfluous JavaScript",
+          "Anchor menu with smooth scrolling between sections",
+          "Advanced contact form connected to your email",
+          "Responsive, mobile-first design on every device"
+        ],
+        "idealFor": [
+          "Anyone launching a campaign or business in a short timeframe",
+          "Anyone who wants a lean, fast showcase that's easy to update",
+          "Anyone who prefers a focused project on a contained budget"
+        ],
+        "includes": [
+          "Requirements analysis and technical proposal",
+          "Custom responsive design, not prebuilt templates",
+          "Development with islands architecture (Astro) and zero superfluous JS",
+          "Cross-browser and cross-device testing before launch",
+          "Training on the contact form and content"
+        ]
+      },
+      {
+        "slug": "tailor-made-corporate-website",
+        "icon": "development",
+        "title": "Custom Multi-Page Website",
+        "tagline": "A website built around you, without the limits of a generic CMS.",
+        "description": "Development of multi-page corporate websites in custom source code, with no CMS: bespoke design and a control panel dedicated only to the sections you actually need (News, Portfolio, Gallery), with no unnecessary interfaces.",
+        "features": [
+          "Custom source code, no CMS to maintain or update",
+          "Dedicated control panel for the dynamic sections",
+          "Scalable structure across multiple pages, no rigid limits",
+          "No known vulnerabilities from third-party plugins or themes"
+        ],
+        "idealFor": [
+          "Anyone who wants a solid, distinctive corporate image",
+          "Anyone who doesn't want to depend on plugins, licenses, or CMS updates",
+          "Anyone who needs multiple pages with partly dynamic content"
+        ],
+        "includes": [
+          "Requirements analysis and technical proposal",
+          "Custom responsive design, not prebuilt templates",
+          "Development with islands architecture (Astro) and zero superfluous JS",
+          "Control panel for the agreed dynamic sections",
+          "Training on the panel and the content"
+        ]
+      },
+      {
+        "slug": "core-web-vitals",
+        "icon": "core-web-vitals",
+        "title": "Core Web Vitals Optimization",
+        "tagline": "Less waiting, more conversions: measurable performance, not promises.",
+        "description": "A technical audit of LCP, INP, and CLS with targeted refactoring of your existing codebase: concrete improvements to images, scripts, and layout to boost user experience and Google rankings, with measurable before/after numbers.",
+        "features": [
+          "Detailed Lighthouse and PageSpeed Insights audit",
+          "Targeted refactoring of images, fonts, and third-party scripts",
+          "Ongoing Core Web Vitals monitoring",
+          "Reports that make sense even to non-technical stakeholders"
+        ],
+        "idealFor": [
+          "Anyone with an existing site losing visitors due to load times",
+          "Anyone who received a Search Console warning about LCP/INP/CLS",
+          "Anyone who wants to know, in numbers, what slowness costs in conversions"
+        ],
+        "includes": [
+          "Full audit with Lighthouse and PageSpeed Insights",
+          "Optimization of images, fonts, and script loading",
+          "Reduction of non-essential JavaScript",
+          "Before/after report with measurable metrics",
+          "Ongoing monitoring over time (optional)"
+        ]
+      },
+      {
+        "slug": "technical-local-seo",
+        "icon": "seo",
+        "title": "SEO, GEO & Generative Search",
+        "tagline": "Get found by Google and cited by AI assistants.",
+        "description": "Structured data (JSON-LD), technical and local SEO, and the new GEO/AEO disciplines to get cited by ChatGPT, Perplexity, and AI Overview: a single package to dominate both classic and generative search.",
+        "features": [
+          "Custom Schema.org (JSON-LD) structured data",
+          "Technical, local SEO and Google Business Profile",
+          "GEO and AEO for visibility on ChatGPT, Perplexity and AI Overview",
+          "Structure for AI retrieval (llms.txt, RAG-readiness)"
+        ],
+        "idealFor": [
+          "Anyone with a local business who wants to show up in local search",
+          "Anyone who wants to be cited by AI assistants (ChatGPT, Perplexity)",
+          "Anyone whose site struggles to get indexed or ranked by Google"
+        ],
+        "includes": [
+          "Full technical SEO audit of the existing site",
+          "Implementation of Schema.org structured data (JSON-LD)",
+          "Google Business Profile and local SEO optimization",
+          "GEO/AEO strategy for visibility on AI assistants",
+          "RAG-readiness setup (llms.txt, embeddings, advanced schema)"
+        ]
+      },
+      {
+        "slug": "technology-migrations",
+        "icon": "migrations",
+        "title": "Migrations & Technology Restyling",
+        "tagline": "From an old, slow site to a modern architecture — without losing your rankings.",
+        "description": "Migration of bloated WordPress portals or heavy Single Page Applications to modern, high-performance architectures, preserving URLs, content, and SEO rankings built up over time.",
+        "features": [
+          "Migration from WordPress to modern architectures",
+          "Moving from heavy SPAs to hybrid rendering (SSR/SSG)",
+          "301 redirects and SEO ranking preservation",
+          "Low-risk migration plan with zero downtime"
+        ],
+        "idealFor": [
+          "Anyone with a WordPress site that's become slow and hard to maintain",
+          "Anyone with a heavy Single Page Application (React/Vue)",
+          "Anyone who wants to change technology without losing SEO rankings"
+        ],
+        "includes": [
+          "Analysis of the existing site/application and migration plan",
+          "Mapping and 301 redirects of all existing URLs",
+          "Content migration with zero data loss",
+          "Post-migration SEO verification (rankings, indexing)",
+          "Low-risk release, with zero site downtime"
+        ]
+      },
+      {
+        "slug": "business-software-automation",
+        "icon": "automation",
+        "title": "Custom Software & Automation",
+        "tagline": "Custom tools that make your processes work harder, not your team.",
+        "description": "Development of custom management software, internal tools, and automations: dashboards, integrations between existing systems, and automation of repetitive processes, tailored to your specific workflow instead of a generic off-the-shelf product.",
+        "features": [
+          "Custom business software (not limited to web applications)",
+          "Automation of repetitive business processes",
+          "Integrations between existing tools and systems",
+          "Custom dashboards and reporting"
+        ],
+        "idealFor": [
+          "Anyone still managing processes manually (spreadsheets, email, paper)",
+          "Anyone using multiple tools that don't talk to each other",
+          "Anyone who needs a custom internal tool, not a generic off-the-shelf system"
+        ],
+        "includes": [
+          "Analysis of the business process to digitize or automate",
+          "Development of custom management software/internal tool",
+          "Integration with existing systems and software",
+          "Custom control dashboard and reporting",
+          "Team training on the new tool"
+        ]
+      }
+    ],
+    "processTitle": "How I Work",
+    "processSubtitle": "A clear method, from the first call to the production release.",
+    "process": [
+      {
+        "icon": "discovery",
+        "title": "Discovery & Strategy",
+        "description": "We analyze goals, audience, and technical constraints together to define the right solution before a single line of code is written."
+      },
+      {
+        "icon": "design",
+        "title": "UX/UI Design",
+        "description": "I define the information architecture and interface, always keeping an eye on performance and conversion."
+      },
+      {
+        "icon": "development",
+        "title": "Development & Testing",
+        "description": "I write clean, tested code, with quality and accessibility checks throughout the process — not just at the end."
+      },
+      {
+        "icon": "launch",
+        "title": "Launch & Support",
+        "description": "I ship the project with automated pipelines and stay available for training, maintenance, and future growth."
+      }
+    ],
+    "faqTitle": "Frequently Asked Questions About Services",
+    "detailsLabel": "Learn more",
+    "homeSectionTitle": "How I Can Help",
+    "homeSectionSubtitle": "From custom web development to business process automation: every project starts from a concrete goal, not a template.",
+    "viewAllLabel": "Discover all services",
+    "modal": {
+      "idealForLabel": "Best suited for:",
+      "includesLabel": "What's included",
+      "ctaLabel": "Ask about this service",
+      "closeLabel": "Close detail window",
+      "prefillMessage": "Hello, I'm interested in the \"{service}\" service. I'd like to receive more information and, if possible, an indicative quote."
+    },
+    "quiz": {
+      "title": "Not sure where to start? Find out in 30 seconds.",
+      "subtitle": "Answer 4 quick questions and we'll tell you exactly what you need.",
+      "restartLabel": "Start over",
+      "resultCtaLabel": "See this service",
+      "resultIntro": "Based on your answers, the best fit for you is:",
+      "progressLabel": "Question {current} of {total}",
+      "questions": [
+        {
+          "question": "What do you need most right now?",
+          "answers": [
+            { "label": "A fast landing page for a campaign", "service": "high-performance-web-development" },
+            { "label": "A tailor-made, multi-page corporate site", "service": "tailor-made-corporate-website" },
+            { "label": "Speed up my current site", "service": "core-web-vitals" },
+            { "label": "Get found on Google and by AI assistants", "service": "technical-local-seo" },
+            { "label": "Modernize my current technology", "service": "technology-migrations" },
+            { "label": "Automate a business process", "service": "business-software-automation" },
+            { "label": "Not sure yet" },
+            { "label": "A mix of several of these" }
+          ]
+        },
+        {
+          "question": "How would you mainly use the project?",
+          "answers": [
+            { "label": "A quick showcase for a campaign or offer", "service": "high-performance-web-development" },
+            { "label": "A solid, structured corporate presence", "service": "tailor-made-corporate-website" },
+            { "label": "Understand why my site is slow", "service": "core-web-vitals" },
+            { "label": "Get noticed locally and online", "service": "technical-local-seo" },
+            { "label": "Rebuild an existing site", "service": "technology-migrations" },
+            { "label": "An internal tool for the team", "service": "business-software-automation" },
+            { "label": "Depends, give me some examples" },
+            { "label": "A bit of all of the above" }
+          ]
+        },
+        {
+          "question": "What problem bothers you most today?",
+          "answers": [
+            { "label": "I don't have anything online yet", "service": "high-performance-web-development" },
+            { "label": "My current site looks amateurish", "service": "tailor-made-corporate-website" },
+            { "label": "The site loads far too slowly", "service": "core-web-vitals" },
+            { "label": "The site stays invisible online", "service": "technical-local-seo" },
+            { "label": "Outdated, slow technology", "service": "technology-migrations" },
+            { "label": "Too much time on manual tasks", "service": "business-software-automation" },
+            { "label": "None of these in particular" },
+            { "label": "Several of these at once" }
+          ]
+        },
+        {
+          "question": "One result in the next 3 months: which would you pick?",
+          "answers": [
+            { "label": "A landing page online for a campaign", "service": "high-performance-web-development" },
+            { "label": "A complete, professional corporate site", "service": "tailor-made-corporate-website" },
+            { "label": "Higher speed scores", "service": "core-web-vitals" },
+            { "label": "Higher rankings on Google and AI search", "service": "technical-local-seo" },
+            { "label": "A modern, solid platform", "service": "technology-migrations" },
+            { "label": "Less time on repetitive tasks", "service": "business-software-automation" },
+            { "label": "I'd rather decide together with you" },
+            { "label": "More than one of these results" }
+          ]
+        }
+      ]
+    },
+    "estimator": {
+      "title": "Configure Your Project",
+      "subtitle": "Choose the project type, its size, and the features you're interested in: the estimate updates in real time.",
+      "disclaimer": "Purely indicative, illustrative figures: the real cost depends on your goals, complexity, and project scope, and is defined together after an initial free call.",
+      "totalLabel": "Estimated investment",
+      "emptyLabel": "Choose a project type to see an estimate",
+      "projectTypeLabel": "1. Project type",
+      "addonsLabel": "2. Additional features",
+      "resetLabel": "Start over",
+      "contactLabel": "Request a tailored quote",
+      "noAddonsLabel": "none",
+      "messageTemplate": "I configured the following project online: {type} ({units} {unitLabel}), with these additional features: {addons}. Indicative estimate: ~€{total}. I'd like to receive more information and a more precise quote.",
+      "reactions": [
+        "A lean, effective project.",
+        "A good balance of scope and budget.",
+        "A complete, well-structured project.",
+        "A full-scale digital transformation."
+      ],
+      "projectTypes": [
+        {
+          "key": "landing",
+          "label": "Landing Page",
+          "description": "Up to 6 sections included, anchor menu and advanced form; extra features always quoted separately.",
+          "basePrice": 600,
+          "unitLabel": "Additional sections",
+          "unitPrice": 150,
+          "minUnits": 0,
+          "maxUnits": 8,
+          "defaultUnits": 0,
+          "excludedAddons": ["automation"]
+        },
+        {
+          "key": "multipage",
+          "label": "Custom Multi-Page Website",
+          "description": "Multi-page site in custom code (no CMS), with a dedicated control panel; includes up to 8 pages.",
+          "basePrice": 1700,
+          "unitLabel": "Additional pages",
+          "unitPrice": 180,
+          "minUnits": 0,
+          "maxUnits": 15,
+          "defaultUnits": 0,
+          "excludedAddons": []
+        },
+        {
+          "key": "restyling",
+          "label": "Restyling / Migration",
+          "description": "Renewing an existing site or moving to a modern technology, preserving URLs and SEO rankings.",
+          "basePrice": 1000,
+          "unitLabel": "Pages to migrate",
+          "unitPrice": 150,
+          "minUnits": 1,
+          "maxUnits": 20,
+          "defaultUnits": 5,
+          "excludedAddons": []
+        },
+        {
+          "key": "web-software",
+          "label": "Custom Software",
+          "description": "Bespoke management software, internal tool, or automation, developed after a requirements analysis.",
+          "basePrice": 900,
+          "unitLabel": "Functional modules",
+          "unitPrice": 500,
+          "minUnits": 1,
+          "maxUnits": 12,
+          "defaultUnits": 3,
+          "excludedAddons": ["seo-onpage-technical", "seo-local-international", "geo", "aeo", "rag", "rss", "cwv"]
+        }
+      ],
+      "addons": [
+        { "key": "seo-onpage-technical", "label": "On-Page & Technical SEO", "description": "Metatags, headings, sitemap, crawlability and Core Web Vitals.", "price": 300 },
+        { "key": "seo-local-international", "label": "Local & International SEO", "description": "Google Business Profile, hreflang and multi-country rankings.", "price": 300 },
+        { "key": "geo", "label": "GEO (Generative Engine Optimization)", "description": "Optimization for citations from ChatGPT, Perplexity and AI Overview.", "price": 350 },
+        { "key": "aeo", "label": "AEO (Answer Engine Optimization)", "description": "Optimization for direct answers, voice search and SGE.", "price": 300 },
+        { "key": "rag", "label": "RAG-Readiness", "description": "Data and content structure ready for retrieval by AI systems (llms.txt, embeddings, advanced schema).", "price": 450 },
+        { "key": "rss", "label": "RSS Feed", "description": "Automatic content distribution via RSS feed.", "price": 80 },
+        { "key": "cwv", "label": "Core Web Vitals Optimization", "description": "Audit and refactoring for LCP, INP, and CLS.", "price": 350 },
+        { "key": "automation", "label": "Automations & Integrations", "description": "Connecting with tools and processes already in use.", "price": 500 }
+      ]
+    },
+    "terminal": {
+      "title": "Watch a real build, live",
+      "subtitle": "This is exactly the kind of output I get working on every project: fast, clean, verifiable builds — not just words.",
+      "lines": [
+        "$ npm run build",
+        "  building for production...",
+        "  ✓ 89 pages generated",
+        "  ✓ images optimized automatically",
+        "  ✓ sitemap and RSS feed generated",
+        "  ✓ build completed in 10.86s",
+        "$ _"
+      ]
+    },
+    "beforeAfter": {
+      "title": "The Real Impact of Optimization",
+      "subtitle": "A typical example of what happens when a slow site is properly optimized.",
+      "disclaimer": "Illustrative figures based on typical technical optimization cases, not tied to a specific client.",
+      "beforeLabel": "Before",
+      "afterLabel": "After",
+      "stats": [
+        { "label": "Load time (LCP)", "before": 4.2, "after": 0.9, "suffix": "s", "decimals": 1 },
+        { "label": "Page weight", "before": 3500, "after": 650, "suffix": " KB", "decimals": 0 },
+        { "label": "HTTP requests", "before": 85, "after": 22, "suffix": "", "decimals": 0 }
+      ]
+    },
+    "ctaTitle": "Not sure where to start?",
+    "ctaText": "Tell me about your project: in an initial discovery call we'll identify the right solution together, no strings attached.",
+    "ctaButton": "Request a free consultation",
+    "ctaHref": "/en/#contact"
+  },
   "blog": {
     "title": "Blog & Notes",
     "description": "Development notes, tutorials, and project updates.",
     "backToArticles": "← Back to articles",
     "readMore": "Read more",
     "publishedOn": "Published on",
+    "readingTime": "{minutes} min read",
     "locale": "en-US",
     "ctaTitle": "Have a similar project in mind?",
     "ctaText": "If this article gave you useful ideas, I can help you put them into practice on your site or project.",
@@ -131,7 +505,15 @@
     "relatedTitle": "Related Articles",
     "homeSectionTitle": "From the Blog",
     "homeSectionSubtitle": "Practical guides on SEO, performance, and web development, written by someone who builds websites every day.",
-    "viewAllLabel": "View all articles"
+    "viewAllLabel": "View all articles",
+    "shareLabel": "Share this article",
+    "shareNative": "Share",
+    "shareLinkedin": "Share on LinkedIn",
+    "shareX": "Share on X",
+    "shareWhatsapp": "Share on WhatsApp",
+    "shareEmail": "Share via email",
+    "shareCopy": "Copy link",
+    "shareCopied": "Link copied!"
   },
   "homeFaq": {
     "title": "Frequently Asked Questions",
@@ -247,6 +629,21 @@
     "tooltip": "Message me on WhatsApp",
     "ariaLabel": "Contact me on WhatsApp",
     "message": "Hello%20Leonardo%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch%20with%20you%21"
+  },
+  "speedDial": {
+    "openLabel": "Open quick contact menu",
+    "closeLabel": "Close quick contact menu"
+  },
+  "toc": {
+    "title": "Table of contents",
+    "openLabel": "Open table of contents",
+    "closeLabel": "Close table of contents"
+  },
+  "search": {
+    "placeholder": "Search articles...",
+    "noResults": "No results found.",
+    "loading": "Searching...",
+    "unavailable": "Search is unavailable in development mode (available after a production build)."
   },
   "cookieModal": {
     "title": "Your privacy matters",

@@ -4,7 +4,7 @@
   "version": "1.6.0",
   "scripts": {
     "dev": "astro dev --host",
-    "build": "astro build",
+    "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@tailwindcss/typography": "^0.5.20",
+    "pagefind": "^1.5.2",
     "typescript": "^5.9.3"
   }
 }

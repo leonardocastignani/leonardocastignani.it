@@ -10,10 +10,27 @@ export function initMobileMenu() {
 
     const activeMenuBtn = document.getElementById('menu-btn');
 
-    const isOpen = () => !mobileMenu.classList.contains('hidden');
+    let closeTimeout = null;
+    const isOpen = () => mobileMenu.classList.contains('menu-open');
 
     const setMenuState = (open) => {
-        mobileMenu.classList.toggle('hidden', !open);
+        if (closeTimeout) {
+            clearTimeout(closeTimeout);
+            closeTimeout = null;
+        }
+
+        if (open) {
+            mobileMenu.classList.remove('hidden');
+            // Force reflow so the transition plays from the collapsed state.
+            void mobileMenu.offsetHeight;
+            mobileMenu.classList.add('menu-open');
+        } else {
+            mobileMenu.classList.remove('menu-open');
+            closeTimeout = window.setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 450);
+        }
+
         activeMenuBtn.setAttribute('aria-expanded', String(open));
 
         const labelOpen = activeMenuBtn.dataset.labelOpen || 'Open Menu';

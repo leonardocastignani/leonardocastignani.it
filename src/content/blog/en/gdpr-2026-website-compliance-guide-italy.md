@@ -10,7 +10,7 @@ imageTitle: "GDPR 2026 Compliance Guide for Corporate Websites"
 imageCaption: "Secure your digital business with modern privacy regulations and prevent automated fines."
 tags: ["privacy-sicurezza"]
 lang: "en"
-alternateSlug: "gdpr-2026-website-compliance-guide-italy"
+alternateSlug: "adeguamento-gdpr-2026-siti-web-pmi-marche"
 faqs:
   - question: "What happens if a corporate website is not GDPR compliant in 2026?"
     answer: "Supervisory authorities now use automated bots to scan websites daily. Failing to implement granular consent or an accurate Privacy Policy results in immediate fines, regardless of your company's size."

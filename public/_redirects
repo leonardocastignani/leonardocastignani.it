@@ -63,5 +63,7 @@ http://www.leonardocastignani.it/* https://www.leonardocastignani.it/:splat 301!
 /en/blog/v1-1-2-release/ /en/blog/website-technical-seo-update-changelog-v1-1-2/ 301!
 /en/blog/v1-2-0-release/ /en/blog/google-tag-manager-integration-update-v1-2-0/ 301!
 
-# Gestione pagina 404 (Questa regola deve stare sempre per ultima)
+# Gestione pagina 404 (queste regole devono stare sempre per ultime, /en/* prima del catch-all generico)
+# Nota: con trailingSlash "always" Astro genera /en/404/index.html (non /en/404.html), quindi il target usa lo slash finale.
+/en/* /en/404/ 404
 /* /404.html 404

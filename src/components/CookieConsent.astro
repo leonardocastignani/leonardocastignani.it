@@ -52,6 +52,7 @@ const privacyHref = currentLang === 'it' ? '/privacy-policy/' : '/en/privacy-pol
 
 <script>
     // @ts-nocheck
+    import { lockPageScroll, unlockPageScroll } from '../scripts/scrollLock.js';
 
     // --- COOKIE HELPERS ---
     function getCookie(name) {
@@ -78,24 +79,6 @@ const privacyHref = currentLang === 'it' ? '/privacy-policy/' : '/en/privacy-pol
         window.dataLayer.push({ event: 'cookie_consent_granted' });
     }
 
-    // --- SCROLL LOCK ---
-    function lockScroll() {
-        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-        document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
-        document.documentElement.style.scrollbarGutter = 'auto';
-        document.documentElement.classList.add('cookie-scroll-locked');
-        const header = document.querySelector('header');
-        if (header) header.style.paddingRight = `${scrollbarWidth}px`;
-    }
-
-    function unlockScroll() {
-        document.documentElement.classList.remove('cookie-scroll-locked');
-        document.documentElement.style.paddingRight = '';
-        document.documentElement.style.scrollbarGutter = '';
-        const header = document.querySelector('header');
-        if (header) header.style.paddingRight = '';
-    }
-
     // --- FOCUS TRAP ---
     function trapFocus(modal) {
         modal.addEventListener('keydown', (e) => {
@@ -116,8 +99,15 @@ const privacyHref = currentLang === 'it' ? '/privacy-policy/' : '/en/privacy-pol
         });
     }
 
+    // Guards against re-entrant opens (e.g. a double-click on the cookie
+    // preferences button), which would otherwise lock the shared scroll
+    // counter twice while only unlocking it once.
+    let isCookieModalOpen = false;
+
     function showModal(modal) {
-        lockScroll();
+        if (isCookieModalOpen) return;
+        isCookieModalOpen = true;
+        lockPageScroll();
         modal.classList.remove('hidden');
         requestAnimationFrame(() => modal.classList.add('cookie-modal-visible'));
         const firstBtn = modal.querySelector('[data-action="accept-all"]');
@@ -125,10 +115,12 @@ const privacyHref = currentLang === 'it' ? '/privacy-policy/' : '/en/privacy-pol
     }
 
     function hideModal(modal) {
+        if (!isCookieModalOpen) return;
+        isCookieModalOpen = false;
         modal.classList.remove('cookie-modal-visible');
         setTimeout(() => {
             modal.classList.add('hidden');
-            unlockScroll();
+            unlockPageScroll();
             document.dispatchEvent(new CustomEvent('cookieConsentChanged'));
         }, 250);
     }

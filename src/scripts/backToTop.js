@@ -8,9 +8,11 @@ export function initBackToTop() {
         if (window.scrollY > 300) {
             backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
             backToTopBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            backToTopBtn.removeAttribute('tabindex');
         } else {
             backToTopBtn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
             backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+            backToTopBtn.setAttribute('tabindex', '-1');
         }
     };
 
