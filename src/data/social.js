@@ -21,15 +21,17 @@ export const social = [
         Icon: GithubIcon, 
         id: 'github'
     },
-    { 
-        name: 'Instagram', 
-        Icon: InstagramIcon, 
-        id: 'instagram'
+    {
+        name: 'Instagram',
+        Icon: InstagramIcon,
+        id: 'instagram',
+        disabled: true
     },
-    { 
-        name: 'Facebook', 
-        Icon: FacebookIcon, 
-        id: 'facebook'
+    {
+        name: 'Facebook',
+        Icon: FacebookIcon,
+        id: 'facebook',
+        disabled: true
     },
     { 
         name: 'Email', 

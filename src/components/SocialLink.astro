@@ -5,26 +5,48 @@ interface Props {
   name: string;
   Icon: any;
   ariaLabel: string;
+  disabled?: boolean;
+  unavailableLabel?: string;
 }
-const { href, name, Icon, ariaLabel } = Astro.props;
+const { href, name, Icon, ariaLabel, disabled = false, unavailableLabel = '' } = Astro.props;
+const tooltipText = disabled ? unavailableLabel : name;
 ---
 
 <!-- SOCIAL ICON COMPONENT -->
-<a
-  href={href}
-  target="_blank"
-  rel="noopener noreferrer"
-  class="group relative flex flex-col items-center justify-center p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-  aria-label={ariaLabel}
->
-  {/* ICON CONTAINER */}
-  <div class="w-8 h-8 text-gray-400 group-hover:text-white transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] transform group-hover:scale-125 group-hover:-translate-y-0.5">
-    <Icon class="w-full h-full" />
-  </div>
+{disabled ? (
+  <span
+    class="group relative flex flex-col items-center justify-center p-2 cursor-not-allowed"
+    aria-disabled="true"
+    aria-label={`${ariaLabel} (${unavailableLabel})`}
+  >
+    {/* ICON CONTAINER (dimmed, no hover lift — visually inert) */}
+    <div class="w-8 h-8 text-gray-600 opacity-40 grayscale">
+      <Icon class="w-full h-full" />
+    </div>
 
-  {/* TOOLTIP */}
-  <div class="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 bg-gray-700 text-white text-xs font-semibold rounded opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-xl z-10 capitalize translate-y-2 group-hover:translate-y-0">
-    {name}
-    <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
-  </div>
-</a>
+    {/* TOOLTIP */}
+    <div class="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 bg-gray-700 text-white text-xs font-semibold rounded opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-xl z-10 translate-y-2 group-hover:translate-y-0">
+      {tooltipText}
+      <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
+    </div>
+  </span>
+) : (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="group relative flex flex-col items-center justify-center p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+    aria-label={ariaLabel}
+  >
+    {/* ICON CONTAINER */}
+    <div class="w-8 h-8 text-gray-400 group-hover:text-white transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] transform group-hover:scale-125 group-hover:-translate-y-0.5">
+      <Icon class="w-full h-full" />
+    </div>
+
+    {/* TOOLTIP */}
+    <div class="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 bg-gray-700 text-white text-xs font-semibold rounded opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-xl z-10 capitalize translate-y-2 group-hover:translate-y-0">
+      {tooltipText}
+      <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
+    </div>
+  </a>
+)}

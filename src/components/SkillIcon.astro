@@ -3,14 +3,15 @@
 interface Props {
   name: string;
   Icon: any;
+  iconClass?: string;
 }
-const { name, Icon } = Astro.props;
+const { name, Icon, iconClass = '' } = Astro.props;
 ---
 
 <!-- SKILL ICON COMPONENT -->
 <div class="group relative flex flex-col items-center justify-center p-2">
   {/* ICON CONTAINER */}
-  <div class="w-12 h-12 text-gray-400 group-hover:text-white opacity-75 group-hover:opacity-100 transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] transform group-hover:scale-125 group-hover:-rotate-6">
+  <div class:list={["w-12 h-12 text-gray-400 group-hover:text-white opacity-75 group-hover:opacity-100 transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] transform group-hover:scale-125 group-hover:-rotate-6", iconClass]}>
     <Icon class="w-full h-full" />
   </div>
 

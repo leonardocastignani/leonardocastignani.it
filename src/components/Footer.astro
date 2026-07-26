@@ -23,12 +23,14 @@ const geoText = currentLang === 'it'
     <div class="container mx-auto max-w-6xl text-center text-gray-400" data-animate="fade-up">
         {/* SOCIAL LINKS CONTAINER */}
         <div class="flex justify-center items-center gap-4 mb-8 flex-wrap">
-            {social.map(({ name, Icon, id }) => (
-                <SocialLink 
-                    href={SOCIAL_LINKS[id as keyof typeof SOCIAL_LINKS] || '#'} 
-                    name={name} 
+            {social.map(({ name, Icon, id, disabled }) => (
+                <SocialLink
+                    href={SOCIAL_LINKS[id as keyof typeof SOCIAL_LINKS] || '#'}
+                    name={name}
                     Icon={Icon}
                     ariaLabel={`${i18n.footer.socialAriaLabel} ${name}`}
+                    disabled={disabled}
+                    unavailableLabel={i18n.footer.socialUnavailable}
                 />
             ))}
         </div>

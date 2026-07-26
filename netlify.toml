@@ -14,7 +14,7 @@
     # per eseguire GTM fuori dal thread principale). Nessun font/CDN esterno.
     # Passare a "Content-Security-Policy" (enforcement) solo dopo un periodo
     # di osservazione delle violazioni in produzione.
-    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; worker-src 'self' blob:; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; frame-src 'self' https://www.googletagmanager.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';"
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; worker-src 'self' blob:; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; frame-src 'self' https://www.googletagmanager.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';"
 
 # --- BLOCCO INDICIZZAZIONE CV (contiene dati personali: telefono, indirizzo, data di nascita) ---
 # X-Robots-Tag (non robots.txt): permette a Google di ri-scansionare il file,

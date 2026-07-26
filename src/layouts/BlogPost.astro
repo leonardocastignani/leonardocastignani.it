@@ -119,13 +119,14 @@ const breadcrumbSchema = {
                 {heroImage && (
                     <figure class="mb-8 w-full" data-animate="fade">
                         <div class="img-reveal rounded-xl overflow-hidden shadow-2xl aspect-[16/9] w-full bg-gray-800">
-                            <img 
-                                src={heroImage} 
-                                alt={imageAlt || title} 
+                            <img
+                                src={heroImage}
+                                alt={imageAlt || title}
                                 title={imageTitle}
                                 class="w-full h-full object-cover"
-                                loading="eager" 
+                                loading="eager"
                                 decoding="async"
+                                fetchpriority="high"
                                 width="1200"
                                 height="669"
                             />

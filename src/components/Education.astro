@@ -21,19 +21,26 @@ const categories = i18n.education.skillsCategories;
                 {/* Course of Study */}
                 <div>
                     <h3 class="text-2xl font-semibold mb-6 text-blue-400">{i18n.education.studyTitle}</h3>
-                    <div class="space-y-6">
+                    <div class="space-y-6" data-stagger-children="100">
                         {i18n.education.educationDetails.map(edu => (
-                            <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
-                                <p class="font-bold text-lg">{edu.degree}</p>
-                                <a href={edu.url} target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-blue-400 font-semibold mb-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">
-                                        {edu.institution}
-                                    </a>
-                                <p class="text-sm text-gray-500">{edu.period}</p>
-                                {edu.grade && (
-                                    <p class="text-sm text-blue-300 mt-2">
-                                        <span class="font-semibold">{i18n.education.gradeLabel}</span> {edu.grade}
-                                    </p>
-                                )}
+                            <div class="education-card card-tilt spotlight flex gap-4 bg-gray-800 p-4 rounded-lg border border-gray-700 hover:border-blue-500 transition-colors duration-200" data-animate="fade-up" data-tilt-max="2">
+                                <div class="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-xl bg-blue-500/10 text-blue-400" style="transform: translateZ(20px);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443" />
+                                    </svg>
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="font-bold text-lg">{edu.degree}</p>
+                                    <a href={edu.url} target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-blue-400 font-semibold mb-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">
+                                            {edu.institution}
+                                        </a>
+                                    <p class="text-sm text-gray-500">{edu.period}</p>
+                                    {edu.grade && (
+                                        <p class="text-sm text-blue-300 mt-2">
+                                            <span class="font-semibold">{i18n.education.gradeLabel}</span> {edu.grade}
+                                        </p>
+                                    )}
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -42,15 +49,22 @@ const categories = i18n.education.skillsCategories;
                 {/* Certifications */}
                 <div>
                     <h3 class="text-2xl font-semibold mb-6 text-blue-400">{i18n.education.certificationsTitle}</h3>
-                    <div class="space-y-6">
+                    <div class="space-y-6" data-stagger-children="100">
                         {i18n.education.certificationDetails.map(cert => (
-                            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 flex flex-col">
-                                <p class="font-bold text-lg flex-grow">{cert.title}</p>
-                                <p class="text-blue-300 font-semibold mt-1">{cert.issuer}</p>
-                                <p class="text-sm text-gray-500 mb-3">{cert.date}</p>
-                                {cert.description && (
-                                    <p class="text-sm text-gray-300">{cert.description}</p>
-                                )}
+                            <div class="certification-card card-tilt spotlight flex gap-4 bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition-colors duration-200" data-animate="fade-up" data-tilt-max="2">
+                                <div class="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-xl bg-blue-500/10 text-blue-400" style="transform: translateZ(20px);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                                    </svg>
+                                </div>
+                                <div class="min-w-0 flex flex-col flex-grow">
+                                    <p class="font-bold text-lg flex-grow">{cert.title}</p>
+                                    <p class="text-blue-300 font-semibold mt-1">{cert.issuer}</p>
+                                    <p class="text-sm text-gray-500 mb-3">{cert.date}</p>
+                                    {cert.description && (
+                                        <p class="text-sm text-gray-300">{cert.description}</p>
+                                    )}
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -96,7 +110,7 @@ const categories = i18n.education.skillsCategories;
                         <h4 class="text-lg font-semibold mb-4 text-gray-300">{categories.tools}</h4>
                         <div class="flex flex-wrap gap-4">
                             {tools.map(({ name, Icon }) => (
-                                <SkillIcon name={name} Icon={Icon} />
+                                <SkillIcon name={name} Icon={Icon} iconClass={name === 'GitHub' ? 'tool-icon-github' : ''} />
                             ))}
                         </div>
                     </div>
@@ -105,3 +119,17 @@ const categories = i18n.education.skillsCategories;
         </div>
     </div>
 </section>
+
+<style>
+    /* GithubIcon.astro hardcodes a near-black fill (#161614) on its <path>,
+       which blends into the dark background here. The icon markup itself
+       lives inside SkillIcon.astro (a child component), so it never receives
+       this file's Astro scoping attribute — the whole selector has to be
+       :global() for it to match at all. `.tool-icon-github` is a unique,
+       one-off class used nowhere else, so this still only affects this one
+       instance (Tools & Platforms) in practice: the icon keeps its original
+       dark tone everywhere else it's used (Footer, Projects, AuthorBox). */
+    :global(.tool-icon-github svg path) {
+        fill: #B6BFB8;
+    }
+</style>

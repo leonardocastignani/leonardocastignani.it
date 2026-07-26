@@ -578,6 +578,7 @@
   "footer": {
     "copyright": "© {year} Leonardo Castignani | Portfolio. Tutti i diritti riservati.",
     "socialAriaLabel": "Visita il mio profilo",
+    "socialUnavailable": "Non disponibile",
     "privacyLink": "Privacy Policy"
   },
   "error404": {
