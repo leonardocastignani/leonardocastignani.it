@@ -74,12 +74,14 @@
       {
         "title": "Patentino della Robotica",
         "issuer": "COMAU",
+        "issuerUrl": "https://www.comau.com/it/",
         "date": "2022",
         "description": "Certificazione sulle competenze di base per l'utilizzo e la programmazione di robot industriali."
       },
       {
         "title": "ICDL Full Standard",
         "issuer": "AICA",
+        "issuerUrl": "https://www.aicanet.it/",
         "date": "2021",
         "description": "Certificazione completa delle competenze digitali, inclusi moduli specialistici come IT-Security e Web-Editing."
       }
@@ -621,6 +623,9 @@
     "manageConsentText": "Puoi modificare la tua scelta in qualsiasi momento cancellando i cookie di questo sito dalle impostazioni del tuo browser: al successivo accesso, il banner per la scelta del consenso ti verrà nuovamente proposto.",
     "rightsTitle": "I tuoi Diritti",
     "rightsText": "In qualità di interessato, hai il diritto di accedere ai tuoi dati personali, richiederne la rettifica o la cancellazione, opporti al trattamento, richiederne la limitazione o la portabilità, e di proporre reclamo all'Autorità Garante per la Protezione dei Dati Personali.",
+    "aiTransparencyTitle": "Trasparenza sui Contenuti e Intelligenza Artificiale",
+    "aiTransparencyText1": "Alcuni contenuti di questo sito, in particolare gli articoli del blog, vengono redatti con il supporto di strumenti di intelligenza artificiale generativa. Ogni contenuto è però sempre rivisto, verificato e validato personalmente da Leonardo Castignani prima della pubblicazione, che ne rimane l'unico responsabile editoriale.",
+    "aiTransparencyText2": "Questo sito non utilizza, al momento, chatbot, assistenti virtuali o altri sistemi di intelligenza artificiale che interagiscono direttamente con i visitatori. Qualora in futuro venisse introdotta una funzionalità di questo tipo, ne troverai qui indicazione esplicita, in conformità all'articolo 50 del Regolamento UE 2024/1689 (AI Act).",
     "contactTitle": "Contatti",
     "contactText": "Per qualsiasi domanda riguardo a questa Privacy Policy, puoi contattarmi tramite il modulo presente su questo sito o via email.",
     "backButton": "Ritorna da dove hai lasciato",

@@ -26,6 +26,13 @@ const bio = isIt
     : "Web & Software Developer specializing in Web Performance, Islands Architecture (Astro), and Technical SEO. I help businesses scale through fast, accessible, and conversion-driven digital products.";
 
 const titleText = isIt ? "Scritto da" : "Written by";
+
+// AI ACT ART. 50: nota di trasparenza editoriale sui contenuti redatti con supporto IA
+const aiDisclosureText = isIt
+    ? "Contenuto redatto con il supporto di strumenti di IA, sempre rivisto e validato personalmente prima della pubblicazione."
+    : "Content drafted with the support of AI tools, always personally reviewed and validated before publication.";
+const aiDisclosureLinkText = isIt ? "Maggiori dettagli" : "Learn more";
+const privacyHref = isIt ? "/privacy-policy/#ai-transparency" : "/en/privacy-policy/#ai-transparency";
 ---
 
 <!-- AUTHOR BOX UI -->
@@ -65,7 +72,15 @@ const titleText = isIt ? "Scritto da" : "Written by";
         <p class="text-gray-300 leading-relaxed text-sm md:text-base mb-5">
             {bio}
         </p>
-        
+
+        <!-- AI ACT ART. 50: NOTA DI TRASPARENZA EDITORIALE -->
+        <p class="text-gray-500 text-xs leading-relaxed mb-5">
+            {aiDisclosureText}{' '}
+            <a href={privacyHref} class="underline underline-offset-2 hover:text-gray-300 transition-colors">
+                {aiDisclosureLinkText}
+            </a>
+        </p>
+
         <!-- SOCIAL TRUST SIGNALS -->
         <div class="flex items-center justify-center md:justify-start gap-4">
             <a 

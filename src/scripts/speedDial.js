@@ -5,6 +5,12 @@ export function initSpeedDial() {
     const icon = document.getElementById('speed-dial-icon');
     if (!trigger || !panel) return;
 
+    // Guards against double-binding: this runs both immediately on first load
+    // and again on 'astro:page-load', which would otherwise attach two click
+    // listeners that toggle the panel open then immediately closed again.
+    if (trigger.dataset.speedDialBound === 'true') return;
+    trigger.dataset.speedDialBound = 'true';
+
     const mobileQuery = window.matchMedia('(max-width: 767px)');
 
     const isOpen = () => panel.classList.contains('speed-dial-open');

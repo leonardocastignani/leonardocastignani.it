@@ -74,12 +74,14 @@
       {
         "title": "Robotics License",
         "issuer": "COMAU",
+        "issuerUrl": "https://www.comau.com/en/",
         "date": "2022",
         "description": "Certification on the basic skills for the use and programming of industrial robots."
       },
       {
         "title": "ICDL Full Standard",
         "issuer": "AICA",
+        "issuerUrl": "https://www.aicanet.it/",
         "date": "2021",
         "description": "Comprehensive certification of digital skills, including specialized modules like IT-Security and Web-Editing."
       }
@@ -621,6 +623,9 @@
     "manageConsentText": "You can change your choice at any time by deleting this site's cookies from your browser settings: on your next visit, the consent banner will be shown again.",
     "rightsTitle": "Your Rights",
     "rightsText": "As a data subject, you have the right to access your personal data, request rectification or erasure, object to processing, request restriction or portability, and lodge a complaint with the competent Data Protection Authority.",
+    "aiTransparencyTitle": "Content Transparency and Artificial Intelligence",
+    "aiTransparencyText1": "Some content on this site, particularly blog articles, is drafted with the support of generative artificial intelligence tools. Every piece of content is always reviewed, verified, and personally validated by Leonardo Castignani before publication, who remains its sole editorial responsible party.",
+    "aiTransparencyText2": "This site currently does not use chatbots, virtual assistants, or other artificial intelligence systems that interact directly with visitors. Should such a feature be introduced in the future, it will be explicitly disclosed here, in compliance with Article 50 of EU Regulation 2024/1689 (AI Act).",
     "contactTitle": "Contact",
     "contactText": "For any questions about this Privacy Policy, you can contact me through the form on this site or by email.",
     "backButton": "Back to where you left off",
