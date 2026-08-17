@@ -22,7 +22,7 @@ faqs:
 
 There is a widespread misconception: many clients think a developer's job consists of sitting in front of a computer, opening an editor, and typing code until the software magically appears online.
 
-In reality, writing code is just *one* part of the process. A successful digital project—whether it's custom business management software, a complex web app, or a SaaS platform—is the result of engineering, planning, and rigorous management.
+In reality, writing code is just *one* part of the process. A successful digital project-whether it's custom business management software, a complex web app, or a SaaS platform-is the result of engineering, planning, and rigorous management.
 
 Today, I am taking you behind the scenes to show you the exact lifecycle of a project when you decide to work with me.
 

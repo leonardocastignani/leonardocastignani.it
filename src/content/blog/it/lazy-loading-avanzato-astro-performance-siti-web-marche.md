@@ -25,7 +25,7 @@ Per le immagini, il web ci ha regalato una soluzione facilissima: basta aggiunge
 
 Ma cosa succede quando ad appesantire la pagina non è un'immagine, ma un componente interattivo, una libreria JavaScript enorme o un'animazione complessa situata nel footer? Il semplice attributo HTML non basta più.
 
-In questo articolo vedremo come Astro e le API moderne del browser ci permettono di implementare un **Lazy Loading avanzato** per immagini, componenti e moduli, mantenendo il nostro bundle JavaScript leggero e le metriche Core Web Vitals impeccabili — un tassello che si aggiunge a quanto già raccontato nel mio articolo su [Core Web Vitals nel 2026](/blog/ottimizzazione-seo-tecnica-core-web-vitals-2026/).
+In questo articolo vedremo come Astro e le API moderne del browser ci permettono di implementare un **Lazy Loading avanzato** per immagini, componenti e moduli, mantenendo il nostro bundle JavaScript leggero e le metriche Core Web Vitals impeccabili - un tassello che si aggiunge a quanto già raccontato nel mio articolo su [Core Web Vitals nel 2026](/blog/ottimizzazione-seo-tecnica-core-web-vitals-2026/).
 
 ### 0. Le Immagini: `loading="lazy"` Non Basta (e a Volte è Dannoso)
 Partiamo dalla base, perché qui si nascondono due errori comuni. Il primo: applicare `loading="lazy"` a **tutte** le immagini indiscriminatamente, inclusa quella dell'Hero in cima alla pagina. Quell'immagine è quasi sempre il tuo Largest Contentful Paint (LCP): ritardarne il caricamento con `lazy` peggiora proprio la metrica che vorresti migliorare. Per l'immagine principale sopra la piega usa invece `loading="eager"` (o ometti l'attributo) insieme a `fetchpriority="high"`, per dire al browser "scarica subito questa, ha priorità".
@@ -53,7 +53,7 @@ Astro offre diverse **Client Directives** per controllare questo processo. Le pi
 *   `client:load`: Idrata il componente immediatamente, appena la pagina finisce di caricare. Da riservare solo a componenti davvero critici sopra la piega (es. un menu di navigazione interattivo).
 *   `client:idle`: Dice ad Astro di caricare e idratare il componente solo quando il Main Thread del browser è libero. Perfetto per elementi visibili subito, ma non critici.
 *   `client:visible`: La vera magia. Astro utilizza l'Intersection Observer dietro le quinte per caricare il JavaScript del componente **solo quando questo entra nella viewport** dell'utente.
-*   `client:media={query}`: Idrata il componente solo se una media query CSS è verificata — utilissima per un componente che serve solo su mobile (es. il menu hamburger) e che su desktop non ha motivo di scaricare nemmeno un byte di JavaScript.
+*   `client:media={query}`: Idrata il componente solo se una media query CSS è verificata - utilissima per un componente che serve solo su mobile (es. il menu hamburger) e che su desktop non ha motivo di scaricare nemmeno un byte di JavaScript.
 
 ```astro
 ---
@@ -96,7 +96,7 @@ Invece di importarle in cima al file (il che le includerebbe nel bundle iniziale
 </script>
 ```
 
-Questo approccio salva centinaia di Kilobyte al caricamento iniziale, abbattendo drasticamente la metrica INP (Interaction to Next Paint) — la stessa logica "carica solo ciò che serve, solo quando serve" che ho applicato in prima persona quando ho raccontato la [migrazione di un progetto da React ad Astro](/blog/migrazione-sito-web-react-astro-performance/): spesso il problema non è il framework in sé, ma le centinaia di KB di JavaScript spediti al browser senza reale necessità.
+Questo approccio salva centinaia di Kilobyte al caricamento iniziale, abbattendo drasticamente la metrica INP (Interaction to Next Paint) - la stessa logica "carica solo ciò che serve, solo quando serve" che ho applicato in prima persona quando ho raccontato la [migrazione di un progetto da React ad Astro](/blog/migrazione-sito-web-react-astro-performance/): spesso il problema non è il framework in sé, ma le centinaia di KB di JavaScript spediti al browser senza reale necessità.
 
 ### 3. L'Intersection Observer per Logiche Custom
 Se stai lavorando con HTML puro in Astro e non stai usando framework UI esterni, potresti aver bisogno di attivare animazioni CSS, caricare video o immagini di background solo allo scroll. Per questo, l'API nativa `IntersectionObserver` è lo strumento definitivo.

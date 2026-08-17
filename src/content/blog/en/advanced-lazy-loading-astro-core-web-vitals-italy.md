@@ -25,10 +25,10 @@ For images, the web has given us a very easy solution: just add `loading="lazy"`
 
 But what happens when the page is weighed down not by an image, but by an interactive component, a massive JavaScript library, or a complex animation located in the footer? The simple HTML attribute is no longer enough.
 
-In this article, we will see how Astro and modern browser APIs allow us to implement **advanced Lazy Loading** for images, components, and modules, keeping our JavaScript bundle light and our Core Web Vitals metrics flawless — a companion piece to what I already covered in my article on [Core Web Vitals in 2026](/en/blog/technical-seo-core-web-vitals-optimization-2026/).
+In this article, we will see how Astro and modern browser APIs allow us to implement **advanced Lazy Loading** for images, components, and modules, keeping our JavaScript bundle light and our Core Web Vitals metrics flawless - a companion piece to what I already covered in my article on [Core Web Vitals in 2026](/en/blog/technical-seo-core-web-vitals-optimization-2026/).
 
 ### 0. Images: `loading="lazy"` Isn't Enough (and Can Even Hurt)
-Let's start with the basics, because two common mistakes hide here. The first: applying `loading="lazy"` to **every** image indiscriminately, including the Hero image at the top of the page. That image is almost always your Largest Contentful Paint (LCP) — delaying it with `lazy` actively hurts the very metric you're trying to improve. For the primary above-the-fold image, use `loading="eager"` (or omit the attribute entirely) together with `fetchpriority="high"`, telling the browser "download this one now, it's the priority".
+Let's start with the basics, because two common mistakes hide here. The first: applying `loading="lazy"` to **every** image indiscriminately, including the Hero image at the top of the page. That image is almost always your Largest Contentful Paint (LCP) - delaying it with `lazy` actively hurts the very metric you're trying to improve. For the primary above-the-fold image, use `loading="eager"` (or omit the attribute entirely) together with `fetchpriority="high"`, telling the browser "download this one now, it's the priority".
 
 The second mistake is ignoring Astro's `<Image />` component (`astro:assets`), which does most of the heavy lifting for you: it automatically generates modern formats (WebP/AVIF), computes `width`/`height` to prevent Cumulative Layout Shift, and applies `loading="lazy"` and `decoding="async"` by default to every image except the one marked as a priority.
 
@@ -53,7 +53,7 @@ Astro offers several **Client Directives** to control this process. The most use
 *   `client:load`: Hydrates the component immediately, as soon as the page finishes loading. Reserve this only for genuinely critical above-the-fold components (e.g., an interactive navigation menu).
 *   `client:idle`: Tells Astro to load and hydrate the component only when the browser's Main Thread is free. Perfect for elements visible immediately, but not critical.
 *   `client:visible`: The real magic. Astro uses the Intersection Observer behind the scenes to load the component's JavaScript **only when it enters the user's viewport**.
-*   `client:media={query}`: Hydrates the component only if a CSS media query matches — extremely useful for a component that's only needed on mobile (e.g., a hamburger menu), which on desktop has no reason to download even a single byte of JavaScript.
+*   `client:media={query}`: Hydrates the component only if a CSS media query matches - extremely useful for a component that's only needed on mobile (e.g., a hamburger menu), which on desktop has no reason to download even a single byte of JavaScript.
 
 ```astro
 ---
@@ -96,7 +96,7 @@ Instead of importing them at the top of the file (which would include them in th
 </script>
 ```
 
-This approach saves hundreds of Kilobytes on initial load, drastically improving the INP (Interaction to Next Paint) metric — the same "load only what's needed, only when it's needed" logic I applied firsthand when I documented [migrating a project from React to Astro](/en/blog/migrating-react-spa-to-astro-performance/): the problem is often not the framework itself, but the hundreds of KB of JavaScript shipped to the browser without genuine need.
+This approach saves hundreds of Kilobytes on initial load, drastically improving the INP (Interaction to Next Paint) metric - the same "load only what's needed, only when it's needed" logic I applied firsthand when I documented [migrating a project from React to Astro](/en/blog/migrating-react-spa-to-astro-performance/): the problem is often not the framework itself, but the hundreds of KB of JavaScript shipped to the browser without genuine need.
 
 ### 3. Intersection Observer for Custom Logic
 If you are working with pure HTML in Astro and aren't using external UI frameworks, you might need to trigger CSS animations, load videos, or load background images only on scroll. For this, the native `IntersectionObserver` API is the ultimate tool.

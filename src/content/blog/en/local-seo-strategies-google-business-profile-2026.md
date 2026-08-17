@@ -20,7 +20,7 @@ faqs:
     answer: "It is invisible code injected directly into the website that feeds search engines explicit data regarding your GPS coordinates, service areas, and standardized operating hours."
 ---
 
-If you run a business rooted in a specific territory—whether you are an artisan here in Civitanova Marche, a consulting firm, or a retail store—there is one metric that matters more than any other: **how many people in your area can find you online**.
+If you run a business rooted in a specific territory-whether you are an artisan here in Civitanova Marche, a consulting firm, or a retail store-there is one metric that matters more than any other: **how many people in your area can find you online**.
 
 In 2026, local search has evolved. Users no longer just type "plumber" into Google; they ask complex questions to voice assistants or rely on AI overviews to find "the best plumber open right now near me with great reviews".
 
@@ -47,7 +47,7 @@ Ensure that your NAP is identical, down to the last letter, everywhere your comp
 
 ### 4. The Technical Edge: Geographic Markup (JSON-LD)
 This is where a custom-developed site makes the difference compared to a cheap template.
-To ensure Google understands exactly where you are and what areas you serve, I inject **structured data (Schema.org / JSON-LD)** of the `LocalBusiness` type into the site's code — the same technique I detail in my [Schema Markup and Structured Data guide for Astro](/en/blog/schema-markup-json-ld-astro-seo-italy/).
+To ensure Google understands exactly where you are and what areas you serve, I inject **structured data (Schema.org / JSON-LD)** of the `LocalBusiness` type into the site's code - the same technique I detail in my [Schema Markup and Structured Data guide for Astro](/en/blog/schema-markup-json-ld-astro-seo-italy/).
 
 This code, invisible to users but fundamental to search engines, explicitly tells Google:
 * Your exact GPS coordinates.

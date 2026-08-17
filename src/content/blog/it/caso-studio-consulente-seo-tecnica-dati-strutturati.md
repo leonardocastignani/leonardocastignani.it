@@ -1,5 +1,5 @@
 ---
-title: "Come ho ottimizzato la SEO di questo sito (Caso di Studio)"
+title: "Come ho ottimizzato la SEO di questo sito (Caso Studio)"
 description: "Caso studio di SEO tecnica: come ho ottimizzato Sitemap automatica, dati strutturati JSON-LD e Meta Tag su questo stesso sito, leonardocastignani.it."
 cardDescription: "Come ho ottimizzato la SEO tecnica di questo sito: Sitemap, JSON-LD e Meta Tag reali."
 pubDate: "2026-02-23"

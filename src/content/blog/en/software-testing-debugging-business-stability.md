@@ -15,7 +15,7 @@ faqs:
   - question: "Why is the testing phase critical before going live?"
     answer: "A modern web application connects multiple moving parts (APIs, databases). Testing acts as an automated safety net to guarantee complex interactions don't fail under real-world use."
   - question: "What are End-to-End (E2E) tests?"
-    answer: "E2E tests programmatically simulate a real human interacting with the platform from start to finish—like adding products to a cart and checking out—to verify holistic functionality."
+    answer: "E2E tests programmatically simulate a real human interacting with the platform from start to finish-like adding products to a cart and checking out-to verify holistic functionality."
   - question: "Do you guarantee tested applications for clients in Italy?"
     answer: "Yes. Every custom web app and website I build, whether for a client based in Civitanova Marche or elsewhere, includes rigorous Unit and E2E tests before launch, ensuring stability for all my clients."
 ---

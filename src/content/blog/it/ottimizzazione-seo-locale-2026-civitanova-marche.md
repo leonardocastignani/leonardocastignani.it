@@ -47,7 +47,7 @@ Assicurati che il tuo NAP sia identico, al millimetro, ovunque la tua azienda si
 
 ### 4. Il vantaggio tecnico: Markup Geografico (JSON-LD)
 Qui è dove un sito sviluppato su misura fa la differenza rispetto a un template economico. 
-Per assicurarci che Google capisca esattamente dove ti trovi e quali zone servi, inietto nel codice del sito dei **dati strutturati (Schema.org / JSON-LD)** di tipo `LocalBusiness` — la stessa tecnica che approfondisco nella mia [guida allo Schema Markup e ai Dati Strutturati per Astro](/blog/dati-strutturati-json-ld-astro-seo-tecnica-marche/).
+Per assicurarci che Google capisca esattamente dove ti trovi e quali zone servi, inietto nel codice del sito dei **dati strutturati (Schema.org / JSON-LD)** di tipo `LocalBusiness` - la stessa tecnica che approfondisco nella mia [guida allo Schema Markup e ai Dati Strutturati per Astro](/blog/dati-strutturati-json-ld-astro-seo-tecnica-marche/).
 
 Questo codice invisibile agli utenti, ma fondamentale per i motori di ricerca, dice a Google in modo esplicito:
 * Le tue coordinate GPS.
