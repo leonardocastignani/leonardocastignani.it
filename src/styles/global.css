@@ -393,8 +393,8 @@ html.modal-scroll-locked {
         position: fixed;
         inset: 0;
         z-index: 100;
-        background: rgba(10, 12, 20, 0.92);
-        backdrop-filter: blur(6px);
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(4px);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -417,6 +417,19 @@ html.modal-scroll-locked {
     .lightbox-overlay.is-open img {
         transform: scale(1);
     }
+    .lightbox-close {
+        position: fixed;
+        top: 1.25rem;
+        right: 1.25rem;
+        z-index: 101;
+        color: #fff;
+        opacity: 0.85;
+        transition: opacity 0.2s var(--ease-smooth), transform 0.2s var(--ease-smooth);
+    }
+    .lightbox-close:hover {
+        opacity: 1;
+        transform: scale(1.08);
+    }
 
     .cookie-modal-overlay {
         @apply opacity-0 transition-opacity duration-300 ease-out;
@@ -434,7 +447,7 @@ html.modal-scroll-locked {
         @apply opacity-100 scale-100;
     }
 
-    /* TABLE OF CONTENTS OVERLAY (shares the cookie-modal open/close pattern) */
+    /* TABLE OF CONTENTS OVERLAY */
     .toc-modal-overlay {
         @apply opacity-0 transition-opacity duration-300 ease-out;
     }
@@ -459,7 +472,7 @@ html.modal-scroll-locked {
     }
 }
 
-/* --- PROSE CONTENT REVEAL (blog paragraphs) --- */
+/* --- PROSE CONTENT REVEAL --- */
 .prose-reveal > * {
     opacity: 0;
     transform: translateY(18px);
@@ -483,6 +496,14 @@ html.modal-scroll-locked {
     border-radius: 0.75rem;
 }
 .prose img:hover {
+    filter: brightness(1.05);
+}
+
+.hero-image-lightbox img {
+    cursor: pointer;
+    transition: transform 0.4s var(--ease-smooth), filter 0.4s var(--ease-smooth);
+}
+.hero-image-lightbox img:hover {
     filter: brightness(1.05);
 }
 

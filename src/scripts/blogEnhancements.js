@@ -1,4 +1,5 @@
 // --- BLOG ARTICLE ENHANCEMENTS SCRIPT ---
+import { lockPageScroll, unlockPageScroll } from './scrollLock.js';
 
 const prefersReducedMotion = () =>
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -56,37 +57,67 @@ export function initProseReveal() {
     });
 }
 
-// --- LIGHTBOX FOR CONTENT IMAGES ---
+// --- LIGHTBOX FOR CONTENT IMAGES + HERO IMAGE ---
 export function initLightbox() {
     const prose = document.querySelector('.prose');
-    if (!prose) return;
+    const heroImg = document.querySelector('.hero-image-lightbox img');
+    if (!prose && !heroImg) return;
 
     let overlay = document.getElementById('image-lightbox');
     if (!overlay) {
         overlay = document.createElement('div');
         overlay.id = 'image-lightbox';
         overlay.className = 'lightbox-overlay';
-        overlay.innerHTML = '<img alt="" />';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
+        const closeLabel = document.documentElement.lang === 'en' ? 'Close' : 'Chiudi';
+        overlay.innerHTML = `
+            <button type="button" class="lightbox-close" aria-label="${closeLabel}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <img alt="" />
+        `;
         document.body.appendChild(overlay);
 
-        overlay.addEventListener('click', () => overlay.classList.remove('is-open'));
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') overlay.classList.remove('is-open');
+        let isOpen = false;
+        const closeLightbox = () => {
+            if (!isOpen) return;
+            isOpen = false;
+            overlay.classList.remove('is-open');
+            unlockPageScroll();
+        };
+
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay || e.target.closest('.lightbox-close')) closeLightbox();
         });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        overlay.openLightbox = () => {
+            isOpen = true;
+            lockPageScroll();
+            overlay.classList.add('is-open');
+        };
     }
 
     const overlayImg = overlay.querySelector('img');
 
-    prose.querySelectorAll('img').forEach(img => {
+    const bindLightbox = (img) => {
         if (img.dataset.lightboxBound) return;
         img.dataset.lightboxBound = 'true';
 
         img.addEventListener('click', () => {
             overlayImg.src = img.currentSrc || img.src;
             overlayImg.alt = img.alt || '';
-            overlay.classList.add('is-open');
+            overlay.openLightbox();
         });
-    });
+    };
+
+    prose?.querySelectorAll('img').forEach(bindLightbox);
+    if (heroImg) bindLightbox(heroImg);
 }
 
 export function initBlogEnhancements() {
