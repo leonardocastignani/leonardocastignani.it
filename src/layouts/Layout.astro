@@ -204,7 +204,7 @@ const hreflangEn = alternateEn || new URL(enPath, Astro.site);
         </a>
 
         <!-- HEADER -->
-        <Header isMaintenance={isMaintenance} />
+        <Header isMaintenance={isMaintenance} alternateItPath={hreflangIt.pathname} alternateEnPath={hreflangEn.pathname} />
 
         <!-- MAIN CONTENT -->
         <main id="main-content">

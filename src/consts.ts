@@ -12,8 +12,10 @@ export const SOCIAL_LINKS = {
   linkedin: 'https://www.linkedin.com/in/leonardo-castignani/',
   indeed: 'https://profile.indeed.com/p/leonardoc-6lmm68l',
   github: 'https://github.com/leonardocastignani',
-  instagram: 'https://www.instagram.com/leonardocastignani.it/',
-  facebook: 'https://www.facebook.com/leonardocastignani.it/',
+  // instagram: 'https://www.instagram.com/leonardocastignani.it/',
+  // facebook: 'https://www.facebook.com/leonardocastignani.it/',
+  instagram: 'https://www.instagram.com/lc.freelancedeveloper/',
+  facebook: 'https://www.facebook.com/lc.freelancedeveloper/',
   email: `mailto:${SITE_DATA.email}`,
 };
 

@@ -6,7 +6,7 @@ import NavLink from './NavLink.astro';
 import logo from '../assets/logo.svg';
 
 // --- INITIAL CONFIGURATION ---
-const { isMaintenance = false } = Astro.props;
+const { isMaintenance = false, alternateItPath, alternateEnPath } = Astro.props;
 const i18n = getI18N({ astroUrl: Astro.url });
 const homeBase = i18n.nav.homeLink === '/' ? '' : i18n.nav.homeLink.replace(/\/$/, '');
 
@@ -32,12 +32,15 @@ const isBlogPage = currentPath.includes('/blog');
 const isServicesPage = currentPath === '/servizi/' || currentPath === '/en/services/';
 
 if (isBlogPage) {
+    // Prefer the article's own translated URL (from its alternateSlug in the
+    // frontmatter, already resolved by Layout.astro) over the generic blog
+    // listing, so switching language on a post opens its actual translation.
     if (currentPath.startsWith('/en/')) {
-        targetLangLink = '/blog/';
+        targetLangLink = alternateItPath || '/blog/';
         targetLangLabel = 'IT';
         targetLangAria = 'Passa alla versione italiana';
     } else {
-        targetLangLink = '/en/blog/';
+        targetLangLink = alternateEnPath || '/en/blog/';
         targetLangLabel = 'EN';
         targetLangAria = 'Switch to English version';
     }

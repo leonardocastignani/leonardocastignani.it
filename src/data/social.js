@@ -24,14 +24,12 @@ export const social = [
     {
         name: 'Instagram',
         Icon: InstagramIcon,
-        id: 'instagram',
-        disabled: true
+        id: 'instagram'
     },
     {
         name: 'Facebook',
         Icon: FacebookIcon,
-        id: 'facebook',
-        disabled: true
+        id: 'facebook'
     },
     { 
         name: 'Email', 

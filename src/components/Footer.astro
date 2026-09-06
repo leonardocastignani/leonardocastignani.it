@@ -23,7 +23,7 @@ const geoText = currentLang === 'it'
     <div class="container mx-auto max-w-6xl text-center text-gray-400" data-animate="fade-up">
         {/* SOCIAL LINKS CONTAINER */}
         <div class="flex justify-center items-center gap-4 mb-8 flex-wrap">
-            {social.map(({ name, Icon, id, disabled }) => (
+            {social.map(({ name, Icon, id, disabled }: { name: string; Icon: any; id: string; disabled?: boolean }) => (
                 <SocialLink
                     href={SOCIAL_LINKS[id as keyof typeof SOCIAL_LINKS] || '#'}
                     name={name}
