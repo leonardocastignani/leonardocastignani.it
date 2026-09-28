@@ -79,12 +79,12 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
         {/* SITE LOGO */}
         {!isMaintenance ? (
             <a href={i18n.nav.homeLink} id="header-title" class:list={[logoClasses, "hover:text-blue-500 transition-colors"]}>
-                <Image src={logo} alt="Logo di Leonardo Castignani" class="h-8 w-auto" />
+                <Image src={logo} alt="Logo di Leonardo Castignani" class="h-8 w-auto" loading="eager" />
                 <span>Leonardo Castignani</span>
             </a>
-        ) : (            
+        ) : (
             <div id="header-title" class:list={[logoClasses]}>
-                <Image src={logo} alt="Logo di Leonardo Castignani" class="h-8 w-auto" />
+                <Image src={logo} alt="Logo di Leonardo Castignani" class="h-8 w-auto" loading="eager" />
                 <span>Leonardo Castignani</span>
             </div>
         )}
