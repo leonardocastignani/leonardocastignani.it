@@ -33,20 +33,28 @@ const i18n = getI18N({ astroUrl: Astro.url });
 </div>
 
 <script define:vars={{ lang, noResultsText: i18n.search.noResults, loadingText: i18n.search.loading, unavailableText: i18n.search.unavailable }}>
-    let pagefindInstance;
+    let pagefindByLang = {};
     let debounceTimer;
+    let searchId = 0;
 
-    async function loadPagefind() {
-        if (pagefindInstance !== undefined) return pagefindInstance;
-        try {
-            const mod = await import(/* @vite-ignore */ '/pagefind/pagefind.js');
-            await mod.init();
-            pagefindInstance = mod;
-        } catch (err) {
-            console.warn('Pagefind non disponibile (indice assente: probabile ambiente di sviluppo).', err);
-            pagefindInstance = null;
+    // Pagefind legge <html lang> all'init e tiene lo stato nel modulo. Con ClientRouter lo stesso
+    // modulo resta in memoria tra IT ed EN, e il primo indice caricato "vince" anche sull'altra lingua.
+    // Soluzione: un modulo separato per lingua (URL diverso = istanza diversa, senza destroy()).
+    function loadPagefind() {
+        if (!pagefindByLang[lang]) {
+            pagefindByLang[lang] = (async () => {
+                // Allinea <html lang> alla lingua del componente prima dell'init
+                document.documentElement.lang = lang;
+                const mod = await import(/* @vite-ignore */ `/pagefind/pagefind.js?lang=${lang}`);
+                await mod.init();
+                return mod;
+            })().catch((err) => {
+                console.warn('Pagefind non disponibile (indice assente: probabile ambiente di sviluppo).', err);
+                delete pagefindByLang[lang];
+                return null;
+            });
         }
-        return pagefindInstance;
+        return pagefindByLang[lang];
     }
 
     function initBlogSearch() {
@@ -70,6 +78,8 @@ const i18n = getI18N({ astroUrl: Astro.url });
         };
 
         const runSearch = async (term) => {
+            const currentId = ++searchId;
+
             if (!term || term.trim().length < 2) {
                 results.classList.add('hidden');
                 results.innerHTML = '';
@@ -86,6 +96,8 @@ const i18n = getI18N({ astroUrl: Astro.url });
             }
 
             const { results: searchResults } = await pf.search(term, { filters: { lang: [lang] } });
+            // Ignora le risposte di query superate da una più recente (arrivo fuori ordine)
+            if (currentId !== searchId) return;
             await renderResults(searchResults);
         };
 
