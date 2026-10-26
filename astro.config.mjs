@@ -66,6 +66,9 @@ function getSitemapOverrides(pathname) {
 export default defineConfig({
   site: 'https://www.leonardocastignani.it',
   trailingSlash: 'always',
+  build: {
+    inlineStylesheets: 'auto'
+  },
   i18n: {
     defaultLocale: 'it',
     locales: ['it', 'en'],
