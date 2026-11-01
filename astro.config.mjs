@@ -27,7 +27,9 @@ function buildBlogLastmodMap() {
       const lastmod = readFrontmatterDate(filePath, 'updatedDate') || readFrontmatterDate(filePath, 'pubDate');
       if (lastmod) {
         const urlPath = lang === 'en' ? `/en/blog/${slug}/` : `/blog/${slug}/`;
-        map.set(urlPath, lastmod);
+        // Fissa l'orario alle 10:00 UTC (non locale, per restare deterministico
+        // a prescindere dal fuso orario della macchina che esegue la build).
+        map.set(urlPath, `${lastmod}T10:00:00.000Z`);
       }
     }
   }

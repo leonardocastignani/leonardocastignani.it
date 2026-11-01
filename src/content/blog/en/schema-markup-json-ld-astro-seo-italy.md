@@ -64,8 +64,10 @@ const personSchema = {
   "jobTitle": "Software & Web Developer",
   "url": "https://www.leonardocastignani.it",
   "sameAs": [
+    "https://www.linkedin.com/in/leonardo-castignani/",
     "https://github.com/leonardocastignani",
-    "https://www.linkedin.com/in/leonardo-castignani/"
+    "https://www.instagram.com/lc.freelancedeveloper/",
+    "https://www.facebook.com/lc.freelancedeveloper/"
   ]
 };
 ---
@@ -83,7 +85,7 @@ const localBusinessSchema = {
   "@type": "ProfessionalService",
   "@id": "https://www.leonardocastignani.it/#organization",
   "name": "Leonardo Castignani - Software & Web Development",
-  "image": "https://www.leonardocastignani.it/logo.png",
+  "image": "https://www.leonardocastignani.it/favicon/favicon-96x96.png",
   "url": "https://www.leonardocastignani.it",
   "founder": { "@id": "https://www.leonardocastignani.it/#person" },
   "address": {
@@ -142,7 +144,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "Blog",
-      "item": "https://www.leonardocastignani.it/blog"
+      "item": "https://www.leonardocastignani.it/blog/"
     }
   ]
 };
