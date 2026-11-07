@@ -2,8 +2,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* --- DARK MODE: nessun toggle in JS, 'dark:' resterebbe comunque inerte
-   (vedi tailwind.config.mjs rimosso: darkMode 'class' con .dark mai applicata) --- */
+/* --- TEMA: light fisso, nessun toggle. 'dark:' non è usato da nessuna
+   classe nel progetto, quindi resterebbe comunque inerte anche se qualche
+   visitatore avesse il sistema operativo impostato su dark mode. --- */
 
 /* --- GLOBAL LAYOUT FIXES --- */
 html, body {
@@ -16,22 +17,12 @@ html, body {
 
 /* `scrollbar-gutter: stable` (set on html in Layout.astro) reserves the
    scrollbar's space on the html element's own box, outside of body. Only
-   body has the dark bg-gray-900 background, so that reserved strip fell
-   through to the browser's default (white) canvas behind it — visible as
-   an uncovered vertical strip whenever a modal/cookie banner dims the page. */
+   body has an explicit background, so that reserved strip fell through to
+   the browser's default canvas behind it — visible as an uncovered vertical
+   strip whenever a modal/cookie banner dims the page. */
 html {
-    background-color: #111827;
+    background-color: #ffffff;
 }
-
-/* --- CUSTOM SCROLLBAR --- */
-html {
-    scrollbar-width: auto;
-    scrollbar-color: #374151 #111827;
-}
-html::-webkit-scrollbar { width: 12px; }
-html::-webkit-scrollbar-track { background: #111827; }
-html::-webkit-scrollbar-thumb { background: #374151; border-radius: 6px; border: 2px solid #111827; }
-html::-webkit-scrollbar-thumb:hover { background: #4b5563; }
 
 /* --- MODAL SCROLL LOCK (shared by every full-screen overlay: cookie consent, service detail, ...) --- */
 html.modal-scroll-locked {
@@ -123,7 +114,7 @@ html.modal-scroll-locked {
     }
     .card-tilt:hover {
         transform: perspective(1000px) rotateX(var(--tilt-y)) rotateY(var(--tilt-x)) translateY(-4px);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px -10px rgba(59, 130, 246, 0.25);
+        box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.18), 0 0 40px -10px rgba(59, 130, 246, 0.2);
     }
 
     /* TERMINAL DEMO BLINKING CURSOR */
@@ -144,7 +135,7 @@ html.modal-scroll-locked {
             right: -1.5rem;
             font-size: 1.5rem;
             line-height: 1;
-            color: rgba(255, 255, 255, 0.15);
+            color: rgba(15, 23, 42, 0.15);
             pointer-events: none;
         }
     }
@@ -191,8 +182,8 @@ html.modal-scroll-locked {
     /* GRADIENT BORDER */
     .gradient-border {
         position: relative;
-        background: linear-gradient(#1f2937, #1f2937) padding-box,
-            linear-gradient(120deg, rgba(96,165,250,0.55), rgba(168,85,247,0.45), rgba(236,72,153,0.35)) border-box;
+        background: linear-gradient(#ffffff, #ffffff) padding-box,
+            linear-gradient(120deg, rgba(37,99,235,0.55), rgba(147,51,234,0.45), rgba(219,39,119,0.35)) border-box;
         border: 1px solid transparent;
         transition: background 0.5s var(--ease-smooth);
     }
@@ -226,7 +217,7 @@ html.modal-scroll-locked {
 
     /* SKELETON LOADING PER IMMAGINI */
     .img-skeleton {
-        background: linear-gradient(100deg, #1f2937 30%, #2b3646 50%, #1f2937 70%);
+        background: linear-gradient(100deg, #e2e8f0 30%, #f1f5f9 50%, #e2e8f0 70%);
         background-size: 200% 100%;
         animation: skeleton-shine 1.4s ease-in-out infinite;
     }
@@ -237,10 +228,10 @@ html.modal-scroll-locked {
 
     /* GLASSMORPHISM LEGGERO */
     .glass-panel {
-        background: rgba(31, 41, 55, 0.45);
+        background: rgba(255, 255, 255, 0.55);
         backdrop-filter: blur(14px) saturate(140%);
         -webkit-backdrop-filter: blur(14px) saturate(140%);
-        border: 1px solid rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(15, 23, 42, 0.06);
     }
 
     /* FLOATING GLOW BLOBS */
@@ -249,7 +240,7 @@ html.modal-scroll-locked {
         border-radius: 9999px;
         filter: blur(60px);
         pointer-events: none;
-        opacity: 0.35;
+        opacity: 0.25;
         animation: glow-float 10s ease-in-out infinite;
     }
     @keyframes glow-float {
@@ -316,8 +307,8 @@ html.modal-scroll-locked {
             box-shadow 0.4s var(--ease-smooth), border-color 0.4s var(--ease-smooth);
     }
     #site-header.is-scrolled {
-        background-color: rgba(17, 24, 39, 0.6);
-        box-shadow: 0 8px 30px -10px rgba(0, 0, 0, 0.5);
+        background-color: rgba(255, 255, 255, 0.62);
+        box-shadow: 0 8px 30px -10px rgba(15, 23, 42, 0.18);
         backdrop-filter: blur(20px);
         border-color: transparent;
     }
@@ -460,14 +451,7 @@ html.modal-scroll-locked {
 
     .toc-modal-panel {
         @apply opacity-0 scale-95 transition-all duration-300 ease-out;
-        scrollbar-width: thin;
-        scrollbar-color: #4b5563 transparent;
     }
-
-    .toc-modal-panel::-webkit-scrollbar { width: 8px; }
-    .toc-modal-panel::-webkit-scrollbar-track { background: transparent; }
-    .toc-modal-panel::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 6px; }
-    .toc-modal-panel::-webkit-scrollbar-thumb:hover { background: #6b7280; }
 
     .toc-modal-overlay.toc-modal-visible .toc-modal-panel {
         @apply opacity-100 scale-100;

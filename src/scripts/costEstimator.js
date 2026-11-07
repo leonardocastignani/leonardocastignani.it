@@ -20,10 +20,10 @@ function animateValue(el, from, to, duration = 450) {
 
 function setAddonState(button, selected) {
     button.setAttribute('aria-pressed', String(selected));
-    // Tailwind compiles .border-gray-700 after .border-blue-500, so the static
+    // Tailwind compiles .border-slate-200 after .border-blue-500, so the static
     // gray border class must be removed (not just out-cascaded) or it always wins.
     button.classList.toggle('border-blue-500', selected);
-    button.classList.toggle('border-gray-700', !selected);
+    button.classList.toggle('border-slate-200', !selected);
     button.classList.toggle('bg-blue-500/5', selected);
 
     const check = button.querySelector('.estimator-check');
@@ -31,7 +31,7 @@ function setAddonState(button, selected) {
     if (check) {
         check.classList.toggle('border-blue-500', selected);
         check.classList.toggle('bg-blue-500', selected);
-        check.classList.toggle('border-gray-600', !selected);
+        check.classList.toggle('border-slate-300', !selected);
     }
     if (checkIcon) checkIcon.classList.toggle('opacity-0', !selected);
 }
@@ -131,7 +131,7 @@ export function initCostEstimator() {
             btn.setAttribute('aria-pressed', String(active));
             // Same cascade-order fix as setAddonState: drop the static gray border when active.
             btn.classList.toggle('border-blue-500', active);
-            btn.classList.toggle('border-gray-700', !active);
+            btn.classList.toggle('border-slate-200', !active);
             btn.classList.toggle('bg-blue-500/5', active);
         });
 
@@ -162,7 +162,7 @@ export function initCostEstimator() {
         typeButtons.forEach((btn) => {
             btn.setAttribute('aria-pressed', 'false');
             btn.classList.remove('border-blue-500', 'bg-blue-500/5');
-            btn.classList.add('border-gray-700');
+            btn.classList.add('border-slate-200');
         });
         addonButtons.forEach((btn) => {
             setAddonState(btn, false);

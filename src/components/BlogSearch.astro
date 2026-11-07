@@ -22,12 +22,12 @@ const i18n = getI18N({ astroUrl: Astro.url });
             placeholder={i18n.search.placeholder}
             aria-label={i18n.search.placeholder}
             autocomplete="off"
-            class="input-glow w-full bg-gray-800/60 border border-gray-700 rounded-xl py-3 pl-12 pr-4 text-white placeholder-gray-500 focus:outline-hidden focus:border-blue-500 transition-colors"
+            class="input-glow w-full bg-slate-50/60 border border-slate-200 rounded-xl py-3 pl-12 pr-4 text-gray-900 placeholder-gray-400 focus:outline-hidden focus:border-blue-500 transition-colors"
         />
     </div>
     <div
         id="blog-search-results"
-        class="hidden absolute z-30 mt-2 w-full max-h-[70vh] overflow-y-auto bg-gray-800 border border-gray-700 rounded-xl shadow-2xl"
+        class="hidden absolute z-30 mt-2 w-full max-h-[70vh] overflow-y-auto bg-slate-50 border border-slate-200 rounded-xl shadow-2xl"
         role="listbox"
     ></div>
 </div>
@@ -65,14 +65,14 @@ const i18n = getI18N({ astroUrl: Astro.url });
 
         const renderResults = async (rawResults) => {
             if (!rawResults || rawResults.length === 0) {
-                results.innerHTML = `<p class="p-4 text-sm text-gray-400">${noResultsText}</p>`;
+                results.innerHTML = `<p class="p-4 text-sm text-gray-500">${noResultsText}</p>`;
                 return;
             }
             const items = await Promise.all(rawResults.slice(0, 8).map((r) => r.data()));
             results.innerHTML = items.map((item) => `
-                <a href="${item.url}" class="block p-4 border-b border-gray-700 last:border-none hover:bg-gray-700/60 transition-colors" role="option">
-                    <div class="font-semibold text-white text-sm mb-1">${item.meta && item.meta.title ? item.meta.title : ''}</div>
-                    <div class="text-xs text-gray-400 line-clamp-2">${item.excerpt}</div>
+                <a href="${item.url}" class="block p-4 border-b border-slate-200 last:border-none hover:bg-slate-100/60 transition-colors" role="option">
+                    <div class="font-semibold text-gray-900 text-sm mb-1">${item.meta && item.meta.title ? item.meta.title : ''}</div>
+                    <div class="text-xs text-gray-500 line-clamp-2">${item.excerpt}</div>
                 </a>
             `).join('');
         };
@@ -87,11 +87,11 @@ const i18n = getI18N({ astroUrl: Astro.url });
             }
 
             results.classList.remove('hidden');
-            results.innerHTML = `<p class="p-4 text-sm text-gray-400">${loadingText}</p>`;
+            results.innerHTML = `<p class="p-4 text-sm text-gray-500">${loadingText}</p>`;
 
             const pf = await loadPagefind();
             if (!pf) {
-                results.innerHTML = `<p class="p-4 text-sm text-gray-400">${unavailableText}</p>`;
+                results.innerHTML = `<p class="p-4 text-sm text-gray-500">${unavailableText}</p>`;
                 return;
             }
 

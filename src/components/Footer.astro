@@ -19,8 +19,8 @@ const geoText = currentLang === 'it'
 ---
 
 <!-- FOOTER SECTION -->
-<footer class="bg-gray-800 py-8 border-t border-gray-700/60">
-    <div class="container mx-auto max-w-6xl text-center text-gray-400" data-animate="fade-up">
+<footer class="bg-slate-50 py-8 border-t border-slate-200/60">
+    <div class="container mx-auto max-w-6xl text-center text-gray-500" data-animate="fade-up">
         {/* SOCIAL LINKS CONTAINER */}
         <div class="flex justify-center items-center gap-4 mb-8 flex-wrap">
             {social.map(({ name, Icon, id, disabled }: { name: string; Icon: any; id: string; disabled?: boolean }) => (
@@ -49,14 +49,14 @@ const geoText = currentLang === 'it'
         <p class="mt-2 text-sm flex justify-center items-center gap-3 flex-wrap">
             <a
                 href={servicesHref}
-                class="nav-link-underline text-gray-400 hover:text-white underline underline-offset-2 transition-colors"
+                class="nav-link-underline text-gray-500 hover:text-gray-900 underline underline-offset-2 transition-colors"
             >
                 {i18n.nav.services}
             </a>
-            <span class="text-gray-700" aria-hidden="true">·</span>
+            <span class="text-gray-300" aria-hidden="true">·</span>
             <a
                 href={privacyHref}
-                class="nav-link-underline text-gray-400 hover:text-white underline underline-offset-2 transition-colors"
+                class="nav-link-underline text-gray-500 hover:text-gray-900 underline underline-offset-2 transition-colors"
             >
                 {i18n.footer.privacyLink}
             </a>

@@ -36,7 +36,7 @@ const privacyHref = isIt ? "/privacy-policy/#ai-transparency" : "/en/privacy-pol
 ---
 
 <!-- AUTHOR BOX UI -->
-<aside class="spotlight fade-in-section mt-16 mb-8 p-6 md:p-8 bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-2xl shadow-xl flex flex-col md:flex-row items-center md:items-start gap-6 transition-all duration-300 hover:border-blue-500/50">
+<aside class="spotlight fade-in-section mt-16 mb-8 p-6 md:p-8 bg-slate-50/40 backdrop-blur-sm border border-slate-200/60 rounded-2xl shadow-xl flex flex-col md:flex-row items-center md:items-start gap-6 transition-all duration-300 hover:border-blue-500/50">
     
     <!-- AVATAR -->
     <div class="flex-shrink-0 relative img-reveal rounded-full">
@@ -44,23 +44,23 @@ const privacyHref = isIt ? "/privacy-policy/#ai-transparency" : "/en/privacy-pol
         <Image 
             src={profileImg} 
             alt={`Foto di ${SITE_DATA.name}`} 
-            class="relative w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-2 border-gray-700 shadow-md"
+            class="relative w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-2 border-slate-200 shadow-md"
             quality={85}
         />
     </div>
 
     <!-- CONTENT -->
     <div class="flex-1 text-center md:text-left">
-        <span class="text-[11px] font-bold uppercase tracking-widest text-blue-400 mb-1.5 block">
+        <span class="text-[11px] font-bold uppercase tracking-widest text-blue-600 mb-1.5 block">
             {titleText}
         </span>
         
-        <h3 class="text-2xl font-bold text-white mb-1">
+        <h3 class="text-2xl font-bold text-gray-900 mb-1">
             {SITE_DATA.name}
         </h3>
         
         <!-- GEO & ROLE INDICATOR -->
-        <p class="text-sm font-mono text-gray-400 mb-3 flex items-center justify-center md:justify-start gap-2">
+        <p class="text-sm font-mono text-gray-500 mb-3 flex items-center justify-center md:justify-start gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -69,14 +69,14 @@ const privacyHref = isIt ? "/privacy-policy/#ai-transparency" : "/en/privacy-pol
         </p>
         
         <!-- BIO -->
-        <p class="text-gray-300 leading-relaxed text-sm md:text-base mb-5">
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base mb-5">
             {bio}
         </p>
 
         <!-- AI ACT ART. 50: NOTA DI TRASPARENZA EDITORIALE -->
         <p class="text-gray-500 text-xs leading-relaxed mb-5">
             {aiDisclosureText}{' '}
-            <a href={privacyHref} class="underline underline-offset-2 hover:text-gray-300 transition-colors">
+            <a href={privacyHref} class="underline underline-offset-2 hover:text-gray-600 transition-colors">
                 {aiDisclosureLinkText}
             </a>
         </p>
@@ -87,7 +87,7 @@ const privacyHref = isIt ? "/privacy-policy/#ai-transparency" : "/en/privacy-pol
                 href={SOCIAL_LINKS.linkedin} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                class="text-gray-400 hover:text-white transition-all duration-200 flex items-center justify-center w-6 h-6 hover:scale-110 [&_svg]:w-full [&_svg]:h-full"
+                class="text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-center w-6 h-6 hover:scale-110 [&_svg]:w-full [&_svg]:h-full"
                 aria-label={`Profilo LinkedIn di ${SITE_DATA.name}`}
             >
                 <LinkedinIcon />
@@ -96,7 +96,7 @@ const privacyHref = isIt ? "/privacy-policy/#ai-transparency" : "/en/privacy-pol
                 href={SOCIAL_LINKS.github} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                class="text-gray-400 hover:text-white transition-all duration-200 flex items-center justify-center w-6 h-6 hover:scale-110 [&_svg]:w-full [&_svg]:h-full"
+                class="text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-center w-6 h-6 hover:scale-110 [&_svg]:w-full [&_svg]:h-full"
                 aria-label={`Profilo GitHub di ${SITE_DATA.name}`}
             >
                 <GithubIcon />

@@ -24,7 +24,7 @@ export function initServicesQuiz() {
         questions.forEach((q, i) => { q.hidden = i !== index; });
         dots.forEach((d, i) => {
             d.classList.toggle('bg-blue-500', i <= index);
-            d.classList.toggle('bg-gray-600', i > index);
+            d.classList.toggle('bg-slate-200', i > index);
         });
     };
 

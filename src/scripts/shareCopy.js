@@ -31,14 +31,14 @@ export function initShareCopy() {
 
         btn.setAttribute('aria-label', btn.dataset.copiedLabel || '');
         btn.setAttribute('title', btn.dataset.copiedLabel || '');
-        icon?.classList.add('text-green-400');
-        icon?.classList.remove('text-gray-300');
+        icon?.classList.add('text-green-600');
+        icon?.classList.remove('text-gray-600');
 
         window.clearTimeout(resetTimer);
         resetTimer = window.setTimeout(() => {
             btn.setAttribute('aria-label', btn.dataset.defaultLabel || '');
             btn.setAttribute('title', btn.dataset.defaultLabel || '');
-            icon?.classList.remove('text-green-400');
+            icon?.classList.remove('text-green-600');
         }, 2000);
     });
 }

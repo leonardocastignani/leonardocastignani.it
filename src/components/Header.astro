@@ -3,6 +3,8 @@
 import { Image } from 'astro:assets';
 import { getI18N } from '../i18n/utils';
 import NavLink from './NavLink.astro';
+import ItalyFlagIcon from './icons/ItalyFlagIcon.astro';
+import UkFlagIcon from './icons/UkFlagIcon.astro';
 import logo from '../assets/logo.svg';
 
 // --- INITIAL CONFIGURATION ---
@@ -25,7 +27,7 @@ const navLinks = [
 // --- SMART LANGUAGE SWITCHING LOGIC ---
 const currentPath = Astro.url.pathname;
 let targetLangLink = '';
-let targetLangLabel = '';
+let targetLangFlag = '';
 let targetLangAria = '';
 
 const isBlogPage = currentPath.includes('/blog');
@@ -34,17 +36,20 @@ const isServicesPage = currentPath === '/servizi/' || currentPath === '/en/servi
 // cartella), a differenza di ogni altra pagina sotto trailingSlash: 'always'
 // (incluso /en/404/, che segue la regola normale). La logica generica sotto
 // si limiterebbe a togliere "/en" da "/en/404/" ottenendo "/404/", un URL che
-// non esiste: va quindi gestito qui come caso a parte, verso "/404" senza slash.
+// non esiste. Va quindi gestito qui come caso a parte, puntando esplicitamente
+// a "/404.html": l'estensione esplicita serve sia in locale (astro dev/preview,
+// che con trailingSlash: 'always' rifiuta "/404" senza slash) sia in produzione
+// (dove Netlify la risolverebbe comunque implicitamente).
 const isNotFoundPage = currentPath === '/404/' || currentPath === '/en/404/';
 
 if (isNotFoundPage) {
     if (currentPath.startsWith('/en/')) {
-        targetLangLink = '/404';
-        targetLangLabel = 'IT';
+        targetLangLink = '/404.html';
+        targetLangFlag = 'it';
         targetLangAria = 'IT - Passa alla versione italiana';
     } else {
         targetLangLink = '/en/404/';
-        targetLangLabel = 'EN';
+        targetLangFlag = 'gb';
         targetLangAria = 'EN - Switch to English version';
     }
 } else if (isBlogPage) {
@@ -53,32 +58,32 @@ if (isNotFoundPage) {
     // listing, so switching language on a post opens its actual translation.
     if (currentPath.startsWith('/en/')) {
         targetLangLink = alternateItPath || '/blog/';
-        targetLangLabel = 'IT';
+        targetLangFlag = 'it';
         targetLangAria = 'IT - Passa alla versione italiana';
     } else {
         targetLangLink = alternateEnPath || '/en/blog/';
-        targetLangLabel = 'EN';
+        targetLangFlag = 'gb';
         targetLangAria = 'EN - Switch to English version';
     }
 } else if (isServicesPage) {
     if (currentPath.startsWith('/en/')) {
         targetLangLink = '/servizi/';
-        targetLangLabel = 'IT';
+        targetLangFlag = 'it';
         targetLangAria = 'IT - Passa alla versione italiana';
     } else {
         targetLangLink = '/en/services/';
-        targetLangLabel = 'EN';
+        targetLangFlag = 'gb';
         targetLangAria = 'EN - Switch to English version';
     }
 } else {
     if (currentPath.startsWith('/en/')) {
         const pathWithoutEn = currentPath.replace(/^\/en/, '');
         targetLangLink = pathWithoutEn || '/';
-        targetLangLabel = 'IT';
+        targetLangFlag = 'it';
         targetLangAria = 'IT - Passa alla versione italiana';
     } else {
         targetLangLink = currentPath === '/' ? '/en/' : `/en${currentPath}`;
-        targetLangLabel = 'EN';
+        targetLangFlag = 'gb';
         targetLangAria = 'EN - Switch to English version';
     }
 }
@@ -90,11 +95,11 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
 ---
 
 <!-- MAIN HEADER -->
-<header id="site-header" class="bg-gray-900/80 backdrop-blur-sm fixed z-50 border-b border-gray-800/60">
+<header id="site-header" class="bg-white/65 backdrop-blur-sm fixed z-50 border-b border-slate-200/60">
     <nav class="container mx-auto max-w-6xl px-4 py-4 flex justify-between items-center">
         {/* SITE LOGO */}
         {!isMaintenance ? (
-            <a href={i18n.nav.homeLink} id="header-title" class:list={[logoClasses, "hover:text-blue-500 transition-colors"]}>
+            <a href={i18n.nav.homeLink} id="header-title" class:list={[logoClasses, "hover:text-blue-600 transition-colors"]}>
                 <Image src={logo} alt="Logo di Leonardo Castignani" class="h-8 w-auto" loading="eager" />
                 <span>Leonardo Castignani</span>
             </a>
@@ -117,26 +122,30 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
                             href={link.href}
                             label={link.label}
                             sectionId={link.sectionId}
-                            class="text-gray-300 hover:text-white"
+                            class="text-gray-600 hover:text-gray-900"
                         />
                     ))}
                     {/* Desktop Language Switcher */}
-                    <a href={targetLangLink} hreflang={currentPath.startsWith('/en/') ? 'it' : 'en'} class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-md text-sm transition-colors" aria-label={targetLangAria}>
-                        <span lang={currentPath.startsWith('/en/') ? 'it' : 'en'}>
-                            {targetLangLabel}
-                        </span>
+                    <a href={targetLangLink} hreflang={currentPath.startsWith('/en/') ? 'it' : 'en'} class="flex items-center bg-slate-100 hover:bg-slate-200 p-1.5 rounded-md transition-colors" aria-label={targetLangAria}>
+                        {targetLangFlag === 'it' ? (
+                            <ItalyFlagIcon class="w-5 h-3.5 rounded-xs" preserveAspectRatio="none" aria-hidden="true" />
+                        ) : (
+                            <UkFlagIcon class="w-5 h-3.5 rounded-xs" preserveAspectRatio="none" aria-hidden="true" />
+                        )}
                     </a>
                 </div>
 
                 {/* MOBILE/COMPACT VERSION (below lg: includes phones in landscape) */}
                 <div class="lg:hidden flex items-center gap-4">
                     {/* Mobile Language Switcher */}
-                    <a href={targetLangLink} hreflang={currentPath.startsWith('/en/') ? 'it' : 'en'} class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md text-base font-medium mt-2 transition-colors" aria-label={targetLangAria}>
-                        <span lang={currentPath.startsWith('/en/') ? 'it' : 'en'}>
-                            {targetLangLabel}
-                        </span>
+                    <a href={targetLangLink} hreflang={currentPath.startsWith('/en/') ? 'it' : 'en'} class="flex items-center bg-slate-100 hover:bg-slate-200 p-2 rounded-md mt-2 transition-colors" aria-label={targetLangAria}>
+                        {targetLangFlag === 'it' ? (
+                            <ItalyFlagIcon class="w-6 h-4 rounded-xs" preserveAspectRatio="none" aria-hidden="true" />
+                        ) : (
+                            <UkFlagIcon class="w-6 h-4 rounded-xs" preserveAspectRatio="none" aria-hidden="true" />
+                        )}
                     </a>
-                    <button id="menu-btn" class="text-gray-200 focus:outline-hidden" aria-label={openMenuLabel} aria-expanded="false" aria-controls="mobile-menu" data-label-open={openMenuLabel} data-label-close={closeMenuLabel}>
+                    <button id="menu-btn" class="text-gray-700 focus:outline-hidden" aria-label={openMenuLabel} aria-expanded="false" aria-controls="mobile-menu" data-label-open={openMenuLabel} data-label-close={closeMenuLabel}>
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
                 </div>
@@ -146,14 +155,14 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
 
     {/* MOBILE DROPDOWN MENU */}
     {!isMaintenance && (
-        <div id="mobile-menu" class="hidden lg:hidden bg-gray-900/95 backdrop-blur-sm mobile-menu-panel">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-sm mobile-menu-panel">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
                 {navLinks.map(link => (
                     <NavLink
                         href={link.href}
                         label={link.label}
                         sectionId={link.sectionId}
-                        class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                        class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
                     />
                 ))}
             </div>

@@ -17,16 +17,16 @@ const privacyHref = currentLang === 'it' ? '/privacy-policy/' : '/en/privacy-pol
     aria-labelledby="cookie-modal-title"
     aria-describedby="cookie-modal-desc"
 >
-    <div class="cookie-modal-panel w-full max-w-md bg-gray-800 border border-gray-700 rounded-2xl shadow-2xl p-6 sm:p-8">
-        <h2 id="cookie-modal-title" class="text-xl font-bold text-white mb-3">
+    <div class="cookie-modal-panel w-full max-w-md bg-slate-50 border border-slate-200 rounded-2xl shadow-2xl p-6 sm:p-8">
+        <h2 id="cookie-modal-title" class="text-xl font-bold text-gray-900 mb-3">
             {cm.title}
         </h2>
-        <p id="cookie-modal-desc" class="text-sm text-gray-300 leading-relaxed mb-2">
+        <p id="cookie-modal-desc" class="text-sm text-gray-600 leading-relaxed mb-2">
             {cm.description}
         </p>
         <a
             href={privacyHref}
-            class="inline-block text-sm text-blue-400 hover:text-blue-300 underline underline-offset-2 mb-6"
+            class="inline-block text-sm text-blue-600 hover:text-blue-700 underline underline-offset-2 mb-6"
         >
             {cm.learnMore}
         </a>
@@ -42,7 +42,7 @@ const privacyHref = currentLang === 'it' ? '/privacy-policy/' : '/en/privacy-pol
             <button
                 type="button"
                 data-action="accept-necessary"
-                class="order-2 sm:order-1 flex-1 bg-transparent border border-gray-600 hover:bg-gray-700 text-gray-200 font-semibold py-2.5 px-5 rounded-lg transition-colors"
+                class="order-2 sm:order-1 flex-1 bg-transparent border border-slate-300 hover:bg-slate-100 text-gray-700 font-semibold py-2.5 px-5 rounded-lg transition-colors"
             >
                 {cm.acceptNecessary}
             </button>

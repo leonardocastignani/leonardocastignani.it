@@ -5,30 +5,30 @@ import { getI18N } from '../i18n/utils';
 // --- INITIAL CONFIGURATION ---
 const i18n = getI18N({ astroUrl: Astro.url });
 const titleId = "experience-title";
-const companyClasses = "text-lg font-semibold text-blue-300 hover:text-blue-400 transition-colors";
+const companyClasses = "text-lg font-semibold text-blue-600 hover:text-blue-700 transition-colors";
 
 const experiences = i18n.experience.experiences || [];
 ---
 
 <!-- EXPERIENCE SECTION -->
-<section id="experience" class="py-20 px-4 bg-gray-800 fade-in-section" aria-labelledby={titleId}>
+<section id="experience" class="py-20 px-4 bg-slate-50 fade-in-section" aria-labelledby={titleId}>
     <div class="container mx-auto max-w-4xl">
         <h2 id={titleId} class="text-3xl md:text-4xl font-bold text-center mb-16">
             {i18n.experience.title}
         </h2>
 
         <!-- TIMELINE CONTAINER -->
-        <div class="relative border-l-2 border-gray-700 ml-3 md:ml-6 space-y-12" data-stagger-children="130">
+        <div class="relative border-l-2 border-slate-200 ml-3 md:ml-6 space-y-12" data-stagger-children="130">
             {experiences.map((exp) => (
                 <div class="relative pl-8 md:pl-12 group" data-animate="slide-right">
                     
                     {/* Pallino della Timeline */}
-                    <span class="absolute -left-[9px] top-2 bg-blue-600 h-5 w-5 rounded-full border-4 border-gray-800 group-hover:scale-125 group-hover:bg-blue-400 transition-all duration-300 shadow-[0_0_0_4px_rgba(31,41,55,1)]"></span>
+                    <span class="absolute -left-[9px] top-2 bg-blue-600 h-5 w-5 rounded-full border-4 border-slate-50 group-hover:scale-125 group-hover:bg-blue-700 transition-all duration-300 shadow-[0_0_0_4px_rgba(248,250,252,1)]"></span>
                     
                     {/* Contenuto */}
                     <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2">
                         <div>
-                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                            <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors">
                                 {exp.role}
                             </h3>
                             
@@ -43,18 +43,18 @@ const experiences = i18n.experience.experiences || [];
                                     {exp.company}
                                 </a>
                             ) : (
-                                <div class="text-lg font-semibold text-blue-300">
+                                <div class="text-lg font-semibold text-blue-600">
                                     {exp.company}
                                 </div>
                             )}
                         </div>
 
-                        <span class="text-sm font-medium text-blue-300 bg-blue-900/30 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0 border border-blue-800/50 whitespace-nowrap">
+                        <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0 border border-blue-200 whitespace-nowrap">
                             {exp.period}
                         </span>
                     </div>
                     
-                    <p class="text-gray-400 leading-relaxed mt-3 text-base">
+                    <p class="text-gray-500 leading-relaxed mt-3 text-base">
                         {exp.description}
                     </p>
                 </div>
@@ -62,9 +62,9 @@ const experiences = i18n.experience.experiences || [];
         </div>
 
         <!-- TIMELINE FOOTER -->
-        <div class="ml-3 md:ml-6 mt-8 pl-8 md:pl-12 opacity-60">
+        <div class="ml-3 md:ml-6 mt-8 pl-8 md:pl-12">
             <div class="text-gray-500 text-sm italic flex items-center gap-2">
-                <span class="w-2 h-2 bg-gray-600 rounded-full"></span>
+                <span class="w-2 h-2 bg-slate-300 rounded-full"></span>
                 {i18n.experience.start || "..."}
             </div>
         </div>

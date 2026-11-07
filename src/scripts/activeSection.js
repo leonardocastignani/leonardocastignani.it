@@ -26,8 +26,8 @@ export function initActiveSection() {
         headerNavLinks.forEach(link => {
             if (!isTracked(link)) return;
             delete link.dataset.active;
-            link.classList.remove('text-white');
-            link.classList.add('text-gray-400');
+            link.classList.remove('text-gray-900');
+            link.classList.add('text-gray-500');
         });
     };
 
@@ -39,8 +39,8 @@ export function initActiveSection() {
         resetLinks();
         matchingLinks.forEach(link => {
             link.dataset.active = 'true';
-            link.classList.remove('text-gray-400');
-            link.classList.add('text-white');
+            link.classList.remove('text-gray-500');
+            link.classList.add('text-gray-900');
         });
     };
 

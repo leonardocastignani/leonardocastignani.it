@@ -33,17 +33,17 @@ const uniqueTags = Object.keys(tagCounts).sort((a, b) => tagCounts[b].count - ta
     <Maintenance lang="it" />
 ) : (
     <Layout title={`${i18n.blog.title} | Leonardo Castignani`} description={i18n.blog.description}>
-        <div class="pt-24 pb-16 px-4 bg-gray-900 min-h-screen">
+        <div class="pt-24 pb-16 px-4 bg-white min-h-screen">
             <div class="container mx-auto max-w-4xl">
                 {/* PAGE TITLE */}
-                <h1 class="text-4xl font-bold text-white mb-8 text-center">{i18n.blog.title}</h1>
+                <h1 class="text-4xl font-bold text-gray-900 mb-8 text-center">{i18n.blog.title}</h1>
 
                 <BlogSearch lang="it" />
 
                 {uniqueTags.length > 0 && (
-                    <div class="mb-12 p-6 bg-gray-800/30 backdrop-blur-sm border border-gray-800 rounded-2xl shadow-xl">
-                        <div class="flex items-center gap-2 mb-4 text-gray-400">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-blue-400">
+                    <div class="mb-12 p-6 bg-slate-50/30 backdrop-blur-sm border border-slate-200 rounded-2xl shadow-xl">
+                        <div class="flex items-center gap-2 mb-4 text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-blue-600">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581a1.43 1.43 0 0 0 2.022 0l4.319-4.319a1.43 1.43 0 0 0 0-2.022L11.16 3.66a2.25 2.25 0 0 0-1.592-.659ZM7.5 9h.008v.008H7.5V9Z" />
                             </svg>
                             <h2 class="text-xs font-semibold uppercase tracking-wider">
@@ -55,10 +55,10 @@ const uniqueTags = Object.keys(tagCounts).sort((a, b) => tagCounts[b].count - ta
                             {uniqueTags.map((tag) => (
                                 <a
                                     href={`/blog/tag/${tag}/`}
-                                    class="group flex items-center gap-2 text-xs font-medium px-3.5 py-1.5 bg-gray-950/60 text-gray-300 border border-gray-800/80 rounded-full hover:text-white hover:border-blue-500/50 hover:bg-gray-900 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300 transform hover:-translate-y-0.5"
+                                    class="group flex items-center gap-2 text-xs font-medium px-3.5 py-1.5 bg-slate-100/60 text-gray-600 border border-slate-200/80 rounded-full hover:text-gray-900 hover:border-blue-500/50 hover:bg-white hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300 transform hover:-translate-y-0.5"
                                 >
                                     <span class="capitalize">{tagCounts[tag].display}</span>
-                                    <span class="inline-flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold font-mono rounded-full bg-gray-900 text-gray-400 group-hover:bg-blue-950 group-hover:text-blue-400 border border-transparent group-hover:border-blue-900/50 transition-colors duration-300">
+                                    <span class="inline-flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold font-mono rounded-full bg-white text-gray-500 group-hover:bg-blue-50 group-hover:text-blue-700 border border-transparent group-hover:border-blue-200 transition-colors duration-300">
                                         {tagCounts[tag].count}
                                     </span>
                                 </a>
@@ -75,10 +75,10 @@ const uniqueTags = Object.keys(tagCounts).sort((a, b) => tagCounts[b].count - ta
                             href={`/blog/${post.id.replace(/^it\//, '')}/`}
                             data-animate="fade-up"
                             data-tilt-max="1.6"
-                            class="card-tilt spotlight block group bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 shadow-lg"
+                            class="card-tilt spotlight block group bg-slate-50 rounded-xl overflow-hidden border border-slate-200 hover:border-blue-500 shadow-lg"
                         >
                             {post.data.heroImage && (
-                                <div class="img-reveal aspect-[16/9] w-full overflow-hidden border-b border-gray-700 bg-gray-800">
+                                <div class="img-reveal aspect-[16/9] w-full overflow-hidden border-b border-slate-200 bg-slate-50">
                                     <img 
                                         src={post.data.heroImage} 
                                         alt={post.data.imageAlt || ""} 
@@ -91,20 +91,20 @@ const uniqueTags = Object.keys(tagCounts).sort((a, b) => tagCounts[b].count - ta
                                 </div>
                             )}
                             <div class="p-6">
-                                <div class="text-sm text-blue-400 mb-2">
+                                <div class="text-sm text-blue-600 mb-2">
                                     {post.data.pubDate.toLocaleDateString(i18n.blog.locale, { year: 'numeric', month: 'short', day: 'numeric' })}
                                     <span aria-hidden="true"> · </span>
                                     <span>{i18n.blog.readingTime.replace('{minutes}', getReadingTime(post.body).toString())}</span>
                                 </div>
-                                <h2 class="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                                <h2 class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">
                                     {post.data.title}
                                 </h2>
-                                <p class="text-gray-400 line-clamp-3">
+                                <p class="text-gray-500 line-clamp-3">
                                     {post.data.cardDescription}
                                 </p>
                                 <div class="mt-4 flex gap-2 flex-wrap">
                                     {post.data.tags?.map((tag: string) => (
-                                        <span class="text-xs bg-gray-900 text-gray-300 px-2 py-1 rounded-sm border border-gray-700">#{getTagLabel(tag, 'it')}</span>
+                                        <span class="text-xs bg-white text-gray-600 px-2 py-1 rounded-sm border border-slate-200">#{getTagLabel(tag, 'it')}</span>
                                     ))}
                                 </div>
                             </div>

@@ -12,25 +12,25 @@ const services = i18n.services;
 <!-- PROCESS: HOW I WORK (connected stepper) -->
 <div class="mb-24">
     <div class="text-center mb-12" data-animate="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">{services.processTitle}</h2>
-        <p class="text-gray-400 max-w-2xl mx-auto">{services.processSubtitle}</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{services.processTitle}</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">{services.processSubtitle}</p>
     </div>
 
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4" data-stagger-children="120">
         {services.process.map((step, index) => (
             <div class:list={["relative", index < services.process.length - 1 && "process-connector"]}>
                 <div
-                    class="process-card card-tilt spotlight bg-gray-800/60 border border-gray-700 hover:border-blue-500/50 rounded-xl p-6 text-center h-full transition-colors duration-300"
+                    class="process-card card-tilt spotlight bg-slate-50/60 border border-slate-200 hover:border-blue-500/50 rounded-xl p-6 text-center h-full transition-colors duration-300"
                     data-animate="fade-up"
                 >
-                    <div class="process-icon mx-auto mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-gray-900 border-2 border-gray-700 text-gray-500 transition-all duration-500">
+                    <div class="process-icon mx-auto mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-white border-2 border-slate-200 text-gray-500 transition-all duration-500">
                         <ServiceIcon name={step.icon as ServiceIconName} class="w-7 h-7" />
                     </div>
-                    <span class="block text-xs font-mono text-blue-500/60 mb-2">
+                    <span class="block text-xs font-mono text-blue-600/60 mb-2">
                         {String(index + 1).padStart(2, '0')}
                     </span>
-                    <h3 class="text-lg font-bold text-white mb-2">{step.title}</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">{step.description}</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">{step.description}</p>
                 </div>
             </div>
         ))}

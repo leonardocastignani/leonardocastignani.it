@@ -83,7 +83,15 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !/\/blog\/tag\/aggiornamenti\/?/.test(new URL(page).pathname),
+      // /en/404/ è una pagina d'errore vera (noindex) generata come route
+      // normale da Astro con trailingSlash: 'always'; la 404 principale
+      // (src/pages/404.astro) invece diventa /404.html, un file "nudo" che
+      // @astrojs/sitemap non vede mai come route - quindi non la include di
+      // suo. Va esclusa esplicitamente anche la versione inglese, per coerenza.
+      filter: (page) => {
+        const { pathname } = new URL(page);
+        return !/\/blog\/tag\/aggiornamenti\/?/.test(pathname) && pathname !== '/en/404/';
+      },
       serialize(item) {
         const { pathname } = new URL(item.url);
         return { ...item, ...getSitemapOverrides(pathname) };

@@ -10,10 +10,10 @@ const homeLink = i18n.error404.homeLink;
 ---
 
 <!-- 404 PAGE LAYOUT -->
-<Layout title={`404: ${i18n.error404.title}`} description={i18n.error404.description}>
+<Layout title={`404: ${i18n.error404.title}`} description={i18n.error404.description} noindex>
     <section class="h-screen flex flex-col justify-center items-center text-center p-4 -mt-20">
         <!-- Big Error Code -->
-        <h1 class="text-8xl font-extrabold text-blue-500">404</h1>
+        <h1 class="text-8xl font-extrabold text-blue-600">404</h1>
         
         <!-- Error Title -->
         <h2 
@@ -27,7 +27,7 @@ const homeLink = i18n.error404.homeLink;
         <!-- Error Subtitle -->
         <p 
             id="error-subtitle" 
-            class="text-lg text-gray-400 mb-8"
+            class="text-lg text-gray-500 mb-8"
             data-en={enData.error404.subtitle}
         >
             {i18n.error404.subtitle}

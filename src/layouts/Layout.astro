@@ -37,13 +37,13 @@ const hreflangEn = alternateEn || new URL(enPath, Astro.site);
 ---
 
 <!doctype html>
-<html lang={currentLang} class="scroll-smooth dark">
+<html lang={currentLang} class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <meta name="author" content={SITE_DATA.name} />
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#111827" />
+        <meta name="theme-color" content="#ffffff" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
 
@@ -194,11 +194,11 @@ const hreflangEn = alternateEn || new URL(enPath, Astro.site);
         <!-- VIEW TRANSITIONS (SPA-LIKE NAVIGATION) -->
         <ClientRouter />
     </head>
-    <body class="bg-gray-900 text-gray-100 font-sans overflow-x-hidden">
+    <body class="bg-white text-gray-800 font-sans overflow-x-hidden">
         <!-- SKIP TO CONTENT (ACCESSIBILITY) -->
         <a
             href="#main-content"
-            class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus-visible:ring-2 focus-visible:ring-white"
+            class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus-visible:ring-2 focus-visible:ring-blue-300"
         >
             {i18n.skipToContentLabel}
         </a>
@@ -244,7 +244,7 @@ const hreflangEn = alternateEn || new URL(enPath, Astro.site);
                     id="cookie-preferences-btn"
                     aria-label="Gestisci preferenze cookie"
                     title="Gestisci preferenze cookie"
-                    class="btn-premium relative w-8 h-8 p-0 rounded-full bg-gray-700/80 hover:bg-gray-600 border border-gray-500/50 backdrop-blur-sm shadow-md transition-all duration-200 hover:scale-110 opacity-0"
+                    class="btn-premium relative w-8 h-8 p-0 rounded-full bg-slate-100/80 hover:bg-slate-200 border border-slate-300/50 backdrop-blur-sm shadow-md transition-all duration-200 hover:scale-110 opacity-0"
                 >
                     <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5" viewBox="1 1 54 66" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M28 3 L53 12 L53 33 C53 48 41 58 28 65 C15 58 3 48 3 33 L3 12 Z" fill="#1E3A5F" stroke="#3B82F6" stroke-width="1.8"/>
@@ -285,14 +285,14 @@ const hreflangEn = alternateEn || new URL(enPath, Astro.site);
             <!-- SPEED-DIAL TRIGGER (mobile only, hidden from md up where actions are always visible) -->
             <button
                 id="speed-dial-trigger"
-                class="btn-premium md:hidden w-9 h-9 rounded-full bg-gray-700/90 hover:bg-gray-600 border border-gray-500/50 backdrop-blur-sm shadow-md flex items-center justify-center focus:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500"
+                class="btn-premium md:hidden w-9 h-9 rounded-full bg-slate-100/90 hover:bg-slate-200 border border-slate-300/50 backdrop-blur-sm shadow-md flex items-center justify-center focus:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500"
                 aria-expanded="false"
                 aria-controls="speed-dial-actions"
                 aria-label={i18n.speedDial.openLabel}
                 data-label-open={i18n.speedDial.openLabel}
                 data-label-close={i18n.speedDial.closeLabel}
             >
-                <svg id="speed-dial-icon" class="w-4 h-4 text-gray-200 transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <svg id="speed-dial-icon" class="w-4 h-4 text-gray-700 transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                 </svg>
             </button>

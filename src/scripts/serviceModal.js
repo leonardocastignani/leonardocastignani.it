@@ -21,14 +21,14 @@ export function initServiceModal() {
 
     const buildListItem = (text) => {
         const li = document.createElement('li');
-        li.className = 'flex items-start gap-2.5 text-sm text-gray-300';
+        li.className = 'flex items-start gap-2.5 text-sm text-gray-600';
 
         const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         icon.setAttribute('viewBox', '0 0 24 24');
         icon.setAttribute('fill', 'none');
         icon.setAttribute('stroke', 'currentColor');
         icon.setAttribute('stroke-width', '2');
-        icon.setAttribute('class', 'w-4 h-4 mt-0.5 flex-shrink-0 text-blue-400');
+        icon.setAttribute('class', 'w-4 h-4 mt-0.5 flex-shrink-0 text-blue-600');
         icon.setAttribute('aria-hidden', 'true');
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute('stroke-linecap', 'round');

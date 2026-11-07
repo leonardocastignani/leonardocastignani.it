@@ -62,17 +62,17 @@ const schemaLd = {
 
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaLd)} />
 
-    <div class="pt-24 pb-16 px-4 bg-gray-900 min-h-screen">
+    <div class="pt-24 pb-16 px-4 bg-white min-h-screen">
         <div class="container mx-auto max-w-4xl">
             {/* INTESTAZIONE PAGINA */}
             <div class="text-center mb-12">
-                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                    Tag: <span class="text-blue-400">{displayTag}</span>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Tag: <span class="text-blue-600">{displayTag}</span>
                 </h1>
-                <p class="text-gray-400 text-lg">
+                <p class="text-gray-500 text-lg">
                     Pagina {page.currentPage} di {page.lastPage} ({page.total} articoli totali)
                 </p>
-                <hr class="border-gray-700 my-8" />
+                <hr class="border-slate-200 my-8" />
             </div>
 
             {/* GRIGLIA ARTICOLI */}
@@ -82,10 +82,10 @@ const schemaLd = {
                     return (
                         <a 
                             href={`/blog/${cleanSlug}/`} 
-                            data-animate="fade-up" data-tilt-max="1.6" class="card-tilt spotlight block group bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-blue-400"
+                            data-animate="fade-up" data-tilt-max="1.6" class="card-tilt spotlight block group bg-slate-50 rounded-xl overflow-hidden shadow-lg border border-slate-200 hover:border-blue-400"
                         >
                             {post.data.heroImage && (
-                                <div class="img-reveal aspect-[16/9] w-full overflow-hidden border-b border-gray-700 bg-gray-800">
+                                <div class="img-reveal aspect-[16/9] w-full overflow-hidden border-b border-slate-200 bg-slate-50">
                                     <img 
                                         src={post.data.heroImage} 
                                         alt={post.data.imageAlt || ""} 
@@ -98,10 +98,10 @@ const schemaLd = {
                                 </div>
                             )}
                             <div class="p-6">
-                                <h2 class="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                                <h2 class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">
                                     {post.data.title}
                                 </h2>
-                                <p class="text-gray-400 line-clamp-3 mb-4">{post.data.cardDescription}</p>
+                                <p class="text-gray-500 line-clamp-3 mb-4">{post.data.cardDescription}</p>
                                 <span class="text-sm text-gray-500 font-mono">
                                     {post.data.pubDate.toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' })}
                                     {' · '}
@@ -115,15 +115,15 @@ const schemaLd = {
 
             {/* CONTROLLI PAGINAZIONE */}
             {(page.url.prev || page.url.next) && (
-                <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-700">
+                <div class="flex justify-between items-center mt-12 pt-8 border-t border-slate-200">
                     {page.url.prev ? (
-                        <a href={page.url.prev} class="px-6 py-2 bg-gray-800 text-blue-400 font-semibold rounded-lg hover:bg-gray-700 transition-colors">
+                        <a href={page.url.prev} class="px-6 py-2 bg-slate-50 text-blue-600 font-semibold rounded-lg hover:bg-slate-100 transition-colors">
                             &larr; Precedente
                         </a>
                     ) : <span />}
                     
                     {page.url.next ? (
-                        <a href={page.url.next} class="px-6 py-2 bg-gray-800 text-blue-400 font-semibold rounded-lg hover:bg-gray-700 transition-colors">
+                        <a href={page.url.next} class="px-6 py-2 bg-slate-50 text-blue-600 font-semibold rounded-lg hover:bg-slate-100 transition-colors">
                             Successiva &rarr;
                         </a>
                     ) : <span />}

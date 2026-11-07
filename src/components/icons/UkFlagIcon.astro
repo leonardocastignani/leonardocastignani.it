@@ -1,0 +1,16 @@
+---
+const { ...props } = Astro.props;
+---
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" {...props}>
+    <title>English</title>
+    <clipPath id="uk-flag-clip">
+        <rect width="60" height="30" />
+    </clipPath>
+    <g clip-path="url(#uk-flag-clip)">
+        <rect width="60" height="30" fill="#00247d" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="9" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#cf142b" stroke-width="4.5" />
+        <path d="M25,0 H35 V30 H25 Z M0,10 H60 V20 H0 Z" fill="#fff" />
+        <path d="M27,0 H33 V30 H27 Z M0,12 H60 V18 H0 Z" fill="#cf142b" />
+    </g>
+</svg>
