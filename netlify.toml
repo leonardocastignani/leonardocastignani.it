@@ -1,3 +1,9 @@
+# --- BUILD ENVIRONMENT ---
+# Astro 6/7 richiederanno Node >=22.12 / >=22.23.4: fissiamo la versione di
+# build qui (oltre a .nvmrc, per sviluppo locale) prima di arrivarci.
+[build.environment]
+  NODE_VERSION = "22"
+
 # --- SECURITY HEADERS ---
 # Header HTTP a basso rischio (nessun impatto su script inline, GTM/Partytown, JSON-LD).
 [[headers]]

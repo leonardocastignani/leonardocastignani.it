@@ -15,7 +15,7 @@ const i18n = getI18N({ astroUrl: Astro.url });
 // --- RELATED POSTS: shared canonical tags, most in common first, then most recent ---
 const allPosts = await getCollection('blog', ({ data }) => data.lang === lang);
 const related = allPosts
-    .filter((post) => post.slug !== currentSlug)
+    .filter((post) => post.id !== currentSlug)
     .map((post) => ({
         post,
         shared: (post.data.tags ?? []).filter((t: string) => tags.includes(t)).length,
@@ -35,7 +35,7 @@ const stripPrefix = new RegExp(`^${lang}/`);
         <div class="grid gap-6 sm:grid-cols-3" data-stagger-children="90">
             {related.map((post: CollectionEntry<'blog'>) => (
                 <a
-                    href={`${prefix}${post.slug.replace(stripPrefix, '')}/`}
+                    href={`${prefix}${post.id.replace(stripPrefix, '')}/`}
                     data-animate="fade-up"
                     data-tilt-max="2"
                     class="card-tilt spotlight block group bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 shadow-lg"
@@ -44,7 +44,7 @@ const stripPrefix = new RegExp(`^${lang}/`);
                         <div class="img-reveal aspect-[16/9] w-full overflow-hidden border-b border-gray-700 bg-gray-800">
                             <img
                                 src={post.data.heroImage}
-                                alt={post.data.title}
+                                alt={post.data.imageAlt || ""}
                                 class="w-full h-full object-cover"
                                 loading="lazy"
                                 decoding="async"

@@ -31,7 +31,7 @@ const categories = i18n.education.skillsCategories;
                                 </div>
                                 <div class="min-w-0">
                                     <p class="font-bold text-lg">{edu.degree}</p>
-                                    <a href={edu.url} target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-blue-400 font-semibold mb-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">
+                                    <a href={edu.url} target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-blue-400 font-semibold mb-2 transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm">
                                         {edu.institution}
                                     </a>
                                     <p class="text-sm text-gray-500">{edu.period}</p>
@@ -60,7 +60,7 @@ const categories = i18n.education.skillsCategories;
                                 <div class="min-w-0 flex flex-col flex-grow">
                                     <p class="font-bold text-lg flex-grow">{cert.title}</p>
                                     {cert.issuerUrl ? (
-                                        <a href={cert.issuerUrl} target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-blue-400 font-semibold mt-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm w-fit">
+                                        <a href={cert.issuerUrl} target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-blue-400 font-semibold mt-1 transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm w-fit">
                                             {cert.issuer}
                                         </a>
                                     ) : (

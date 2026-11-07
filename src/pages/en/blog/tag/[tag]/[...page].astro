@@ -60,7 +60,7 @@ const schemaLd = {
 
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaLd)} />
 
-    <main class="pt-24 pb-16 px-4 bg-gray-900 min-h-screen">
+    <div class="pt-24 pb-16 px-4 bg-gray-900 min-h-screen">
         <div class="container mx-auto max-w-4xl">
             {/* INTESTAZIONE PAGINA */}
             <div class="text-center mb-12">
@@ -76,7 +76,7 @@ const schemaLd = {
             {/* GRIGLIA ARTICOLI */}
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-stagger-children="90">
                 {page.data.map((post) => {
-                    const cleanSlug = post.slug.replace(/^en\//, '');
+                    const cleanSlug = post.id.replace(/^en\//, '');
                     return (
                         <a 
                             href={`/en/blog/${cleanSlug}/`} 
@@ -86,7 +86,7 @@ const schemaLd = {
                                 <div class="img-reveal aspect-[16/9] w-full overflow-hidden border-b border-gray-700 bg-gray-800">
                                     <img 
                                         src={post.data.heroImage} 
-                                        alt={post.data.title} 
+                                        alt={post.data.imageAlt || ""} 
                                         class="w-full h-full object-cover" 
                                         loading="lazy"
                                         decoding="async"
@@ -128,5 +128,5 @@ const schemaLd = {
                 </div>
             )}
         </div>
-    </main>
+    </div>
 </Layout>

@@ -1,6 +1,6 @@
 // --- IMPORTS ---
 import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
 import { readdirSync, readFileSync } from 'node:fs';
@@ -78,8 +78,10 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
+  vite: {
+    plugins: [tailwindcss()]
+  },
   integrations: [
-    tailwind(),
     sitemap({
       filter: (page) => !/\/blog\/tag\/aggiornamenti\/?/.test(new URL(page).pathname),
       serialize(item) {

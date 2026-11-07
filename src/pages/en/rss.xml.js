@@ -20,7 +20,7 @@ export async function GET(context) {
             title: post.data.title,
             description: post.data.description,
             pubDate: post.data.pubDate,
-            link: `/en/blog/${post.slug.replace(/^en\//, '')}/`,
+            link: `/en/blog/${post.id.replace(/^en\//, '')}/`,
         })),
         // RSS 2.0 ammette un solo <link> di canale (la home); la sezione blog va in Atom
         customData: `<language>en-US</language>

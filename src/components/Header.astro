@@ -30,40 +30,56 @@ let targetLangAria = '';
 
 const isBlogPage = currentPath.includes('/blog');
 const isServicesPage = currentPath === '/servizi/' || currentPath === '/en/services/';
+// Astro genera 404.astro come /404.html "nudo" (niente trailing slash, niente
+// cartella), a differenza di ogni altra pagina sotto trailingSlash: 'always'
+// (incluso /en/404/, che segue la regola normale). La logica generica sotto
+// si limiterebbe a togliere "/en" da "/en/404/" ottenendo "/404/", un URL che
+// non esiste: va quindi gestito qui come caso a parte, verso "/404" senza slash.
+const isNotFoundPage = currentPath === '/404/' || currentPath === '/en/404/';
 
-if (isBlogPage) {
+if (isNotFoundPage) {
+    if (currentPath.startsWith('/en/')) {
+        targetLangLink = '/404';
+        targetLangLabel = 'IT';
+        targetLangAria = 'IT - Passa alla versione italiana';
+    } else {
+        targetLangLink = '/en/404/';
+        targetLangLabel = 'EN';
+        targetLangAria = 'EN - Switch to English version';
+    }
+} else if (isBlogPage) {
     // Prefer the article's own translated URL (from its alternateSlug in the
     // frontmatter, already resolved by Layout.astro) over the generic blog
     // listing, so switching language on a post opens its actual translation.
     if (currentPath.startsWith('/en/')) {
         targetLangLink = alternateItPath || '/blog/';
         targetLangLabel = 'IT';
-        targetLangAria = 'Passa alla versione italiana';
+        targetLangAria = 'IT - Passa alla versione italiana';
     } else {
         targetLangLink = alternateEnPath || '/en/blog/';
         targetLangLabel = 'EN';
-        targetLangAria = 'Switch to English version';
+        targetLangAria = 'EN - Switch to English version';
     }
 } else if (isServicesPage) {
     if (currentPath.startsWith('/en/')) {
         targetLangLink = '/servizi/';
         targetLangLabel = 'IT';
-        targetLangAria = 'Passa alla versione italiana';
+        targetLangAria = 'IT - Passa alla versione italiana';
     } else {
         targetLangLink = '/en/services/';
         targetLangLabel = 'EN';
-        targetLangAria = 'Switch to English version';
+        targetLangAria = 'EN - Switch to English version';
     }
 } else {
     if (currentPath.startsWith('/en/')) {
         const pathWithoutEn = currentPath.replace(/^\/en/, '');
         targetLangLink = pathWithoutEn || '/';
         targetLangLabel = 'IT';
-        targetLangAria = 'Passa alla versione italiana';
+        targetLangAria = 'IT - Passa alla versione italiana';
     } else {
         targetLangLink = currentPath === '/' ? '/en/' : `/en${currentPath}`;
         targetLangLabel = 'EN';
-        targetLangAria = 'Switch to English version';
+        targetLangAria = 'EN - Switch to English version';
     }
 }
 
@@ -74,7 +90,7 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
 ---
 
 <!-- MAIN HEADER -->
-<header id="site-header" class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 border-b border-gray-800/60">
+<header id="site-header" class="bg-gray-900/80 backdrop-blur-sm fixed z-50 border-b border-gray-800/60">
     <nav class="container mx-auto max-w-6xl px-4 py-4 flex justify-between items-center">
         {/* SITE LOGO */}
         {!isMaintenance ? (
@@ -120,7 +136,7 @@ const logoClasses = "text-xl font-bold flex items-center gap-x-3";
                             {targetLangLabel}
                         </span>
                     </a>
-                    <button id="menu-btn" class="text-gray-200 focus:outline-none" aria-label={openMenuLabel} aria-expanded="false" aria-controls="mobile-menu" data-label-open={openMenuLabel} data-label-close={closeMenuLabel}>
+                    <button id="menu-btn" class="text-gray-200 focus:outline-hidden" aria-label={openMenuLabel} aria-expanded="false" aria-controls="mobile-menu" data-label-open={openMenuLabel} data-label-close={closeMenuLabel}>
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
                 </div>

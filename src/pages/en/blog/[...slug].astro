@@ -1,6 +1,6 @@
 ---
 // --- IMPORTS ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BlogPost from '../../../layouts/BlogPost.astro';
 import { getReadingTime } from '../../../scripts/readingTime.js';
 
@@ -8,7 +8,7 @@ import { getReadingTime } from '../../../scripts/readingTime.js';
 export async function getStaticPaths() {
     const posts = await getCollection('blog', ({ data }) => data.lang === 'en');
     return posts.map((post: CollectionEntry<'blog'>) => {
-        const cleanSlug = post.slug.replace(/^en\//, '');
+        const cleanSlug = post.id.replace(/^en\//, '');
         return {
             params: { slug: cleanSlug },
             props: post,
@@ -21,11 +21,11 @@ type Props = CollectionEntry<'blog'>;
 
 // --- INITIAL CONFIGURATION ---
 const post = Astro.props;
-const { Content, headings } = await post.render();
+const { Content, headings } = await render(post);
 const readingTime = getReadingTime(post.body);
 ---
 
 <!-- RENDER BLOG POST LAYOUT -->
-<BlogPost {...post.data} slug={post.slug} readingTime={readingTime} headings={headings}>
+<BlogPost {...post.data} slug={post.id} readingTime={readingTime} headings={headings}>
     <Content />
 </BlogPost>

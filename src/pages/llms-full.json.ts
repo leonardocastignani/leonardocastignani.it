@@ -39,7 +39,7 @@ export async function GET() {
     const toKnowledgeEntry = (post: (typeof itPosts)[number], lang: 'it' | 'en') => ({
         title: post.data.title,
         description: post.data.description,
-        url: `${SITE_DATA.siteUrl}${lang === 'en' ? '/en' : ''}/blog/${post.slug.replace(/^(it|en)\//, '')}/`,
+        url: `${SITE_DATA.siteUrl}${lang === 'en' ? '/en' : ''}/blog/${post.id.replace(/^(it|en)\//, '')}/`,
         language: lang,
         tags: post.data.tags ?? [],
         publicationDate: post.data.pubDate.toISOString(),

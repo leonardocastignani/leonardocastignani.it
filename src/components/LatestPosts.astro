@@ -12,8 +12,8 @@ const titleId = "latest-posts-title";
 const blogIndexHref = lang === 'en' ? '/en/blog/' : '/blog/';
 const postHref = (post: CollectionEntry<'blog'>) =>
     lang === 'en'
-        ? `/en/blog/${post.slug.replace(/^en\//, '')}/`
-        : `/blog/${post.slug.replace(/^it\//, '')}/`;
+        ? `/en/blog/${post.id.replace(/^en\//, '')}/`
+        : `/blog/${post.id.replace(/^it\//, '')}/`;
 
 const latestPosts = (await getCollection('blog', ({ data }) => data.lang === lang))
     .sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -39,7 +39,7 @@ const latestPosts = (await getCollection('blog', ({ data }) => data.lang === lan
                             <div class="img-reveal aspect-[16/9] w-full overflow-hidden border-b border-gray-700 bg-gray-900">
                                 <img
                                     src={post.data.heroImage}
-                                    alt={post.data.title}
+                                    alt={post.data.imageAlt || ""}
                                     class="w-full h-full object-cover"
                                     loading={index === 0 ? "eager" : "lazy"}
                                     decoding="async"
@@ -69,7 +69,7 @@ const latestPosts = (await getCollection('blog', ({ data }) => data.lang === lan
             <div class="mt-12">
                 <a
                     href={blogIndexHref}
-                    class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-blue-400 rounded"
+                    class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold focus:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-blue-400 rounded-sm"
                 >
                     <span>{i18n.blog.viewAllLabel}</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">

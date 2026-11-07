@@ -70,6 +70,7 @@ export function initLightbox() {
         overlay.className = 'lightbox-overlay';
         overlay.setAttribute('role', 'dialog');
         overlay.setAttribute('aria-modal', 'true');
+        overlay.setAttribute('aria-label', document.documentElement.lang === 'en' ? 'Image preview' : 'Anteprima immagine');
         const closeLabel = document.documentElement.lang === 'en' ? 'Close' : 'Chiudi';
         overlay.innerHTML = `
             <button type="button" class="lightbox-close" aria-label="${closeLabel}">

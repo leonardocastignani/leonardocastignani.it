@@ -53,7 +53,7 @@ const jsonLd = {
 
         <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-        <main class="pt-24 pb-16 px-4 bg-gray-900 min-h-screen">
+        <div class="pt-24 pb-16 px-4 bg-gray-900 min-h-screen">
             <div class="container mx-auto max-w-5xl">
 
                 {/* PAGE HEADER */}
@@ -107,13 +107,13 @@ const jsonLd = {
                     <a
                         href={services.ctaHref}
                         data-magnetic-strength="0.25"
-                        class="btn-premium magnetic inline-block mt-5 bg-blue-600 hover:bg-blue-500 hover:shadow-[0_10px_30px_-8px_rgba(59,130,246,0.55)] text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-white"
+                        class="btn-premium magnetic inline-block mt-5 bg-blue-600 hover:bg-blue-500 hover:shadow-[0_10px_30px_-8px_rgba(59,130,246,0.55)] text-white font-bold py-3 px-6 rounded-lg focus:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-white"
                     >
                         {services.ctaButton}
                     </a>
                 </div>
 
             </div>
-        </main>
+        </div>
     </Layout>
 )}

@@ -1,7 +1,9 @@
-/* --- TAILWIND CSS DIRECTIVES --- */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* --- TAILWIND CSS --- */
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* --- DARK MODE: nessun toggle in JS, 'dark:' resterebbe comunque inerte
+   (vedi tailwind.config.mjs rimosso: darkMode 'class' con .dark mai applicata) --- */
 
 /* --- GLOBAL LAYOUT FIXES --- */
 html, body {

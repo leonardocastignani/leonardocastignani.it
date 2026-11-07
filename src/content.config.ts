@@ -1,5 +1,7 @@
 // --- IMPORTS ---
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 // --- BLOG COLLECTION DEFINITION ---
 export interface FAQItem {
@@ -8,7 +10,7 @@ export interface FAQItem {
 }
 
 const blog = defineCollection({
-    type: 'content',
+    loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
     // --- SCHEMA DEFINITION WITH ZOD ---
     schema: z.object({
         title: z.string(),

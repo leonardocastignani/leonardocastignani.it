@@ -36,7 +36,7 @@ const servicesList = i18n.services.list;
                     {q.answers.map((a) => (
                         <button
                             type="button"
-                            class="quiz-answer text-left p-4 bg-gray-900/60 border border-gray-700 hover:border-blue-500 hover:bg-gray-900 rounded-xl text-gray-200 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                            class="quiz-answer text-left p-4 bg-gray-900/60 border border-gray-700 hover:border-blue-500 hover:bg-gray-900 rounded-xl text-gray-200 transition-all duration-200 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500"
                             data-service={a.service}
                         >
                             {a.label}
@@ -54,10 +54,10 @@ const servicesList = i18n.services.list;
         <p id="quiz-result-tagline" class="text-blue-400 font-semibold mb-4"></p>
         <p id="quiz-result-description" class="text-gray-300 leading-relaxed mb-6"></p>
         <div class="flex flex-wrap justify-center gap-3">
-            <a id="quiz-result-cta" href="#" class="btn-premium bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-white">
+            <a id="quiz-result-cta" href="#" class="btn-premium bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg focus:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 focus-visible:ring-white">
                 {quiz.resultCtaLabel}
             </a>
-            <button type="button" id="quiz-restart" class="btn-premium border border-gray-600 hover:bg-gray-700 text-gray-300 font-semibold py-3 px-6 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-400">
+            <button type="button" id="quiz-restart" class="btn-premium border border-gray-600 hover:bg-gray-700 text-gray-300 font-semibold py-3 px-6 rounded-lg focus:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-400">
                 {quiz.restartLabel}
             </button>
         </div>
