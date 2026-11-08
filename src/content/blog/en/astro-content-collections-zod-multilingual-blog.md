@@ -27,15 +27,19 @@ Until a few years ago, managing a Markdown-based blog meant discovering errors o
 Here is how the blog you are reading is actually organized, with the project's real code and its honest limits.
 
 ### The Real Schema: The Content "Customs Checkpoint"
-The schema lives in `src/content/config.ts`. This is the complete file, with no simplifications:
+The schema lives in `src/content.config.ts` (at the root of `src/`, no longer inside `src/content/`: that's the new location required by the Content Layer API introduced in Astro 5 and made mandatory by the [upgrade to Astro 7](/en/blog/light-theme-astro-7-tailwind-4-changelog-v2-0-0/)). This is the complete file, with no simplifications:
 
 ```typescript
 // --- IMPORTS ---
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 // --- BLOG COLLECTION DEFINITION ---
 const blog = defineCollection({
-    type: 'content',
+    // 'loader' replaces the old 'type: content': it reads every Markdown
+    // file in this folder instead of relying on an implicit convention.
+    loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
     // --- SCHEMA DEFINITION WITH ZOD ---
     schema: z.object({
         title: z.string(),

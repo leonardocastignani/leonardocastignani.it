@@ -27,15 +27,19 @@ Fino a qualche anno fa, gestire un blog basato su file Markdown significava scop
 Ecco come è organizzato davvero il blog che stai leggendo, con il codice reale del progetto e i suoi limiti onesti.
 
 ### Lo schema reale: la "dogana" dei contenuti
-Lo schema vive in `src/content/config.ts`. Questo è il file completo, senza semplificazioni:
+Lo schema vive in `src/content.config.ts` (nella root di `src/`, non più dentro `src/content/`: è la nuova posizione richiesta dalla Content Layer API introdotta con Astro 5 e diventata l'unica via con l'[aggiornamento ad Astro 7](/blog/changelog-v2-0-0-tema-light-upgrade-astro-7-tailwind-4/)). Questo è il file completo, senza semplificazioni:
 
 ```typescript
 // --- IMPORTS ---
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 // --- BLOG COLLECTION DEFINITION ---
 const blog = defineCollection({
-    type: 'content',
+    // Il 'loader' sostituisce il vecchio 'type: content': legge ogni file
+    // Markdown in questa cartella invece di affidarsi a una convenzione implicita.
+    loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
     // --- SCHEMA DEFINITION WITH ZOD ---
     schema: z.object({
         title: z.string(),

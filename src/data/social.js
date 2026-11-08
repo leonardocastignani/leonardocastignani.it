@@ -6,34 +6,34 @@ import FacebookIcon from '../components/icons/FacebookIcon.astro';
 import InstagramIcon from '../components/icons/InstagramIcon.astro';
 
 export const social = [
-    { 
-        name: 'LinkedIn', 
+    {
+        name: 'LinkedIn',
         Icon: LinkedinIcon,
         id: 'linkedin'
     },
-    { 
-        name: 'Indeed', 
+    {
+        name: 'Indeed',
         Icon: IndeedIcon,
         id: 'indeed'
     },
-    { 
-        name: 'GitHub', 
-        Icon: GithubIcon, 
+    {
+        name: 'GitHub',
+        Icon: GithubIcon,
         id: 'github'
     },
     {
-        name: 'Instagram',
-        Icon: InstagramIcon,
-        id: 'instagram'
+        name: 'Email',
+        Icon: EmailIcon,
+        id: 'email'
     },
     {
         name: 'Facebook',
         Icon: FacebookIcon,
         id: 'facebook'
     },
-    { 
-        name: 'Email', 
-        Icon: EmailIcon, 
-        id: 'email'
+    {
+        name: 'Instagram',
+        Icon: InstagramIcon,
+        id: 'instagram'
     },
 ];

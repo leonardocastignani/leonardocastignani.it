@@ -581,7 +581,11 @@
     "copyright": "© {year} Leonardo Castignani | Portfolio. Tutti i diritti riservati.",
     "socialAriaLabel": "Visita il mio profilo",
     "socialUnavailable": "Non disponibile",
-    "privacyLink": "Privacy Policy"
+    "privacyLink": "Privacy Policy",
+    "tagline": "Sviluppatore Web & Software freelance nelle Marche. Creo siti e landing page veloci, ottimizzati per Core Web Vitals, SEO e ricerca generativa, oltre a software su misura per far crescere il tuo progetto digitale.",
+    "quickLinksTitle": "Link Rapidi",
+    "contactTitle": "Contatti",
+    "backToTopText": "Torna su"
   },
   "error404": {
     "title": "Pagina non trovata",

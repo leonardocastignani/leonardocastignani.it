@@ -581,7 +581,11 @@
     "copyright": "© {year} Leonardo Castignani | Portfolio. All rights reserved.",
     "socialAriaLabel": "Visit my profile on",
     "socialUnavailable": "Not available",
-    "privacyLink": "Privacy Policy"
+    "privacyLink": "Privacy Policy",
+    "tagline": "Freelance Web & Software Developer based in Marche, Italy. I build fast websites and landing pages optimized for Core Web Vitals, SEO and generative search, plus custom software to grow your digital project.",
+    "quickLinksTitle": "Quick Links",
+    "contactTitle": "Get in Touch",
+    "backToTopText": "Back to top"
   },
   "error404": {
     "title": "Page Not Found",
