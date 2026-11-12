@@ -39,4 +39,15 @@ All commands should be run from the project's root folder.
 
 ---
 
-*This README was generated and customized for the project.*
+## ⚠️ License & Copyright
+
+Copyright © 2026 Leonardo Castignani. All rights reserved.
+
+This repository contains the source code and digital assets for my personal portfolio. **This is not an open-source template.**
+
+* **What you CANNOT do:** You are strictly prohibited from copying, cloning, reproducing, modifying, distributing, hosting, or reselling the code, design, layout, or content of this website for either commercial or non-commercial purposes. This prohibition explicitly includes incorporating this code into any dataset, corpus, index, or other collection used to train, fine-tune, or provide retrieval context to artificial intelligence or automated agents.
+* **What you CAN do:** You are welcome to explore the source code, analyze the technical architecture, and use it as an educational reference or inspiration for your own projects, provided that no direct code or design elements are copied.
+
+**Note on prior versions:** this license takes effect on November 12, 2026. Versions of this repository made public before that date were distributed under the MIT License and remain available under those original terms for anyone who obtained them before then.
+
+Any unauthorized use, plagiarism, or copyright infringement will be legally pursued to the fullest extent of the law. For permission requests, contact: info@leonardocastignani.it

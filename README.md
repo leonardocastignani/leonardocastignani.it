@@ -38,4 +38,15 @@ Tutti i comandi vanno eseguiti dalla cartella principale del progetto.
 
 ---
 
-*Questo README è stato generato e personalizzato per il progetto.*
+## ⚠️ Licenza e Diritto d'Autore
+
+Copyright © 2026 Leonardo Castignani. Tutti i diritti riservati.
+
+Questo repository contiene il codice sorgente e gli asset del mio portfolio personale. **Non è un template open-source.** 
+
+* **Cosa NON puoi fare:** È severamente vietato copiare, clonare, riprodurre, modificare, distribuire, ospitare (hosting) o rivendere il codice, la grafica, la struttura o i contenuti di questo sito, sia per scopi commerciali che personali. Questo divieto include esplicitamente l'inclusione di questo codice in dataset, corpora, indici o altre raccolte usate per addestrare, ottimizzare o fornire contesto a sistemi di intelligenza artificiale o agenti automatici.
+* **Cosa puoi fare:** Sei libero di esplorare il codice sorgente, analizzare l'architettura tecnica e trarre ispirazione per i tuoi progetti personali, a patto di non copiare direttamente righe di codice o elementi di design.
+
+**Nota sulle versioni precedenti:** questa licenza è in vigore dal 12 novembre 2026. Le versioni di questo repository rese pubbliche prima di tale data erano distribuite con licenza MIT e restano disponibili con quei termini per chi le ha ottenute prima di allora.
+
+Ogni violazione o plagio non autorizzato verrà perseguito legalmente nei termini di legge. Per richieste di autorizzazione: info@leonardocastignani.it
