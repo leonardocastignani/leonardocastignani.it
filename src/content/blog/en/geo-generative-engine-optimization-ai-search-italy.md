@@ -8,7 +8,7 @@ heroImage: "/blog/geo-generative-engine-optimization-seo-ai-italia.webp"
 imageAlt: "Hand holding a glowing holographic digital brain surrounded by data nodes, representing Generative Engine Optimization (GEO)."
 imageTitle: "GEO: Generative Engine Optimization and AI Search"
 imageCaption: "The evolution from Google text search to generative synthesis: how to get cited by AIs."
-tags: ["ai-innovazione", "seo-tecnica"]
+tags: ["ai-innovazione", "seo-tecnica", "case-study"]
 lang: "en"
 alternateSlug: "geo-generative-engine-optimization-seo-ai-marche"
 faqs:
@@ -26,19 +26,19 @@ Today, that paradigm is crumbling. People no longer simply "search" by scrolling
 
 This epochal transition has birthed a new discipline: **GEO (Generative Engine Optimization)**. It is no longer about ranking in an index, but about convincing a language model to use your content as the foundation for its answers.
 
-### The Difference Between SEO and GEO
+## The Difference Between SEO and GEO
 
 Old search algorithms rewarded popularity (inbound links) and exact keyword matching. A Large Language Model (LLM), on the other hand, evaluates text based on its **semantics**, **logical structure**, and **unique informational value**.
 
 If your blog post says exactly the same things found on Wikipedia or a hundred other competing sites, the AI will have no reason to cite you. It will take the general concept and rewrite it without indicating a specific source. To be cited, you must offer something the AI cannot deduce elsewhere.
 
-### 1. Information Gain (The Value of Experience)
+## 1. Information Gain (The Value of Experience)
 
 The generative algorithm is hungry for *Information Gain*. It wants firsthand data, expert opinions, and real-world statistics.
 
 Instead of writing "How to maintain a boiler," write "How I fixed 50 boiler breakdowns in Civitanova Marche last year: data and procedures." Share tables with your real prices, publish the results of physical tests you conducted in your company, or express a strong contrarian opinion backed by your work experience. Direct experience and non-replicable data are your only defenses against automated synthesis and are the main triggers that force the AI to cite you as a primary source.
 
-### 2. Flawless Semantic Structure
+## 2. Flawless Semantic Structure
 
 An AI reads your site by extracting pure text. If your site is a chaotic tangle of `<div>` tags without a logical hierarchy, the AI will struggle to understand its context.
 
@@ -46,13 +46,13 @@ Building a site with modern, fast frameworks like **Astro** becomes a massive co
 *   **Clean Markdown:** content written in Markdown gets rendered into semantic HTML - this very article, for instance, is wrapped in a real `<article>` tag, not a generic `<div>`, specifically to give the AI a clear hierarchy to follow.
 *   **JSON-LD and Schema Markup:** providing structured data is equivalent to handing the AI a pre-digested database. On this site, every blog post really does expose `BlogPosting` and `BreadcrumbList`, and when a post has an FAQ section (like this one), `FAQPage` too - generated automatically from the `faqs` field I write in the frontmatter. I cover this in detail in my [guide to JSON-LD structured data in Astro](/en/blog/schema-markup-json-ld-astro-seo-italy/) and in the [technical SEO case study on structured data](/en/blog/technical-seo-json-ld-structured-data-case-study/).
 
-### 3. Quotability and Formatting
+## 3. Quotability and Formatting
 
 AIs love order. When formulating an answer, they tend to prefer sources that present information in dense, easily comparable formats.
 
 Avoid huge walls of text. Organize key concepts into **Markdown Tables**, bulleted lists, or clear, concise Question and Answer (Q&A) sections. If you write a long essay on web architecture, always include a summary block at the beginning with the 3 Key Takeaways. The easier your content is to scan and extract, the more likely an LLM is to use it verbatim, appending a link to your company.
 
-### How I Put This Into Practice on This Site
+## How I Put This Into Practice on This Site
 
 Beyond the theory, here are three concrete choices I made to make this site citable by AIs, not just indexable by Google:
 

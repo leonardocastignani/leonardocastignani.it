@@ -8,7 +8,7 @@ heroImage: "/blog/sviluppatore-web-freelance-auguri-natale-2025-civitanova-march
 imageAlt: "Setup di sviluppo web di Leonardo Castignani, freelance a Civitanova Marche."
 imageTitle: "Buone Feste e Progetti Digitali 2026"
 imageCaption: "Pronti per un nuovo anno di innovazione digitale nel territorio marchigiano."
-tags: ["aggiornamenti"]
+tags: ["aggiornamenti", "business-strategia", "seo-locale"]
 lang: "it"
 alternateSlug: "freelance-web-developer-italy-holidays-2026-goals"
 faqs:
@@ -24,13 +24,13 @@ Mentre il 2025 volge al termine, mi prendo un momento per staccare le mani dalla
 
 È stato un anno di crescita, di sfide tecniche risolte e di nuove collaborazioni. Lanciare la [nuova versione del mio portfolio](/blog/leonardo-castignani-portfolio-sviluppatore-web-freelance-marche/) proprio in questi giorni è stato il modo migliore per chiudere questo capitolo: un simbolo di come la tecnologia e le competenze siano in continua evoluzione.
 
-### 🎄 I miei Auguri per Voi
+## 🎄 I miei Auguri per Voi
 
 A tutti i clienti che hanno creduto nel mio lavoro, ai colleghi con cui ho condiviso righe di codice e a chi passa di qui anche solo per curiosità: **Buon Natale e Felice Anno Nuovo.**
 
 Vi auguro di passare questi giorni con serenità, ricaricando le batterie (proprio come facciamo con i nostri device!) per ripartire al massimo.
 
-### 🚀 Obiettivi per il 2026
+## 🚀 Obiettivi per il 2026
 
 Il nuovo anno porterà nuove tecnologie e nuove opportunità. Il mio proposito per il 2026 è continuare a creare soluzioni web che non siano solo "codice funzionante", ma veri strumenti di valore per chi li utilizza.
 

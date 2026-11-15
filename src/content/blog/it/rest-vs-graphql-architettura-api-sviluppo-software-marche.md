@@ -8,7 +8,7 @@ heroImage: "/blog/rest-vs-graphql-architettura-api-sviluppo-software-italia.webp
 imageAlt: "Confronto tecnico tra architettura REST e GraphQL per lo sviluppo di API in applicazioni web su misura."
 imageTitle: "REST vs GraphQL: Architetture API a Confronto"
 imageCaption: "Scegliere tra REST e GraphQL: vantaggi, limiti e criteri decisionali per l'infrastruttura del tuo software aziendale."
-tags: ["sviluppo-software-qualita", "business-strategia"]
+tags: ["sviluppo-software-qualita", "business-strategia", "privacy-sicurezza"]
 lang: "it"
 alternateSlug: "rest-vs-graphql-api-architecture-custom-software-italy"
 faqs:
@@ -26,7 +26,7 @@ Il risultato? Molti team scelgono GraphQL semplicemente per seguire la moda (il 
 
 Per costruire software su misura che duri nel tempo, la scelta dell'architettura deve essere puramente pragmatica. Analizziamo i vantaggi reali di entrambi gli approcci e i criteri per scegliere quello giusto.
 
-### REST: L'Affidabilità dello Standard
+## REST: L'Affidabilità dello Standard
 Un'architettura REST (Representational State Transfer) si basa su concetti semplici e universali: utilizzi URL specifici (chiamati *endpoint*) per accedere a determinate risorse (es. `/api/utenti/123`) e usi i verbi HTTP standard (GET, POST, PUT, DELETE) per dirgli cosa fare.
 
 **I veri vantaggi di REST:**
@@ -37,7 +37,7 @@ Un'architettura REST (Representational State Transfer) si basa su concetti sempl
 * **Over-fetching:** Se hai bisogno solo del "Nome" di un utente, l'endpoint REST ti restituirà comunque l'intero oggetto (nome, cognome, email, data di nascita, storico ordini). Scarichi dati inutili, sprecando banda preziosa (particolarmente critico su reti mobili) - un costo che si somma a quanto racconto in [come la velocità del sito influenza le vendite](/blog/velocita-sito-web-impatto-vendite-seo/).
 * **Under-fetching:** Per mostrare una dashboard complessa, potresti dover fare 5 o 6 chiamate HTTP separate a endpoint diversi (es. `/utenti`, poi `/ordini`, poi `/fatture`), rallentando il rendering della pagina.
 
-### GraphQL: La Flessibilità su Misura
+## GraphQL: La Flessibilità su Misura
 GraphQL capovolge il paradigma. Invece di avere decine di endpoint, hai un solo e unico endpoint (es. `/graphql`). Il client invia una *Query* strutturata chiedendo esattamente i campi di cui ha bisogno, e il server restituisce un JSON con la stessa identica struttura.
 
 Ecco lo stesso scenario - una dashboard che mostra i dati di un utente, i suoi ordini e le sue fatture - nei due approcci:
@@ -71,7 +71,7 @@ query {
 * **Caching più complesso:** Le query GraphQL viaggiano di norma via `POST` verso un solo endpoint, quindi la cache HTTP nativa di browser e CDN è molto meno efficace che con REST. Per compensare si ricorre a tecniche come le *persisted queries* o alla cache normalizzata lato client, tipicamente tramite librerie come Apollo Client o Relay.
 * **Il problema "N+1":** Se non configurato da mani esperte (ad esempio utilizzando i *DataLoader*), GraphQL può inavvertitamente interrogare il database centinaia di volte per una singola query, mettendo in ginocchio il server.
 
-### Criteri Pratici per la Scelta
+## Criteri Pratici per la Scelta
 
 Non esiste un vincitore assoluto. Quando mi siedo con un cliente per progettare l'architettura di un nuovo applicativo, utilizzo questi criteri decisionali - sempre *prima* di scrivere codice, come spiego nelle [fasi di sviluppo di un progetto software aziendale](/blog/fasi-sviluppo-software-progetti-web-aziendali/).
 
@@ -86,7 +86,7 @@ Non esiste un vincitore assoluto. Quando mi siedo con un cliente per progettare 
 * L'applicazione verrà fruita massicciamente da dispositivi mobili su reti lente, dove il risparmio di banda e la minimizzazione delle richieste HTTP sono cruciali.
 * Hai più client (Web, iOS, Android, Smartwatch) che necessitano di viste completamente diverse degli stessi dati.
 
-### E in un sito Astro? L'esempio di questo stesso sito
+## E in un sito Astro? L'esempio di questo stesso sito
 Per non restare sul teorico, ecco cosa uso davvero su questo sito - e cosa non uso:
 
 * **Nessun GraphQL, e nessuna API a runtime per il blog.** Gli articoli sono file Markdown letti a build-time tramite le Content Collections di Astro: il sito è interamente statico, quindi non c'è alcun server o database da interrogare a ogni visita. Sforzare GraphQL qui sarebbe esattamente l'esercizio di stile di cui parlavo all'inizio.
@@ -95,5 +95,5 @@ Per non restare sul teorico, ecco cosa uso davvero su questo sito - e cosa non u
 
 Tre esempi reali, tre soluzioni minimali: per un progetto con queste esigenze, la soluzione più semplice possibile è anche quella giusta.
 
-### Conclusione
+## Conclusione
 La tecnologia migliore è sempre e solo quella che risolve il problema di business nel modo più efficiente. Sforzare GraphQL in un blog statico è un inutile esercizio di stile, così come usare REST per una dashboard finanziaria in tempo reale rischia di creare un collo di bottiglia insostenibile. Analizzare a fondo la struttura dei dati e il comportamento atteso degli utenti prima di scrivere la prima riga di codice è l'unico modo per garantire che il tuo investimento software scali senza ostacoli - la stessa filosofia che guida la scelta tra [un sito su misura e un CMS come WordPress](/blog/sito-web-custom-vs-wordpress-prestazioni/).

@@ -5,10 +5,10 @@ cardDescription: "What's new in v1.2.0: new favicon, Google Tag Manager, and gra
 pubDate: "2026-01-23"
 updatedDate: "2026-06-23"
 heroImage: "/blog/release-1.2.0-aggiornamento-integrazione-google-tag-manager-siti-web-marche.webp"
-imageAlt: "Release notes for update 1.2.0 featuring GTM integration."
+imageAlt: "Release notes for site update v1.2.0, featuring the new favicon and Google Tag Manager integration."
 imageTitle: "Changelog v1.2.0: Google Tag Manager"
 imageCaption: "New visual identity and advanced marketing analytics tracking implemented."
-tags: ["aggiornamenti"]
+tags: ["aggiornamenti", "marketing-conversione", "sviluppo-astro-performance"]
 lang: "en"
 alternateSlug: "changelog-v1-2-0-integrazione-google-tag-manager"
 faqs:
@@ -24,14 +24,14 @@ I'm happy to announce the release of version **1.2.0**. This update focuses on r
 
 Here are the details of the changes introduced in this release:
 
-### 🎨 Design and UI
+## 🎨 Design and UI
 * **New favicon design:** I updated the site icon to make it more modern and recognizable in browser tabs.
 * **New footer links:** The footer section has been enriched with new links to improve navigation and accessibility to external resources.
 
-### ⚙️ Features and Integrations
+## ⚙️ Features and Integrations
 * **Google Tag Manager:** We implemented a connection with Google Tag Manager for more advanced and flexible tag management and analytics.
 
-### 🐛 Bug Fixes
+## 🐛 Bug Fixes
 * **Graphic display resolution:** Fixed several display errors that were compromising the layout on specific resolutions or devices.
 
 ---

@@ -8,7 +8,7 @@ heroImage: "/blog/siti-web-multilingua-i18n-astro-js-italia.webp"
 imageAlt: "Codice Astro per siti web multilingua sviluppati per aziende delle Marche."
 imageTitle: "Sviluppo Siti Multilingua con Astro"
 imageCaption: "Configurazione i18n per espandere il business locale sui mercati esteri."
-tags: ["sviluppo-astro-performance", "case-study"]
+tags: ["sviluppo-astro-performance", "case-study", "seo-tecnica"]
 lang: "it"
 alternateSlug: "multilingual-website-development-i18n-astro-js"
 faqs:
@@ -24,7 +24,7 @@ Chiunque abbia mai dovuto trasformare un sito web da singola lingua a multilingu
 
 Quando ho progettato questo portfolio, sapevo di volerlo nativamente bilingue (Italiano e Inglese) per raggiungere clienti internazionali. Ecco come ho risolto il problema in **Astro** in modo pulito, senza appesantire il sito di 1 solo KB di JavaScript.
 
-### 1. Il Routing basato su Cartelle
+## 1. Il Routing basato su Cartelle
 Astro utilizza una logica di routing basata su file (File-based routing). Per separare le lingue, ho optato per la struttura a sottocartelle fisiche (Sub-directory approach), che è anche la preferita da Google per la SEO.
 
 La struttura del mio progetto appare così:
@@ -43,7 +43,7 @@ src/
 
 In questo modo, ho la massima flessibilità: posso avere pagine in italiano che non esistono in inglese e viceversa, senza impazzire con configurazioni complesse.
 
-### 2. Gestione dei Dizionari (UI Strings)
+## 2. Gestione dei Dizionari (UI Strings)
 Per le parti dell'interfaccia condivise tra le due versioni (come la navbar, il footer o i pulsanti di "Leggi di più"), non volevo duplicare il codice. Ho creato un semplice file TypeScript che funge da dizionario:
 
 ```typescript
@@ -69,7 +69,7 @@ export const ui = {
 } as const;
 ```
 
-### 3. La Funzione Helper per le Traduzioni
+## 3. La Funzione Helper per le Traduzioni
 Per estrarre la stringa corretta in base all'URL in cui si trova l'utente, ho scritto una piccola funzione di utilità. Astro mi permette di leggere l'URL corrente lato server e capire in quale lingua ci troviamo:
 
 ```astro
@@ -87,5 +87,5 @@ const t = useTranslations(lang);
 </ul>
 ```
 
-### Conclusione: Meno magia, più controllo
+## Conclusione: Meno magia, più controllo
 La vera forza di questo approccio in Astro è l'assenza di "magia nera". Non c'è un provider di stato globale che appesantisce il client, non ci sono librerie esterne da mantenere. Tutto viene risolto al **build time**. Il risultato finale è puro HTML inviato al browser, tradotto perfettamente e con i tag `<html lang="it">` e `hreflang` configurati alla perfezione per la SEO. Se ti interessa un altro caso studio tecnico su Astro, ho documentato anche come ho implementato [i dati strutturati JSON-LD per la SEO tecnica](/blog/dati-strutturati-json-ld-astro-seo-tecnica-marche/) su questo stesso sito.

@@ -8,7 +8,7 @@ heroImage: "/blog/astro-content-collections-zod-blog-multilingua-italia.webp"
 imageAlt: "TypeScript code snippet for validating an Astro Content Collection using a Zod schema."
 imageTitle: "Astro Content Collections and Zod Validation"
 imageCaption: "Configuring Zod in Astro: type safety and build-time validation for your blog content."
-tags: ["sviluppo-astro-performance", "sviluppo-software-qualita"]
+tags: ["sviluppo-astro-performance", "sviluppo-software-qualita", "case-study"]
 lang: "en"
 alternateSlug: "astro-content-collections-zod-blog-multilingua"
 faqs:
@@ -26,7 +26,7 @@ Until a few years ago, managing a Markdown-based blog meant discovering errors o
 
 Here is how the blog you are reading is actually organized, with the project's real code and its honest limits.
 
-### The Real Schema: The Content "Customs Checkpoint"
+## The Real Schema: The Content "Customs Checkpoint"
 The schema lives in `src/content.config.ts` (at the root of `src/`, no longer inside `src/content/`: that's the new location required by the Content Layer API introduced in Astro 5 and made mandatory by the [upgrade to Astro 7](/en/blog/light-theme-astro-7-tailwind-4-changelog-v2-0-0/)). This is the complete file, with no simplifications:
 
 ```typescript
@@ -74,7 +74,7 @@ A few things about this schema matter, because they separate what the system enf
 * **The hero image is optional.** A missing `heroImage` does not block the build: the article still publishes, and the layout handles the absence of an image.
 * **Tags are plain strings.** `tags: z.array(z.string())` accepts any value: the schema does not check that a tag exists in the official registry. The controlled vocabulary lives in `src/data/tags.ts` and is used for human-readable labels, falling back to the raw key when a tag isn't registered. I state this limit openly: a typo in a tag doesn't break the build, it only shows up on the page. Constraining tags with a `z.enum` built from the registry would be the natural next step.
 
-### Multi-Language Organization: One Collection, Two Languages
+## Multi-Language Organization: One Collection, Two Languages
 Instead of splitting collections by language, I use a single `blog` collection with files divided into two folders:
 
 ```plaintext
@@ -91,7 +91,7 @@ An article's language is determined not by its folder but by the `lang` field in
 
 A practical detail you'll run into immediately: Astro's generated `slug` includes the folder, so it becomes `it/article-name`. That's why the real code always contains a line like `post.slug.replace(/^it\//, '')` before building a link.
 
-### Querying the Collection
+## Querying the Collection
 The real code of the page listing the Italian articles (`src/pages/blog/index.astro`) filters by language and sorts by descending date:
 
 ```typescript
@@ -102,7 +102,7 @@ const posts = (await getCollection('blog', ({ data }) => data.lang === 'it')).so
 
 The same filtering pattern feeds the three latest articles on the homepage (`LatestPosts.astro`, with `.slice(0, 3)`) and the related articles at the bottom of every post (`RelatedPosts.astro`). The advantage is that selection logic lives in one place and the fields are typed: TypeScript knows `pubDate` is a `Date` because the schema declares it with `z.coerce.date()`.
 
-### What Building It Taught Me
+## What Building It Taught Me
 A blog like this is not "just text online". Build-time validation surfaces errors before publication, the language filter keeps the two versions separate yet linked, and the SEO length limits are enforced by the system instead of left to memory. The most useful thing to remember, though, is what the schema does *not* check, such as tags: validation is only as trustworthy as its coverage, and knowing where it stops is part of the job.
 
 If you want to see how these choices connect to the rest of the site, start with the [XML sitemap and robots.txt guide](/en/blog/xml-sitemap-robots-txt-technical-seo-guide-astro/): the sitemap reads each article's `updatedDate` from the frontmatter to compute its `lastmod`.

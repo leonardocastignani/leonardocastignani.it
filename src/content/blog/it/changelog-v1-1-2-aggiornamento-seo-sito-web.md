@@ -8,7 +8,7 @@ heroImage: "/blog/release-1.1.2-aggiornamento-sito-web-seo-tecnica-civitanova-ma
 imageAlt: "Log di rilascio dell'aggiornamento 1.1.2 per l'ottimizzazione server."
 imageTitle: "Changelog v1.1.2: Server e SEO"
 imageCaption: "Miglioramenti dell'infrastruttura backend e visibilità locale aggiornata."
-tags: ["aggiornamenti"]
+tags: ["aggiornamenti", "seo-tecnica", "sviluppo-astro-performance"]
 lang: "it"
 alternateSlug: "website-technical-seo-update-changelog-v1-1-2"
 faqs:

@@ -8,7 +8,7 @@ heroImage: "/blog/ciclo-sviluppo-software-web-agency-marche.webp"
 imageAlt: "Diagramma del ciclo di vita dello sviluppo software curato da Leonardo Castignani."
 imageTitle: "Ciclo di Sviluppo Software Professionale"
 imageCaption: "Dall'analisi dei requisiti al deploy: il metodo per piattaforme web di successo."
-tags: ["sviluppo-software-qualita"]
+tags: ["sviluppo-software-qualita", "business-strategia", "case-study"]
 lang: "it"
 alternateSlug: "custom-software-development-lifecycle"
 faqs:
@@ -26,33 +26,33 @@ In realtà, la fase di scrittura del codice (il *coding*) è solo *una* delle pa
 
 Oggi ti porto dietro le quinte per mostrarti l'esatto ciclo di vita di un progetto quando decidi di lavorare con me.
 
-### Fase 1: Discovery & Strategia (Analisi dei Requisiti)
+## Fase 1: Discovery & Strategia (Analisi dei Requisiti)
 Non scrivo una singola riga di codice prima di aver capito esattamente **quale problema aziendale stiamo risolvendo**. In questa fase organizziamo una call approfondita (o un caffè, se sei nelle Marche!) in cui analizziamo:
 * Quali sono i colli di bottiglia del tuo attuale processo lavorativo?
 * Chi utilizzerà questo software (dipendenti, clienti finali, amministratori)?
 * Quali sono le funzionalità "must-have" per il primo rilascio (MVP)?
 Il risultato è un documento di progetto chiaro che allinea la tecnologia ai tuoi obiettivi di business.
 
-### Fase 2: Architettura e UX/UI Design
+## Fase 2: Architettura e UX/UI Design
 Prima di costruire un palazzo, servono le fondamenta e la piantina. Lo stesso vale per il software.
 * **Architettura Dati:** Definisco come saranno strutturati i database e come comunicheranno le varie API.
 * **Prototipazione (UX/UI):** Creo dei **Wireframe** (schemi strutturali) per definire i flussi utente (es. "cosa succede quando l'utente clicca su questo pulsante in questa dashboard?"). Successivamente passo a mockup ad alta fedeltà per farti approvare l'interfaccia esatta *prima* di iniziare lo sviluppo.
 
-### Fase 3: Sviluppo Tecnico (Engineering)
+## Fase 3: Sviluppo Tecnico (Engineering)
 Qui entra in gioco la vera ingegneria del software. Trasformo l'architettura approvata in codice reale, pulito e scalabile.
 Utilizzo un ecosistema moderno e robusto (come TypeScript per azzerare i bug logici, e framework performanti come Astro o React). In questa fase scrivo la logica di business, integro servizi di terze parti (come gateway di pagamento o CRM esterni) e mi assicuro che il backend sia in grado di gestire i dati in modo sicuro ed efficiente.
 
-### Fase 4: Testing & Quality Assurance (QA)
+## Fase 4: Testing & Quality Assurance (QA)
 Il software è costruito, ma non è ancora pronto per la produzione. Ora inizia la fase di stress-test:
 * **Test Funzionali:** Verifico che ogni singola logica faccia esattamente quello che deve fare (senza rompere il resto del sistema).
 * **Sicurezza:** Controllo che i dati sensibili siano protetti e che le autenticazioni funzionino correttamente. Se il progetto raccoglie dati utente, questa fase include anche la conformità GDPR: ho scritto una [guida su cookie banner e GDPR](/blog/guida-cookie-banner-gdpr-siti-web/) che spiega nel dettaglio come gestire correttamente questo aspetto.
 * **Responsività e Accessibilità:** Mi assicuro che l'interfaccia sia fluida e utilizzabile su qualsiasi dispositivo.
 
-### Fase 5: Deploy (Go Live) & Handover
+## Fase 5: Deploy (Go Live) & Handover
 Il grande giorno. Configuro l'infrastruttura cloud, imposto le pipeline di rilascio automatico (CI/CD) e mettiamo il progetto in produzione.
 Ma non ti lascio da solo: ti fornisco la documentazione tecnica, una formazione pratica per insegnare al tuo team a utilizzare la nuova piattaforma, e stabiliamo un piano per il monitoraggio continuo.
 
-### Conclusione
+## Conclusione
 Affidare lo sviluppo di un progetto digitale non significa comprare "ore di programmazione", ma farsi guidare in un processo collaudato che trasforma un'idea astratta in uno strumento di lavoro solido. Questo approccio metodico è ciò che garantisce il rispetto delle scadenze e un prodotto finale che non si limita a "funzionare", ma che porta reale valore alla tua azienda.
 
 Se ti stai chiedendo quanto possa costare seguire questo intero processo, ho affrontato l'argomento in dettaglio in questo articolo su [quanto costa davvero un sito web professionale](/blog/costo-sito-web-professionale-preventivi/).

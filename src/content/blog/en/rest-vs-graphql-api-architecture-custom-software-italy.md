@@ -8,7 +8,7 @@ heroImage: "/blog/rest-vs-graphql-architettura-api-sviluppo-software-italia.webp
 imageAlt: "Technical comparison between REST and GraphQL architectures for custom web API development."
 imageTitle: "REST vs GraphQL: API Architectures Compared"
 imageCaption: "Choosing between REST and GraphQL: advantages, limitations, and practical decision criteria for your software infrastructure."
-tags: ["sviluppo-software-qualita", "business-strategia"]
+tags: ["sviluppo-software-qualita", "business-strategia", "privacy-sicurezza"]
 lang: "en"
 alternateSlug: "rest-vs-graphql-architettura-api-sviluppo-software-marche"
 faqs:
@@ -26,7 +26,7 @@ The result? Many teams choose GraphQL simply to follow the trend (the infamous *
 
 To build custom software that stands the test of time, the choice of architecture must be purely pragmatic. Let's analyze the real advantages of both approaches and the criteria to choose the right one.
 
-### REST: The Reliability of the Standard
+## REST: The Reliability of the Standard
 A REST (Representational State Transfer) architecture is based on simple, universal concepts: you use specific URLs (called *endpoints*) to access certain resources (e.g., `/api/users/123`) and you use standard HTTP verbs (GET, POST, PUT, DELETE) to tell it what to do.
 
 **The real advantages of REST:**
@@ -37,7 +37,7 @@ A REST (Representational State Transfer) architecture is based on simple, univer
 * **Over-fetching:** If you only need a user's "First Name," the REST endpoint will still return the entire object (first name, last name, email, birth date, order history). You download useless data, wasting precious bandwidth (especially critical on mobile networks) - a cost that adds to what I cover in [how site speed impacts sales](/en/blog/website-loading-speed-impact-ecommerce-sales/).
 * **Under-fetching:** To display a complex dashboard, you might have to make 5 or 6 separate HTTP calls to different endpoints (e.g., `/users`, then `/orders`, then `/invoices`), slowing down page rendering.
 
-### GraphQL: Tailored Flexibility
+## GraphQL: Tailored Flexibility
 GraphQL flips the paradigm. Instead of having dozens of endpoints, you have one single endpoint (e.g., `/graphql`). The client sends a structured *Query* asking for exactly the fields it needs, and the server returns a JSON object with that exact structure.
 
 Here is the same scenario - a dashboard showing a user's data, their orders, and their invoices - in both approaches:
@@ -71,7 +71,7 @@ query {
 * **More Complex Caching:** GraphQL queries typically travel via `POST` to a single endpoint, so native browser and CDN HTTP caching is far less effective than with REST. To compensate, teams turn to techniques like *persisted queries* or normalized client-side caches, typically through libraries such as Apollo Client or Relay.
 * **The "N+1" Problem:** If not configured by expert hands (e.g., using *DataLoaders*), GraphQL can inadvertently query the database hundreds of times for a single request, bringing the server to its knees.
 
-### Practical Criteria for Your Choice
+## Practical Criteria for Your Choice
 
 There is no absolute winner. When I sit down with a client to design the architecture of a new application, I use these decision criteria - always *before* writing code, as I explain in the [phases of a corporate software project](/en/blog/custom-software-development-lifecycle/).
 
@@ -86,7 +86,7 @@ There is no absolute winner. When I sit down with a client to design the archite
 * The application will be heavily consumed by mobile devices on slow networks, where bandwidth savings and minimizing HTTP requests are crucial.
 * You have multiple clients (Web, iOS, Android, Smartwatch) that require completely different views of the same data.
 
-### And in an Astro Site? This Very Site as an Example
+## And in an Astro Site? This Very Site as an Example
 To keep this grounded, here is what I actually use on this site - and what I don't:
 
 * **No GraphQL, and no runtime API for the blog.** Articles are Markdown files read at build time through Astro's Content Collections: the site is entirely static, so there is no server or database to query on every visit. Forcing GraphQL here would be exactly the pointless exercise in style I mentioned at the start.
@@ -95,5 +95,5 @@ To keep this grounded, here is what I actually use on this site - and what I don
 
 Three real examples, three minimal solutions: for a project with these needs, the simplest possible solution is also the right one.
 
-### Conclusion
+## Conclusion
 The best technology is always and only the one that solves the business problem most efficiently. Forcing GraphQL into a static blog is a pointless exercise in style, just as using REST for a real-time financial dashboard risks creating an unsustainable bottleneck. Thoroughly analyzing the data structure and expected user behavior before writing the first line of code is the only way to ensure your software investment scales seamlessly - the same philosophy behind choosing between [a custom-coded site and a CMS like WordPress](/en/blog/custom-coded-website-vs-wordpress-cms/).

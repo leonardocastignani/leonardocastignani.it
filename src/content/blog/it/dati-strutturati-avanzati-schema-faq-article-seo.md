@@ -8,7 +8,7 @@ heroImage: "/blog/dati-strutturati-avanzati-schema-faq-article-seo-italia.webp"
 imageAlt: "Codice JSON-LD per l'implementazione di dati strutturati avanzati: schema FAQPage e Article ottimizzato per E-E-A-T."
 imageTitle: "Dati Strutturati Avanzati e Rich Snippet SEO"
 imageCaption: "Domina i risultati di ricerca (SERP) rubando spazio visivo ai competitor grazie a FAQPage e schema Article avanzati."
-tags: ["seo-tecnica", "sviluppo-astro-performance"]
+tags: ["seo-tecnica", "sviluppo-astro-performance", "ai-innovazione"]
 lang: "it"
 alternateSlug: "advanced-structured-data-schema-faq-article-seo"
 faqs:
@@ -26,7 +26,7 @@ Google premia i contenuti ben strutturati mostrando i **Rich Snippets**: blocchi
 
 Vediamo come implementare in Astro i tre schemi avanzati più potenti per il content marketing aziendale: `FAQPage`, `HowTo` e la versione avanzata di `Article` - e dove, nel mio stesso sito, ho fatto scelte diverse da quelle "da manuale" per un buon motivo.
 
-### 1. Schema "FAQPage" (Il Ruba-Spazio)
+## 1. Schema "FAQPage" (Il Ruba-Spazio)
 Se hai una pagina dei servizi o un articolo con una sezione "Domande Frequenti", lo schema `FAQPage` è obbligatorio. Questo schema permette a Google di mostrare le tue domande e risposte in un menu a tendina direttamente sotto il tuo link nella SERP, spingendo i concorrenti verso il basso.
 
 Ecco come generarlo dinamicamente in un componente Astro (es. `FaqSection.astro`):
@@ -75,7 +75,7 @@ const faqSchema = {
 
 Sul mio sito questo pattern esiste già, ma con un dettaglio in più: il campo `faqs` del frontmatter di ogni articolo (validato da Zod, ne ho parlato nella mia [guida alle Content Collections](/blog/astro-content-collections-zod-blog-multilingua/)) alimenta sia il componente `<FAQ>` visivo sia il suo `FAQPage` JSON-LD, generato dallo stesso componente riutilizzabile per ogni post - nessuna duplicazione manuale dello schema per ogni pagina.
 
-### 2. Schema "HowTo" (Per Guide e Tutorial)
+## 2. Schema "HowTo" (Per Guide e Tutorial)
 Se scrivi tutorial (es. "Come configurare un server" o "Come cambiare la ruota dell'auto"), lo schema `HowTo` dice a Google che il tuo contenuto è una procedura sequenziale. Questo può farti apparire con snippet speciali che mostrano i vari passaggi, il tempo richiesto e persino gli strumenti necessari.
 
 ```astro
@@ -111,7 +111,7 @@ const howToSchema = {
 
 Una nota onesta: sul mio blog non uso ancora `HowTo`, perché nessuno dei miei articoli è strutturato come una checklist di passaggi numerati con uno strumento e un tempo stimato - sono guide discorsive, non procedure. Introdurrei questo schema solo su un contenuto realmente scritto in quella forma: uno schema che promette "passaggi" ma rimanda a un testo continuo rischia di essere penalizzato invece che premiato.
 
-### 3. Schema "Article" Avanzato (Ottimizzazione E-E-A-T)
+## 3. Schema "Article" Avanzato (Ottimizzazione E-E-A-T)
 Il markup `Article` di base (titolo, immagine, data) non basta più per argomenti sensibili (finanza, salute, tecnologia avanzata). L'algoritmo di Google premia l'E-E-A-T (Esperienza, Competenza, Autorevolezza, Affidabilità).
 
 Per dimostrare autorevolezza, dobbiamo espandere l'oggetto `author` fornendo link esterni che certifichino chi siamo, e aggiungere l'oggetto `publisher` per legare l'articolo al brand aziendale. Un approccio diretto, "da manuale", è inserire questi dati per intero in ogni pagina:

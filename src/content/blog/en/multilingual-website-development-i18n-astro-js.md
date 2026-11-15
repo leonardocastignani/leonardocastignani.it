@@ -8,7 +8,7 @@ heroImage: "/blog/siti-web-multilingua-i18n-astro-js-italia.webp"
 imageAlt: "Astro code architecture for multilingual websites developed in Italy."
 imageTitle: "Multilingual Websites with Astro"
 imageCaption: "i18n configuration to scale Italian businesses globally without JavaScript bloat."
-tags: ["sviluppo-astro-performance", "case-study"]
+tags: ["sviluppo-astro-performance", "case-study", "seo-tecnica"]
 lang: "en"
 alternateSlug: "creare-siti-web-multilingua-i18n-astro-js"
 faqs:
@@ -24,7 +24,7 @@ Anyone who has ever had to turn a single-language website into a multilingual on
 
 When I designed this portfolio, I knew I wanted it natively bilingual (Italian and English) to reach international clients. Here is how I solved the problem in **Astro** cleanly, without weighing down the site with a single KB of JavaScript.
 
-### 1. Folder-Based Routing
+## 1. Folder-Based Routing
 Astro uses file-based routing logic. To separate languages, I opted for the physical subfolder approach (Sub-directory routing), which is also Google's preferred method for SEO.
 
 My project structure looks like this:
@@ -42,7 +42,7 @@ src/
 ```
 This gives me maximum flexibility: I can have pages in Italian that don't exist in English and vice versa, without going crazy with complex configurations.
 
-### 2. Managing Dictionaries (UI Strings)
+## 2. Managing Dictionaries (UI Strings)
 For the UI parts shared between the two versions (like the navbar, footer, or "Read more" buttons), I didn't want to duplicate code. I created a simple TypeScript file that acts as a dictionary:
 
 ```typescript
@@ -68,7 +68,7 @@ export const ui = {
 } as const;
 ```
 
-### 3. The Helper Function for Translations
+## 3. The Helper Function for Translations
 To extract the correct string based on the URL the user is currently on, I wrote a small utility function. Astro allows me to read the current URL server-side and figure out which language we are in:
 
 ```astro
@@ -86,5 +86,5 @@ const t = useTranslations(lang);
 </ul>
 ```
 
-### Conclusion: Less Magic, More Control
+## Conclusion: Less Magic, More Control
 The real strength of this approach in Astro is the lack of "black magic". There is no global state provider slowing down the client, no external libraries to maintain. Everything is resolved at **build time**. The final result is pure HTML sent to the browser, perfectly translated, and with the `<html lang="en">` and `hreflang` tags flawlessly configured for SEO. If you're interested in another technical Astro case study, I've also documented how I implemented [JSON-LD structured data for technical SEO](/en/blog/schema-markup-json-ld-astro-seo-italy/) on this same site.

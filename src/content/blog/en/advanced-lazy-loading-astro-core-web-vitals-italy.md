@@ -8,7 +8,7 @@ heroImage: "/blog/ottimizzazione-lazy-loading-avanzato-astro-performance.webp"
 imageAlt: "JavaScript code and Astro client directives for advanced lazy loading and web performance optimization."
 imageTitle: "Advanced Lazy Loading in Astro JS"
 imageCaption: "Boost your Core Web Vitals and site performance by loading interactive components strictly on demand."
-tags: ["sviluppo-astro-performance"]
+tags: ["sviluppo-astro-performance", "seo-tecnica", "marketing-conversione"]
 lang: "en"
 alternateSlug: "lazy-loading-avanzato-astro-performance-siti-web-marche"
 faqs:
@@ -27,7 +27,7 @@ But what happens when the page is weighed down not by an image, but by an intera
 
 In this article, we will see how Astro and modern browser APIs allow us to implement **advanced Lazy Loading** for images, components, and modules, keeping our JavaScript bundle light and our Core Web Vitals metrics flawless - a companion piece to what I already covered in my article on [Core Web Vitals in 2026](/en/blog/technical-seo-core-web-vitals-optimization-2026/).
 
-### 0. Images: `loading="lazy"` Isn't Enough (and Can Even Hurt)
+## 0. Images: `loading="lazy"` Isn't Enough (and Can Even Hurt)
 Let's start with the basics, because two common mistakes hide here. The first: applying `loading="lazy"` to **every** image indiscriminately, including the Hero image at the top of the page. That image is almost always your Largest Contentful Paint (LCP) - delaying it with `lazy` actively hurts the very metric you're trying to improve. For the primary above-the-fold image, use `loading="eager"` (or omit the attribute entirely) together with `fetchpriority="high"`, telling the browser "download this one now, it's the priority".
 
 The second mistake is ignoring Astro's `<Image />` component (`astro:assets`), which does most of the heavy lifting for you: it automatically generates modern formats (WebP/AVIF), computes `width`/`height` to prevent Cumulative Layout Shift, and applies `loading="lazy"` and `decoding="async"` by default to every image except the one marked as a priority.
@@ -45,7 +45,7 @@ import heroImg from '../assets/hero.jpg';
 <Image src={heroImg} alt="Gallery" loading="lazy" />
 ```
 
-### 1. Astro's "Superpower": Client Directives
+## 1. Astro's "Superpower": Client Directives
 The biggest advantage of [Astro's Islands Architecture](/en/blog/astro-js-islands-architecture-performance/) is total control over component hydration. If you have a heavy interactive component (e.g., a review carousel or a quote calculator) located halfway down the page, there is no point in executing its JavaScript on initial load.
 
 Astro offers several **Client Directives** to control this process. The most useful ones are:
@@ -67,7 +67,7 @@ import QuoteCalculator from '../components/QuoteCalculator.jsx';
 </div>
 ```
 
-### 2. Dynamic Import (On-Demand Modules)
+## 2. Dynamic Import (On-Demand Modules)
 Sometimes you don't have a whole component to delay, but a massive JavaScript library. Think of charting libraries (Chart.js), complex form validation, or cryptography.
 
 Instead of importing them at the top of the file (which would include them in the initial bundle), you can use the `import()` statement to load them dynamically only when a specific event occurs, such as a button click.
@@ -98,7 +98,7 @@ Instead of importing them at the top of the file (which would include them in th
 
 This approach saves hundreds of Kilobytes on initial load, drastically improving the INP (Interaction to Next Paint) metric - the same "load only what's needed, only when it's needed" logic I applied firsthand when I documented [migrating a project from React to Astro](/en/blog/migrating-react-spa-to-astro-performance/): the problem is often not the framework itself, but the hundreds of KB of JavaScript shipped to the browser without genuine need.
 
-### 3. Intersection Observer for Custom Logic
+## 3. Intersection Observer for Custom Logic
 If you are working with pure HTML in Astro and aren't using external UI frameworks, you might need to trigger CSS animations, load videos, or load background images only on scroll. For this, the native `IntersectionObserver` API is the ultimate tool.
 
 Here is an example of how to trigger an animation class only when an element appears on screen, optimized to run in Astro's `<script>` tags:
@@ -131,5 +131,5 @@ Here is an example of how to trigger an animation class only when an element app
 </script>
 ```
 
-### Conclusion
+## Conclusion
 Relying solely on `loading="lazy"` is no longer sufficient to build high-end web experiences. Surgically managing when and how the browser downloads JavaScript and media is what differentiates a slow, clunky site from a snappy application capable of converting users without frustrating them. By leveraging Astro's directives and Dynamic Imports, you get maximum results with minimal engineering effort. And those saved milliseconds aren't an academic exercise: as I cover in my article on [how website speed impacts sales](/en/blog/website-loading-speed-impact-ecommerce-sales/), every second of load time shaved off translates directly into fewer abandoned visits and more conversions.

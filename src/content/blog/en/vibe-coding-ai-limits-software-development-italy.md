@@ -8,7 +8,7 @@ heroImage: "/blog/vibe-coding-ai-limiti-sviluppo-software-architettura-italia.we
 imageAlt: "Visual comparison between AI-generated Vibe Coding and human-reviewed software architecture."
 imageTitle: "Vibe Coding: The Limits of AI in Development"
 imageCaption: "Artificial Intelligence speeds up coding, but architecture and security demand human expertise."
-tags: ["ai-innovazione", "sviluppo-software-qualita"]
+tags: ["ai-innovazione", "sviluppo-software-qualita", "business-strategia"]
 lang: "en"
 alternateSlug: "vibe-coding-ai-limiti-sviluppo-software-marche"
 faqs:
@@ -27,7 +27,7 @@ But what happens when we take Vibe Coding out of the tutorials and apply it to a
 
 This is where the magic ends and engineering begins. Here is what really works and where "Vibe Coding" crashes into reality.
 
-### The Superpower: Where AI Shines
+## The Superpower: Where AI Shines
 Don't get me wrong, AI has forever changed the way I work. As a developer, I use it daily to:
 * **Generate Boilerplate:** Write those repetitive and boring portions of code (initial setups, basic typings) that take up hours.
 * **Lightning-fast Prototyping:** If a client wants to see what a contact form would look like on a page, I can get them a working preview in minutes.
@@ -35,7 +35,7 @@ Don't get me wrong, AI has forever changed the way I work. As a developer, I use
 
 In these phases, the AI is like a tireless, blazing-fast *Junior* programmer sitting right next to me. Even the articles on this blog are born this way: a first draft generated with AI, then combed through - a process that, as I explain in the [dedicated section of my Privacy Policy](/en/privacy-policy/#ai-transparency), always goes through human editorial review before publication.
 
-### The Wall of Reality: The "Remaining 10%"
+## The Wall of Reality: The "Remaining 10%"
 There is an old adage in computer science: *"The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time."*
 AI is phenomenal at getting you quickly to the first 90%. It is an absolute disaster at completing the last 10%.
 
@@ -44,12 +44,12 @@ Here is where a project generated exclusively with "Vibe Coding" falls apart:
 2.  **Architecture and Scalability:** Asking an AI to "add a function" in a file works. Asking it to structure an entire database that will need to scale to handle thousands of simultaneous orders without crashing? It will generate unsustainable "spaghetti" code in the long run - the same planning discipline I cover in my article on the [phases of a corporate software project](/en/blog/custom-software-development-lifecycle/).
 3.  **Invisible Security:** AI copies patterns found online, including vulnerable ones. It might generate a database query that works perfectly but leaves the site wide open to attacks like SQL Injection - a risk to guard against with the same security policies I cover in my [guide to Content Security Policy on Astro](/en/blog/website-security-csp-astro-guide-italy/).
 
-### A Real Bug, Not a Textbook Example
+## A Real Bug, Not a Textbook Example
 To keep this grounded, not theoretical: a few weeks ago, on this very site, a mobile widget (the small "speed-dial" menu with the WhatsApp and cookie-preferences buttons) stopped responding to taps. The AI-generated code was syntactically flawless, passed linting, and appeared to work locally. The problem? An initialization function was being called twice on every page load, attaching two identical click listeners that canceled each other out - a bug the AI couldn't have caught on its own, because it required actually *testing* the interaction on a mobile viewport, not just re-reading the code. We only found and fixed it through targeted testing with a real browser in mobile emulation, not by re-reading the snippet one more time.
 
 This is exactly the "remaining 10%": a bug that compiles, throws no console errors, and looks correct - until someone actually tries it.
 
-### The Biggest Problem: AI Doesn't Ask "Why?"
+## The Biggest Problem: AI Doesn't Ask "Why?"
 The ultimate limitation of Vibe Coding in the real world is business communication.
 When a client tells me: *"I want a giant pop-up asking for an email as soon as the user opens the site"*, the AI will code it instantly.
 
@@ -58,6 +58,6 @@ If the goal is to increase conversions, I explain to the client that an instant 
 
 AI follows orders blindly. Humans question the requirement to protect the client's business.
 
-### Conclusion: From Typists to Architects
+## Conclusion: From Typists to Architects
 Vibe Coding will not replace professional web developers, but it will eliminate "code typists" - those who merely paste snippets without understanding the logic.
 Today, my role is no longer just writing code, but acting as a **Reviewer and Architect**. I use AI to speed up the manual labor, and I use my experience to ensure the infrastructure is secure, accessible, SEO-optimized, and above all, aligned with the client's true business goals.

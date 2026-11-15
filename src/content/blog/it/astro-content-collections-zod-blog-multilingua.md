@@ -8,7 +8,7 @@ heroImage: "/blog/astro-content-collections-zod-blog-multilingua-italia.webp"
 imageAlt: "Snippet di codice TypeScript per la validazione di una Content Collection in Astro utilizzando lo schema Zod."
 imageTitle: "Astro Content Collections e Zod"
 imageCaption: "Configurazione di Zod in Astro: type safety e validazione a build-time per i contenuti del blog."
-tags: ["sviluppo-astro-performance", "sviluppo-software-qualita"]
+tags: ["sviluppo-astro-performance", "sviluppo-software-qualita", "case-study"]
 lang: "it"
 alternateSlug: "astro-content-collections-zod-multilingual-blog"
 faqs:
@@ -26,7 +26,7 @@ Fino a qualche anno fa, gestire un blog basato su file Markdown significava scop
 
 Ecco come è organizzato davvero il blog che stai leggendo, con il codice reale del progetto e i suoi limiti onesti.
 
-### Lo schema reale: la "dogana" dei contenuti
+## Lo schema reale: la "dogana" dei contenuti
 Lo schema vive in `src/content.config.ts` (nella root di `src/`, non più dentro `src/content/`: è la nuova posizione richiesta dalla Content Layer API introdotta con Astro 5 e diventata l'unica via con l'[aggiornamento ad Astro 7](/blog/changelog-v2-0-0-tema-light-upgrade-astro-7-tailwind-4/)). Questo è il file completo, senza semplificazioni:
 
 ```typescript
@@ -74,7 +74,7 @@ Alcune cose che è importante capire di questo schema, perché distinguono la re
 * **L'immagine di copertina è opzionale.** `heroImage` non blocca la build se manca: l'articolo viene pubblicato comunque, e il layout gestisce l'assenza dell'immagine.
 * **I tag sono solo stringhe.** `tags: z.array(z.string())` accetta qualunque valore: lo schema non verifica che il tag esista nel registro ufficiale. Il vocabolario controllato vive in `src/data/tags.ts` e viene usato per le etichette leggibili, con un fallback sulla chiave grezza se il tag non è registrato. È un limite che dichiaro apertamente: un refuso in un tag non blocca la build, lo rivelerebbe solo il risultato in pagina. Vincolare i tag con un `z.enum` sul registro sarebbe il passo successivo naturale.
 
-### Organizzazione multi-lingua: una collezione, due lingue
+## Organizzazione multi-lingua: una collezione, due lingue
 Invece di separare le collezioni per lingua, uso un'unica collezione `blog` con i file divisi in due cartelle:
 
 ```plaintext
@@ -91,7 +91,7 @@ La lingua di un articolo non è decisa dalla cartella ma dal campo `lang` nel fr
 
 Un dettaglio pratico che incontri subito: lo `slug` generato da Astro include la cartella, quindi diventa `it/nome-articolo`. È per questo che nel codice reale trovi sempre una riga come `post.slug.replace(/^it\//, '')` prima di costruire un link.
 
-### Interrogare la collezione
+## Interrogare la collezione
 Il codice reale della pagina che elenca gli articoli in italiano (`src/pages/blog/index.astro`) filtra per lingua e ordina per data decrescente:
 
 ```typescript
@@ -102,7 +102,7 @@ const posts = (await getCollection('blog', ({ data }) => data.lang === 'it')).so
 
 Lo stesso schema di filtro alimenta il widget degli ultimi tre articoli in home (`LatestPosts.astro`, con `.slice(0, 3)`) e gli articoli correlati in fondo a ogni post (`RelatedPosts.astro`). Il vantaggio è che la logica di selezione è in un solo posto e i campi sono tipizzati: TypeScript conosce `pubDate` come `Date` perché lo schema lo dichiara con `z.coerce.date()`.
 
-### Cosa mi ha insegnato costruirlo
+## Cosa mi ha insegnato costruirlo
 Un blog così non è "solo testo online". La validazione a build-time fa emergere gli errori prima della pubblicazione, il filtro per lingua tiene le due versioni separate ma collegate, e i limiti sui campi SEO sono applicati dal sistema invece che affidati alla memoria. Il limite più utile da ricordare è però quello che lo schema *non* controlla, come i tag: una validazione è affidabile solo quanto è completa, e capire dove si ferma è parte del lavoro.
 
 Se vuoi vedere come queste scelte si collegano al resto del sito, parti dalla [guida alla sitemap XML e robots.txt](/blog/guida-sitemap-xml-robots-txt-seo-tecnica-astro/): la sitemap legge proprio il campo `updatedDate` di ogni articolo per calcolare il `lastmod`.

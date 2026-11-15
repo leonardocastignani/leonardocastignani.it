@@ -8,7 +8,7 @@ heroImage: "/blog/velocita-sito-web-impatto-vendite-seo-italia.webp"
 imageAlt: "Analytics chart correlating website loading times with bounce rates."
 imageTitle: "Website Speed and Revenue"
 imageCaption: "A blazing fast website retains users and exponentially increases sales."
-tags: ["seo-tecnica", "marketing-conversione"]
+tags: ["seo-tecnica", "marketing-conversione", "sviluppo-astro-performance"]
 lang: "en"
 alternateSlug: "velocita-sito-web-impatto-vendite-seo"
 faqs:
@@ -24,20 +24,20 @@ We are in the age of digital impatience. According to established studies by Goo
 
 It doesn't matter how beautiful your design is or how affordable your product is: if the user can't see it immediately, they leave.
 
-### Core Web Vitals and Visibility
+## Core Web Vitals and Visibility
 Speed is not just a matter of User Experience (UX); it has become a crucial technical factor. Google uses *Core Web Vitals* (LCP, FID, CLS) as metrics to decide who gets on the first page.
 A slow site is actively penalized in search results.
 * **Less visibility** = Less organic traffic.
 * **Less traffic** = Fewer sales opportunities.
 It is a simple but ruthless equation.
 
-### The "Culprits" of Slowness
+## The "Culprits" of Slowness
 Why are many sites slow? Often the problems are structural and invisible to the naked eye:
 * **Giant Images:** Photos uploaded directly from the camera (5-10MB files) instead of modern compressed formats like `.webp` or `.avif`.
 * **JavaScript Bloatware:** Excessive use of tracking libraries, social widgets, or chatbots that block the rendering of the main page.
 * **Cheap Hosting:** Shared servers that fail to handle traffic spikes.
 
-### The Technical Solution
+## The Technical Solution
 Optimizing a site isn't magic; it's engineering. In my workflow, I apply precise strategies to guarantee instant speed:
 1.  **Lazy Loading:** Loading images only when the user scrolls down to that point.
 2.  **Minification:** Minimizing the weight of CSS and JavaScript files.

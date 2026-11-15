@@ -8,7 +8,7 @@ heroImage: "/blog/migrazione-sito-react-astro-performance-seo.webp"
 imageAlt: "Technical comparison between React SPAs and Astro MPA architecture."
 imageTitle: "Migrating from React to Astro JS"
 imageCaption: "Eliminating performance debt to deliver blazing-fast static websites."
-tags: ["sviluppo-astro-performance"]
+tags: ["sviluppo-astro-performance", "sviluppo-software-qualita", "business-strategia"]
 lang: "en"
 alternateSlug: "migrazione-sito-web-react-astro-performance"
 faqs:
@@ -26,20 +26,20 @@ We built simple blogs, landing pages, and corporate sites as if they were comple
 
 Today, I want to technically analyze when it makes sense to take your React frontend and migrate it to **Astro**, what you gain, and what you have to give up.
 
-### The SPA Problem (React / Next.js)
+## The SPA Problem (React / Next.js)
 In a pure React application, the server sends the browser a practically empty HTML file (the famous `<div id="root"></div>`) accompanied by a gigantic JavaScript file.
 The client's browser must download, parse, and execute all that code to finally "draw" the interface (Client-Side Rendering) and make it interactive (Hydration).
 
 * **The cost:** High *Time to Interactive* (TTI) and a massive strain on the CPUs of less powerful mobile devices.
 * **The paradox:** We are forcing users to download 300kb of JavaScript just to show them static "About Us" text.
 
-### The Paradigm Shift with Astro
+## The Paradigm Shift with Astro
 Astro solves this problem by going back to basics (Multi-Page Applications), but with modern superpowers. By default, Astro strips out all the code and sends the browser **only pure HTML and CSS**. Zero JavaScript.
 
 The real stroke of genius is the [**Islands Architecture**](/en/blog/astro-js-islands-architecture-performance/).
 You don't have to abandon React. If you need a highly interactive component (like an e-commerce cart or a complex search bar), you can use your existing React code and tell Astro to "hydrate" *only* that specific island, leaving the rest of the page static.
 
-### When (and Why) to Migrate to Astro
+## When (and Why) to Migrate to Astro
 Migration makes absolute sense (and brings incredible ROI in terms of conversions and SEO) in these cases:
 
 1.  **Content-Driven Sites:** Blogs, editorial sites, portfolios, and corporate landing pages. Here, content is king, and reading speed is everything.
@@ -51,11 +51,11 @@ Migration makes absolute sense (and brings incredible ROI in terms of conversion
 * **Superior SEO:** Google loves clean, instant HTML.
 * **Less code to maintain:** Zero complex client-side routing libraries.
 
-### When NOT to Migrate (The Trade-offs)
+## When NOT to Migrate (The Trade-offs)
 Astro is not a universal magic wand. There are cases where React (or Next.js) remains the only sensible choice:
 
 1.  **Highly Interactive Web Apps:** Think Spotify clones, real-time financial dashboards, tools like Figma or Notion. In these cases, the interface changes constantly without changing the page.
 2.  **Complex Global State:** If your application relies heavily on Redux, Zustand, or massive state passing between dozens of components simultaneously, Astro's Islands architecture will become a hurdle, not a help.
 
-### Conclusion
+## Conclusion
 Astro isn't killing React; it's saving it from itself. It allows us to use React only where it's truly needed, eliminating the "performance debt" for everything else. Migrating to Astro means putting the end-user's experience (and their data plan) back at the center of the development process.

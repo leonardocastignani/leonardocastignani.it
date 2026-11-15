@@ -7,8 +7,8 @@ updatedDate: "2026-06-23"
 heroImage: "/blog/ottimizzazione-seo-core-web-vitals-2026-marche.webp"
 imageAlt: "Metriche Core Web Vitals di Google ottimizzate per un sito web delle Marche."
 imageTitle: "Ottimizzazione Core Web Vitals 2026"
-imageCaption: "LCP, INP e CLS perfetti per battere la concorrenza su Google."
-tags: ["seo-tecnica"]
+imageCaption: "LCP, INP e CLS ottimizzati al massimo per battere la concorrenza nei risultati di ricerca Google."
+tags: ["seo-tecnica", "sviluppo-astro-performance", "marketing-conversione"]
 lang: "it"
 alternateSlug: "technical-seo-core-web-vitals-optimization-2026"
 faqs:
@@ -26,9 +26,9 @@ Nel 2026, l'algoritmo di Google è diventato ancora più severo e preciso nel va
 
 Vediamo nel dettaglio cosa misurano oggi i Core Web Vitals, come analizzarli e come li ottimizzo nei miei progetti utilizzando Astro.
 
-### Le 3 Metriche Fondamentali
+## Le 3 Metriche Fondamentali
 
-#### 1. LCP (Largest Contentful Paint) - Velocità di Caricamento
+### 1. LCP (Largest Contentful Paint) - Velocità di Caricamento
 L'LCP misura il tempo necessario affinché l'elemento visibile più grande (un'immagine hero, un video o un blocco di testo) venga renderizzato sullo schermo. Per Google, un LCP ottimale deve essere inferiore a **2.5 secondi**.
 
 **Come ottimizzarlo:**
@@ -36,7 +36,7 @@ L'LCP misura il tempo necessario affinché l'elemento visibile più grande (un'i
 * **Formati di nuova generazione:** Utilizzo rigorosamente immagini compresse in formati moderni come `.webp` o `.avif`.
 * **Hosting e CDN:** Affidarsi a server Edge veloci garantisce che il documento HTML iniziale arrivi al client in pochi millisecondi.
 
-#### 2. INP (Interaction to Next Paint) - Reattività
+### 2. INP (Interaction to Next Paint) - Reattività
 L'INP ha sostituito il vecchio FID, diventando la metrica definitiva per misurare la reattività. Valuta la latenza di *tutte* le interazioni dell'utente (click, tap, input da tastiera) sull'intera pagina, non solo la prima. Un INP ottimale è inferiore a **200 millisecondi**.
 
 **Come ottimizzarlo (Il vantaggio di Astro):**
@@ -45,17 +45,17 @@ Astro risolve questo problema alla radice inviando **zero JavaScript di default*
 
 Se il tuo sito attuale è costruito con una SPA React pesante, può valere la pena leggere anche la mia analisi su [quando (e perché) migrare da React ad Astro](/blog/migrazione-sito-web-react-astro-performance/).
 
-#### 3. CLS (Cumulative Layout Shift) - Stabilità Visiva
+### 3. CLS (Cumulative Layout Shift) - Stabilità Visiva
 Hai mai provato a cliccare un pulsante su un sito, ma un secondo prima appare un'immagine che sposta tutto il layout verso il basso facendoti cliccare l'elemento sbagliato? Questo è un layout shift. Il CLS misura questa instabilità visiva e deve essere inferiore a **0.1**.
 
 **Come ottimizzarlo:**
 * **Dimensioni esplicite:** Definisco sempre gli attributi `width` e `height` su ogni immagine e iframe. In questo modo il browser riserva lo spazio necessario prima ancora che l'immagine venga scaricata.
 * **Font Fallback:** Evito lo sfarfallio dei testi (FOIT/FOUT) utilizzando `font-display: swap` e precaricando i font critici.
 
-### Dati di Laboratorio vs Dati sul Campo
+## Dati di Laboratorio vs Dati sul Campo
 Uno degli errori più comuni è affidarsi esclusivamente a *Lighthouse* avviato dal proprio browser. Lighthouse fornisce **dati di laboratorio** simulati. 
 
 Per capire veramente la salute del tuo sito, devi guardare i **dati sul campo** (Field Data) provenienti dal *Chrome User Experience Report (CrUX)*, visibili tramite PageSpeed Insights o Google Search Console. Questi dati riflettono l'esperienza reale dei tuoi utenti basata sulle loro connessioni e sui loro smartphone.
 
-### Conclusione
+## Conclusione
 Raggiungere la zona verde in tutti e tre i Core Web Vitals non è un'opzione estetica, ma un requisito ingegneristico per qualsiasi business online. Scegliere strumenti nativamente performanti, uniti a una scrittura del codice pulita e intenzionale, è la chiave per costruire piattaforme che Google ama indicizzare e gli utenti amano navigare.

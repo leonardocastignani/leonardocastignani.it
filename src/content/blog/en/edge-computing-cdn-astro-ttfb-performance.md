@@ -8,7 +8,7 @@ heroImage: "/blog/edge-computing-cdn-astro-ttfb-performance-italia.webp"
 imageAlt: "Edge Computing and CDN architecture diagram for optimizing TTFB and web performance on Astro websites."
 imageTitle: "Edge Computing and CDNs for Astro Websites"
 imageCaption: "Eliminate physical latency and minimize TTFB by deploying your Astro site's Server-Side Rendering to global Edge nodes."
-tags: ["sviluppo-astro-performance", "seo-tecnica"]
+tags: ["sviluppo-astro-performance", "seo-tecnica", "marketing-conversione"]
 lang: "en"
 alternateSlug: "edge-computing-cdn-astro-ttfb-performance"
 faqs:
@@ -26,17 +26,17 @@ This approach has a massive physical flaw: distance. If your server is in Milan 
 
 The solution to this physical limit is called **Edge Computing**. Let's see what it is, how it drastically lowers the TTFB metric, and how I natively integrate it into projects built with Astro.
 
-### What is a CDN and Edge Computing?
+## What is a CDN and Edge Computing?
 Let's start with the basics. A **CDN (Content Delivery Network)** is a global network of servers. When you use a CDN, your site no longer resides on a single computer; it is copied (cached) across hundreds of servers around the world, known as Points of Presence (PoPs). If a user from New York visits your site, the files are sent from the New York server, not the Milan one.
 
 **Edge Computing** is the evolution of this concept. It is not limited to distributing static files (like images and HTML), but allows you to **execute code and server logic** directly on these "peripheral nodes" (the Edge): authentication, content personalization, geolocation, A/B testing - all computed milliseconds from the user instead of on a single centralized origin.
 
-### The Real Enemy: TTFB (Time to First Byte)
+## The Real Enemy: TTFB (Time to First Byte)
 TTFB is the metric that measures the time between the moment the user clicks a link and the moment their browser receives the *very first byte* of data from the server.
 
 If your site has a slow TTFB (over 600 milliseconds), no image optimization or code minification can save you: the page will simply appear stuck before it even starts loading. TTFB is also the time baseline that **Largest Contentful Paint (LCP)** is built on - the heaviest Core Web Vitals metric in Google's ranking judgment, as I explain in my [2026 Core Web Vitals guide](/en/blog/technical-seo-core-web-vitals-optimization-2026/). Deploying the site to the Edge eliminates physical distances, ensuring a global TTFB of less than 50 milliseconds.
 
-### Astro and the Edge: A Perfect Match
+## Astro and the Edge: A Perfect Match
 Astro was born with a natural inclination for speed. When you generate a Static Site (SSG), the pure HTML files are perfectly suited for distribution on a traditional CDN, as I described in my article on [Astro's Islands Architecture](/en/blog/astro-js-islands-architecture-performance/).
 
 But the real leap in quality happens when you need dynamic features (like an e-commerce cart updated in real-time, a login system, or internal search) using **Server-Side Rendering (SSR)**.
@@ -48,7 +48,7 @@ The three best providers (and the ones I use often) for hosting an Astro project
 2.  **Vercel:** built for Next.js, but offers excellent, *zero-config* support for Astro thanks to its Edge Network and tight integration with Git-based deploys.
 3.  **Netlify:** a pioneer of the Jamstack architecture, with Edge Functions built on the Deno runtime, extremely easy to integrate and well documented for Astro projects.
 
-### A Practical Example: The Cloudflare Adapter
+## A Practical Example: The Cloudflare Adapter
 To transform a local Astro site into an application distributed across Cloudflare's global network, you just need a simple terminal command to install the adapter:
 
 ```bash
@@ -71,12 +71,12 @@ export default defineConfig({
 
 With just three lines of configuration, your code is ready to run on hundreds of data centers worldwide simultaneously.
 
-### Mind the Edge Runtime Limits
+## Mind the Edge Runtime Limits
 There's one detail that trips up many developers on their first migration: the Edge runtime **is not Node.js**. It runs on lightweight environments (V8 Isolates or Deno Deploy) that lack access to some traditional APIs, like the filesystem (`fs`) or certain native Node modules. If your project relies on libraries that need `fs` at runtime, or npm packages built exclusively for Node, that code needs to move into a build step - or the project needs to ship with a classic Node adapter instead of the Edge one.
 
 Another thing worth checking is how you handle security headers: if you're already using an Astro Middleware to inject a Content Security Policy, as described in my [guide to CSP on Astro](/en/blog/website-security-csp-astro-guide-italy/), that Middleware runs just as well on the Edge - that's actually where it performs best, since it enforces your security rules as close as possible to the user, before the request even reaches your origin.
 
-### Edge Middleware: Personalization Without Sacrificing TTFB
+## Edge Middleware: Personalization Without Sacrificing TTFB
 One of the most interesting Edge use cases isn't just "serving a static asset faster" - it's **deciding** what to serve based on the context of the request, without paying the cost of a round trip to a distant origin. An Astro Middleware running on the Edge can, for example, read the `Accept-Language` header or the request's IP geolocation to automatically redirect a user to the correct language:
 
 ```typescript
@@ -96,7 +96,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
 If this kind of logic ran on a centralized server far from the user, it would add hundreds of milliseconds before the page even started loading. Run on the Edge, the cost is nearly imperceptible - the same "do less work, closer to the user" philosophy behind client-side [advanced lazy loading](/en/blog/advanced-lazy-loading-astro-core-web-vitals-italy/).
 
-### Conclusion
+## Conclusion
 Relying on traditional shared hosting for $50 a year for an ambitious digital business is like buying a Ferrari and putting bicycle tires on it.
 
 Leveraging Edge Computing means offering an instantaneous experience to every customer who genuinely needs dynamic functionality, regardless of their geographical location. It isn't, however, a mandatory choice for every project: if a site - like this very portfolio - doesn't require SSR, a static build served from a CDN remains the simplest, fastest, and most cost-effective solution. The right criterion isn't "Edge always and everywhere," but choosing the architecture that actually fits the project's needs. If you're considering a move to a faster architecture, the first step is often rethinking how your site's rendering is structured - a path I walked myself when [migrating a project from React to Astro](/en/blog/migrating-react-spa-to-astro-performance/).

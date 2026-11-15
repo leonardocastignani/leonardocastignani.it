@@ -8,7 +8,7 @@ heroImage: "/blog/tecnologia-digitale-made-in-italy-sviluppo-web-festa-repubblic
 imageAlt: "Celebrazione del 2 Giugno: lavoro, progresso e tecnologia in Italia."
 imageTitle: "80 Anni di Repubblica e Innovazione"
 imageCaption: "L'evoluzione del lavoro: dalla manifattura all'ingegneria del software in Italia."
-tags: ["aggiornamenti"]
+tags: ["aggiornamenti", "business-strategia", "seo-locale"]
 lang: "it"
 alternateSlug: "italian-digital-innovation-tech-industry"
 faqs:
@@ -24,12 +24,12 @@ Domani, 2 Giugno 2026, l'Italia festeggia un traguardo storico: gli **80 anni de
 
 Spesso, tra una riga di codice, una scadenza da rispettare e un nuovo progetto da lanciare, ci dimentichiamo di guardare indietro. 
 
-### Dal 1946 al Web Moderno
+## Dal 1946 al Web Moderno
 Il concetto di "lavoro" è cambiato radicalmente in questi otto decenni. Dalla ricostruzione post-bellica e le grandi fabbriche manifatturiere, siamo passati alla rivoluzione informatica e al lavoro digitale. 
 
 Oggi, lavorare significa anche costruire infrastrutture immateriali, connettere le persone in tutto il mondo e [digitalizzare le nostre eccellenze](/blog/digitalizzazione-pmi-marche-sviluppo-web/) (specialmente qui, nel nostro prezioso territorio marchigiano). Ma lo spirito di sacrificio, la creatività e la voglia di fare del "Made in Italy" sono rimasti esattamente gli stessi del 1946.
 
-### Un giorno di pausa
+## Un giorno di pausa
 In occasione di questa festività nazionale, mi prendo una breve pausa dallo sviluppo e dai monitor per ricaricare le energie e godermi questa giornata di festa.
 
 A tutti i miei clienti, colleghi e partner che ogni giorno si impegnano per far crescere le proprie realtà e innovare il nostro tessuto economico: **Buona Festa della Repubblica!**

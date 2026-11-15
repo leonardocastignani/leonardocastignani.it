@@ -5,10 +5,10 @@ cardDescription: "Not just hype: how Astro's Islands Architecture changes real p
 pubDate: "2026-02-16"
 updatedDate: "2026-06-23"
 heroImage: "/blog/performance-siti-web-astro-js-deep-dive-civitanova-marche.webp"
-imageAlt: "Astro JS performance analysis for high-speed web projects."
+imageAlt: "Astro JS Islands Architecture performance analysis for high-speed, SEO-friendly web projects."
 imageTitle: "Astro Islands Architecture"
 imageCaption: "Scoring 100/100 on Lighthouse to dominate organic search results worldwide."
-tags: ["sviluppo-astro-performance"]
+tags: ["sviluppo-astro-performance", "seo-tecnica", "marketing-conversione"]
 lang: "en"
 alternateSlug: "performance-siti-web-astro-js-islands"
 faqs:
@@ -24,13 +24,13 @@ When I decided to rebuild my portfolio, the temptation to use a Single Page Appl
 
 Here is why I chose **Astro** and why, technically, it is superior for this use case.
 
-### The Hydration Problem
+## The Hydration Problem
 In a typical React (or Next.js) application, the browser downloads an almost empty HTML file and then a huge JavaScript bundle that must be parsed and executed to "draw" the page. This process is called **hydration**.
 The problem?
 1.  **High TTI (Time to Interactive):** The user sees the page but can't click anything until the JS finishes loading.
 2.  **Mobile CPU Stress:** On budget smartphones, executing all that JS freezes the browser, creating scroll lag.
 
-### The Solution: Islands Architecture 🏝️
+## The Solution: Islands Architecture 🏝️
 Astro flips the paradigm (MPA - Multi Page App). By default, it ships **0kb of JavaScript**. It is just pure HTML and CSS rendered server-side.
 But what if I need an interactive component, like a mobile menu or a contact form?
 
@@ -49,7 +49,7 @@ import ThemeToggle from '../components/ThemeToggle.svelte';
 <ThemeToggle client:load />
 ```
 
-### The Results
+## The Results
 Thanks to this approach, my portfolio consistently scores **100/100 on Lighthouse**. I'm not loading the entire React library to display static "About Me" text. I'm loading React (or Preact, or Svelte) only for that small piece of UI that needs it. For a deeper look at what these scores actually measure, see my guide to [Core Web Vitals in 2026](/en/blog/technical-seo-core-web-vitals-optimization-2026/).
 
 This is the efficiency I strive to bring to every client project: using technology to solve performance problems, not to create new ones. If you're currently running a React SPA and wondering whether it's worth the switch, I cover the trade-offs in [migrating from React to Astro](/en/blog/migrating-react-spa-to-astro-performance/).

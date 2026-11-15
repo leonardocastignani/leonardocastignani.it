@@ -5,10 +5,10 @@ cardDescription: "Happy Holidays! Thank you for this year, and best wishes for 2
 pubDate: "2025-12-23"
 updatedDate: "2026-06-23"
 heroImage: "/blog/sviluppatore-web-freelance-auguri-natale-2025-civitanova-marche-2026.webp"
-imageAlt: "Web development workspace of Leonardo Castignani in Italy."
+imageAlt: "Web development workspace of Leonardo Castignani, freelance developer in Civitanova Marche, Italy."
 imageTitle: "Happy Holidays and Digital Projects 2026"
 imageCaption: "Ready for a new year of digital innovation and global software development."
-tags: ["aggiornamenti"]
+tags: ["aggiornamenti", "business-strategia", "seo-locale"]
 lang: "en"
 alternateSlug: "auguri-feste-2026-sviluppatore-web-freelance-marche"
 faqs:
@@ -24,13 +24,13 @@ As 2025 draws to a close, I'm taking a moment to unplug my keyboard, close my co
 
 It's been a year of growth, technical challenges solved, and new collaborations. Launching the [new version of my portfolio](/en/blog/leonardo-castignani-freelance-high-performance-portfolio-astro-js/) just now was the perfect way to close this chapter: a symbol of how technology and expertise are constantly evolving.
 
-### 🎄 My Best Wishes for You
+## 🎄 My Best Wishes for You
 
 To all the clients who have believed in my work, to the colleagues with whom I've shared lines of code, and to anyone who stops by even just out of curiosity: **Merry Christmas and Happy New Year.**
 
 I hope you spend these days peacefully, recharging your batteries (just like we do with our devices!) to get back to work at full speed.
 
-### 🚀 Goals for 2026
+## 🚀 Goals for 2026
 
 The new year will bring new technologies and new opportunities. My resolution for 2026 is to continue creating web solutions that aren't just "working code," but truly valuable tools for those who use them.
 

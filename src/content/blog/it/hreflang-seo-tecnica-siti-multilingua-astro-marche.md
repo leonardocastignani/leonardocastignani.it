@@ -8,7 +8,7 @@ heroImage: "/blog/configurazione-hreflang-seo-tecnica-multilingua-astro-italia.w
 imageAlt: "Snippet di codice Astro per la generazione dinamica dei tag hreflang in un sito web multilingua."
 imageTitle: "SEO Multilingua: Configurazione Hreflang su Astro"
 imageCaption: "Evita contenuti duplicati e posiziona il tuo sito sui mercati globali gestendo i tag hreflang direttamente a build-time."
-tags: ["seo-tecnica", "sviluppo-astro-performance"]
+tags: ["seo-tecnica", "sviluppo-astro-performance", "case-study"]
 lang: "it"
 alternateSlug: "hreflang-technical-seo-multilingual-websites-astro-italy"
 faqs:
@@ -24,7 +24,7 @@ Quando si traduce un sito web in più lingue, l'aspettativa è quella di raddopp
 
 Il responsabile di questo disastro è quasi sempre una configurazione errata o mancante dell'attributo **hreflang**. Questo piccolo frammento di codice HTML comunica a Google l'esatta architettura delle lingue del tuo sito, dicendogli: *"Questa pagina è per chi cerca in italiano, mentre quest'altra è per chi cerca in inglese"* - lo stesso principio di architettura pulita che guida anche la mia [guida a sitemap XML e robots.txt](/blog/guida-sitemap-xml-robots-txt-seo-tecnica-astro/).
 
-### L'Anatomia dell'hreflang perfetto
+## L'Anatomia dell'hreflang perfetto
 Per far capire ai motori di ricerca la relazione tra le varianti linguistiche di una pagina, dobbiamo inserire dei tag `<link>` nella sezione `<head>` del documento HTML.
 
 Su questo stesso sito, ad esempio (che non usa un prefisso `/it/` per la lingua predefinita, solo `/en/` per l'inglese), il codice iniettato in **entrambe** le pagine di questo articolo è questo:
@@ -35,14 +35,14 @@ Su questo stesso sito, ad esempio (che non usa un prefisso `/it/` per la lingua 
 <link rel="alternate" hreflang="x-default" href="https://www.leonardocastignani.it/blog/hreflang-seo-tecnica-siti-multilingua-astro-marche/" />
 ```
 
-### I 3 Errori Fatali da Evitare
+## I 3 Errori Fatali da Evitare
 Analizzando i siti dei miei clienti, riscontro regolarmente tre errori di implementazione che invalidano l'intero setup:
 
 * **Mancanza del tag auto-referenziale:** La regola d'oro di Google è che *ogni pagina deve linkare a se stessa*. La pagina italiana non deve solo linkare alla versione inglese, ma deve avere anche un tag `hreflang="it"` che punta alla propria URL.
 * **Link non bidirezionali:** Se la pagina A (Italiano) dichiara che la sua traduzione è la pagina B (Inglese), la pagina B **deve** restituire il favore puntando alla pagina A. Se manca questo ritorno, Google ignorerà l'attributo per prevenire manipolazioni esterne.
 * **`x-default` scelto senza criterio:** Molte guide generiche consigliano di puntare sempre l'`x-default` alla versione inglese "perché è la lingua universale". Non è una regola fissa: va puntato alla lingua predefinita del *tuo* sito. Su questo stesso sito, ad esempio, punta alla versione italiana, perché l'italiano è la `defaultLocale` configurata nell'i18n di Astro e il pubblico primario è quello nazionale - non un default cieco copiato da un tutorial.
 
-### La Soluzione Concreta in Astro (non solo teoria)
+## La Soluzione Concreta in Astro (non solo teoria)
 Nei CMS tradizionali gestire questi tag, specialmente quando gli slug (le URL) cambiano da lingua a lingua - come capita quasi sempre su un blog, dove il titolo tradotto cambia lo slug - è un incubo che richiede plugin pesanti. Su questo sito la gestione è centralizzata in un unico punto, il layout condiviso da ogni pagina, senza duplicare la logica altrove.
 
 Ogni articolo del blog dichiara nel proprio frontmatter un campo `alternateSlug`, che punta allo slug della sua traduzione:

@@ -5,10 +5,10 @@ cardDescription: "Non basta un bel design: le parole giuste trasformano i visita
 pubDate: "2026-05-25"
 updatedDate: "2026-06-23"
 heroImage: "/blog/ux-writing-ottimizzazione-tasso-conversione-siti-web.webp"
-imageAlt: "Analisi del microcopy su un bottone di acquisto per ecommerce."
+imageAlt: "Analisi del microcopy su un bottone di acquisto per un sito e-commerce, con focus sul tasso di conversione."
 imageTitle: "UX Writing e Tasso di Conversione"
 imageCaption: "Come le parole giuste guidano l'utente all'acquisto abbattendo le frizioni."
-tags: ["marketing-conversione"]
+tags: ["marketing-conversione", "business-strategia", "accessibilita"]
 lang: "it"
 alternateSlug: "ux-writing-microcopy-conversion-rate-optimization"
 faqs:
@@ -24,7 +24,7 @@ C'è un equivoco molto diffuso quando si progetta un nuovo sito web o una piatta
 
 La realtà è che un design accattivante attira l'attenzione, ma **sono le parole che guidano l'azione**. Ingegnerizzare le parole per facilitare la navigazione dell'utente e spingerlo a compiere un'azione specifica si chiama **UX Writing** (User Experience Writing), ed è uno degli strumenti di vendita più potenti a tua disposizione.
 
-### Microcopy: Piccoli testi, enormi risultati
+## Microcopy: Piccoli testi, enormi risultati
 Il "microcopy" è quell'insieme di brevi testi che guidano l'utente durante l'utilizzo del sito: le etichette dei form di contatto, i messaggi di errore, i testi rassicuranti sotto i pulsanti di pagamento.
 
 Prendiamo un esempio classico: il form di iscrizione alla newsletter.
@@ -33,7 +33,7 @@ Prendiamo un esempio classico: il form di iscrizione alla newsletter.
 
 Aggiungere una riga di microcopy che rassicura l'utente sulla privacy o sul valore che riceverà può aumentare in modo significativo il tasso di conversione (Conversion Rate). Non è magia, è psicologia applicata al web design.
 
-### La scienza della Call to Action (CTA) perfetta
+## La scienza della Call to Action (CTA) perfetta
 Il bottone è il momento della verità. È il punto esatto in cui un utente decide se darti fiducia o abbandonare la pagina.
 
 Scrivere "Invia" o "Clicca qui" su un bottone è un'occasione sprecata. Una CTA efficace deve comunicare **esattamente cosa succederà dopo il clic** e deve concentrarsi sul beneficio per l'utente, non sullo sforzo.
@@ -43,7 +43,7 @@ Invece di usare parole che implicano lavoro (es. "Compila il modulo", "Acquista 
 
 La regola d'oro? Completa questa frase: *"Voglio..."*. Il testo del tuo bottone dovrebbe essere la fine di quella frase (es. Voglio... *Scaricare il Catalogo*).
 
-### Il Tono di Voce nei momenti di "Frizione"
+## Il Tono di Voce nei momenti di "Frizione"
 L'UX Writing dà il meglio di sé quando le cose vanno storte. Immagina un utente che sbaglia a digitare la password o compila male un campo del form di contatto.
 Un messaggio generico in rosso fuoco *"Errore: campo non valido"* genera frustrazione e fa sentire l'utente stupido.
 
@@ -51,6 +51,6 @@ Un buon messaggio di errore è empatico, si prende la colpa e offre una soluzion
 
 Questa attenzione al linguaggio è parte integrante di un approccio più ampio all'accessibilità: nella mia guida sullo [sviluppo di siti web accessibili (A11y)](/blog/sviluppo-siti-web-accessibili-a11y/) spiego come una buona UX scritta vada di pari passo con un'esperienza inclusiva per tutti gli utenti.
 
-### Conclusione
+## Conclusione
 Le parole sul tuo sito non sono semplici etichette, ma istruzioni di navigazione e leve di persuasione. Quando sviluppo un progetto digitale, non mi limito a "creare i bottoni", ma studio attentamente il contesto in cui si trovano. 
 Investire nell'UX Writing significa prendere l'utente per mano e accompagnarlo fluidamente dal primo clic fino alla cassa, eliminando ogni ostacolo emotivo o cognitivo lungo il percorso.

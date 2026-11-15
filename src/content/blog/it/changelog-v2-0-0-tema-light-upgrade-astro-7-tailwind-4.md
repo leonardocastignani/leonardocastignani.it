@@ -8,7 +8,7 @@ heroImage: "/blog/release-2.0.0-tema-light-astro-7-tailwind-4-sito-web-marche.we
 imageAlt: "Log di rilascio della versione 2.0.0 con restyling del sito in tema light."
 imageTitle: "Changelog v2.0.0: Tema Light e Upgrade Tecnologico"
 imageCaption: "Nuova identità visiva in tema chiaro su fondamenta tecnologiche aggiornate ad Astro 7 e Tailwind CSS v4."
-tags: ["aggiornamenti"]
+tags: ["aggiornamenti", "sviluppo-astro-performance", "accessibilita"]
 lang: "it"
 alternateSlug: "light-theme-astro-7-tailwind-4-changelog-v2-0-0"
 faqs:
@@ -24,16 +24,16 @@ Sono felice di annunciare il rilascio della versione **2.0.0** del sito. È l'ag
 
 Ecco il dettaglio delle modifiche introdotte in questa release:
 
-### 🎨 Restyling: Tema Light
+## 🎨 Restyling: Tema Light
 * **Passaggio al tema chiaro:** Il sito abbandona la veste scura per un tema light fisso, con palette, ombre, glassmorphism dell'header e stati di scroll ridisegnati da zero per garantire un contrasto pulito e coerente su ogni componente.
 * **Selettore di lingua con bandiere:** Le sigle testuali "IT" / "EN" nell'header lasciano spazio a due nuove icone a bandiera (Italia / Regno Unito), per un cambio lingua più immediato e riconoscibile a colpo d'occhio, anche da mobile.
 
-### ⚙️ Aggiornamento del Framework
+## ⚙️ Aggiornamento del Framework
 * **Astro aggiornato a v7:** Il motore del sito passa dalla v5 alla v7, attraversando la v6 in un'unica soluzione: due major version in sequenza, con la migrazione delle collezioni di contenuti alla nuova Content Layer API basata su loader. Lo schema è passato da `src/content/config.ts` a `src/content.config.ts`, con `type: 'content'` sostituito da un vero `loader: glob(...)` - ho aggiornato di conseguenza anche la mia [guida alle Content Collections con Zod](/blog/astro-content-collections-zod-blog-multilingua/), che fino a ieri citava ancora la sintassi precedente.
 * **Tailwind CSS alla v4:** Lo stack di stile adotta il nuovo motore CSS-first di Tailwind tramite plugin Vite, eliminando la configurazione storica (`tailwind.config.mjs`, PostCSS e Autoprefixer) a favore di un setup più snello e di build più rapide.
 * **Ambiente di build su Node.js 22:** Versione di Node fissata in `.nvmrc`, in Netlify e nella pipeline GitHub Actions, allineando sviluppo locale e produzione ai requisiti dei nuovi major.
 
-### 🐛 Bug Fix e Accessibilità
+## 🐛 Bug Fix e Accessibilità
 * **Fix dei 404 multilingua:** Le pagine di errore italiana e inglese erano gestite in modo incoerente dalla sitemap. Ora sono escluse entrambe, anche se con due mezzi diversi: quella italiana (`/404.html`) è un file "nudo" che l'integrazione sitemap di Astro non vede mai come route, mentre quella inglese (`/en/404/`) va esclusa esplicitamente nel filtro - lo stesso meccanismo di filtraggio che racconto nella mia [guida a sitemap XML e robots.txt](/blog/guida-sitemap-xml-robots-txt-seo-tecnica-astro/). Entrambe restano inoltre marcate `noindex`.
 * **Link di cambio lingua sulla 404:** Il collegamento per passare dalla 404 inglese a quella italiana puntava a un URL inesistente; ora risolve correttamente verso la pagina giusta.
 * **Etichette più accessibili:** Le `aria-label` del selettore di lingua e di altri controlli dell'header sono state rese più esplicite per chi naviga con lettori di schermo - un tassello che si aggiunge a quanto racconto nella mia [guida all'accessibilità dei siti web](/blog/sviluppo-siti-web-accessibili-a11y/).

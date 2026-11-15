@@ -8,7 +8,7 @@ heroImage: "/blog/consulente-seo-tecnica-dati-strutturati-marche.webp"
 imageAlt: "Analisi del codice sorgente per l'ottimizzazione tecnica della SEO locale."
 imageTitle: "Caso di Studio SEO Tecnica"
 imageCaption: "Sitemap XML e Dati Strutturati JSON-LD per dominare la ricerca Google."
-tags: ["seo-tecnica", "case-study"]
+tags: ["seo-tecnica", "case-study", "sviluppo-astro-performance"]
 lang: "it"
 alternateSlug: "technical-seo-json-ld-structured-data-case-study"
 faqs:
@@ -24,11 +24,11 @@ Avere un sito veloce è il primo passo, ma renderlo "comprensibile" ai motori di
 
 Ecco le 3 implementazioni chiave che ho realizzato per questo sito.
 
-### 1. Sitemap Dinamica e Robots.txt
+## 1. Sitemap Dinamica e Robots.txt
 Invece di scrivere la sitemap a mano (rischiando errori), ho utilizzato l'integrazione `@astrojs/sitemap`. Questo script scansiona le mie rotte (`src/pages`) durante la compilazione (build time) e genera automaticamente il file XML finale.
 Questo garantisce che ogni volta che pubblico un nuovo post (come questo), Google ne venga a conoscenza immediatamente tramite la Google Search Console, senza il mio intervento manuale.
 
-### 2. Dati Strutturati (JSON-LD)
+## 2. Dati Strutturati (JSON-LD)
 Per aiutare Google a capire che questo è il sito di un professionista freelance, ho iniettato dei dati strutturati in formato **JSON-LD** nel `<head>` di ogni pagina.
 Ecco un estratto reale del codice che genera lo schema `Person`, con un `@id` stabile a cui posso far riferimento da qualsiasi altro schema della pagina invece di ridichiarare la stessa identità più volte:
 
@@ -71,7 +71,7 @@ Accanto allo schema `Person`, genero anche uno schema `ProfessionalService` che 
 </script>
 ```
 
-### 3. Meta Tag Canonici e Open Graph
+## 3. Meta Tag Canonici e Open Graph
 Gestendo un sito multilingua (IT/EN), è cruciale evitare la penalizzazione per "contenuti duplicati". Utilizzo un componente `BaseHead.astro` centralizzato che gestisce dinamicamente:
 * **Canonical URL:** Indica a Google quale è la versione "originale" della pagina corrente.
 * **Open Graph Image:** L'immagine che appare quando condividi il link su WhatsApp o LinkedIn. Invece di un'immagine generica uguale per tutto il sito, ogni post ha la sua cover specifica definita nel frontmatter Markdown.

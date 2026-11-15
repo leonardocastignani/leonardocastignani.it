@@ -8,7 +8,7 @@ heroImage: "/blog/consulente-seo-tecnica-dati-strutturati-marche.webp"
 imageAlt: "Source code analysis for technical and international SEO optimization."
 imageTitle: "Technical SEO Case Study"
 imageCaption: "XML Sitemaps and JSON-LD Structured Data to dominate global search results."
-tags: ["seo-tecnica", "case-study"]
+tags: ["seo-tecnica", "case-study", "sviluppo-astro-performance"]
 lang: "en"
 alternateSlug: "caso-studio-consulente-seo-tecnica-dati-strutturati"
 faqs:
@@ -24,11 +24,11 @@ Having a fast site is the first step, but making it "understandable" to search e
 
 Here are the 3 key implementations I deployed for this site.
 
-### 1. Dynamic Sitemap and Robots.txt
+## 1. Dynamic Sitemap and Robots.txt
 Instead of writing the sitemap by hand (risking errors), I used the `@astrojs/sitemap` integration. This script scans my routes (`src/pages`) at build time and automatically generates the final XML file.
 This ensures that every time I publish a new post (like this one), Google knows about it immediately via Google Search Console, without manual intervention.
 
-### 2. Structured Data (JSON-LD)
+## 2. Structured Data (JSON-LD)
 To help Google understand that this is a freelance professional's site, I injected structured data in **JSON-LD** format into the `<head>` of every page.
 Here is a real snippet of the code generating the `Person` schema, with a stable `@id` that any other schema on the page can reference instead of redeclaring the same identity over and over:
 
@@ -71,7 +71,7 @@ Alongside the `Person` schema, I also generate a `ProfessionalService` schema de
 </script>
 ```
 
-### 3. Canonical Meta Tags and Open Graph
+## 3. Canonical Meta Tags and Open Graph
 Running a multilingual site (IT/EN), avoiding "duplicate content" penalties is crucial. I use a centralized `BaseHead.astro` component that dynamically manages:
 * **Canonical URL:** Tells Google which is the "original" version of the current page.
 * **Open Graph Image:** The image that appears when you share the link on WhatsApp or LinkedIn. Instead of a generic image for the whole site, each post has its specific cover defined in the Markdown frontmatter.

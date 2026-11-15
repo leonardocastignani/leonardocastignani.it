@@ -8,7 +8,7 @@ heroImage: "/blog/tecnologia-digitale-made-in-italy-sviluppo-web-festa-repubblic
 imageAlt: "June 2nd Celebration: progress, technology, and Italian industry."
 imageTitle: "80 Years of Republic and Innovation"
 imageCaption: "The evolution of Italian industry: from manufacturing to modern digital infrastructure."
-tags: ["aggiornamenti"]
+tags: ["aggiornamenti", "business-strategia", "seo-locale"]
 lang: "en"
 alternateSlug: "80-anni-repubblica-italiana-innovazione-digitale"
 faqs:
@@ -24,12 +24,12 @@ Tomorrow, June 2nd, 2026, Italy celebrates a historic milestone: the **80th anni
 
 Often, between writing lines of code, meeting deadlines, and launching new projects, we forget to look back.
 
-### From 1946 to the Modern Web
+## From 1946 to the Modern Web
 The concept of "work" has changed radically over these eight decades. From post-war reconstruction and massive manufacturing plants, we have transitioned into the information age and the digital revolution.
 
 Today, working also means building intangible infrastructures, connecting people worldwide, and [digitizing our excellence](/en/blog/digital-transformation-italian-smes-marche/) (especially here, in our precious Marche region). But the spirit of sacrifice, creativity, and the drive behind the "Made in Italy" brand remain exactly the same as in 1946.
 
-### A Day to Pause
+## A Day to Pause
 In observance of this national holiday, I am taking a short break from development and screens to recharge my batteries and enjoy the day.
 
 To all my international clients, colleagues, and partners who work with Italian companies every day to innovate and grow our economic fabric: **Happy Italian Republic Day!**

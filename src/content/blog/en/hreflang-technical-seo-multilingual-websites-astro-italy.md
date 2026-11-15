@@ -8,7 +8,7 @@ heroImage: "/blog/configurazione-hreflang-seo-tecnica-multilingua-astro-italia.w
 imageAlt: "Astro code snippet for the dynamic generation of hreflang tags on a multilingual website."
 imageTitle: "Multilingual SEO: Hreflang Configuration in Astro"
 imageCaption: "Avoid duplicate content and rank on global markets by managing your hreflang tags directly at build-time."
-tags: ["seo-tecnica", "sviluppo-astro-performance"]
+tags: ["seo-tecnica", "sviluppo-astro-performance", "case-study"]
 lang: "en"
 alternateSlug: "hreflang-seo-tecnica-siti-multilingua-astro-marche"
 faqs:
@@ -24,7 +24,7 @@ When translating a website into multiple languages, the expectation is to instan
 
 The culprit behind this disaster is almost always a misconfigured or missing **hreflang** attribute. This small snippet of HTML code communicates the exact language architecture of your site to Google, telling it: *"This page is for people searching in Italian, while this other one is for people searching in English"* - the same clean-architecture principle behind my [guide to XML sitemaps and robots.txt](/en/blog/xml-sitemap-robots-txt-technical-seo-guide-astro/).
 
-### The Anatomy of the Perfect hreflang
+## The Anatomy of the Perfect hreflang
 To help search engines understand the relationship between the linguistic variants of a page, we must insert `<link>` tags into the `<head>` section of the HTML document.
 
 On this very site, for instance (which uses no `/en/` prefix for the default language, only for English), the code injected into **both** pages of this article is this:
@@ -35,14 +35,14 @@ On this very site, for instance (which uses no `/en/` prefix for the default lan
 <link rel="alternate" hreflang="x-default" href="https://www.leonardocastignani.it/blog/hreflang-seo-tecnica-siti-multilingua-astro-marche/" />
 ```
 
-### The 3 Fatal Mistakes to Avoid
+## The 3 Fatal Mistakes to Avoid
 Analyzing my clients' sites, I regularly find three implementation errors that invalidate the entire setup:
 
 * **Missing self-referencing tag:** Google's golden rule is that *every page must link to itself*. The Italian page must not only link to the English version, but it must also have an `hreflang="it"` tag pointing to its own URL.
 * **Non-bidirectional links:** If Page A (Italian) declares that its translation is Page B (English), Page B **must** return the favor by pointing back to Page A. If this return link is missing, Google will ignore the attribute to prevent external manipulation.
 * **`x-default` chosen without a rationale:** Many generic guides recommend always pointing `x-default` at the English version "because it's the universal language." That's not a fixed rule - it should point to *your* site's actual default locale. On this very site, for instance, it points to the Italian version, because Italian is the `defaultLocale` configured in Astro's i18n, and the primary audience is domestic - not a blind default copied from a tutorial.
 
-### The Real Solution in Astro (Not Just Theory)
+## The Real Solution in Astro (Not Just Theory)
 In traditional CMSs, managing these tags - especially when slugs (URLs) change from language to language, as they almost always do on a blog, where the translated title changes the slug - is a nightmare that requires heavy plugins. On this site, the logic lives in exactly one place, the shared layout used by every page, with nothing duplicated elsewhere.
 
 Every blog post declares an `alternateSlug` field in its own frontmatter, pointing to its translation's slug:

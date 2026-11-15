@@ -8,7 +8,7 @@ heroImage: "/blog/ux-writing-ottimizzazione-tasso-conversione-siti-web.webp"
 imageAlt: "Microcopy analysis on a digital checkout button for an ecommerce platform."
 imageTitle: "UX Writing and Conversion Rates"
 imageCaption: "How strategic wording guides users to checkout and eliminates cognitive friction."
-tags: ["marketing-conversione"]
+tags: ["marketing-conversione", "business-strategia", "accessibilita"]
 lang: "en"
 alternateSlug: "ux-writing-ottimizzazione-tasso-conversione"
 faqs:
@@ -24,7 +24,7 @@ There is a widespread misconception when designing a new website or digital plat
 
 The reality is that an eye-catching design grabs attention, but **it's the words that drive action**. Engineering words to facilitate user navigation and prompt them to take a specific action is called **UX Writing** (User Experience Writing), and it is one of the most powerful sales tools at your disposal.
 
-### Microcopy: Small Texts, Huge Results
+## Microcopy: Small Texts, Huge Results
 "Microcopy" is the set of short texts that guide the user while using the site: contact form labels, error messages, reassuring text under payment buttons.
 
 Let's take a classic example: the newsletter subscription form.
@@ -33,7 +33,7 @@ Let's take a classic example: the newsletter subscription form.
 
 Adding a line of microcopy that reassures the user about their privacy or the value they will receive can meaningfully increase conversion rate. It's not magic; it's psychology applied to web design.
 
-### The Science of the Perfect Call to Action (CTA)
+## The Science of the Perfect Call to Action (CTA)
 The button is the moment of truth. It is the exact point where a user decides whether to trust you or leave the page.
 
 Writing "Submit" or "Click here" on a button is a wasted opportunity. An effective CTA must communicate **exactly what will happen after the click** and should focus on the benefit to the user, not the effort.
@@ -43,7 +43,7 @@ Instead of using words that imply work (e.g., "Fill out the form", "Buy now"), t
 
 The golden rule? Complete this sentence: *"I want to..."*. Your button text should be the end of that sentence (e.g., I want to... *Download the Catalog*).
 
-### Tone of Voice in Moments of "Friction"
+## Tone of Voice in Moments of "Friction"
 UX Writing shines brightest when things go wrong. Imagine a user mistyping their password or incorrectly filling out a field in a contact form.
 A generic, bright red message like *"Error: invalid field"* generates frustration and makes the user feel stupid.
 
@@ -51,6 +51,6 @@ A good error message is empathetic, takes the blame, and offers an immediate sol
 
 This attention to language is part of a broader approach to accessibility: in my guide on [accessible web development (A11y)](/en/blog/accessible-web-development-a11y-standards/), I explain how good UX writing goes hand in hand with an inclusive experience for all users.
 
-### Conclusion
+## Conclusion
 The words on your website are not simple labels, but navigational instructions and levers of persuasion. When I develop a digital project, I don't just "create buttons"; I carefully study the context in which they are placed.
 Investing in UX Writing means taking the user by the hand and smoothly guiding them from the first click straight to the checkout, eliminating any emotional or cognitive obstacles along the way.

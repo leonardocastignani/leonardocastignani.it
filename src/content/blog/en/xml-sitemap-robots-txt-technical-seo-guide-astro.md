@@ -8,7 +8,7 @@ heroImage: "/blog/guida-sitemap-xml-robots-txt-crawl-budget-seo-italia.webp"
 imageAlt: "Code snippets for configuring the robots.txt file and dynamic XML Sitemap on an Astro site."
 imageTitle: "SEO Guide: XML Sitemaps and Robots.txt"
 imageCaption: "Optimize Google's Crawl Budget and manage your site's indexing like a professional."
-tags: ["seo-tecnica", "sviluppo-astro-performance"]
+tags: ["seo-tecnica", "sviluppo-astro-performance", "case-study"]
 lang: "en"
 alternateSlug: "guida-sitemap-xml-robots-txt-seo-tecnica-astro"
 faqs:
@@ -26,10 +26,10 @@ Early in my career, I used to configure these files mostly by inertia, copying a
 
 Here is the practical, no-nonsense guide I wish I had read years ago.
 
-### 1. Robots.txt: The Site's Bouncer
+## 1. Robots.txt: The Site's Bouncer
 The `robots.txt` file is always located in the root directory of your site (`yoursite.com/robots.txt`). It is the first thing crawlers (like Googlebot) look at when they arrive. Its instructions tell the bots **which rooms in your house they can visit and which doors must remain closed**.
 
-#### Basic Syntax
+### Basic Syntax
 Directives work via two main commands: `User-agent` (which bot you are addressing) and `Disallow` (what they cannot crawl).
 
 ```text
@@ -41,7 +41,7 @@ Allow: /
 
 In the script above, we are telling all bots (`*`) not to crawl the administration folder and not to crawl internal search result pages (to avoid wasting *Crawl Budget* on low-value pages).
 
-### The Deadly Mistake
+## The Deadly Mistake
 The biggest SEO disaster you can make is accidentally leaving this line when moving the site from staging to production:
 
 ```text
@@ -51,10 +51,10 @@ Disallow: /
 
 This command tells Google: *"Go away, don't look at any pages on my site"*. Your site will literally vanish from search engines in a matter of days.
 
-### 2. XML Sitemap: The Treasure Map
+## 2. XML Sitemap: The Treasure Map
 If `robots.txt` tells bots where not to go, the `sitemap.xml` is the map that suggests **where they absolutely should go**. It is a list of all the URLs on your site that you want to see appear on Google. Once it's ready, the right place to manually submit it to Google (and monitor any crawl errors) is Google Search Console - I cover this in detail in my [practical Search Console guide](/en/blog/google-search-console-seo-guide-websites-italy/).
 
-### What to include (and what NOT to include) in the Sitemap
+## What to include (and what NOT to include) in the Sitemap
 One of the most common mistakes is using plugins or scripts that dump every page of the site into the sitemap. This is very wrong.
 Your sitemap must **only contain canonical, indexable URLs that return a 200 (OK) status code**.
 
@@ -65,12 +65,12 @@ Your sitemap must **only contain canonical, indexable URLs that return a 200 (OK
 
 Including "garbage" in the sitemap causes Googlebot to lose trust in the quality of your map.
 
-### A Myth Worth Downsizing: `priority` and `changefreq`
+## A Myth Worth Downsizing: `priority` and `changefreq`
 In the past, XML files included values like `<priority>0.8</priority>` and `<changefreq>weekly</changefreq>`. An important tip: today, **Google openly states it ignores these two fields**, relying on its own algorithms to figure out how often you update a page. The only attribute Google still looks at with real interest is `<lastmod>` (the last modified date) - provided it's accurate and not artificially bumped on every build.
 
 That said, on this very site I still set `priority` and `changefreq` per page type (the homepage at `1.0`/weekly, the services page at `0.9`/monthly, individual blog posts at `0.6`/monthly, tag pages at `0.3`). Not for Google's benefit - it costs nothing to maintain, it doubles as internal documentation of the site's priorities, and a handful of other engines or SEO monitoring tools may still take it into account. The `lastmod`, on the other hand, is calculated dynamically from each article's real update date - that's the one Google genuinely weighs.
 
-### The Missing Link
+## The Missing Link
 There is a golden rule that many ignore: **you must always declare your sitemap link at the end of your robots.txt**. It is the fastest way for search engines to find it. This is, verbatim, the `robots.txt` running in production on this site:
 
 ```text
@@ -80,7 +80,7 @@ Allow: /
 Sitemap: https://www.leonardocastignani.it/sitemap-index.xml
 ```
 
-### How I Handle It in Astro
+## How I Handle It in Astro
 In traditional frameworks, creating a dynamic sitemap can be tedious. With Astro, the process is automated through the official `@astrojs/sitemap` integration, configured in `astro.config.mjs`. One important clarification, since it's a common misconception: the integration does **not** automatically inject the link into `robots.txt` - that file stays static, and the link needs to be declared by hand, once, as in the example above.
 
 What the integration actually does is generate the sitemap on every build by reading all existing routes and applying the rules I pass it. This is, simplified, the core of this site's real configuration:
@@ -101,5 +101,5 @@ sitemap({
 
 In practice: the homepage gets maximum priority and a weekly cadence, tag pages (low SEO value) drop to `0.3`, and every blog post gets its real `lastmod`, calculated from the `updatedDate` declared in each post's frontmatter - not a fake date regenerated on every deploy, a detail that makes a real difference to the sitemap's credibility in Google's eyes.
 
-### Conclusion
+## Conclusion
 Your code might be pristine, but if you don't give Google the correct directions to navigate it, your organic traffic will suffer. Intentionally (and not casually) configuring your `robots.txt` and `sitemap.xml` means having full control over how the world discovers your project - the same care I put into [JSON-LD structured data](/en/blog/schema-markup-json-ld-astro-seo-italy/) to make every page not just crawlable, but genuinely understandable to search engines.
