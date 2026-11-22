@@ -8,7 +8,7 @@ heroImage: "/blog/manutenzione-sicurezza-siti-web-aziendali-go-live-italia.webp"
 imageAlt: "Monitoraggio e manutenzione server per un'applicazione web sicura."
 imageTitle: "Manutenzione e Sicurezza Siti Web"
 imageCaption: "Proteggi il tuo investimento digitale con aggiornamenti e backup continui."
-tags: ["privacy-sicurezza", "business-strategia", "sviluppo-software-qualita"]
+tags: ["privacy-sicurezza", "business-strategia", "devops"]
 lang: "it"
 alternateSlug: "enterprise-website-security-maintenance"
 faqs:

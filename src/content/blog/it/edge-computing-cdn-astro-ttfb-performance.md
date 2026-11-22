@@ -8,7 +8,7 @@ heroImage: "/blog/edge-computing-cdn-astro-ttfb-performance-italia.webp"
 imageAlt: "Schema di architettura Edge Computing e CDN per l'ottimizzazione del TTFB e delle performance sui siti web Astro."
 imageTitle: "Edge Computing e CDN per Siti Web in Astro"
 imageCaption: "Azzera la latenza fisica e riduci il TTFB distribuendo il Server-Side Rendering del tuo sito Astro su nodi Edge globali."
-tags: ["sviluppo-astro-performance", "seo-tecnica", "marketing-conversione"]
+tags: ["sviluppo-astro-performance", "seo-tecnica", "devops"]
 lang: "it"
 alternateSlug: "edge-computing-cdn-astro-ttfb-performance"
 faqs:

@@ -8,7 +8,7 @@ heroImage: "/blog/ciclo-sviluppo-software-web-agency-marche.webp"
 imageAlt: "Software development lifecycle diagram, from discovery to deployment, by Leonardo Castignani."
 imageTitle: "Professional Software Engineering Lifecycle"
 imageCaption: "From requirement discovery to deployment: building robust digital tools."
-tags: ["sviluppo-software-qualita", "business-strategia", "case-study"]
+tags: ["sviluppo-software-qualita", "business-strategia", "devops"]
 lang: "en"
 alternateSlug: "fasi-sviluppo-software-progetti-web-aziendali"
 faqs:

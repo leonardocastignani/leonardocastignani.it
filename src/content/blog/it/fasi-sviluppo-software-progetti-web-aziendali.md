@@ -8,7 +8,7 @@ heroImage: "/blog/ciclo-sviluppo-software-web-agency-marche.webp"
 imageAlt: "Diagramma del ciclo di vita dello sviluppo software curato da Leonardo Castignani."
 imageTitle: "Ciclo di Sviluppo Software Professionale"
 imageCaption: "Dall'analisi dei requisiti al deploy: il metodo per piattaforme web di successo."
-tags: ["sviluppo-software-qualita", "business-strategia", "case-study"]
+tags: ["sviluppo-software-qualita", "business-strategia", "devops"]
 lang: "it"
 alternateSlug: "custom-software-development-lifecycle"
 faqs:

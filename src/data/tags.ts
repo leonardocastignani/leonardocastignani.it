@@ -4,6 +4,7 @@ export const TAG_REGISTRY = {
     'seo-locale': { it: 'SEO Locale', en: 'Local SEO' },
     'sviluppo-astro-performance': { it: 'Sviluppo Astro & Performance', en: 'Astro Development & Performance' },
     'sviluppo-software-qualita': { it: 'Sviluppo Software & Qualità', en: 'Software Development & Quality' },
+    'devops': { it: 'DevOps', en: 'DevOps' },
     'business-strategia': { it: 'Business & Strategia', en: 'Business & Strategy' },
     'marketing-conversione': { it: 'Marketing & Conversione', en: 'Marketing & Conversion' },
     'privacy-sicurezza': { it: 'Privacy & Sicurezza', en: 'Privacy & Security' },

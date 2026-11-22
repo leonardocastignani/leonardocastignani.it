@@ -8,7 +8,7 @@ heroImage: "/blog/manutenzione-sicurezza-siti-web-aziendali-go-live-italia.webp"
 imageAlt: "Server monitoring and ongoing maintenance dashboard for secure, enterprise web applications."
 imageTitle: "Website Maintenance and Cybersecurity"
 imageCaption: "Protect your digital assets with proactive monitoring and continuous updates."
-tags: ["privacy-sicurezza", "business-strategia", "sviluppo-software-qualita"]
+tags: ["privacy-sicurezza", "business-strategia", "devops"]
 lang: "en"
 alternateSlug: "manutenzione-sicurezza-siti-web-aziendali"
 faqs:

@@ -8,7 +8,7 @@ heroImage: "/blog/edge-computing-cdn-astro-ttfb-performance-italia.webp"
 imageAlt: "Edge Computing and CDN architecture diagram for optimizing TTFB and web performance on Astro websites."
 imageTitle: "Edge Computing and CDNs for Astro Websites"
 imageCaption: "Eliminate physical latency and minimize TTFB by deploying your Astro site's Server-Side Rendering to global Edge nodes."
-tags: ["sviluppo-astro-performance", "seo-tecnica", "marketing-conversione"]
+tags: ["sviluppo-astro-performance", "seo-tecnica", "devops"]
 lang: "en"
 alternateSlug: "edge-computing-cdn-astro-ttfb-performance"
 faqs:
